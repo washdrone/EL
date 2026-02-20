@@ -1,0 +1,77 @@
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+export const faqItems: FAQItem[] = [
+  {
+    question: "Vilka typer av luftledningar inspekterar ni?",
+    answer:
+      "Vi utför inspektion av luftledningar i distributions- och regionnät. Inspektionen anpassas efter spänningsnivå och nätägarens specifika krav på dokumentation och bildunderlag.",
+  },
+  {
+    question: "Hur lång tid tar en inspektion?",
+    answer:
+      "Tidsåtgången beror på ledningens längd, terräng, väderförhållanden och vilken typ av inspektion som genomförs. Vid en initial genomgång uppskattar vi tidsåtgången baserat på era GIS-underlag och ger er ett detaljerat schema.",
+  },
+  {
+    question: "Vilka data och leveranser ingår?",
+    answer:
+      "Standardleveransen omfattar georefererade högupplösta bilder, strukturerad rapport per stolpe/sektion och kartlager kompatibla med vanliga GIS-system. Exakt format och detaljnivå anpassas efter er specifikation.",
+  },
+  {
+    question: "Hur säkerställer ni kvaliteten på insamlad data?",
+    answer:
+      "Vi arbetar med standardiserade bildvinklar och kontrollpunkter för varje stolpe och ledningssektion. Alla bilder genomgår en kvalitetskontroll (QA) innan leverans, och saknade eller otillräckliga bilder kompletteras.",
+  },
+  {
+    question: "Hur hanteras arbetsmiljö och säkerhet (HSE)?",
+    answer:
+      "Alla uppdrag genomförs enligt gällande luftfartsregler och med riskanalys anpassad för arbete i närheten av elektriska anläggningar. Våra piloter har relevant utbildning och vi följer nätägarens säkerhetsföreskrifter.",
+  },
+  {
+    question: "Kan ni utföra akutinspektion efter storm eller annan händelse?",
+    answer:
+      "Ja, vi erbjuder akutinspektion med kort mobiliseringstid. Vid stormskador eller andra akuta händelser kan vi snabbt ge er en översikt av skadeläget för prioritering av reparationsinsatser.",
+  },
+  {
+    question: "Hur fungerar det vid upphandling?",
+    answer:
+      "Vi tillhandahåller all information som behövs för upphandling: tydlig metodbeskrivning, leveransformat, QA-process, referensuppdrag och prissättningsmodell. Vi kan delta i upphandlingsprocesser och anpassa leveransen efter ert förfrågningsunderlag.",
+  },
+  {
+    question: "Vilken utrustning använder ni?",
+    answer:
+      "Vi använder professionella drönare med högupplösta kameror avsedda för inspektionsarbete. Utrustningen väljs utifrån uppdragets krav. Tillval som termografi eller LiDAR kan diskuteras vid behov.",
+  },
+  {
+    question: "Hur levereras data och hur snabbt?",
+    answer:
+      "Data levereras digitalt i överenskommet format. Leveranstiden beror på uppdragets omfattning och avtalas vid beställning. Akutinspektion har kortare leveranstid.",
+  },
+  {
+    question: "Vad behöver ni från oss för att ge en offert?",
+    answer:
+      "För en träffsäker offert behöver vi: ungefärlig sträcka (km ledning) eller antal stolpar, nättyp och spänningsnivå, eventuella GIS-underlag samt önskad inspektionstyp och leveransformat.",
+  },
+  {
+    question: "Påverkar inspektionen driften av elnätet?",
+    answer:
+      "Drönareinspektion genomförs normalt utan driftstopp. Vi flyger i säkert avstånd från spänningsförande delar och koordinerar med nätägaren för att minimera eventuell påverkan på driften.",
+  },
+  {
+    question: "Hur hanterar ni vår data?",
+    answer:
+      "All data hanteras konfidentiellt och enligt avtal med uppdragsgivaren. Vi lagrar data säkert under avtalad period och delar aldrig information med tredje part utan ert godkännande.",
+  },
+  {
+    question: "Kan ni integrera data med vårt befintliga system?",
+    answer:
+      "Vi levererar data i standardiserade format (t.ex. GeoTIFF, shapefiler, CSV) som är kompatibla med de flesta GIS- och nätförvaltningssystem. Vid behov anpassar vi leveransformatet efter ert system.",
+  },
+  {
+    question: "Vad driver priset för en inspektion?",
+    answer:
+      "De viktigaste prisdrivarna är: ledningens längd, terrängens tillgänglighet, inspektionstyp (översiktlig vs detaljerad), krav på leveranser/analys samt mobiliseringsavstånd. Kontakta oss för en kostnadsuppskattning baserad på ert specifika behov.",
+  },
+];
