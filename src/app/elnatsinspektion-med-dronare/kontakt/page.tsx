@@ -8,7 +8,7 @@ import { CONTACT_EMAIL, CONTACT_PHONE, COMPANY_NAME } from "@/lib/constants";
 export const metadata: Metadata = createPageMetadata({
   title: "Kontakt – elnätsinspektion med drönare",
   description:
-    "Boka en genomgång eller begär offert för drönareinspektion av ert elnät. Vi återkommer inom två arbetsdagar.",
+    "Boka en genomgång eller begär offert för drönareinspektion av ert elnät.",
   path: "/elnatsinspektion-med-dronare/kontakt",
   keywords: [
     "kontakt drönareinspektion elnät",
@@ -49,8 +49,8 @@ export default function KontaktPage() {
               <div className="lg:col-span-2">
                 <h1 className="heading-1">Boka genomgång eller begär offert</h1>
                 <p className="body-text mt-4">
-                  Fyll i formuläret så återkommer vi inom två arbetsdagar
-                  med en genomgång anpassad efter ert behov.
+                  Fyll i formuläret så återkommer vi med en genomgång
+                  anpassad efter ert behov.
                 </p>
 
                 <div className="mt-8 space-y-4">

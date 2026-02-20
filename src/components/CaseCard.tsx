@@ -51,8 +51,8 @@ export const sampleCases: CaseData[] = [
     slug: "regionnat-inspektion-mellansverige",
     title: "Översiktsinspektion av regionnät",
     client: "Elnätsbolag, Mellansverige",
-    scope: "120 km luftledning, 340 stolpar",
+    scope: "Regionnät, luftledningar",
     summary:
-      "Årlig översiktsinspektion av regionnät med standardiserad dokumentation per stolpe. Leverans av georefererade bilder, avvikelserapport och GIS-kartlager inom avtalad tid.",
+      "Årlig översiktsinspektion av regionnät med standardiserad dokumentation per stolpe. Leverans av georefererade bilder, avvikelserapport och GIS-kartlager enligt överenskommelse.",
   },
 ];

@@ -88,7 +88,7 @@ export default function LeadForm() {
           Tack för er förfrågan
         </h3>
         <p className="mt-2 text-sm text-surface-600">
-          Vi har tagit emot ert meddelande och återkommer inom två arbetsdagar.
+          Vi har tagit emot ert meddelande och återkommer så snart vi kan.
         </p>
         <div className="mt-6 rounded-xl bg-white p-5 text-left text-sm">
           <p className="font-medium text-surface-900">Nästa steg:</p>

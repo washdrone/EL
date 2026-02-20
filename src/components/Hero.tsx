@@ -69,7 +69,7 @@ export default function Hero({
             )}
           </div>
 
-          {/* Visual element - inspection illustration */}
+          {/* Visual element - service overview card */}
           {!compact && (
             <div className="hidden lg:col-span-2 lg:block">
               <div className="relative">
@@ -82,7 +82,7 @@ export default function Hero({
                         </svg>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white/90">Dataleverans</p>
+                        <p className="text-sm font-medium text-white/90">Strukturerad leverans</p>
                         <p className="text-xs text-white/50">GIS, bilder, rapporter</p>
                       </div>
                     </div>
@@ -93,33 +93,31 @@ export default function Hero({
                         </svg>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white/90">100% QA</p>
-                        <p className="text-xs text-white/50">Kvalitetskontrollerat</p>
+                        <p className="text-sm font-medium text-white/90">Kvalitetssäkrad</p>
+                        <p className="text-xs text-white/50">Intern QA före leverans</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/20">
                         <svg className="h-5 w-5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                         </svg>
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-white/90">24h mobilisering</p>
-                        <p className="text-xs text-white/50">Akutinspektion</p>
+                        <p className="text-sm font-medium text-white/90">Spårbar process</p>
+                        <p className="text-xs text-white/50">Dokumenterat varje steg</p>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-6 border-t border-white/10 pt-5">
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <svg className="h-5 w-5 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m10.5-6v4.5m0-4.5h-4.5m4.5 0L15 9m-10.5 6v4.5m0-4.5h4.5m-4.5 0L9 15m10.5 0l-5.25-5.25M19.5 15v4.5m0-4.5h-4.5" />
+                      </svg>
                       <div>
-                        <p className="text-2xl font-bold text-white">100+</p>
-                        <p className="text-xs text-white/40">km inspekterade</p>
-                      </div>
-                      <div className="h-8 w-px bg-white/10" />
-                      <div>
-                        <p className="text-2xl font-bold text-white">4h</p>
-                        <p className="text-xs text-white/40">typisk leveranstid</p>
+                        <p className="text-sm font-medium text-white/80">Standardiserade flygprofiler</p>
+                        <p className="text-xs text-white/40">Jämförbar data mellan inspektionstillfällen</p>
                       </div>
                     </div>
                   </div>

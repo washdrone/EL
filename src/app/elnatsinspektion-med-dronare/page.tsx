@@ -12,6 +12,7 @@ import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
 import { CaseCard, sampleCases } from "@/components/CaseCard";
 import { faqItems } from "@/data/faq";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Elnätsinspektion med drönare",
@@ -56,18 +57,25 @@ export default function HubPage() {
       {/* Intro section */}
       <section className="section-padding bg-white">
         <div className="container-section">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="heading-2">
-              Inspektion anpassad för elnätets behov
-            </h2>
-            <p className="body-text mt-6">
-              Drönareinspektion ger er detaljerad dokumentation av
-              luftledningar utan klättring, utan driftstopp och med
-              konsekvent kvalitet oavsett terräng. Varje stolpe och
-              ledningssektion dokumenteras med standardiserade bildvinklar
-              och georefererade bilder – redo för ert
-              nätförvaltningssystem.
-            </p>
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <h2 className="heading-2">
+                Inspektion anpassad för elnätets behov
+              </h2>
+              <p className="body-text mt-6">
+                Drönareinspektion ger er detaljerad dokumentation av
+                luftledningar utan klättring, utan driftstopp och med
+                konsekvent kvalitet oavsett terräng. Varje stolpe och
+                ledningssektion dokumenteras med standardiserade bildvinklar
+                och georefererade bilder – redo för ert
+                nätförvaltningssystem.
+              </p>
+            </div>
+            <ImagePlaceholder
+              alt="Drönare inspekterar luftledning"
+              illustration="drone"
+              aspect="4/3"
+            />
           </div>
 
           <div className="mx-auto mt-14 grid max-w-4xl gap-8 sm:grid-cols-3">
@@ -133,9 +141,9 @@ export default function HubPage() {
               </div>
             </div>
             {[
-              { label: "Driftstopp", drone: "Inga", traditional: "Ofta krävs" },
+              { label: "Driftstopp", drone: "Normalt inga", traditional: "Ofta krävs" },
               { label: "Klättring", drone: "Nej", traditional: "Ja" },
-              { label: "Svårtillgänglig terräng", drone: "Inga hinder", traditional: "Begränsad" },
+              { label: "Svårtillgänglig terräng", drone: "God tillgänglighet", traditional: "Begränsad" },
               { label: "Dokumentation", drone: "Standardiserad", traditional: "Varierar" },
               { label: "Repeterbarhet", drone: "Hög", traditional: "Låg" },
               { label: "GIS-integration", drone: "Direkt", traditional: "Manuell" },
