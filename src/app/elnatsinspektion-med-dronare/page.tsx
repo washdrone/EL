@@ -71,48 +71,92 @@ export default function HubPage() {
           </div>
 
           <div className="mx-auto mt-14 grid max-w-4xl gap-8 sm:grid-cols-3">
-            <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
-                <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            {[
+              {
+                title: "Säkrare arbetsmetod",
+                desc: "Ingen klättring eller arbete på hög höjd. Minskad riskexponering för er personal.",
+                icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                </svg>
-              </div>
-              <h3 className="mt-4 text-base font-semibold text-surface-900">
-                Säkrare arbetsmetod
-              </h3>
-              <p className="mt-2 text-sm text-surface-500">
-                Ingen klättring eller arbete på hög höjd. Minskad riskexponering
-                för er personal.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
-                <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                ),
+              },
+              {
+                title: "Repeterbar process",
+                desc: "Standardiserade bildvinklar och dokumentation möjliggör jämförelse över tid.",
+                icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m10.5-6v4.5m0-4.5h-4.5m4.5 0L15 9m-10.5 6v4.5m0-4.5h4.5m-4.5 0L9 15m10.5 0l-5.25-5.25M19.5 15v4.5m0-4.5h-4.5" />
-                </svg>
-              </div>
-              <h3 className="mt-4 text-base font-semibold text-surface-900">
-                Repeterbar process
-              </h3>
-              <p className="mt-2 text-sm text-surface-500">
-                Standardiserade bildvinklar och dokumentation möjliggör
-                jämförelse över tid.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
-                <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                ),
+              },
+              {
+                title: "Direkt planeringsunderlag",
+                desc: "Strukturerade rapporter och GIS-lager redo för ert nätförvaltningssystem.",
+                icon: (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                </svg>
+                ),
+              },
+            ].map((item) => (
+              <div key={item.title} className="text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
+                  <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    {item.icon}
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-base font-semibold text-surface-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm text-surface-500">
+                  {item.desc}
+                </p>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-surface-900">
-                Direkt planeringsunderlag
-              </h3>
-              <p className="mt-2 text-sm text-surface-500">
-                Strukturerade rapporter och GIS-lager redo för ert
-                nätförvaltningssystem.
-              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison: Drones vs Traditional */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-section">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="heading-2">Drönare vs. traditionell inspektion</h2>
+            <p className="body-text mt-4">
+              Se hur drönareinspektion skiljer sig från traditionella metoder.
+            </p>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-surface-200 bg-white">
+            <div className="grid grid-cols-3">
+              <div className="p-4 sm:p-5" />
+              <div className="border-l border-surface-100 bg-brand-50/50 p-4 text-center sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">Drönare</p>
+              </div>
+              <div className="border-l border-surface-100 p-4 text-center sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-surface-400">Traditionell</p>
+              </div>
             </div>
+            {[
+              { label: "Driftstopp", drone: "Inga", traditional: "Ofta krävs" },
+              { label: "Klättring", drone: "Nej", traditional: "Ja" },
+              { label: "Svårtillgänglig terräng", drone: "Inga hinder", traditional: "Begränsad" },
+              { label: "Dokumentation", drone: "Standardiserad", traditional: "Varierar" },
+              { label: "Repeterbarhet", drone: "Hög", traditional: "Låg" },
+              { label: "GIS-integration", drone: "Direkt", traditional: "Manuell" },
+            ].map((row, i) => (
+              <div key={row.label} className={`grid grid-cols-3 ${i % 2 === 0 ? "bg-surface-50/50" : "bg-white"}`}>
+                <div className="p-4 sm:p-5">
+                  <p className="text-sm font-medium text-surface-700">{row.label}</p>
+                </div>
+                <div className="border-l border-surface-100 bg-brand-50/30 p-4 text-center sm:p-5">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-700">
+                    <svg className="h-4 w-4 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    {row.drone}
+                  </span>
+                </div>
+                <div className="border-l border-surface-100 p-4 text-center sm:p-5">
+                  <span className="text-sm text-surface-400">{row.traditional}</span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
