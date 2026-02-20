@@ -140,10 +140,10 @@ export default function MetodikKvalitetPage() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-slate-600"
+                  className="flex items-start gap-3 text-surface-500"
                 >
                   <svg
-                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-500"
+                    className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -156,7 +156,7 @@ export default function MetodikKvalitetPage() {
                       d="M5 13l4 4L19 7"
                     />
                   </svg>
-                  <span className="text-base">{item}</span>
+                  <span className="text-base text-surface-600">{item}</span>
                 </li>
               ))}
             </ul>

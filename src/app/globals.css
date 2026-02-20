@@ -4,7 +4,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0f172a;
+  --foreground: #111827;
 }
 
 html {
@@ -14,46 +14,64 @@ html {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
-    Arial, sans-serif;
 }
 
 @layer components {
   .container-section {
-    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+    @apply mx-auto max-w-6xl px-5 sm:px-8 lg:px-10;
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-md bg-accent-500 px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-accent-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500;
+    @apply inline-flex items-center justify-center rounded-xl bg-accent-600 px-7 py-3.5 text-sm font-semibold text-white shadow-soft transition-all duration-200 hover:bg-accent-700 hover:shadow-card focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-600;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-md border-2 border-primary-600 bg-white px-6 py-3 text-base font-semibold text-primary-600 shadow-sm transition-colors hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-600;
+    @apply inline-flex items-center justify-center rounded-xl border border-surface-200 bg-white px-7 py-3.5 text-sm font-semibold text-brand-800 shadow-soft transition-all duration-200 hover:border-brand-200 hover:bg-brand-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl px-7 py-3.5 text-sm font-semibold text-white/90 transition-all duration-200 hover:bg-white/10 hover:text-white;
   }
 
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-20 sm:py-24 lg:py-32;
   }
 
   .heading-1 {
-    @apply text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl;
+    @apply text-4xl font-bold tracking-tight text-surface-900 sm:text-5xl lg:text-6xl;
   }
 
   .heading-2 {
-    @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl;
+    @apply text-2xl font-bold tracking-tight text-surface-900 sm:text-3xl lg:text-4xl;
   }
 
   .heading-3 {
-    @apply text-xl font-semibold text-slate-900 sm:text-2xl;
+    @apply text-lg font-semibold text-surface-900 sm:text-xl;
   }
 
   .body-text {
-    @apply text-base leading-7 text-slate-600 sm:text-lg sm:leading-8;
+    @apply text-base leading-7 text-surface-500 sm:text-lg sm:leading-8;
+  }
+
+  .card {
+    @apply rounded-2xl border border-surface-100 bg-white p-6 shadow-soft transition-all duration-200 hover:shadow-card;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(135deg, #0b1525 0%, #072849 40%, #0159a0 100%);
+  }
+
+  .gradient-cta {
+    background: linear-gradient(135deg, #029e92 0%, #07c4b1 50%, #1fe0ca 100%);
+  }
+
+  .gradient-subtle {
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
   }
 }

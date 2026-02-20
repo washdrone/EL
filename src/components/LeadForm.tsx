@@ -27,6 +27,9 @@ const initialForm: FormData = {
   message: "",
 };
 
+const inputClass =
+  "mt-1.5 block w-full rounded-xl border border-surface-200 bg-white px-4 py-2.5 text-sm text-surface-900 shadow-soft transition-colors placeholder:text-surface-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100";
+
 export default function LeadForm() {
   const [form, setForm] = useState<FormData>(initialForm);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -75,42 +78,38 @@ export default function LeadForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-lg border border-green-200 bg-green-50 p-8 text-center">
-        <svg
-          className="mx-auto h-12 w-12 text-green-500"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-          />
-        </svg>
-        <h3 className="mt-4 text-lg font-semibold text-green-900">
+      <div className="rounded-2xl border border-accent-200 bg-accent-50 p-8 text-center">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent-100">
+          <svg className="h-7 w-7 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+          </svg>
+        </div>
+        <h3 className="mt-5 text-lg font-semibold text-surface-900">
           Tack för er förfrågan
         </h3>
-        <p className="mt-2 text-sm text-green-700">
+        <p className="mt-2 text-sm text-surface-600">
           Vi har tagit emot ert meddelande och återkommer inom två arbetsdagar.
         </p>
-        <div className="mt-6 rounded-md bg-white p-4 text-left text-sm text-slate-700">
-          <p className="font-medium">Nästa steg:</p>
-          <ul className="mt-2 list-inside list-disc space-y-1 text-slate-600">
-            <li>Vi granskar er förfrågan och eventuella GIS-underlag</li>
-            <li>Vi kontaktar er för en genomgång av behov och omfattning</li>
-            <li>Ni får en offert anpassad efter ert specifika uppdrag</li>
+        <div className="mt-6 rounded-xl bg-white p-5 text-left text-sm">
+          <p className="font-medium text-surface-900">Nästa steg:</p>
+          <ul className="mt-3 space-y-2 text-surface-500">
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent-500" />
+              Vi granskar er förfrågan och eventuella GIS-underlag
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent-500" />
+              Vi kontaktar er för en genomgång av behov och omfattning
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent-500" />
+              Ni får en offert anpassad efter ert specifika uppdrag
+            </li>
           </ul>
-          <p className="mt-3 text-xs text-slate-500">
-            Tips: Har ni GIS-data eller kartunderlag att dela? Skicka gärna till
-            oss så kan vi ge en mer träffsäker offert.
-          </p>
         </div>
         <button
           type="button"
-          className="btn-secondary mt-6 text-sm"
+          className="btn-secondary mt-6"
           onClick={() => setStatus("idle")}
         >
           Skicka en ny förfrågan
@@ -120,132 +119,53 @@ export default function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {status === "error" && (
-        <div
-          className="rounded-md border border-red-200 bg-red-50 p-4 text-sm text-red-700"
-          role="alert"
-        >
+        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700" role="alert">
           {errorMsg}
         </div>
       )}
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        {/* Företag */}
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label
-            htmlFor="company"
-            className="block text-sm font-medium text-slate-700"
-          >
+          <label htmlFor="company" className="block text-sm font-medium text-surface-700">
             Företag <span className="text-red-500">*</span>
           </label>
-          <input
-            type="text"
-            id="company"
-            name="company"
-            required
-            value={form.company}
-            onChange={handleChange}
-            className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-            placeholder="Företagsnamn"
-          />
+          <input type="text" id="company" name="company" required value={form.company} onChange={handleChange} className={inputClass} placeholder="Företagsnamn" />
         </div>
-
-        {/* Kontaktperson */}
         <div>
-          <label
-            htmlFor="contact"
-            className="block text-sm font-medium text-slate-700"
-          >
+          <label htmlFor="contact" className="block text-sm font-medium text-surface-700">
             Kontaktperson <span className="text-red-500">*</span>
           </label>
-          <input
-            type="text"
-            id="contact"
-            name="contact"
-            required
-            value={form.contact}
-            onChange={handleChange}
-            className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-            placeholder="Namn"
-          />
+          <input type="text" id="contact" name="contact" required value={form.contact} onChange={handleChange} className={inputClass} placeholder="Namn" />
         </div>
-
-        {/* E-post */}
         <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-slate-700"
-          >
+          <label htmlFor="email" className="block text-sm font-medium text-surface-700">
             E-post <span className="text-red-500">*</span>
           </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            required
-            value={form.email}
-            onChange={handleChange}
-            className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-            placeholder="namn@foretag.se"
-          />
+          <input type="email" id="email" name="email" required value={form.email} onChange={handleChange} className={inputClass} placeholder="namn@foretag.se" />
         </div>
-
-        {/* Telefon */}
         <div>
-          <label
-            htmlFor="phone"
-            className="block text-sm font-medium text-slate-700"
-          >
+          <label htmlFor="phone" className="block text-sm font-medium text-surface-700">
             Telefon
           </label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            value={form.phone}
-            onChange={handleChange}
-            className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-            placeholder="+46 70 000 00 00"
-          />
+          <input type="tel" id="phone" name="phone" value={form.phone} onChange={handleChange} className={inputClass} placeholder="+46 70 000 00 00" />
         </div>
       </div>
 
-      {/* Region */}
       <div>
-        <label
-          htmlFor="region"
-          className="block text-sm font-medium text-slate-700"
-        >
+        <label htmlFor="region" className="block text-sm font-medium text-surface-700">
           Nätområde / Region
         </label>
-        <input
-          type="text"
-          id="region"
-          name="region"
-          value={form.region}
-          onChange={handleChange}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-          placeholder="Kommun, region eller nätområde"
-        />
+        <input type="text" id="region" name="region" value={form.region} onChange={handleChange} className={inputClass} placeholder="Kommun, region eller nätområde" />
       </div>
 
-      <div className="grid gap-6 sm:grid-cols-2">
-        {/* Typ av inspektion */}
+      <div className="grid gap-5 sm:grid-cols-2">
         <div>
-          <label
-            htmlFor="inspectionType"
-            className="block text-sm font-medium text-slate-700"
-          >
+          <label htmlFor="inspectionType" className="block text-sm font-medium text-surface-700">
             Typ av inspektion
           </label>
-          <select
-            id="inspectionType"
-            name="inspectionType"
-            value={form.inspectionType}
-            onChange={handleChange}
-            className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-          >
+          <select id="inspectionType" name="inspectionType" value={form.inspectionType} onChange={handleChange} className={inputClass}>
             <option value="">Välj typ</option>
             <option value="arlig">Årlig översiktsinspektion</option>
             <option value="detaljerad">Detaljerad komponentinspektion</option>
@@ -254,42 +174,19 @@ export default function LeadForm() {
             <option value="annan">Annat / vet ej</option>
           </select>
         </div>
-
-        {/* Omfattning */}
         <div>
-          <label
-            htmlFor="scope"
-            className="block text-sm font-medium text-slate-700"
-          >
+          <label htmlFor="scope" className="block text-sm font-medium text-surface-700">
             Omfattning
           </label>
-          <input
-            type="text"
-            id="scope"
-            name="scope"
-            value={form.scope}
-            onChange={handleChange}
-            className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-            placeholder="Antal km ledning / stolpar, eller 'vet ej'"
-          />
+          <input type="text" id="scope" name="scope" value={form.scope} onChange={handleChange} className={inputClass} placeholder="km ledning / stolpar, eller 'vet ej'" />
         </div>
       </div>
 
-      {/* Tidsram */}
       <div>
-        <label
-          htmlFor="timeframe"
-          className="block text-sm font-medium text-slate-700"
-        >
+        <label htmlFor="timeframe" className="block text-sm font-medium text-surface-700">
           Önskad tidsram
         </label>
-        <select
-          id="timeframe"
-          name="timeframe"
-          value={form.timeframe}
-          onChange={handleChange}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-        >
+        <select id="timeframe" name="timeframe" value={form.timeframe} onChange={handleChange} className={inputClass}>
           <option value="">Välj tidsram</option>
           <option value="akut">Akut (inom dagar)</option>
           <option value="1-4veckor">1–4 veckor</option>
@@ -299,34 +196,18 @@ export default function LeadForm() {
         </select>
       </div>
 
-      {/* Meddelande */}
       <div>
-        <label
-          htmlFor="message"
-          className="block text-sm font-medium text-slate-700"
-        >
+        <label htmlFor="message" className="block text-sm font-medium text-surface-700">
           Meddelande
         </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={4}
-          value={form.message}
-          onChange={handleChange}
-          className="mt-1 block w-full rounded-md border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
-          placeholder="Beskriv ert behov, bifoga gärna länk till GIS-underlag eller specifikation."
-        />
+        <textarea id="message" name="message" rows={4} value={form.message} onChange={handleChange} className={inputClass} placeholder="Beskriv ert behov, bifoga gärna länk till GIS-underlag eller specifikation." />
       </div>
 
-      {/* GDPR */}
-      <p className="text-xs text-slate-500">
+      <p className="text-xs text-surface-400">
         Genom att skicka detta formulär godkänner ni att vi behandlar era
         uppgifter för att hantera er förfrågan.{" "}
         Vi sparar era uppgifter i enlighet med vår{" "}
-        <a
-          href="/integritetspolicy"
-          className="text-primary-600 underline hover:text-primary-700"
-        >
+        <a href="/integritetspolicy" className="text-brand-600 underline hover:text-brand-700">
           integritetspolicy
         </a>
         .
@@ -335,7 +216,7 @@ export default function LeadForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="btn-primary w-full disabled:cursor-not-allowed disabled:opacity-60"
+        className="btn-primary w-full justify-center disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "submitting" ? "Skickar..." : "Skicka förfrågan"}
       </button>

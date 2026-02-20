@@ -59,7 +59,7 @@ export default function DatasakerhetPage() {
             </p>
 
             <div className="mt-10 space-y-8">
-              <div className="rounded-lg border border-slate-200 p-6">
+              <div className="card">
                 <h3 className="heading-3">Konfidentialitet</h3>
                 <p className="body-text mt-3">
                   All data hanteras under sekretessavtal. Information om
@@ -68,7 +68,7 @@ export default function DatasakerhetPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-slate-200 p-6">
+              <div className="card">
                 <h3 className="heading-3">Åtkomstkontroll</h3>
                 <p className="body-text mt-3">
                   Tillgång till inspektionsdata begränsas till behörig
@@ -78,7 +78,7 @@ export default function DatasakerhetPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-slate-200 p-6">
+              <div className="card">
                 <h3 className="heading-3">Lagring och livscykel</h3>
                 <p className="body-text mt-3">
                   Data lagras säkert under avtalad period. Vid
@@ -87,7 +87,7 @@ export default function DatasakerhetPage() {
                 </p>
               </div>
 
-              <div className="rounded-lg border border-slate-200 p-6">
+              <div className="card">
                 <h3 className="heading-3">Överföring</h3>
                 <p className="body-text mt-3">
                   Dataleveranser sker via säkra kanaler. Vid stora
@@ -97,11 +97,11 @@ export default function DatasakerhetPage() {
               </div>
             </div>
 
-            <div className="mt-12 rounded-lg bg-slate-50 p-6">
-              <h3 className="text-base font-semibold text-slate-900">
+            <div className="mt-12 rounded-2xl bg-surface-50 p-6">
+              <h3 className="text-base font-semibold text-surface-900">
                 Frågor om datasäkerhet?
               </h3>
-              <p className="mt-2 text-sm text-slate-600">
+              <p className="mt-2 text-sm text-surface-500">
                 Vi besvarar gärna detaljerade frågor om vår
                 datahantering vid upphandling eller avtalsdiskussion.
                 Kontakta oss för en genomgång av era specifika krav.

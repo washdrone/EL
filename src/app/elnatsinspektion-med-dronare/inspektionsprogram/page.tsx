@@ -62,33 +62,33 @@ export default function InspektionsprogramPage() {
           <div className="mx-auto max-w-3xl">
             <h2 className="heading-2">Vilket program passar er?</h2>
             <div className="mt-8 space-y-6">
-              <div className="rounded-lg border-l-4 border-primary-500 bg-slate-50 p-5">
-                <h3 className="font-semibold text-slate-900">
+              <div className="rounded-2xl border-l-4 border-brand-500 bg-surface-50 p-5">
+                <h3 className="font-semibold text-surface-900">
                   Ni vill ha en regelbunden lägesbild av ert nät
                 </h3>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-surface-500">
                   → <strong>Årlig översiktsinspektion</strong> ger er en
                   systematisk genomgång med standardiserad dokumentation.
                   Perfekt som grund för underhållsplanering.
                 </p>
               </div>
 
-              <div className="rounded-lg border-l-4 border-primary-500 bg-slate-50 p-5">
-                <h3 className="font-semibold text-slate-900">
+              <div className="rounded-2xl border-l-4 border-brand-500 bg-surface-50 p-5">
+                <h3 className="font-semibold text-surface-900">
                   Ni behöver granska specifika komponenter eller följa upp avvikelser
                 </h3>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-surface-500">
                   → <strong>Detaljerad komponentinspektion</strong> ger er
                   närbilder och statusklassificering av enskilda
                   komponenter. Används för punktinspektion eller uppföljning.
                 </p>
               </div>
 
-              <div className="rounded-lg border-l-4 border-accent-500 bg-accent-50 p-5">
-                <h3 className="font-semibold text-slate-900">
+              <div className="rounded-2xl border-l-4 border-accent-500 bg-accent-50 p-5">
+                <h3 className="font-semibold text-surface-900">
                   Det har hänt något – storm, åska, trädfällning
                 </h3>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-surface-500">
                   → <strong>Storm- och akutinspektion</strong> ger er snabb
                   överblick av skadeläget. Prioriteringsunderlag för
                   reparation och dokumentation.

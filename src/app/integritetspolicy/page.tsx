@@ -23,7 +23,7 @@ export default function IntegritetspolicyPage() {
               Senast uppdaterad: 2025-01-01
             </p>
 
-            <div className="mt-8 space-y-8 text-base leading-7 text-slate-700">
+            <div className="mt-8 space-y-8 text-base leading-7 text-surface-600">
               <section>
                 <h2 className="heading-3">Personuppgiftsansvarig</h2>
                 <p className="mt-2">
@@ -40,7 +40,7 @@ export default function IntegritetspolicyPage() {
                   Vi samlar in de uppgifter ni själva lämnar vid kontakt via
                   vårt kontaktformulär:
                 </p>
-                <ul className="mt-3 list-inside list-disc space-y-1 text-slate-600">
+                <ul className="mt-3 list-inside list-disc space-y-1 text-surface-500">
                   <li>Företagsnamn</li>
                   <li>Kontaktpersons namn</li>
                   <li>E-postadress</li>
@@ -56,7 +56,7 @@ export default function IntegritetspolicyPage() {
                 <p className="mt-2">
                   Vi behandlar era personuppgifter för att:
                 </p>
-                <ul className="mt-3 list-inside list-disc space-y-1 text-slate-600">
+                <ul className="mt-3 list-inside list-disc space-y-1 text-surface-500">
                   <li>Besvara er förfrågan och kontakta er</li>
                   <li>Utarbeta och leverera en offert</li>
                   <li>Administrera kundrelationen</li>
@@ -95,7 +95,7 @@ export default function IntegritetspolicyPage() {
                   invända mot behandlingen. Kontakta oss på{" "}
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="text-primary-600 underline hover:text-primary-700"
+                    className="text-brand-600 underline hover:text-brand-700"
                   >
                     {CONTACT_EMAIL}
                   </a>{" "}
@@ -119,7 +119,7 @@ export default function IntegritetspolicyPage() {
                   Frågor om vår behandling av personuppgifter besvaras via{" "}
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="text-primary-600 underline hover:text-primary-700"
+                    className="text-brand-600 underline hover:text-brand-700"
                   >
                     {CONTACT_EMAIL}
                   </a>
@@ -131,7 +131,7 @@ export default function IntegritetspolicyPage() {
             <div className="mt-12">
               <Link
                 href="/elnatsinspektion-med-dronare"
-                className="text-sm font-medium text-primary-600 hover:text-primary-700"
+                className="text-sm font-medium text-brand-600 hover:text-brand-700"
               >
                 ← Tillbaka till elnätsinspektion
               </Link>

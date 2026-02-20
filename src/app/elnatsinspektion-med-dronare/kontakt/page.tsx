@@ -55,22 +55,22 @@ export default function KontaktPage() {
 
                 <div className="mt-8 space-y-4">
                   <div>
-                    <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                    <h2 className="text-sm font-semibold uppercase tracking-wider text-surface-400">
                       Kontaktuppgifter
                     </h2>
                     <div className="mt-3 space-y-2">
-                      <p className="text-base text-slate-700">
+                      <p className="text-base text-surface-700">
                         {COMPANY_NAME}
                       </p>
                       <a
                         href={`mailto:${CONTACT_EMAIL}`}
-                        className="block text-base text-primary-600 hover:text-primary-700"
+                        className="block text-base text-brand-600 hover:text-brand-700"
                       >
                         {CONTACT_EMAIL}
                       </a>
                       <a
                         href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}
-                        className="block text-base text-primary-600 hover:text-primary-700"
+                        className="block text-base text-brand-600 hover:text-brand-700"
                       >
                         {CONTACT_PHONE}
                       </a>
@@ -78,10 +78,10 @@ export default function KontaktPage() {
                   </div>
 
                   <div>
-                    <h2 className="text-sm font-semibold uppercase tracking-wider text-slate-500">
+                    <h2 className="text-sm font-semibold uppercase tracking-wider text-surface-400">
                       Vad vi behöver för en träffsäker offert
                     </h2>
-                    <ul className="mt-3 space-y-2 text-sm text-slate-600">
+                    <ul className="mt-3 space-y-2 text-sm text-surface-500">
                       <li className="flex items-start gap-2">
                         <span className="mt-1 text-accent-500">●</span>
                         Ungefärlig sträcka (km) eller antal stolpar
@@ -105,11 +105,11 @@ export default function KontaktPage() {
 
               {/* Right: Form */}
               <div className="lg:col-span-3">
-                <div className="rounded-lg border border-slate-200 bg-slate-50 p-6 sm:p-8">
-                  <h2 className="text-lg font-semibold text-slate-900">
+                <div className="rounded-2xl border border-surface-200 bg-surface-50 p-6 sm:p-8">
+                  <h2 className="text-lg font-semibold text-surface-900">
                     Skicka förfrågan
                   </h2>
-                  <p className="mt-1 text-sm text-slate-500">
+                  <p className="mt-1 text-sm text-surface-400">
                     Obligatoriska fält markerade med *
                   </p>
                   <div className="mt-6">

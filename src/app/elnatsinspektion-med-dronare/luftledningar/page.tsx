@@ -121,7 +121,7 @@ export default function LuftledningarPage() {
       </section>
 
       {/* Fördelar */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding bg-surface-50">
         <div className="container-section">
           <div className="mx-auto max-w-3xl">
             <h2 className="heading-2">Fördelar med drönareinspektion av luftledningar</h2>
@@ -146,12 +146,12 @@ export default function LuftledningarPage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-lg border border-slate-200 bg-white p-5"
+                  className="card"
                 >
-                  <h3 className="text-base font-semibold text-slate-900">
+                  <h3 className="text-base font-semibold text-surface-900">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                  <p className="mt-2 text-sm leading-6 text-surface-500">
                     {item.desc}
                   </p>
                 </div>
@@ -169,23 +169,23 @@ export default function LuftledningarPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <Link
                 href="/elnatsinspektion-med-dronare/inspektionsprogram"
-                className="group rounded-lg border border-slate-200 p-5 transition-colors hover:border-primary-300 hover:bg-primary-50"
+                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
               >
-                <h3 className="font-semibold text-primary-600 group-hover:text-primary-700">
+                <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Inspektionsprogram →
                 </h3>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-surface-500">
                   Se våra inspektionstyper: årlig, detaljerad och akut.
                 </p>
               </Link>
               <Link
                 href="/elnatsinspektion-med-dronare/dataleveranser"
-                className="group rounded-lg border border-slate-200 p-5 transition-colors hover:border-primary-300 hover:bg-primary-50"
+                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
               >
-                <h3 className="font-semibold text-primary-600 group-hover:text-primary-700">
+                <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Dataleveranser →
                 </h3>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-surface-500">
                   Bilder, rapporter och kartlager – vad ni faktiskt får.
                 </p>
               </Link>

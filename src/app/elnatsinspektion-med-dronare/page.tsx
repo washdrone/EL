@@ -70,45 +70,45 @@ export default function HubPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-3">
+          <div className="mx-auto mt-14 grid max-w-4xl gap-8 sm:grid-cols-3">
             <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-50">
-                <svg className="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
+                <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-slate-900">
+              <h3 className="mt-4 text-base font-semibold text-surface-900">
                 Säkrare arbetsmetod
               </h3>
-              <p className="mt-2 text-sm text-slate-600">
+              <p className="mt-2 text-sm text-surface-500">
                 Ingen klättring eller arbete på hög höjd. Minskad riskexponering
                 för er personal.
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-50">
-                <svg className="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
+                <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m10.5-6v4.5m0-4.5h-4.5m4.5 0L15 9m-10.5 6v4.5m0-4.5h4.5m-4.5 0L9 15m10.5 0l-5.25-5.25M19.5 15v4.5m0-4.5h-4.5" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-slate-900">
+              <h3 className="mt-4 text-base font-semibold text-surface-900">
                 Repeterbar process
               </h3>
-              <p className="mt-2 text-sm text-slate-600">
+              <p className="mt-2 text-sm text-surface-500">
                 Standardiserade bildvinklar och dokumentation möjliggör
                 jämförelse över tid.
               </p>
             </div>
             <div className="text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-50">
-                <svg className="h-7 w-7 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
+                <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
                 </svg>
               </div>
-              <h3 className="mt-4 text-base font-semibold text-slate-900">
+              <h3 className="mt-4 text-base font-semibold text-surface-900">
                 Direkt planeringsunderlag
               </h3>
-              <p className="mt-2 text-sm text-slate-600">
+              <p className="mt-2 text-sm text-surface-500">
                 Strukturerade rapporter och GIS-lager redo för ert
                 nätförvaltningssystem.
               </p>
@@ -123,7 +123,7 @@ export default function HubPage() {
       <ComplianceModule />
 
       {/* Case stub */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding bg-surface-50">
         <div className="container-section">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="heading-2">Referensuppdrag</h2>
@@ -148,7 +148,7 @@ export default function HubPage() {
       <div className="bg-white py-4 text-center">
         <Link
           href="/elnatsinspektion-med-dronare/faq"
-          className="text-sm font-medium text-primary-600 hover:text-primary-700"
+          className="text-sm font-medium text-brand-600 hover:text-brand-700"
         >
           Se alla vanliga frågor →
         </Link>

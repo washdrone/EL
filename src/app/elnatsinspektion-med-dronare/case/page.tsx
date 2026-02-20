@@ -55,8 +55,8 @@ export default function CasePage() {
               <CaseCard key={c.slug} data={c} />
             ))}
 
-            <div className="rounded-lg border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
-              <p className="text-sm text-slate-500">
+            <div className="rounded-2xl border border-dashed border-surface-300 bg-surface-50 p-8 text-center">
+              <p className="text-sm text-surface-400">
                 Fler referensuppdrag publiceras löpande. Kontakta oss för
                 detaljerade referensuppgifter anpassade efter er
                 upphandling.

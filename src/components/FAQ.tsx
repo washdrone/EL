@@ -21,28 +21,29 @@ export default function FAQ({
       <div className="container-section">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="heading-2">{heading}</h2>
-          {subheading && <p className="body-text mt-4">{subheading}</p>}
+          {subheading && <p className="body-text mt-5">{subheading}</p>}
         </div>
 
-        <div className="mx-auto mt-12 max-w-3xl divide-y divide-slate-200">
+        <div className="mx-auto mt-14 max-w-3xl">
           {items.map((item, index) => (
-            <div key={index} className="py-4">
+            <div
+              key={index}
+              className="border-b border-surface-100"
+            >
               <button
                 type="button"
-                className="flex w-full items-start justify-between text-left"
+                className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-brand-700"
                 onClick={() =>
                   setOpenIndex(openIndex === index ? null : index)
                 }
                 aria-expanded={openIndex === index}
               >
-                <span className="text-base font-medium text-slate-900 pr-4">
+                <span className="text-base font-medium text-surface-900">
                   {item.question}
                 </span>
-                <span className="ml-4 flex-shrink-0 text-slate-400">
+                <span className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-all ${openIndex === index ? "bg-brand-100 text-brand-700 rotate-180" : "bg-surface-100 text-surface-400"}`}>
                   <svg
-                    className={`h-5 w-5 transition-transform ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
+                    className="h-3.5 w-3.5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -51,19 +52,21 @@ export default function FAQ({
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      strokeWidth={2}
+                      strokeWidth={2.5}
                       d="M19 9l-7 7-7-7"
                     />
                   </svg>
                 </span>
               </button>
-              {openIndex === index && (
-                <div className="mt-3 pr-12">
-                  <p className="text-sm leading-6 text-slate-600">
-                    {item.answer}
-                  </p>
-                </div>
-              )}
+              <div
+                className={`overflow-hidden transition-all duration-200 ${
+                  openIndex === index ? "max-h-96 pb-5" : "max-h-0"
+                }`}
+              >
+                <p className="pr-12 text-sm leading-6 text-surface-500">
+                  {item.answer}
+                </p>
+              </div>
             </div>
           ))}
         </div>

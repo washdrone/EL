@@ -54,7 +54,7 @@ export default function DataleveranserPage() {
       <DeliverablesModule />
 
       {/* Delivery details */}
-      <section className="section-padding bg-slate-50">
+      <section className="section-padding bg-surface-50">
         <div className="container-section">
           <div className="mx-auto max-w-3xl">
             <h2 className="heading-2">Leveransformat och anpassning</h2>
@@ -67,7 +67,7 @@ export default function DataleveranserPage() {
                   och sektion, vilket möjliggör konsekvent jämförelse mellan
                   inspektionstillfällen.
                 </p>
-                <p className="mt-2 text-sm text-slate-500">
+                <p className="mt-2 text-sm text-surface-400">
                   Format: JPEG eller TIFF. Namnkonvention anpassas efter er
                   specifikation.
                 </p>
@@ -81,7 +81,7 @@ export default function DataleveranserPage() {
                   struktureras efter er nätstruktur och kan filtreras
                   på avvikelstyp och prioritet.
                 </p>
-                <p className="mt-2 text-sm text-slate-500">
+                <p className="mt-2 text-sm text-surface-400">
                   Format: PDF och/eller CSV/Excel. Strukturen anpassas efter
                   ert behov.
                 </p>
@@ -94,7 +94,7 @@ export default function DataleveranserPage() {
                   GIS-system. Punkter (stolpar), linjer (sektioner) och
                   attribut (status, avvikelse, bildlänk) i standardformat.
                 </p>
-                <p className="mt-2 text-sm text-slate-500">
+                <p className="mt-2 text-sm text-surface-400">
                   Format: Shapefile, GeoJSON eller KML. Koordinatsystem
                   enligt överenskommelse (SWEREF 99 TM eller annat).
                 </p>
@@ -121,23 +121,23 @@ export default function DataleveranserPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <Link
                 href="/elnatsinspektion-med-dronare/metodik-kvalitet"
-                className="group rounded-lg border border-slate-200 p-5 transition-colors hover:border-primary-300 hover:bg-primary-50"
+                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
               >
-                <h3 className="font-semibold text-primary-600 group-hover:text-primary-700">
+                <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Metodik & kvalitet →
                 </h3>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-surface-500">
                   Hur vi säkerställer kvalitet och spårbarhet i varje leverans.
                 </p>
               </Link>
               <Link
                 href="/elnatsinspektion-med-dronare/inspektionsprogram"
-                className="group rounded-lg border border-slate-200 p-5 transition-colors hover:border-primary-300 hover:bg-primary-50"
+                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
               >
-                <h3 className="font-semibold text-primary-600 group-hover:text-primary-700">
+                <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Inspektionsprogram →
                 </h3>
-                <p className="mt-1 text-sm text-slate-600">
+                <p className="mt-1 text-sm text-surface-500">
                   Årlig, detaljerad och akutinspektion – se vad som passar er.
                 </p>
               </Link>
