@@ -67,10 +67,6 @@ body {
     background: linear-gradient(135deg, #0b1525 0%, #072849 40%, #0159a0 100%);
   }
 
-  .gradient-cta {
-    background: linear-gradient(135deg, #029e92 0%, #07c4b1 50%, #1fe0ca 100%);
-  }
-
   .gradient-subtle {
     background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
   }

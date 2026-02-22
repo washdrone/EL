@@ -32,8 +32,3 @@ export const NAV_ITEMS = [
     href: "/elnatsinspektion-med-dronare/kontakt",
   },
 ] as const;
-
-export const BREADCRUMB_BASE = {
-  name: "Elnätsinspektion med drönare",
-  href: "/elnatsinspektion-med-dronare",
-};
