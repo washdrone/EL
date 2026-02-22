@@ -30,22 +30,22 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-0.5 lg:flex">
+        <div className="hidden items-center gap-0.5 xl:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-surface-600 transition-colors hover:bg-surface-50 hover:text-brand-700"
+              className="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-surface-600 transition-colors hover:bg-surface-50 hover:text-brand-700"
             >
               {item.label}
             </Link>
           ))}
         </div>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <Link
             href="/elnatsinspektion-med-dronare/kontakt"
-            className="btn-primary"
+            className="btn-primary whitespace-nowrap"
             onClick={() => events.clickBook()}
           >
             Boka genomgång
@@ -55,7 +55,7 @@ export default function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg p-2 text-surface-500 transition-colors hover:bg-surface-50 hover:text-surface-900 lg:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-surface-500 transition-colors hover:bg-surface-50 hover:text-surface-900 xl:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label="Öppna meny"
@@ -74,7 +74,7 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-surface-100 bg-white lg:hidden">
+        <div className="border-t border-surface-100 bg-white xl:hidden">
           <div className="container-section space-y-1 py-4">
             {NAV_ITEMS.map((item) => (
               <Link

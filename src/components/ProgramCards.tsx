@@ -26,12 +26,12 @@ export default function ProgramCards() {
               key={program.id}
               className={`card flex flex-col border-t-2 ${cardAccents[i]}`}
             >
-              <div className="flex-1">
+              <div className="flex flex-1 flex-col">
                 <h3 className="heading-3">{program.title}</h3>
                 <p className="mt-1 text-sm font-medium text-accent-700">
                   {program.subtitle}
                 </p>
-                <p className="mt-4 text-sm leading-6 text-surface-500">
+                <p className="mt-4 flex-1 text-sm leading-6 text-surface-500">
                   {program.description}
                 </p>
 
