@@ -63,8 +63,14 @@ export default function HubPage() {
                 Inspektion anpassad för elnätets behov
               </h2>
               <p className="body-text mt-6">
-                Drönareinspektion ger er detaljerad dokumentation av
-                luftledningar utan klättring, utan driftstopp och med
+                Drönareinspektion ger er detaljerad dokumentation av{" "}
+                <Link
+                  href="/elnatsinspektion-med-dronare/luftledningar"
+                  className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400"
+                >
+                  luftledningar
+                </Link>{" "}
+                utan klättring, utan driftstopp och med
                 konsekvent kvalitet oavsett terräng. Varje stolpe och
                 ledningssektion dokumenteras med standardiserade bildvinklar
                 och georefererade bilder – redo för ert

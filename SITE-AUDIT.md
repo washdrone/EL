@@ -315,3 +315,6 @@ Varje sida har kontrollerats för:
 | `.../faq/page.tsx` | Kortare SEO-titel |
 | `.../kontakt/page.tsx` | Optimerad SEO-titel |
 | `.../case/page.tsx` | Kortare SEO-titel |
+| `.../page.tsx` (hub) | Kontextuell internlänk till luftledningar-sidan i intro |
+| `.../dataleveranser/page.tsx` | Extra internlänk till datasäkerhet (relaterat-sektion) |
+| `src/app/sitemap.ts` | Fix lastModified: statiskt byggdatum istf new Date() |

@@ -118,7 +118,7 @@ export default function DataleveranserPage() {
         <div className="container-section">
           <div className="mx-auto max-w-3xl">
             <h2 className="heading-2">Relaterat</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
               <Link
                 href="/elnatsinspektion-med-dronare/metodik-kvalitet"
                 className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
@@ -139,6 +139,17 @@ export default function DataleveranserPage() {
                 </h3>
                 <p className="mt-1 text-sm text-surface-500">
                   Årlig, detaljerad och akutinspektion – se vad som passar er.
+                </p>
+              </Link>
+              <Link
+                href="/elnatsinspektion-med-dronare/datasakerhet"
+                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
+              >
+                <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
+                  Datasäkerhet →
+                </h3>
+                <p className="mt-1 text-sm text-surface-500">
+                  Hur vi hanterar er inspektionsdata konfidentiellt.
                 </p>
               </Link>
             </div>
