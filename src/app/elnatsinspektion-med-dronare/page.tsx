@@ -132,46 +132,97 @@ export default function HubPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-2">Drönare vs. traditionell inspektion</h2>
             <p className="body-text mt-4">
-              Se hur drönareinspektion skiljer sig från traditionella metoder.
+              Metoderna kompletterar varandra. Här är de viktigaste skillnaderna.
             </p>
           </div>
 
-          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-surface-200 bg-white">
-            <div className="grid grid-cols-3">
-              <div className="p-4 sm:p-5" />
-              <div className="border-l border-surface-100 bg-brand-50/50 p-4 text-center sm:p-5">
+          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-soft">
+            {/* Header */}
+            <div className="grid grid-cols-[1fr,1fr,1fr] border-b border-surface-200 bg-surface-50">
+              <div className="p-4 sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-surface-400">Aspekt</p>
+              </div>
+              <div className="border-l border-surface-200 p-4 text-center sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">Drönare</p>
               </div>
-              <div className="border-l border-surface-100 p-4 text-center sm:p-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-surface-400">Traditionell</p>
+              <div className="border-l border-surface-200 p-4 text-center sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-surface-600">Traditionell</p>
               </div>
             </div>
-            {[
-              { label: "Driftstopp", drone: "Normalt inga", traditional: "Ofta krävs" },
-              { label: "Klättring", drone: "Nej", traditional: "Ja" },
-              { label: "Svårtillgänglig terräng", drone: "God tillgänglighet", traditional: "Begränsad" },
-              { label: "Dokumentation", drone: "Standardiserad", traditional: "Varierar" },
-              { label: "Repeterbarhet", drone: "Hög", traditional: "Låg" },
-              { label: "GIS-integration", drone: "Direkt", traditional: "Manuell" },
-            ].map((row, i) => (
-              <div key={row.label} className={`grid grid-cols-3 ${i % 2 === 0 ? "bg-surface-50/50" : "bg-white"}`}>
+
+            {/* Rows */}
+            {([
+              {
+                label: "Arbete på höjd",
+                drone: "Krävs ej",
+                traditional: "Klättring eller skylift",
+                advantage: "drone",
+              },
+              {
+                label: "Frånkoppling",
+                drone: "Kan ofta undvikas vid visuell inspektion",
+                traditional: "Krävs vid närinspektion",
+                advantage: "drone",
+              },
+              {
+                label: "Markåtkomst",
+                drone: "Ej nödvändig",
+                traditional: "Krävs för fordon och personal",
+                advantage: "drone",
+              },
+              {
+                label: "Georeferering av bilder",
+                drone: "Automatisk via GPS/EXIF",
+                traditional: "Manuell registrering",
+                advantage: "drone",
+              },
+              {
+                label: "Återbesök samma punkt",
+                drone: "Sparade flygvägar",
+                traditional: "Beroende av inspektörens rutin",
+                advantage: "drone",
+              },
+              {
+                label: "Fysisk komponentkontroll",
+                drone: "Ej möjlig",
+                traditional: "Direkt åtkomst och provtagning",
+                advantage: "traditional",
+              },
+            ] as const).map((row, i) => (
+              <div
+                key={row.label}
+                className={`grid grid-cols-[1fr,1fr,1fr] ${i % 2 === 0 ? "bg-white" : "bg-surface-50/50"}`}
+              >
                 <div className="p-4 sm:p-5">
-                  <p className="text-sm font-medium text-surface-700">{row.label}</p>
+                  <p className="text-sm font-medium text-surface-800">{row.label}</p>
                 </div>
-                <div className="border-l border-surface-100 bg-brand-50/30 p-4 text-center sm:p-5">
-                  <span className="inline-flex items-center gap-1.5 text-sm font-medium text-brand-700">
-                    <svg className="h-4 w-4 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                <div className={`border-l border-surface-100 p-4 text-center sm:p-5 ${row.advantage === "drone" ? "bg-brand-50/30" : ""}`}>
+                  <span className={`inline-flex items-center gap-1.5 text-sm ${row.advantage === "drone" ? "font-medium text-brand-700" : "text-surface-500"}`}>
+                    {row.advantage === "drone" && (
+                      <svg className="h-3.5 w-3.5 shrink-0 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
                     {row.drone}
                   </span>
                 </div>
-                <div className="border-l border-surface-100 p-4 text-center sm:p-5">
-                  <span className="text-sm text-surface-400">{row.traditional}</span>
+                <div className={`border-l border-surface-100 p-4 text-center sm:p-5 ${row.advantage === "traditional" ? "bg-brand-50/30" : ""}`}>
+                  <span className={`inline-flex items-center gap-1.5 text-sm ${row.advantage === "traditional" ? "font-medium text-brand-700" : "text-surface-500"}`}>
+                    {row.advantage === "traditional" && (
+                      <svg className="h-3.5 w-3.5 shrink-0 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                    {row.traditional}
+                  </span>
                 </div>
               </div>
             ))}
           </div>
+
+          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-surface-400">
+            Jämförelsen avser visuell inspektion av luftledningar. Förutsättningar varierar beroende på spänningsnivå, terräng och inspektionstyp.
+          </p>
         </div>
       </section>
 
