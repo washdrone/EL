@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
-const SITE_NAME = "EL Drönartjänster";
+const SITE_NAME = "SkyGrid";
 
 interface PageMetadataOptions {
   title: string;

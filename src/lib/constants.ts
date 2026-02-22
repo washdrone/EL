@@ -1,6 +1,6 @@
 export const CONTACT_EMAIL = "kontakt@example.com";
 export const CONTACT_PHONE = "+46 10 000 00 00";
-export const COMPANY_NAME = "EL Drönartjänster";
+export const COMPANY_NAME = "SkyGrid";
 
 export const NAV_ITEMS = [
   {

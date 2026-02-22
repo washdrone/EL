@@ -5,8 +5,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Elnätsinspektion med drönare | EL Drönartjänster",
-    template: "%s | EL Drönartjänster",
+    default: "Elnätsinspektion med drönare | SkyGrid",
+    template: "%s | SkyGrid",
   },
   description:
     "Professionell drönareinspektion av elnät och luftledningar. Standardiserad datainsamling för elnätsbolag, DSO och underhållsorganisationer.",
