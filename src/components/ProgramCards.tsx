@@ -24,41 +24,46 @@ export default function ProgramCards() {
           {inspectionPrograms.map((program, i) => (
             <article
               key={program.id}
-              className={`card flex flex-col border-t-2 ${cardAccents[i]}`}
+              className={`card border-t-2 lg:row-span-7 lg:grid lg:grid-rows-subgrid lg:gap-0 ${cardAccents[i]}`}
             >
-              {/* Variable height — absorbs differences so sections below align */}
-              <div className="flex-1">
+              {/* Row 1: Title + subtitle */}
+              <div>
                 <h3 className="heading-3">{program.title}</h3>
                 <p className="mt-1 text-sm font-medium text-accent-700">
                   {program.subtitle}
                 </p>
-                <p className="mt-4 text-sm leading-6 text-surface-500">
-                  {program.description}
-                </p>
               </div>
 
-              {/* Fixed content — aligned across cards */}
-              <div>
-                <h4 className="mt-6 text-xs font-semibold uppercase tracking-wider text-surface-400">
-                  Innehåll
-                </h4>
-                <ul className="mt-3 space-y-2.5">
-                  {program.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-2.5 text-sm text-surface-600"
-                    >
-                      <div className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-accent-100">
-                        <svg className="h-2.5 w-2.5 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                        </svg>
-                      </div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+              {/* Row 2: Description */}
+              <p className="mt-4 text-sm leading-6 text-surface-500 lg:mt-0 lg:pt-4">
+                {program.description}
+              </p>
 
-                <h4 className="mt-6 text-xs font-semibold uppercase tracking-wider text-surface-400">
+              {/* Row 3: INNEHÅLL heading */}
+              <h4 className="mt-6 text-xs font-semibold uppercase tracking-wider text-surface-400 lg:mt-0 lg:self-end">
+                Innehåll
+              </h4>
+
+              {/* Row 4: Features list */}
+              <ul className="mt-3 space-y-2.5 lg:mt-0 lg:pt-3">
+                {program.features.map((feature) => (
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2.5 text-sm text-surface-600"
+                  >
+                    <div className="mt-0.5 flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full bg-accent-100">
+                      <svg className="h-2.5 w-2.5 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              {/* Row 5: LEVERANSER heading + list */}
+              <div className="mt-6 lg:mt-0 lg:pt-6">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-surface-400">
                   Leveranser
                 </h4>
                 <ul className="mt-3 space-y-1.5">
@@ -69,15 +74,17 @@ export default function ProgramCards() {
                     </li>
                   ))}
                 </ul>
-
-                <p className="mt-5 text-xs text-surface-400">
-                  Frekvens: {program.frequency}
-                </p>
               </div>
 
+              {/* Row 6: Frekvens */}
+              <p className="mt-5 text-xs text-surface-400 lg:mt-0 lg:self-end lg:pt-5">
+                Frekvens: {program.frequency}
+              </p>
+
+              {/* Row 7: CTA */}
               <Link
                 href="/elnatsinspektion-med-dronare/kontakt"
-                className="btn-primary mt-6 w-full justify-center"
+                className="btn-primary mt-6 w-full justify-center lg:mt-0 lg:self-end"
               >
                 {program.cta}
               </Link>
