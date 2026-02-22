@@ -7,7 +7,7 @@ import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Referensuppdrag – elnätsinspektion med drönare",
+  title: "Referensuppdrag – drönareinspektion av elnät",
   description:
     "Exempel på genomförda drönareinspektion av elnät och luftledningar. Se hur vi har hjälpt elnätsbolag med standardiserad inspektion.",
   path: "/elnatsinspektion-med-dronare/case",

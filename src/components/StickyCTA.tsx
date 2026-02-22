@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { events } from "@/lib/analytics";
+import { CONTACT_PHONE } from "@/lib/constants";
 
 export default function StickyCTA() {
   return (
@@ -15,7 +16,7 @@ export default function StickyCTA() {
           Boka genomgång
         </Link>
         <a
-          href="tel:+4610000000"
+          href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}
           className="btn-secondary flex-shrink-0 !px-3.5"
           onClick={() => events.clickCall()}
           aria-label="Ring oss"

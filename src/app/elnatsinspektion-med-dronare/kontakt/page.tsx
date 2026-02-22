@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import { CONTACT_EMAIL, CONTACT_PHONE, COMPANY_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Kontakt – elnätsinspektion med drönare",
+  title: "Kontakt och offert – drönareinspektion elnät",
   description:
     "Boka en genomgång eller begär offert för drönareinspektion av ert elnät.",
   path: "/elnatsinspektion-med-dronare/kontakt",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
-const SITE_NAME = "Drönare för elnätsinspektion";
+const SITE_NAME = "EL Drönartjänster";
 
 interface PageMetadataOptions {
   title: string;
@@ -20,7 +20,7 @@ export function createPageMetadata({
   const fullTitle = `${title} | ${SITE_NAME}`;
 
   return {
-    title: fullTitle,
+    title,
     description,
     keywords: keywords.join(", "),
     alternates: {

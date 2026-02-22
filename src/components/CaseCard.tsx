@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export interface CaseData {
   slug: string;
   title: string;
@@ -31,21 +29,17 @@ export function CaseCard({ data }: CaseCardProps) {
           <p className="mt-3 text-sm leading-6 text-surface-500">
             {data.summary}
           </p>
-          <Link
-            href={`/elnatsinspektion-med-dronare/case/${data.slug}`}
-            className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-600 transition-colors hover:text-brand-700"
-          >
-            Läs mer
-            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-            </svg>
-          </Link>
         </div>
       </div>
     </article>
   );
 }
 
+/**
+ * MÅSTE VERIFIERAS: Är detta ett verkligt referensuppdrag?
+ * Om ja: verifiera klient, scope och summary.
+ * Om nej: ta bort eller ersätt med verklig referens.
+ */
 export const sampleCases: CaseData[] = [
   {
     slug: "regionnat-inspektion-mellansverige",

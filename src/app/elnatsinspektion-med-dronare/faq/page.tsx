@@ -8,7 +8,7 @@ import JsonLd from "@/components/JsonLd";
 import { faqItems } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Vanliga frågor – elnätsinspektion med drönare",
+  title: "Vanliga frågor om drönareinspektion av elnät",
   description:
     "Svar på vanliga frågor om drönareinspektion av elnät: upphandling, arbetsmiljö, leveranser, utrustning, tidsåtgång och prisdrivare.",
   path: "/elnatsinspektion-med-dronare/faq",

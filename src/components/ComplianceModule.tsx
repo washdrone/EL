@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const complianceItems = [
   {
     title: "Arbetsmiljö och säkerhet (HSE)",
@@ -53,6 +55,18 @@ export default function ComplianceModule() {
               </p>
             </div>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            href="/elnatsinspektion-med-dronare/datasakerhet"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-white/70 transition-colors hover:text-white"
+          >
+            Läs mer om vår datasäkerhetspolicy
+            <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
