@@ -25,7 +25,7 @@ export default function OpengraphImage() {
       >
         <div
           style={{
-            display: "inline-flex",
+            display: "flex",
             alignItems: "center",
             gap: "12px",
             color: "#91feea",
@@ -33,6 +33,7 @@ export default function OpengraphImage() {
             fontWeight: 700,
             letterSpacing: "0.08em",
             textTransform: "uppercase",
+            alignSelf: "flex-start",
           }}
         >
           SkyGrid
