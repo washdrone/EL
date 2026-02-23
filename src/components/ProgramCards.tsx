@@ -11,7 +11,7 @@ export default function ProgramCards() {
   return (
     <section className="section-padding bg-white" id="program">
       <div className="container-section">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="section-intro">
           <h2 className="heading-2">Inspektionsprogram</h2>
           <p className="body-text mt-5">
             Tre huvudtyper av inspektion, anpassade efter ert behov

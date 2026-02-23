@@ -24,16 +24,16 @@ export default function CTABand({
       <div className="absolute -bottom-10 -left-10 h-[200px] w-[200px] rounded-full bg-brand-400/10 blur-3xl" aria-hidden="true" />
 
       <div className="container-section relative text-center">
-        <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl text-balance">
+        <h2 className="heading-2 text-white text-balance">
           {heading}
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/70">
+        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
           {description}
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link
             href={primaryHref}
-            className="btn-primary"
+            className="btn-primary w-full sm:w-auto"
           >
             {primaryLabel}
             <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -42,7 +42,7 @@ export default function CTABand({
           </Link>
           <Link
             href={secondaryHref}
-            className="btn-ghost"
+            className="btn-ghost w-full sm:w-auto"
           >
             {secondaryLabel}
           </Link>

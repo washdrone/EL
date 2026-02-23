@@ -121,7 +121,7 @@ export default function DataleveranserPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-3">
               <Link
                 href="/elnatsinspektion-med-dronare/metodik-kvalitet"
-                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
+                className="nav-card group"
               >
                 <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Metodik & kvalitet →
@@ -132,7 +132,7 @@ export default function DataleveranserPage() {
               </Link>
               <Link
                 href="/elnatsinspektion-med-dronare/inspektionsprogram"
-                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
+                className="nav-card group"
               >
                 <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Inspektionsprogram →
@@ -143,7 +143,7 @@ export default function DataleveranserPage() {
               </Link>
               <Link
                 href="/elnatsinspektion-med-dronare/datasakerhet"
-                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
+                className="nav-card group"
               >
                 <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Datasäkerhet →

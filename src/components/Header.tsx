@@ -1,22 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { NAV_ITEMS, COMPANY_NAME } from "@/lib/constants";
 import { events } from "@/lib/analytics";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setMobileOpen(false);
+  }, [pathname]);
+
+  const isActive = (href: string) => {
+    if (href === "/elnatsinspektion-med-dronare") {
+      return pathname === href;
+    }
+
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-surface-100 bg-white/90 backdrop-blur-lg">
       <nav
-        className="container-section flex items-center justify-between py-4"
+        className="container-section flex items-center justify-between py-3.5"
         aria-label="Huvudnavigering"
       >
         <Link
           href="/elnatsinspektion-med-dronare"
-          className="flex items-center gap-2.5"
+          className="flex items-center gap-2.5 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
         >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-hero">
             <svg className="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -30,19 +44,28 @@ export default function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <div className="hidden items-center gap-0.5 xl:flex">
-          {NAV_ITEMS.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-surface-600 transition-colors hover:bg-surface-50 hover:text-brand-700"
-            >
-              {item.label}
-            </Link>
-          ))}
+        <div className="hidden items-center gap-0.5 lg:flex">
+          {NAV_ITEMS.map((item) => {
+            const active = isActive(item.href);
+
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={active ? "page" : undefined}
+                className={`whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${
+                  active
+                    ? "bg-brand-50 text-brand-700"
+                    : "text-surface-600 hover:bg-surface-50 hover:text-brand-700"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </div>
 
-        <div className="hidden items-center gap-3 xl:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/elnatsinspektion-med-dronare/kontakt"
             className="btn-primary whitespace-nowrap"
@@ -55,7 +78,7 @@ export default function Header() {
         {/* Mobile menu button */}
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-lg p-2 text-surface-500 transition-colors hover:bg-surface-50 hover:text-surface-900 xl:hidden"
+          className="inline-flex items-center justify-center rounded-lg p-2 text-surface-500 transition-colors hover:bg-surface-50 hover:text-surface-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-label="Öppna meny"
@@ -74,18 +97,27 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="border-t border-surface-100 bg-white xl:hidden">
+        <div className="border-t border-surface-100 bg-white shadow-soft lg:hidden">
           <div className="container-section space-y-1 py-4">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="block rounded-lg px-3 py-2.5 text-base font-medium text-surface-700 transition-colors hover:bg-surface-50 hover:text-brand-700"
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {NAV_ITEMS.map((item) => {
+              const active = isActive(item.href);
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`block rounded-lg px-3 py-2.5 text-base font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${
+                    active
+                      ? "bg-brand-50 text-brand-700"
+                      : "text-surface-700 hover:bg-surface-50 hover:text-brand-700"
+                  }`}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
             <div className="pt-3">
               <Link
                 href="/elnatsinspektion-med-dronare/kontakt"

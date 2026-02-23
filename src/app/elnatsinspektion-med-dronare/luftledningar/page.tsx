@@ -37,6 +37,7 @@ export default function LuftledningarPage() {
         type="Service"
         serviceName="Inspektion av luftledningar med drönare"
         serviceDescription="Systematisk drönareinspektion av luftledningar i elnät – stolpar, isolatorer, traverser och ledningsgata."
+        servicePath="/elnatsinspektion-med-dronare/luftledningar"
       />
 
       <Breadcrumbs
@@ -169,7 +170,7 @@ export default function LuftledningarPage() {
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
               <Link
                 href="/elnatsinspektion-med-dronare/inspektionsprogram"
-                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
+                className="nav-card group"
               >
                 <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Inspektionsprogram →
@@ -180,7 +181,7 @@ export default function LuftledningarPage() {
               </Link>
               <Link
                 href="/elnatsinspektion-med-dronare/dataleveranser"
-                className="group rounded-2xl border border-surface-200 p-5 transition-colors hover:border-brand-300 hover:bg-brand-50"
+                className="nav-card group"
               >
                 <h3 className="font-semibold text-brand-600 group-hover:text-brand-700">
                   Dataleveranser →

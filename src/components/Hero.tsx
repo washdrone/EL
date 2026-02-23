@@ -37,7 +37,7 @@ export default function Hero({
           {/* Text content */}
           <div className={compact ? "" : "lg:col-span-3"}>
             <div className="inline-flex items-center rounded-full border border-accent-400/30 bg-accent-500/10 px-4 py-1.5">
-              <div className="mr-2 h-1.5 w-1.5 rounded-full bg-accent-400 animate-pulse" />
+              <div className="mr-2 h-1.5 w-1.5 rounded-full bg-accent-400 motion-safe:animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-wider text-accent-300">
                 {subtitle}
               </span>
@@ -51,9 +51,9 @@ export default function Hero({
               </p>
             )}
             {(primaryCta || secondaryCta) && (
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                 {primaryCta && (
-                  <Link href={primaryCta.href} className="btn-primary">
+                  <Link href={primaryCta.href} className="btn-primary w-full sm:w-auto">
                     {primaryCta.label}
                     <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -61,7 +61,7 @@ export default function Hero({
                   </Link>
                 )}
                 {secondaryCta && (
-                  <Link href={secondaryCta.href} className="btn-ghost">
+                  <Link href={secondaryCta.href} className="btn-ghost w-full sm:w-auto">
                     {secondaryCta.label}
                   </Link>
                 )}

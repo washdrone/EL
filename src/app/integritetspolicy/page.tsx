@@ -15,9 +15,9 @@ export default function IntegritetspolicyPage() {
   return (
     <>
       <Header />
-      <main className="section-padding bg-white">
+      <main id="main-content" className="section-padding bg-white">
         <div className="container-section">
-          <article className="prose mx-auto max-w-3xl">
+          <article className="content-article">
             <h1 className="heading-1">Integritetspolicy</h1>
             <p className="body-text mt-4">
               Senast uppdaterad: 2025-01-01

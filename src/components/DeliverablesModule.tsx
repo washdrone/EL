@@ -29,7 +29,7 @@ export default function DeliverablesModule() {
   return (
     <section className="section-padding bg-white" id="leveranser">
       <div className="container-section">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="section-intro">
           <h2 className="heading-2">Vad ni får</h2>
           <p className="body-text mt-5">
             Standardiserade dataleveranser som passar direkt in i ert

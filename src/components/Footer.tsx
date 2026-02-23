@@ -27,7 +27,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-surface-400">
+            <h3 className="eyebrow">
               Tjänster
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -46,7 +46,7 @@ export default function Footer() {
 
           {/* Support */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-surface-400">
+            <h3 className="eyebrow">
               Information
             </h3>
             <ul className="mt-4 space-y-2.5">
@@ -73,7 +73,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-wider text-surface-400">
+            <h3 className="eyebrow">
               Kontakt
             </h3>
             <ul className="mt-4 space-y-2.5">

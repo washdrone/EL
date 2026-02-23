@@ -4,11 +4,17 @@ import type { BreadcrumbItem } from "@/components/Breadcrumbs";
 import type { FAQItem } from "@/data/faq";
 
 interface JsonLdProps {
-  type: "Organization" | "Service" | "FAQPage" | "BreadcrumbList";
+  type:
+    | "Organization"
+    | "Service"
+    | "FAQPage"
+    | "BreadcrumbList"
+    | "WebSite";
   breadcrumbs?: BreadcrumbItem[];
   faqItems?: FAQItem[];
   serviceName?: string;
   serviceDescription?: string;
+  servicePath?: string;
 }
 
 export default function JsonLd({
@@ -17,6 +23,7 @@ export default function JsonLd({
   faqItems,
   serviceName,
   serviceDescription,
+  servicePath,
 }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
@@ -25,11 +32,22 @@ export default function JsonLd({
       schema = {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": `${SITE_URL}#organization`,
         name: COMPANY_NAME,
         url: SITE_URL,
+        logo: `${SITE_URL}/opengraph-image`,
         email: CONTACT_EMAIL,
         telephone: CONTACT_PHONE,
         description: `${SITE_NAME} – professionell drönareinspektion av elnät och luftledningar.`,
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            contactType: "customer support",
+            email: CONTACT_EMAIL,
+            telephone: CONTACT_PHONE,
+            availableLanguage: ["sv"],
+          },
+        ],
       };
       break;
 
@@ -37,12 +55,15 @@ export default function JsonLd({
       schema = {
         "@context": "https://schema.org",
         "@type": "Service",
+        "@id": `${SITE_URL}${servicePath || "/elnatsinspektion-med-dronare"}#service`,
         name: serviceName || "Elnätsinspektion med drönare",
         description:
           serviceDescription ||
           "Professionell inspektion av luftledningar och elnät med drönare. Standardiserad datainsamling, georefererade bilder och strukturerade rapporter.",
+        url: `${SITE_URL}${servicePath || "/elnatsinspektion-med-dronare"}`,
         provider: {
           "@type": "Organization",
+          "@id": `${SITE_URL}#organization`,
           name: COMPANY_NAME,
           url: SITE_URL,
         },
@@ -51,6 +72,24 @@ export default function JsonLd({
           name: "Sweden",
         },
         serviceType: "Drönareinspektion",
+      };
+      break;
+
+    case "WebSite":
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": `${SITE_URL}#website`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        inLanguage: "sv-SE",
+        description: `${SITE_NAME} – professionell drönareinspektion av elnät och luftledningar.`,
+        publisher: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}#organization`,
+          name: COMPANY_NAME,
+          url: SITE_URL,
+        },
       };
       break;
 
