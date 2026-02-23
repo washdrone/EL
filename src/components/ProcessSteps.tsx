@@ -29,7 +29,7 @@ export default function ProcessSteps() {
   return (
     <section className="section-padding gradient-subtle" id="process">
       <div className="container-section">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="section-intro">
           <h2 className="heading-2">Så går det till</h2>
           <p className="body-text mt-5">
             Från planering till leverans &ndash; en strukturerad process som

@@ -28,7 +28,7 @@ const initialForm: FormData = {
 };
 
 const inputClass =
-  "mt-1.5 block w-full rounded-xl border border-surface-200 bg-white px-4 py-2.5 text-sm text-surface-900 shadow-soft transition-colors placeholder:text-surface-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100";
+  "mt-1.5 block min-h-11 w-full rounded-xl border border-surface-200 bg-white px-4 py-3 text-sm text-surface-900 shadow-soft transition-colors placeholder:text-surface-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100";
 
 export default function LeadForm() {
   const [form, setForm] = useState<FormData>(initialForm);

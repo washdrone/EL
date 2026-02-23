@@ -51,9 +51,9 @@ export default function Hero({
               </p>
             )}
             {(primaryCta || secondaryCta) && (
-              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
                 {primaryCta && (
-                  <Link href={primaryCta.href} className="btn-primary">
+                  <Link href={primaryCta.href} className="btn-primary w-full sm:w-auto">
                     {primaryCta.label}
                     <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -61,7 +61,7 @@ export default function Hero({
                   </Link>
                 )}
                 {secondaryCta && (
-                  <Link href={secondaryCta.href} className="btn-ghost">
+                  <Link href={secondaryCta.href} className="btn-ghost w-full sm:w-auto">
                     {secondaryCta.label}
                   </Link>
                 )}

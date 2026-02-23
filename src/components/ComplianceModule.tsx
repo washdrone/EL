@@ -30,11 +30,11 @@ export default function ComplianceModule() {
       <div className="absolute -right-32 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-accent-500/5 blur-3xl" aria-hidden="true" />
 
       <div className="container-section relative">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
+        <div className="section-intro">
+          <h2 className="heading-2 text-white">
             Säkerhet, kvalitet och regelefterlevnad
           </h2>
-          <p className="mt-5 text-base leading-7 text-white/60 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/65 sm:text-lg sm:leading-8">
             Vi arbetar strukturerat med HSE, standardisering och datasäkerhet
             för att möta kraven från elnätsbolag och upphandlande
             organisationer.

@@ -55,7 +55,7 @@ export default function KontaktPage() {
 
                 <div className="mt-8 space-y-4">
                   <div>
-                    <h2 className="text-sm font-semibold uppercase tracking-wider text-surface-400">
+                    <h2 className="eyebrow">
                       Kontaktuppgifter
                     </h2>
                     <div className="mt-3 space-y-2">
@@ -78,7 +78,7 @@ export default function KontaktPage() {
                   </div>
 
                   <div>
-                    <h2 className="text-sm font-semibold uppercase tracking-wider text-surface-400">
+                    <h2 className="eyebrow">
                       Vad vi behöver för en träffsäker offert
                     </h2>
                     <ul className="mt-3 space-y-2 text-sm text-surface-500">
@@ -105,7 +105,7 @@ export default function KontaktPage() {
 
               {/* Right: Form */}
               <div className="lg:col-span-3">
-                <div className="rounded-2xl border border-surface-200 bg-surface-50 p-6 sm:p-8">
+                <div className="surface-panel">
                   <h2 className="text-lg font-semibold text-surface-900">
                     Skicka förfrågan
                   </h2>

@@ -29,6 +29,45 @@ export const metadata: Metadata = createPageMetadata({
   ],
 });
 
+const comparisonRows = [
+  {
+    label: "Arbete på höjd",
+    drone: "Krävs ej",
+    traditional: "Klättring eller skylift",
+    advantage: "drone",
+  },
+  {
+    label: "Frånkoppling",
+    drone: "Kan ofta undvikas vid visuell inspektion",
+    traditional: "Krävs vid närinspektion",
+    advantage: "drone",
+  },
+  {
+    label: "Markåtkomst",
+    drone: "Ej nödvändig",
+    traditional: "Krävs för fordon och personal",
+    advantage: "drone",
+  },
+  {
+    label: "Georeferering av bilder",
+    drone: "Automatisk via GPS/EXIF",
+    traditional: "Manuell registrering",
+    advantage: "drone",
+  },
+  {
+    label: "Återbesök samma punkt",
+    drone: "Sparade flygvägar",
+    traditional: "Beroende av inspektörens rutin",
+    advantage: "drone",
+  },
+  {
+    label: "Fysisk komponentkontroll",
+    drone: "Ej möjlig",
+    traditional: "Direkt åtkomst och provtagning",
+    advantage: "traditional",
+  },
+] as const;
+
 export default function HubPage() {
   return (
     <>
@@ -129,14 +168,92 @@ export default function HubPage() {
       {/* Comparison: Drones vs Traditional */}
       <section className="section-padding bg-surface-50">
         <div className="container-section">
-          <div className="mx-auto max-w-3xl text-center">
+          <div className="section-intro-wide">
             <h2 className="heading-2">Drönare vs. traditionell inspektion</h2>
             <p className="body-text mt-4">
               Metoderna kompletterar varandra. Här är de viktigaste skillnaderna.
             </p>
           </div>
 
-          <div className="mx-auto mt-12 max-w-4xl overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-soft">
+          {/* Mobile cards */}
+          <div className="mt-10 grid gap-4 md:hidden">
+            {comparisonRows.map((row) => (
+              <article key={row.label} className="card p-0">
+                <div className="border-b border-surface-100 px-4 py-3">
+                  <p className="text-sm font-semibold text-surface-800">{row.label}</p>
+                </div>
+                <div className="grid grid-cols-1 divide-y divide-surface-100">
+                  <div
+                    className={`px-4 py-3 ${
+                      row.advantage === "drone" ? "bg-brand-50/30" : "bg-white"
+                    }`}
+                  >
+                    <p className="eyebrow">Drönare</p>
+                    <span
+                      className={`mt-1 inline-flex items-center gap-1.5 text-sm ${
+                        row.advantage === "drone"
+                          ? "font-medium text-brand-700"
+                          : "text-surface-600"
+                      }`}
+                    >
+                      {row.advantage === "drone" && (
+                        <svg
+                          className="h-3.5 w-3.5 shrink-0 text-accent-600"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      )}
+                      {row.drone}
+                    </span>
+                  </div>
+                  <div
+                    className={`px-4 py-3 ${
+                      row.advantage === "traditional" ? "bg-brand-50/30" : "bg-white"
+                    }`}
+                  >
+                    <p className="eyebrow">Traditionell</p>
+                    <span
+                      className={`mt-1 inline-flex items-center gap-1.5 text-sm ${
+                        row.advantage === "traditional"
+                          ? "font-medium text-brand-700"
+                          : "text-surface-600"
+                      }`}
+                    >
+                      {row.advantage === "traditional" && (
+                        <svg
+                          className="h-3.5 w-3.5 shrink-0 text-accent-600"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      )}
+                      {row.traditional}
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Tablet/Desktop comparison table */}
+          <div className="mx-auto mt-12 hidden max-w-4xl overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-soft md:block">
             {/* Header */}
             <div className="grid grid-cols-[1fr,1fr,1fr] border-b border-surface-200 bg-surface-50">
               <div className="p-4 sm:p-5">
@@ -151,44 +268,7 @@ export default function HubPage() {
             </div>
 
             {/* Rows */}
-            {([
-              {
-                label: "Arbete på höjd",
-                drone: "Krävs ej",
-                traditional: "Klättring eller skylift",
-                advantage: "drone",
-              },
-              {
-                label: "Frånkoppling",
-                drone: "Kan ofta undvikas vid visuell inspektion",
-                traditional: "Krävs vid närinspektion",
-                advantage: "drone",
-              },
-              {
-                label: "Markåtkomst",
-                drone: "Ej nödvändig",
-                traditional: "Krävs för fordon och personal",
-                advantage: "drone",
-              },
-              {
-                label: "Georeferering av bilder",
-                drone: "Automatisk via GPS/EXIF",
-                traditional: "Manuell registrering",
-                advantage: "drone",
-              },
-              {
-                label: "Återbesök samma punkt",
-                drone: "Sparade flygvägar",
-                traditional: "Beroende av inspektörens rutin",
-                advantage: "drone",
-              },
-              {
-                label: "Fysisk komponentkontroll",
-                drone: "Ej möjlig",
-                traditional: "Direkt åtkomst och provtagning",
-                advantage: "traditional",
-              },
-            ] as const).map((row, i) => (
+            {comparisonRows.map((row, i) => (
               <div
                 key={row.label}
                 className={`grid grid-cols-[1fr,1fr,1fr] ${i % 2 === 0 ? "bg-white" : "bg-surface-50/50"}`}
@@ -234,7 +314,7 @@ export default function HubPage() {
       {/* Case stub */}
       <section className="section-padding bg-surface-50">
         <div className="container-section">
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="section-intro">
             <h2 className="heading-2">Referensuppdrag</h2>
             <p className="body-text mt-4">
               Exempel på genomförda inspektionsuppdrag.
@@ -254,7 +334,7 @@ export default function HubPage() {
         subheading="Har ni fler frågor? Se vår fullständiga FAQ eller kontakta oss direkt."
       />
 
-      <div className="bg-white py-4 text-center">
+      <div className="bg-white py-6 text-center">
         <Link
           href="/elnatsinspektion-med-dronare/faq"
           className="text-sm font-medium text-brand-600 hover:text-brand-700"

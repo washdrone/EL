@@ -19,7 +19,7 @@ export default function FAQ({
   return (
     <section className="section-padding bg-white" id="faq">
       <div className="container-section">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="section-intro">
           <h2 className="heading-2">{heading}</h2>
           {subheading && <p className="body-text mt-5">{subheading}</p>}
         </div>

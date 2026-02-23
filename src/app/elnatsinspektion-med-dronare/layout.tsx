@@ -12,7 +12,9 @@ export default function SectionLayout({
     <>
       <JsonLd type="Organization" />
       <Header />
-      <main id="main-content">{children}</main>
+      <main id="main-content" className="pb-24 lg:pb-0">
+        {children}
+      </main>
       <Footer />
       <StickyCTA />
     </>

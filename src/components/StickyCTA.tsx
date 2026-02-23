@@ -6,7 +6,7 @@ import { CONTACT_PHONE } from "@/lib/constants";
 
 export default function StickyCTA() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-40 border-t border-surface-100 bg-white/95 p-3 shadow-elevated backdrop-blur-lg lg:hidden">
+    <div className="mobile-safe-padding fixed bottom-0 left-0 right-0 z-40 border-t border-surface-100 bg-white/95 p-3 shadow-elevated backdrop-blur-lg lg:hidden">
       <div className="flex items-center justify-center gap-3">
         <Link
           href="/elnatsinspektion-med-dronare/kontakt"
