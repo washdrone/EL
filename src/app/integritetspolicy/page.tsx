@@ -15,7 +15,7 @@ export default function IntegritetspolicyPage() {
   return (
     <>
       <Header />
-      <main className="section-padding bg-white">
+      <main id="main-content" className="section-padding bg-white">
         <div className="container-section">
           <article className="content-article">
             <h1 className="heading-1">Integritetspolicy</h1>

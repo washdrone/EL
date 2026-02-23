@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Inter } from "next/font/google";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -22,19 +28,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="sv" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="min-h-screen bg-white font-sans text-surface-900 antialiased">
+      <body
+        className={`${inter.className} min-h-screen bg-white font-sans text-surface-900 antialiased`}
+      >
+        <a href="#main-content" className="skip-link">
+          Hoppa till huvudinnehåll
+        </a>
         {children}
         {GA_MEASUREMENT_ID && (
           <>

@@ -37,7 +37,7 @@ export default function Hero({
           {/* Text content */}
           <div className={compact ? "" : "lg:col-span-3"}>
             <div className="inline-flex items-center rounded-full border border-accent-400/30 bg-accent-500/10 px-4 py-1.5">
-              <div className="mr-2 h-1.5 w-1.5 rounded-full bg-accent-400 animate-pulse" />
+              <div className="mr-2 h-1.5 w-1.5 rounded-full bg-accent-400 motion-safe:animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-wider text-accent-300">
                 {subtitle}
               </span>
