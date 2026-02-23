@@ -2,6 +2,15 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Inter } from "next/font/google";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
+import JsonLd from "@/components/JsonLd";
+import {
+  SITE_NAME,
+  SITE_URL,
+  SITE_LOCALE,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TWITTER_IMAGE,
+} from "@/lib/metadata";
 import "./globals.css";
 
 const inter = Inter({
@@ -11,14 +20,44 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Elnätsinspektion med drönare | SkyGrid",
-    template: "%s | SkyGrid",
+    default: `Elnätsinspektion med drönare | ${SITE_NAME}`,
+    template: `%s | ${SITE_NAME}`,
   },
-  description:
-    "Professionell drönareinspektion av elnät och luftledningar. Standardiserad datainsamling för elnätsbolag, DSO och underhållsorganisationer.",
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://example.com"
-  ),
+  description: DEFAULT_DESCRIPTION,
+  metadataBase: new URL(SITE_URL),
+  openGraph: {
+    title: `Elnätsinspektion med drönare | ${SITE_NAME}`,
+    description: DEFAULT_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    locale: SITE_LOCALE,
+    type: "website",
+    images: [
+      {
+        url: DEFAULT_OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: `${SITE_NAME} – Elnätsinspektion med drönare`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `Elnätsinspektion med drönare | ${SITE_NAME}`,
+    description: DEFAULT_DESCRIPTION,
+    images: [DEFAULT_TWITTER_IMAGE],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -34,6 +73,8 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Hoppa till huvudinnehåll
         </a>
+        <JsonLd type="Organization" />
+        <JsonLd type="WebSite" />
         {children}
         {GA_MEASUREMENT_ID && (
           <>

@@ -1,13 +1,12 @@
 import type { MetadataRoute } from "next";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://example.com";
+import { SITE_URL } from "@/lib/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseSection = "/elnatsinspektion-med-dronare";
-  // Use build date as lastModified (static site — all pages built at same time)
-  const buildDate = new Date("2026-02-22");
+  const lastModified = new Date();
 
   const pages = [
+    { path: "/", priority: 0.5, changeFrequency: "monthly" as const },
     { path: baseSection, priority: 1.0, changeFrequency: "weekly" as const },
     {
       path: `${baseSection}/luftledningar`,
@@ -58,7 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return pages.map((page) => ({
     url: `${SITE_URL}${page.path}`,
-    lastModified: buildDate,
+    lastModified,
     changeFrequency: page.changeFrequency,
     priority: page.priority,
   }));

@@ -71,7 +71,7 @@ const comparisonRows = [
 export default function HubPage() {
   return (
     <>
-      <JsonLd type="Service" />
+      <JsonLd type="Service" servicePath="/elnatsinspektion-med-dronare" />
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[{ name: "Elnätsinspektion med drönare" }]}

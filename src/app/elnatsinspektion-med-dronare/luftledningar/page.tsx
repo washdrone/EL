@@ -37,6 +37,7 @@ export default function LuftledningarPage() {
         type="Service"
         serviceName="Inspektion av luftledningar med drönare"
         serviceDescription="Systematisk drönareinspektion av luftledningar i elnät – stolpar, isolatorer, traverser och ledningsgata."
+        servicePath="/elnatsinspektion-med-dronare/luftledningar"
       />
 
       <Breadcrumbs
