@@ -129,7 +129,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-surface-200 pt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-surface-400">
-            &copy; {new Date().getFullYear()} {COMPANY_NAME} AB. Alla rättigheter förbehållna.
+            &copy; {new Date().getFullYear()} {COMPANY_NAME}. Alla rättigheter förbehållna.
           </p>
           <div className="flex gap-4">
             <Link href="/integritetspolicy" className="text-xs text-surface-400 hover:text-surface-600">

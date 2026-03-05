@@ -7,7 +7,7 @@ const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://example.com").rep
 const SITE_NAME = "GridDrone";
 const SITE_LOCALE = "sv_SE";
 const DEFAULT_DESCRIPTION =
-  "GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. Visuell inspektion med tillval som termografi och LiDAR. Begär offert.";
+  "GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. EASA-utbildade piloter med BVLOS-behörighet. Termografi och LiDAR. Begär offert.";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`;
 const DEFAULT_TWITTER_IMAGE = `${SITE_URL}/twitter-image`;
 

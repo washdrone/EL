@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 export const metadata: Metadata = createPageMetadata({
   title: "Om GridDrone — Drönarinspektion av Elnät & Energiinfrastruktur",
   description:
-    "GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. Specialiserade på inspektion av energiinfrastruktur.",
+    "GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. EASA-utbildade piloter med BVLOS-behörighet.",
   path: "/om-oss",
   keywords: [
     "om GridDrone",
@@ -20,9 +20,9 @@ export const metadata: Metadata = createPageMetadata({
 
 const reasons = [
   {
-    title: "BVLOS-kapacitet",
+    title: "BVLOS-behörighet",
     description:
-      "BVLOS (Beyond Visual Line of Sight) gör det möjligt att inspektera långa ledningssträckor effektivt utan ompositionering. Kontakta oss för information om aktuella tillstånd.",
+      "Våra piloter har BVLOS-behörighet (Beyond Visual Line of Sight), vilket gör det möjligt att inspektera långa ledningssträckor effektivt utan ompositionering.",
     icon: (
       <path
         strokeLinecap="round"
@@ -67,9 +67,9 @@ const reasons = [
     ),
   },
   {
-    title: "Tillstånd & försäkring",
+    title: "Försäkrat & certifierat",
     description:
-      "Vi arbetar med de tillstånd och försäkringar som krävs för professionell drönarinspektion. Se vår certifieringssida för detaljer.",
+      "Vi har ansvarsförsäkring och de tillstånd som krävs för professionell drönarinspektion. Se vår certifieringssida för detaljer.",
     icon: (
       <path
         strokeLinecap="round"
@@ -92,7 +92,7 @@ export default function OmOssPage() {
       <Hero
         title="Om GridDrone"
         subtitle="Om oss"
-        description="GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. Specialiserade på inspektion av energiinfrastruktur."
+        description="GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. EASA-utbildade piloter med BVLOS-behörighet."
         compact
       />
 
@@ -170,8 +170,8 @@ export default function OmOssPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-2">Certifieringar</h2>
             <p className="body-text mt-4">
-              Vi arbetar med de tillstånd och certifieringar som krävs för
-              professionell drönarinspektion av elnät.
+              Våra piloter är EASA-utbildade med BVLOS-behörighet och
+              mörkerflyg. Vi har ansvarsförsäkring för vår UAS-verksamhet.
             </p>
             <div className="mt-8">
               <Link

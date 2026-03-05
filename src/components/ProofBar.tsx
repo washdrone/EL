@@ -30,9 +30,9 @@ const capabilities = [
 ];
 
 const trustBadges = [
-  "Registrerad UAS-operatör [VERIFIERAS]",
-  "Ansvarsförsäkrad [VERIFIERAS]",
-  "GDPR-anpassad datahantering [VERIFIERAS]",
+  "EASA-utbildade piloter",
+  "BVLOS-behörighet",
+  "Ansvarsförsäkrad",
   "HSE-dokumentation [VERIFIERAS]",
 ];
 

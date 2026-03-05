@@ -17,7 +17,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 export const metadata: Metadata = createPageMetadata({
   title: "Kraftledningsinspektion med Drönare",
   description:
-    "Professionell inspektion av kraftledningar med drönare. Visuell kamera och tillval som värmekamera och LiDAR. Kostnadseffektivt alternativ till helikopter. Begär offert.",
+    "Professionell inspektion av kraftledningar med drönare. Högupplöst RGB-kamera, radiometrisk värmekamera och LiDAR. RTK-positionering. Begär offert.",
   path: "/tjanster/kraftledningsinspektion",
   keywords: [
     "kraftledningsinspektion drönare",

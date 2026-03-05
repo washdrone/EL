@@ -11,7 +11,7 @@ import type { FAQItem } from "@/data/faq";
 export const metadata: Metadata = createPageMetadata({
   title: "Termografering Kraftledning & Elnät",
   description:
-    "Drönarbaserad termografering av elnät, transformatorstationer och kraftledningar. Radiometrisk värmekamera. Förhindra driftstopp.",
+    "Drönarbaserad termografering av elnät, transformatorstationer och kraftledningar. Radiometrisk värmekamera med hög termisk upplösning. Förhindra driftstopp.",
   path: "/tjanster/termografering-kraftledning",
   keywords: [
     "termografering kraftledning",

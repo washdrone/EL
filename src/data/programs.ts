@@ -85,6 +85,6 @@ export const optionalAddons = [
     title: "LiDAR och 3D-kartläggning",
     description:
       "Laserscanning för detaljerad 3D-modell av ledning och omgivande vegetation. Används för vegetationsanalys och avståndsmätning.",
-    note: "Valbart tillägg – tillgänglighet och pris vid förfrågan.",
+    note: "Valbart tillägg – pris vid förfrågan.",
   },
 ];

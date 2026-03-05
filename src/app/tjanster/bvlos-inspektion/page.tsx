@@ -28,8 +28,8 @@ const advantages = [
     desc: "Nå ledningar i skog, fjäll och områden utan vägaccess. Ingen markåtkomst krävs.",
   },
   {
-    title: "Tillstånd enligt gällande regelverk",
-    desc: "BVLOS-flygning kräver särskilda tillstånd från Transportstyrelsen. Kontakta oss för information om våra aktuella tillstånd.",
+    title: "Behöriga piloter",
+    desc: "Våra piloter har BVLOS-behörighet enligt EASA-regelverket och flyger enligt gällande tillstånd.",
   },
   {
     title: "Kostnadseffektivt",
@@ -85,14 +85,14 @@ export default function BvlosInspektionPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-surface-200 bg-surface-50 p-8">
-              <p className="eyebrow">Krav för BVLOS</p>
+              <p className="eyebrow">Vår behörighet</p>
               <h3 className="mt-3 text-lg font-semibold text-surface-900">
-                Vad krävs för BVLOS-flygning?
+                BVLOS-behöriga piloter
               </h3>
               <p className="mt-3 text-sm text-surface-500">
-                BVLOS-flygning i Sverige kräver särskilda tillstånd från
-                Transportstyrelsen. Kontakta oss för information om våra
-                aktuella tillstånd och godkännanden.
+                Våra piloter är utbildade och behöriga för BVLOS-flygning
+                enligt EASA-regelverket. Vi uppfyller de krav som ställs
+                för inspektion av linjär infrastruktur.
               </p>
               <ul className="mt-4 space-y-2 text-sm text-surface-600">
                 <li className="flex items-start gap-2">
