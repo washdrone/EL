@@ -125,9 +125,8 @@ export default function MetodikKvalitetPage() {
           <div className="mx-auto max-w-3xl">
             <h2 className="heading-2">Upphandling och avtal</h2>
             <p className="body-text mt-4">
-              Vi har erfarenhet av att arbeta inom ramavtal och
-              upphandlingsprocesser. Vi tillhandahåller den information
-              som behövs för att utvärdera vår tjänst:
+              Vi kan tillhandahålla den information
+              som behövs för att utvärdera vår tjänst i en upphandlingsprocess:
             </p>
             <ul className="mt-6 space-y-3">
               {[

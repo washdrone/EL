@@ -29,18 +29,11 @@ const capabilities = [
   },
 ];
 
-/**
- * MÅSTE VERIFIERAS:
- * - "Transportstyrelsens godkännande" – Har ni specifikt UAS-operatörstillstånd?
- *   Ange korrekt tillståndstyp (t.ex. EASA Specific Category, LUC, etc.)
- * - "Ansvarsförsäkrad" – Verifiera att ansvarsförsäkring för UAS-verksamhet
- *   finns och är giltig. Ange försäkringsbolag om möjligt.
- */
 const trustBadges = [
-  "Transportstyrelsens godkännande",
-  "Ansvarsförsäkrad",
-  "GDPR-anpassad datahantering",
-  "HSE-dokumentation",
+  "Registrerad UAS-operatör [VERIFIERAS]",
+  "Ansvarsförsäkrad [VERIFIERAS]",
+  "GDPR-anpassad datahantering [VERIFIERAS]",
+  "HSE-dokumentation [VERIFIERAS]",
 ];
 
 export default function ProofBar() {

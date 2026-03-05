@@ -21,7 +21,7 @@ export default function Footer() {
             </div>
             <p className="mt-4 text-sm leading-6 text-surface-500">
               Professionell drönarinspektion av kraftledningar, elnät och
-              energiinfrastruktur i hela Sverige.
+              energiinfrastruktur.
             </p>
           </div>
 

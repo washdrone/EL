@@ -9,13 +9,12 @@ import CTABand from "@/components/CTABand";
 export const metadata: Metadata = createPageMetadata({
   title: "Drönartjänster för energibolag & elnätsleverantörer",
   description:
-    "GridDrone utför drönarinspektioner för energibolag som E.ON, Vattenfall och Ellevio. Kraftledningsinspektion, termografering och vegetationskontroll.",
+    "GridDrone utför drönarinspektioner för energibolag och elnätsleverantörer. Kraftledningsinspektion, termografering och vegetationskontroll.",
   path: "/branscher/energibolag",
   keywords: [
     "drönartjänster energibolag",
     "drönarinspektion elnätsbolag",
     "kraftledningsinspektion energibolag",
-    "drönare Vattenfall Ellevio E.ON",
   ],
 });
 
@@ -84,7 +83,7 @@ export default function EnergibolagPage() {
               },
               {
                 title: "BVLOS — lång räckvidd",
-                desc: "Inspektera långa ledningssträckor utan ompositionering. BVLOS-certifierat av Transportstyrelsen.",
+                desc: "Inspektera långa ledningssträckor utan ompositionering. Kräver BVLOS-tillstånd.",
                 href: "/tjanster/bvlos-inspektion",
               },
               {
@@ -115,18 +114,15 @@ export default function EnergibolagPage() {
         <div className="container-section">
           <h2 className="heading-2">Kostnadseffektiv inspektion</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Drönare erbjuder en kostnadsreduktion på 50–80 % per inspekterad
+            Drönare kan ge betydande kostnadsbesparingar per inspekterad
             kilometer jämfört med traditionell helikopterinspektion. Samtidigt
             får ni bättre data, högre upplösning och standardiserad dokumentation.
+            Kontakta oss för en offert baserad på ert specifika behov.
           </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
             <div className="text-center">
-              <p className="text-3xl font-bold text-brand-600">50–80%</p>
-              <p className="mt-1 text-sm text-surface-500">Kostnadsreduktion vs helikopter</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-brand-600">15+ km</p>
-              <p className="mt-1 text-sm text-surface-500">Per flygdag med BVLOS</p>
+              <p className="text-3xl font-bold text-brand-600">Lägre kostnad</p>
+              <p className="mt-1 text-sm text-surface-500">Jämfört med helikopterinspektion</p>
             </div>
             <div className="text-center">
               <p className="text-3xl font-bold text-brand-600">GIS-redo</p>

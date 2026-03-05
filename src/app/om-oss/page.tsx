@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 export const metadata: Metadata = createPageMetadata({
   title: "Om GridDrone — Drönarinspektion av Elnät & Energiinfrastruktur",
   description:
-    "GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i hela Sverige. BVLOS-certifierat team med gedigen branscherfarenhet.",
+    "GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. Specialiserade på inspektion av energiinfrastruktur.",
   path: "/om-oss",
   keywords: [
     "om GridDrone",
@@ -20,9 +20,9 @@ export const metadata: Metadata = createPageMetadata({
 
 const reasons = [
   {
-    title: "BVLOS-certifierat",
+    title: "BVLOS-kapacitet",
     description:
-      "Vi har tillstånd att flyga utanför synhåll (Beyond Visual Line of Sight), vilket gör det möjligt att inspektera långa ledningssträckor effektivt utan ompositionering.",
+      "BVLOS (Beyond Visual Line of Sight) gör det möjligt att inspektera långa ledningssträckor effektivt utan ompositionering. Kontakta oss för information om aktuella tillstånd.",
     icon: (
       <path
         strokeLinecap="round"
@@ -67,9 +67,9 @@ const reasons = [
     ),
   },
   {
-    title: "Certifierat & försäkrat",
+    title: "Tillstånd & försäkring",
     description:
-      "Vi är registrerade UAS-operatörer med giltiga tillstånd och ansvarsförsäkring. Alla certifieringar och tillstånd dokumenteras löpande.",
+      "Vi arbetar med de tillstånd och försäkringar som krävs för professionell drönarinspektion. Se vår certifieringssida för detaljer.",
     icon: (
       <path
         strokeLinecap="round"
@@ -92,7 +92,7 @@ export default function OmOssPage() {
       <Hero
         title="Om GridDrone"
         subtitle="Om oss"
-        description="GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i hela Sverige. BVLOS-certifierat team med gedigen branscherfarenhet."
+        description="GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. Specialiserade på inspektion av energiinfrastruktur."
         compact
       />
 
@@ -170,8 +170,8 @@ export default function OmOssPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="heading-2">Certifieringar</h2>
             <p className="body-text mt-4">
-              Vi har de tillstånd och certifieringar som krävs för professionell
-              drönarinspektion av elnät i Sverige.
+              Vi arbetar med de tillstånd och certifieringar som krävs för
+              professionell drönarinspektion av elnät.
             </p>
             <div className="mt-8">
               <Link

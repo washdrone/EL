@@ -36,17 +36,17 @@ export function CaseCard({ data }: CaseCardProps) {
 }
 
 /**
- * MÅSTE VERIFIERAS: Är detta ett verkligt referensuppdrag?
- * Om ja: verifiera klient, scope och summary.
- * Om nej: ta bort eller ersätt med verklig referens.
+ * Referensuppdrag – lägg till verifierade referensuppdrag här.
+ * Varje referens ska vara ett verkligt, bekräftat uppdrag.
+ * Ange inte fiktiva klienter eller påhittade uppdrag.
  */
 export const sampleCases: CaseData[] = [
-  {
-    slug: "regionnat-inspektion-mellansverige",
-    title: "Översiktsinspektion av regionnät",
-    client: "Elnätsbolag, Mellansverige",
-    scope: "Regionnät, luftledningar",
-    summary:
-      "Årlig översiktsinspektion av regionnät med standardiserad dokumentation per stolpe. Leverans av georefererade bilder, avvikelserapport och GIS-kartlager enligt överenskommelse.",
-  },
+  // Lägg till verifierade referensuppdrag här. Exempel:
+  // {
+  //   slug: "uppdragsnamn",
+  //   title: "Titel på uppdraget",
+  //   client: "Verifierat kundnamn",
+  //   scope: "Typ av inspektion",
+  //   summary: "Kort beskrivning av uppdraget.",
+  // },
 ];

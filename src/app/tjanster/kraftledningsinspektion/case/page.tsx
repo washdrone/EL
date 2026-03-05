@@ -51,17 +51,18 @@ export default function CasePage() {
       <section className="section-padding bg-white">
         <div className="container-section">
           <div className="mx-auto max-w-2xl space-y-6">
-            {sampleCases.map((c) => (
-              <CaseCard key={c.slug} data={c} />
-            ))}
-
-            <div className="rounded-2xl border border-dashed border-surface-300 bg-surface-50 p-8 text-center">
-              <p className="text-sm text-surface-400">
-                Fler referensuppdrag publiceras löpande. Kontakta oss för
-                detaljerade referensuppgifter anpassade efter er
-                upphandling.
-              </p>
-            </div>
+            {sampleCases.length > 0 ? (
+              sampleCases.map((c) => (
+                <CaseCard key={c.slug} data={c} />
+              ))
+            ) : (
+              <div className="rounded-2xl border border-dashed border-surface-300 bg-surface-50 p-8 text-center">
+                <p className="text-sm text-surface-400">
+                  Referensuppdrag publiceras här när de är verifierade. Kontakta oss för
+                  referensuppgifter anpassade efter er upphandling.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </section>

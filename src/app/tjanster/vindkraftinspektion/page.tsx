@@ -8,7 +8,7 @@ import CTABand from "@/components/CTABand";
 export const metadata: Metadata = createPageMetadata({
   title: "Vindkraftinspektion Drönare",
   description:
-    "Professionell inspektion av vindkraftverk med drönare. Rotorblad, torn, nacelle och åskledare. 45 min per turbininspektion istället för timmar manuellt.",
+    "Professionell inspektion av vindkraftverk med drönare. Rotorblad, torn, nacelle och åskledare. Snabbare och säkrare än manuell klättring.",
   path: "/tjanster/vindkraftinspektion",
   keywords: [
     "vindkraftinspektion drönare",
@@ -46,7 +46,7 @@ const steps = [
   {
     step: "2",
     title: "Drönarinspektion",
-    desc: "Varje turbin inspekteras systematiskt — rotorblad, torn, nacelle och åskledare. Cirka 45 minuter per turbin inklusive alla bildvinklar.",
+    desc: "Varje turbin inspekteras systematiskt — rotorblad, torn, nacelle och åskledare. Tidsåtgången beror på turbinstorlek och inspektionsomfattning.",
   },
   {
     step: "3",
@@ -70,7 +70,7 @@ export default function VindkraftinspektionPage() {
       <Hero
         title="Vindkraftverksinspektion med drönare"
         subtitle="Vindkraftinspektion"
-        description="Professionell inspektion av vindkraftverk med drönare. Vi dokumenterar rotorblad, torn, nacelle och åskledare — 45 minuter per turbin istället för timmar med manuell klättring."
+        description="Professionell inspektion av vindkraftverk med drönare. Vi dokumenterar rotorblad, torn, nacelle och åskledare — snabbare och säkrare än manuell klättring."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
         secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
       />

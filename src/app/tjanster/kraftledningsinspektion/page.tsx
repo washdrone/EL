@@ -17,7 +17,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 export const metadata: Metadata = createPageMetadata({
   title: "Kraftledningsinspektion med Drönare",
   description:
-    "Professionell inspektion av kraftledningar med drönare. Visuell kamera, värmekamera & LiDAR. Upp till 80% billigare än helikopter. Begär offert.",
+    "Professionell inspektion av kraftledningar med drönare. Visuell kamera och tillval som värmekamera och LiDAR. Kostnadseffektivt alternativ till helikopter. Begär offert.",
   path: "/tjanster/kraftledningsinspektion",
   keywords: [
     "kraftledningsinspektion drönare",
@@ -313,22 +313,24 @@ export default function HubPage() {
       <DeliverablesModule />
       <ComplianceModule />
 
-      {/* Case stub */}
-      <section className="section-padding bg-surface-50">
-        <div className="container-section">
-          <div className="section-intro">
-            <h2 className="heading-2">Referensuppdrag</h2>
-            <p className="body-text mt-4">
-              Exempel på genomförda inspektionsuppdrag.
-            </p>
+      {/* Case stub – visas bara om det finns verifierade referensuppdrag */}
+      {sampleCases.length > 0 && (
+        <section className="section-padding bg-surface-50">
+          <div className="container-section">
+            <div className="section-intro">
+              <h2 className="heading-2">Referensuppdrag</h2>
+              <p className="body-text mt-4">
+                Exempel på genomförda inspektionsuppdrag.
+              </p>
+            </div>
+            <div className="mx-auto mt-12 max-w-2xl">
+              {sampleCases.map((c) => (
+                <CaseCard key={c.slug} data={c} />
+              ))}
+            </div>
           </div>
-          <div className="mx-auto mt-12 max-w-2xl">
-            {sampleCases.map((c) => (
-              <CaseCard key={c.slug} data={c} />
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       <FAQ
         items={faqItems.slice(0, 6)}

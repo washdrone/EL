@@ -43,20 +43,7 @@ export default function JsonLd({
           "@type": "Country",
           name: "Sweden",
         },
-        hasCredential: [
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: "BVLOS-certifiering Transportstyrelsen",
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: "PDRA S-01 EASA",
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: "UAS-operatörstillstånd",
-          },
-        ],
+        // hasCredential: Borttaget – lägg till verifierade credentials här när de bekräftats.
         knowsAbout: [
           "Kraftledningsinspektion",
           "Drönarinspektion elnät",

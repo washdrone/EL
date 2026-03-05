@@ -46,8 +46,8 @@ const detectionItems = [
 
 const benefits = [
   {
-    title: "MW-skalig inspektion på timmar",
-    desc: "En drönare inspekterar tusentals moduler per timme — hela anläggningar på en dag istället för veckor.",
+    title: "Effektiv storskalig inspektion",
+    desc: "En drönare inspekterar stora modulfält betydligt snabbare än manuell inspektion. Tidsåtgången beror på anläggningens storlek.",
   },
   {
     title: "Exakt felisolering",
@@ -55,7 +55,7 @@ const benefits = [
   },
   {
     title: "Radiometrisk termografi",
-    desc: "Varje pixel har ett exakt temperaturvärde. Möjliggör analys mot tröskelvärden och trenduppföljning.",
+    desc: "Radiometriska värmekameror ger temperaturvärden per pixel. Möjliggör analys mot tröskelvärden och trenduppföljning. Noggrannhet beror på kameramodell och förhållanden.",
   },
   {
     title: "Minimal driftpåverkan",

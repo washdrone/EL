@@ -27,7 +27,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Hur hanteras arbetsmiljö och säkerhet (HSE)?",
     answer:
-      "Alla uppdrag genomförs enligt gällande luftfartsregler och med riskanalys anpassad för arbete i närheten av elektriska anläggningar. Våra piloter har relevant utbildning och vi följer nätägarens säkerhetsföreskrifter.",
+      "Alla uppdrag genomförs enligt gällande luftfartsregler och med riskanalys anpassad för arbete i närheten av elektriska anläggningar. Vi följer nätägarens säkerhetsföreskrifter. Kontakta oss för information om våra piloters certifieringar och utbildning.",
   },
   {
     question: "Kan ni utföra akutinspektion efter storm eller annan händelse?",
@@ -37,12 +37,12 @@ export const faqItems: FAQItem[] = [
   {
     question: "Hur fungerar det vid upphandling?",
     answer:
-      "Vi tillhandahåller all information som behövs för upphandling: tydlig metodbeskrivning, leveransformat, QA-process, referensuppdrag och prissättningsmodell. Vi kan delta i upphandlingsprocesser och anpassa leveransen efter ert förfrågningsunderlag.",
+      "Vi kan tillhandahålla information som behövs för upphandling: metodbeskrivning, leveransformat, QA-process och prissättningsmodell. Vi kan anpassa leveransen efter ert förfrågningsunderlag.",
   },
   {
     question: "Vilken utrustning använder ni?",
     answer:
-      "Vi använder professionella drönare med högupplösta kameror avsedda för inspektionsarbete. Utrustningen väljs utifrån uppdragets krav. Tillval som termografi eller LiDAR kan diskuteras vid behov.",
+      "Vi använder drönare med kameror avsedda för inspektionsarbete. Utrustningen väljs utifrån uppdragets krav. Tillval som termografi eller LiDAR kan diskuteras vid behov. Kontakta oss för specifikationer på den utrustning vi använder.",
   },
   {
     question: "Hur levereras data och hur snabbt?",

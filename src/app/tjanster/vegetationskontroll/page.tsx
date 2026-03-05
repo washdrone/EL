@@ -39,7 +39,7 @@ const detectionItems = [
 const benefits = [
   {
     title: "Hög noggrannhet med LiDAR",
-    desc: "Centimeternoggrann avståndsmätning mellan vegetation och ledning. Punktmoln ger en exakt 3D-modell av ledningsgatan.",
+    desc: "Noggrann avståndsmätning mellan vegetation och ledning. Punktmoln ger en detaljerad 3D-modell av ledningsgatan. Noggrannhet beror på sensor och flygförhållanden.",
   },
   {
     title: "Stor yttäckning per dag",

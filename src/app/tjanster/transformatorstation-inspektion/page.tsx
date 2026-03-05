@@ -51,7 +51,7 @@ const benefits = [
   },
   {
     title: "Snabbare inspektion",
-    desc: "En komplett stationsinspektion tar timmar istället för dagar. Minimal påverkan på stationens drift.",
+    desc: "Drönarinspektion är snabbare än traditionell manuell inspektion. Tidsåtgången beror på stationens storlek och komplexitet.",
   },
   {
     title: "Kombination av sensorer",
