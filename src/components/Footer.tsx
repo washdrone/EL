@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { COMPANY_NAME, CONTACT_EMAIL, CONTACT_PHONE, SERVICE_ITEMS } from "@/lib/constants";
+import { COMPANY_NAME, CONTACT_EMAIL, CONTACT_PHONE, SERVICE_ITEMS, BRANCH_ITEMS } from "@/lib/constants";
 
 export default function Footer() {
   return (
     <footer className="border-t border-surface-100 bg-surface-50">
       <div className="container-section py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Company */}
           <div>
             <div className="flex items-center gap-2.5">
@@ -31,7 +31,26 @@ export default function Footer() {
               Tjänster
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {SERVICE_ITEMS.slice(0, 5).map((item) => (
+              {SERVICE_ITEMS.slice(0, 7).map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-surface-600 transition-colors hover:text-brand-600"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Branscher */}
+          <div>
+            <h3 className="eyebrow">
+              Branscher
+            </h3>
+            <ul className="mt-4 space-y-2.5">
+              {BRANCH_ITEMS.slice(0, 5).map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -68,10 +87,18 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/tjanster/kraftledningsinspektion/faq"
+                  href="/roi-kalkylator"
                   className="text-sm text-surface-600 transition-colors hover:text-brand-600"
                 >
-                  FAQ
+                  ROI-kalkylator
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/exempelrapport"
+                  className="text-sm text-surface-600 transition-colors hover:text-brand-600"
+                >
+                  Exempelrapport
                 </Link>
               </li>
               <li>
@@ -80,6 +107,14 @@ export default function Footer() {
                   className="text-sm text-surface-600 transition-colors hover:text-brand-600"
                 >
                   Blogg
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/stormrespons"
+                  className="text-sm text-surface-600 transition-colors hover:text-brand-600"
+                >
+                  Stormrespons
                 </Link>
               </li>
               <li>
