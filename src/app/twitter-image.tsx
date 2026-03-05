@@ -32,7 +32,7 @@ export default function TwitterImage() {
             textTransform: "uppercase",
           }}
         >
-          SkyGrid
+          GridDrone
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
@@ -66,7 +66,7 @@ export default function TwitterImage() {
             fontSize: 22,
           }}
         >
-          SkyGrid
+          GridDrone
         </div>
       </div>
     ),

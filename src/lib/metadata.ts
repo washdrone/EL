@@ -4,10 +4,10 @@ const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://example.com").rep
   /\/+$/,
   ""
 );
-const SITE_NAME = "SkyGrid";
+const SITE_NAME = "GridDrone";
 const SITE_LOCALE = "sv_SE";
 const DEFAULT_DESCRIPTION =
-  "Professionell drönareinspektion av elnät och luftledningar. Standardiserad datainsamling, georefererade bilder och strukturerade rapporter.";
+  "GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. Termografi, LiDAR & visuell inspektion. BVLOS-certifierat. Begär offert.";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/opengraph-image`;
 const DEFAULT_TWITTER_IMAGE = `${SITE_URL}/twitter-image`;
 

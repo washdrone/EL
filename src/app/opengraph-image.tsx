@@ -36,7 +36,7 @@ export default function OpengraphImage() {
             alignSelf: "flex-start",
           }}
         >
-          SkyGrid
+          GridDrone
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
@@ -49,7 +49,7 @@ export default function OpengraphImage() {
               maxWidth: "980px",
             }}
           >
-            Elnätsinspektion med drönare
+            Drönarinspektion av elnät & kraftledningar
           </h1>
           <p
             style={{
@@ -60,7 +60,7 @@ export default function OpengraphImage() {
               maxWidth: "980px",
             }}
           >
-            Standardiserad datainsamling för luftledningar och elnät.
+            Kraftledningar, elnät & energiinfrastruktur — hela Sverige.
           </p>
         </div>
 
@@ -73,11 +73,11 @@ export default function OpengraphImage() {
             fontSize: 24,
           }}
         >
-          <span>Utan klättring</span>
+          <span>BVLOS-certifierat</span>
+          <span>•</span>
+          <span>Termografi & LiDAR</span>
           <span>•</span>
           <span>GIS-redo leveranser</span>
-          <span>•</span>
-          <span>Spårbar kvalitet</span>
         </div>
       </div>
     ),

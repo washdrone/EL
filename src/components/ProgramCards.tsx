@@ -83,7 +83,7 @@ export default function ProgramCards() {
 
               {/* Row 7: CTA */}
               <Link
-                href="/elnatsinspektion-med-dronare/kontakt"
+                href="/kontakt"
                 className="btn-primary mt-6 w-full justify-center lg:mt-0 lg:self-end"
               >
                 {program.cta}

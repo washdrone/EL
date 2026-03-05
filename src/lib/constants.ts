@@ -1,34 +1,68 @@
 export const CONTACT_EMAIL = "kontakt@example.com";
 export const CONTACT_PHONE = "+46 10 000 00 00";
-export const COMPANY_NAME = "SkyGrid";
+export const COMPANY_NAME = "GridDrone";
 
 export const NAV_ITEMS = [
   {
-    label: "Översikt",
-    href: "/elnatsinspektion-med-dronare",
+    label: "Tjänster",
+    href: "/tjanster/kraftledningsinspektion",
   },
   {
-    label: "Luftledningar",
-    href: "/elnatsinspektion-med-dronare/luftledningar",
+    label: "Termografering",
+    href: "/tjanster/termografering-kraftledning",
   },
   {
-    label: "Inspektionsprogram",
-    href: "/elnatsinspektion-med-dronare/inspektionsprogram",
+    label: "Vindkraft",
+    href: "/tjanster/vindkraftinspektion",
   },
   {
-    label: "Dataleveranser",
-    href: "/elnatsinspektion-med-dronare/dataleveranser",
-  },
-  {
-    label: "Metodik & kvalitet",
-    href: "/elnatsinspektion-med-dronare/metodik-kvalitet",
+    label: "Om oss",
+    href: "/om-oss",
   },
   {
     label: "FAQ",
-    href: "/elnatsinspektion-med-dronare/faq",
+    href: "/tjanster/kraftledningsinspektion/faq",
   },
   {
     label: "Kontakt",
-    href: "/elnatsinspektion-med-dronare/kontakt",
+    href: "/kontakt",
+  },
+] as const;
+
+export const SERVICE_ITEMS = [
+  {
+    label: "Kraftledningsinspektion",
+    href: "/tjanster/kraftledningsinspektion",
+    description: "Visuell inspektion av luftledningar, stolpar och isolatorer",
+  },
+  {
+    label: "Termografering",
+    href: "/tjanster/termografering-kraftledning",
+    description: "Drönarbaserad värmekamerainspektion av elnät",
+  },
+  {
+    label: "Vindkraftinspektion",
+    href: "/tjanster/vindkraftinspektion",
+    description: "Inspektion av rotorblad, torn och nacelle",
+  },
+  {
+    label: "BVLOS-inspektion",
+    href: "/tjanster/bvlos-inspektion",
+    description: "Lång räckvidd — inspektera mil av ledning per dag",
+  },
+  {
+    label: "Transformatorstation",
+    href: "/tjanster/transformatorstation-inspektion",
+    description: "Säker inspektion av transformatorstationer",
+  },
+  {
+    label: "Solcellspark",
+    href: "/tjanster/solcellspark-inspektion",
+    description: "Termografi och visuell kontroll av solcellsparker",
+  },
+  {
+    label: "Vegetationskontroll",
+    href: "/tjanster/vegetationskontroll",
+    description: "LiDAR-baserad kartläggning av kraftledningsgator",
   },
 ] as const;

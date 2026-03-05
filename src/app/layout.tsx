@@ -20,13 +20,13 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `Elnätsinspektion med drönare | ${SITE_NAME}`,
+    default: `Drönarinspektion Elnät & Kraftledningar — Hela Sverige | ${SITE_NAME}`,
     template: `%s | ${SITE_NAME}`,
   },
   description: DEFAULT_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: `Elnätsinspektion med drönare | ${SITE_NAME}`,
+    title: `${SITE_NAME} | Drönarinspektion Elnät & Kraftledningar — Hela Sverige`,
     description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -37,13 +37,13 @@ export const metadata: Metadata = {
         url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: `${SITE_NAME} – Elnätsinspektion med drönare`,
+        alt: `${SITE_NAME} – Drönarinspektion av elnät och kraftledningar`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `Elnätsinspektion med drönare | ${SITE_NAME}`,
+    title: `${SITE_NAME} | Drönarinspektion Elnät & Kraftledningar`,
     description: DEFAULT_DESCRIPTION,
     images: [DEFAULT_TWITTER_IMAGE],
   },
