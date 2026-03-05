@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_ITEMS, COMPANY_NAME, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/constants";
+import { COMPANY_NAME, CONTACT_EMAIL, CONTACT_PHONE, SERVICE_ITEMS } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -20,18 +20,18 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-6 text-surface-500">
-              Professionell drönareinspektion av elnät och luftledningar.
-              Standardiserad datainsamling för elnätsbolag och entreprenörer.
+              Professionell drönarinspektion av kraftledningar, elnät och
+              energiinfrastruktur i hela Sverige.
             </p>
           </div>
 
-          {/* Navigation */}
+          {/* Services */}
           <div>
             <h3 className="eyebrow">
               Tjänster
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {NAV_ITEMS.slice(0, 5).map((item) => (
+              {SERVICE_ITEMS.slice(0, 5).map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -44,22 +44,44 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Support */}
+          {/* Information */}
           <div>
             <h3 className="eyebrow">
               Information
             </h3>
             <ul className="mt-4 space-y-2.5">
-              {NAV_ITEMS.slice(5).map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-sm text-surface-600 transition-colors hover:text-brand-600"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link
+                  href="/om-oss"
+                  className="text-sm text-surface-600 transition-colors hover:text-brand-600"
+                >
+                  Om oss
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/certifieringar"
+                  className="text-sm text-surface-600 transition-colors hover:text-brand-600"
+                >
+                  Certifieringar
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tjanster/kraftledningsinspektion/faq"
+                  className="text-sm text-surface-600 transition-colors hover:text-brand-600"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blogg"
+                  className="text-sm text-surface-600 transition-colors hover:text-brand-600"
+                >
+                  Blogg
+                </Link>
+              </li>
               <li>
                 <Link
                   href="/integritetspolicy"
@@ -93,13 +115,21 @@ export default function Footer() {
                   {CONTACT_PHONE}
                 </a>
               </li>
+              <li>
+                <Link
+                  href="/kontakt"
+                  className="text-sm text-surface-600 transition-colors hover:text-brand-600"
+                >
+                  Kontaktformulär
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 border-t border-surface-200 pt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-surface-400">
-            &copy; {new Date().getFullYear()} {COMPANY_NAME}. Alla rättigheter förbehållna.
+            &copy; {new Date().getFullYear()} {COMPANY_NAME} AB. Alla rättigheter förbehållna.
           </p>
           <div className="flex gap-4">
             <Link href="/integritetspolicy" className="text-xs text-surface-400 hover:text-surface-600">

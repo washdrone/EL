@@ -1,0 +1,351 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { createPageMetadata } from "@/lib/metadata";
+import Hero from "@/components/Hero";
+import ProofBar from "@/components/ProofBar";
+import ProgramCards from "@/components/ProgramCards";
+import ProcessSteps from "@/components/ProcessSteps";
+import DeliverablesModule from "@/components/DeliverablesModule";
+import ComplianceModule from "@/components/ComplianceModule";
+import FAQ from "@/components/FAQ";
+import CTABand from "@/components/CTABand";
+import JsonLd from "@/components/JsonLd";
+import { CaseCard, sampleCases } from "@/components/CaseCard";
+import { faqItems } from "@/data/faq";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Kraftledningsinspektion med Drönare",
+  description:
+    "Professionell inspektion av kraftledningar med drönare. Visuell kamera, värmekamera & LiDAR. Upp till 80% billigare än helikopter. Begär offert.",
+  path: "/tjanster/kraftledningsinspektion",
+  keywords: [
+    "kraftledningsinspektion drönare",
+    "drönarinspektion elledning",
+    "elnätsinspektion drönare",
+    "kraftledningsinspektion",
+    "inspektion luftledningar",
+    "drönare elnät",
+    "elnätsinspektion",
+    "luftledningsinspektion",
+  ],
+});
+
+const comparisonRows = [
+  {
+    label: "Arbete på höjd",
+    drone: "Krävs ej",
+    traditional: "Klättring eller skylift",
+    advantage: "drone",
+  },
+  {
+    label: "Frånkoppling",
+    drone: "Kan ofta undvikas vid visuell inspektion",
+    traditional: "Krävs vid närinspektion",
+    advantage: "drone",
+  },
+  {
+    label: "Markåtkomst",
+    drone: "Ej nödvändig",
+    traditional: "Krävs för fordon och personal",
+    advantage: "drone",
+  },
+  {
+    label: "Georeferering av bilder",
+    drone: "Automatisk via GPS/EXIF",
+    traditional: "Manuell registrering",
+    advantage: "drone",
+  },
+  {
+    label: "Återbesök samma punkt",
+    drone: "Sparade flygvägar",
+    traditional: "Beroende av inspektörens rutin",
+    advantage: "drone",
+  },
+  {
+    label: "Fysisk komponentkontroll",
+    drone: "Ej möjlig",
+    traditional: "Direkt åtkomst och provtagning",
+    advantage: "traditional",
+  },
+] as const;
+
+export default function HubPage() {
+  return (
+    <>
+      <JsonLd type="Service" servicePath="/tjanster/kraftledningsinspektion" />
+      <JsonLd
+        type="BreadcrumbList"
+        breadcrumbs={[{ name: "Elnätsinspektion med drönare" }]}
+      />
+
+      <Hero
+        title="Säkrare och mer effektiv inspektion av ert elnät"
+        subtitle="Elnätsinspektion med drönare"
+        description="Standardiserad drönareinspektion av luftledningar – från översikt till detaljgranskning. Strukturerade dataleveranser som ger er bättre underlag för underhållsplanering."
+        primaryCta={{
+          label: "Boka genomgång",
+          href: "/kontakt",
+        }}
+        secondaryCta={{
+          label: "Se inspektionsprogram",
+          href: "/tjanster/kraftledningsinspektion/inspektionsprogram",
+        }}
+      />
+
+      <ProofBar />
+
+      {/* Intro section */}
+      <section className="section-padding bg-white">
+        <div className="container-section">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <h2 className="heading-2">
+                Inspektion anpassad för elnätets behov
+              </h2>
+              <p className="body-text mt-6">
+                Drönareinspektion ger er detaljerad dokumentation av{" "}
+                <Link
+                  href="/tjanster/kraftledningsinspektion/luftledningar"
+                  className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400"
+                >
+                  luftledningar
+                </Link>{" "}
+                utan klättring, utan driftstopp och med
+                konsekvent kvalitet oavsett terräng. Varje stolpe och
+                ledningssektion dokumenteras med standardiserade bildvinklar
+                och georefererade bilder – redo för ert
+                nätförvaltningssystem.
+              </p>
+            </div>
+            <ImagePlaceholder
+              alt="Drönare inspekterar luftledning"
+              illustration="drone"
+              aspect="4/3"
+            />
+          </div>
+
+          <div className="mx-auto mt-14 grid max-w-4xl gap-8 sm:grid-cols-3">
+            {[
+              {
+                title: "Säkrare arbetsmetod",
+                desc: "Ingen klättring eller arbete på hög höjd. Minskad riskexponering för er personal.",
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+                ),
+              },
+              {
+                title: "Repeterbar process",
+                desc: "Standardiserade bildvinklar och dokumentation möjliggör jämförelse över tid.",
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9m10.5-6v4.5m0-4.5h-4.5m4.5 0L15 9m-10.5 6v4.5m0-4.5h4.5m-4.5 0L9 15m10.5 0l-5.25-5.25M19.5 15v4.5m0-4.5h-4.5" />
+                ),
+              },
+              {
+                title: "Direkt planeringsunderlag",
+                desc: "Strukturerade rapporter och GIS-lager redo för ert nätförvaltningssystem.",
+                icon: (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                ),
+              },
+            ].map((item) => (
+              <div key={item.title} className="text-center">
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-50">
+                  <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    {item.icon}
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-base font-semibold text-surface-900">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm text-surface-500">
+                  {item.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison: Drones vs Traditional */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-section">
+          <div className="section-intro-wide">
+            <h2 className="heading-2">Drönare vs. traditionell inspektion</h2>
+            <p className="body-text mt-4">
+              Metoderna kompletterar varandra. Här är de viktigaste skillnaderna.
+            </p>
+          </div>
+
+          {/* Mobile cards */}
+          <div className="mt-10 grid gap-4 md:hidden">
+            {comparisonRows.map((row) => (
+              <article key={row.label} className="card p-0">
+                <div className="border-b border-surface-100 px-4 py-3">
+                  <p className="text-sm font-semibold text-surface-800">{row.label}</p>
+                </div>
+                <div className="grid grid-cols-1 divide-y divide-surface-100">
+                  <div
+                    className={`px-4 py-3 ${
+                      row.advantage === "drone" ? "bg-brand-50/30" : "bg-white"
+                    }`}
+                  >
+                    <p className="eyebrow">Drönare</p>
+                    <span
+                      className={`mt-1 inline-flex items-center gap-1.5 text-sm ${
+                        row.advantage === "drone"
+                          ? "font-medium text-brand-700"
+                          : "text-surface-600"
+                      }`}
+                    >
+                      {row.advantage === "drone" && (
+                        <svg
+                          className="h-3.5 w-3.5 shrink-0 text-accent-600"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      )}
+                      {row.drone}
+                    </span>
+                  </div>
+                  <div
+                    className={`px-4 py-3 ${
+                      row.advantage === "traditional" ? "bg-brand-50/30" : "bg-white"
+                    }`}
+                  >
+                    <p className="eyebrow">Traditionell</p>
+                    <span
+                      className={`mt-1 inline-flex items-center gap-1.5 text-sm ${
+                        row.advantage === "traditional"
+                          ? "font-medium text-brand-700"
+                          : "text-surface-600"
+                      }`}
+                    >
+                      {row.advantage === "traditional" && (
+                        <svg
+                          className="h-3.5 w-3.5 shrink-0 text-accent-600"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      )}
+                      {row.traditional}
+                    </span>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Tablet/Desktop comparison table */}
+          <div className="mx-auto mt-12 hidden max-w-4xl overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-soft md:block">
+            {/* Header */}
+            <div className="grid grid-cols-[1fr,1fr,1fr] border-b border-surface-200 bg-surface-50">
+              <div className="p-4 sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-surface-400">Aspekt</p>
+              </div>
+              <div className="border-l border-surface-200 p-4 text-center sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">Drönare</p>
+              </div>
+              <div className="border-l border-surface-200 p-4 text-center sm:p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider text-surface-600">Traditionell</p>
+              </div>
+            </div>
+
+            {/* Rows */}
+            {comparisonRows.map((row, i) => (
+              <div
+                key={row.label}
+                className={`grid grid-cols-[1fr,1fr,1fr] ${i % 2 === 0 ? "bg-white" : "bg-surface-50/50"}`}
+              >
+                <div className="p-4 sm:p-5">
+                  <p className="text-sm font-medium text-surface-800">{row.label}</p>
+                </div>
+                <div className={`border-l border-surface-100 p-4 text-center sm:p-5 ${row.advantage === "drone" ? "bg-brand-50/30" : ""}`}>
+                  <span className={`inline-flex items-center gap-1.5 text-sm ${row.advantage === "drone" ? "font-medium text-brand-700" : "text-surface-500"}`}>
+                    {row.advantage === "drone" && (
+                      <svg className="h-3.5 w-3.5 shrink-0 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                    {row.drone}
+                  </span>
+                </div>
+                <div className={`border-l border-surface-100 p-4 text-center sm:p-5 ${row.advantage === "traditional" ? "bg-brand-50/30" : ""}`}>
+                  <span className={`inline-flex items-center gap-1.5 text-sm ${row.advantage === "traditional" ? "font-medium text-brand-700" : "text-surface-500"}`}>
+                    {row.advantage === "traditional" && (
+                      <svg className="h-3.5 w-3.5 shrink-0 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
+                    )}
+                    {row.traditional}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-surface-400">
+            Jämförelsen avser visuell inspektion av luftledningar. Förutsättningar varierar beroende på spänningsnivå, terräng och inspektionstyp.
+          </p>
+        </div>
+      </section>
+
+      <ProgramCards />
+      <ProcessSteps />
+      <DeliverablesModule />
+      <ComplianceModule />
+
+      {/* Case stub */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-section">
+          <div className="section-intro">
+            <h2 className="heading-2">Referensuppdrag</h2>
+            <p className="body-text mt-4">
+              Exempel på genomförda inspektionsuppdrag.
+            </p>
+          </div>
+          <div className="mx-auto mt-12 max-w-2xl">
+            {sampleCases.map((c) => (
+              <CaseCard key={c.slug} data={c} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FAQ
+        items={faqItems.slice(0, 6)}
+        heading="Vanliga frågor"
+        subheading="Har ni fler frågor? Se vår fullständiga FAQ eller kontakta oss direkt."
+      />
+
+      <div className="bg-white py-6 text-center">
+        <Link
+          href="/tjanster/kraftledningsinspektion/faq"
+          className="text-sm font-medium text-brand-600 hover:text-brand-700"
+        >
+          Se alla vanliga frågor →
+        </Link>
+      </div>
+
+      <CTABand />
+    </>
+  );
+}

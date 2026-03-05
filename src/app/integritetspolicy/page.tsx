@@ -130,7 +130,7 @@ export default function IntegritetspolicyPage() {
 
             <div className="mt-12">
               <Link
-                href="/elnatsinspektion-med-dronare"
+                href="/tjanster/kraftledningsinspektion"
                 className="text-sm font-medium text-brand-600 hover:text-brand-700"
               >
                 ← Tillbaka till elnätsinspektion

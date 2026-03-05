@@ -13,9 +13,9 @@ export default function CTABand({
   heading = "Redo att effektivisera er elnätsinspektion?",
   description = "Kontakta oss för en genomgång av hur drönareinspektion kan anpassas till ert nät och era behov.",
   primaryLabel = "Boka genomgång",
-  primaryHref = "/elnatsinspektion-med-dronare/kontakt",
+  primaryHref = "/kontakt",
   secondaryLabel = "Begär offert",
-  secondaryHref = "/elnatsinspektion-med-dronare/kontakt",
+  secondaryHref = "/kontakt",
 }: CTABandProps) {
   return (
     <section className="relative overflow-hidden gradient-hero py-16 sm:py-20">

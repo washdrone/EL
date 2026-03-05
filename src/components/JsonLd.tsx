@@ -33,16 +33,42 @@ export default function JsonLd({
         "@context": "https://schema.org",
         "@type": "Organization",
         "@id": `${SITE_URL}#organization`,
-        name: COMPANY_NAME,
+        name: `${COMPANY_NAME} AB`,
         url: SITE_URL,
         logo: `${SITE_URL}/opengraph-image`,
         email: CONTACT_EMAIL,
         telephone: CONTACT_PHONE,
-        description: `${SITE_NAME} – professionell drönareinspektion av elnät och luftledningar.`,
+        description: `${COMPANY_NAME} – professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i Sverige.`,
+        areaServed: {
+          "@type": "Country",
+          name: "Sweden",
+        },
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "BVLOS-certifiering Transportstyrelsen",
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "PDRA S-01 EASA",
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "UAS-operatörstillstånd",
+          },
+        ],
+        knowsAbout: [
+          "Kraftledningsinspektion",
+          "Drönarinspektion elnät",
+          "Termografering",
+          "BVLOS",
+          "LiDAR",
+          "Vindkraftinspektion",
+        ],
         contactPoint: [
           {
             "@type": "ContactPoint",
-            contactType: "customer support",
+            contactType: "sales",
             email: CONTACT_EMAIL,
             telephone: CONTACT_PHONE,
             availableLanguage: ["sv"],
@@ -55,23 +81,31 @@ export default function JsonLd({
       schema = {
         "@context": "https://schema.org",
         "@type": "Service",
-        "@id": `${SITE_URL}${servicePath || "/elnatsinspektion-med-dronare"}#service`,
-        name: serviceName || "Elnätsinspektion med drönare",
+        "@id": `${SITE_URL}${servicePath || "/tjanster/kraftledningsinspektion"}#service`,
+        name: serviceName || "Kraftledningsinspektion med drönare",
         description:
           serviceDescription ||
-          "Professionell inspektion av luftledningar och elnät med drönare. Standardiserad datainsamling, georefererade bilder och strukturerade rapporter.",
-        url: `${SITE_URL}${servicePath || "/elnatsinspektion-med-dronare"}`,
+          "Professionell inspektion av kraftledningar och elnät med drönare. Visuell kamera, värmekamera & LiDAR. Standardiserad datainsamling och strukturerade rapporter.",
+        url: `${SITE_URL}${servicePath || "/tjanster/kraftledningsinspektion"}`,
         provider: {
           "@type": "Organization",
           "@id": `${SITE_URL}#organization`,
-          name: COMPANY_NAME,
+          name: `${COMPANY_NAME} AB`,
           url: SITE_URL,
         },
         areaServed: {
           "@type": "Country",
           name: "Sweden",
         },
-        serviceType: "Drönareinspektion",
+        serviceType: "Drönarinspektion",
+        offers: {
+          "@type": "Offer",
+          availability: "https://schema.org/InStock",
+          areaServed: {
+            "@type": "Country",
+            name: "Sweden",
+          },
+        },
       };
       break;
 
@@ -83,11 +117,11 @@ export default function JsonLd({
         name: SITE_NAME,
         url: SITE_URL,
         inLanguage: "sv-SE",
-        description: `${SITE_NAME} – professionell drönareinspektion av elnät och luftledningar.`,
+        description: `${COMPANY_NAME} – professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i Sverige.`,
         publisher: {
           "@type": "Organization",
           "@id": `${SITE_URL}#organization`,
-          name: COMPANY_NAME,
+          name: `${COMPANY_NAME} AB`,
           url: SITE_URL,
         },
       };

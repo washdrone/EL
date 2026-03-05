@@ -3,23 +3,24 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NAV_ITEMS, COMPANY_NAME } from "@/lib/constants";
+import { NAV_ITEMS, COMPANY_NAME, SERVICE_ITEMS } from "@/lib/constants";
 import { events } from "@/lib/analytics";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
     setMobileOpen(false);
+    setServicesOpen(false);
   }, [pathname]);
 
   const isActive = (href: string) => {
-    if (href === "/elnatsinspektion-med-dronare") {
-      return pathname === href;
+    if (href === "/tjanster/kraftledningsinspektion") {
+      return pathname === href || pathname.startsWith("/tjanster/kraftledningsinspektion/");
     }
-
-    return pathname.startsWith(href);
+    return pathname === href || pathname.startsWith(href + "/");
   };
 
   return (
@@ -29,7 +30,7 @@ export default function Header() {
         aria-label="Huvudnavigering"
       >
         <Link
-          href="/elnatsinspektion-med-dronare"
+          href="/"
           className="flex items-center gap-2.5 rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
         >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg gradient-hero">
@@ -45,9 +46,45 @@ export default function Header() {
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-0.5 lg:flex">
-          {NAV_ITEMS.map((item) => {
-            const active = isActive(item.href);
+          {/* Services dropdown */}
+          <div className="relative">
+            <button
+              type="button"
+              className={`flex items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${
+                pathname.startsWith("/tjanster")
+                  ? "bg-brand-50 text-brand-700"
+                  : "text-surface-600 hover:bg-surface-50 hover:text-brand-700"
+              }`}
+              onClick={() => setServicesOpen(!servicesOpen)}
+              onMouseEnter={() => setServicesOpen(true)}
+              aria-expanded={servicesOpen}
+            >
+              Tjänster
+              <svg className={`h-3.5 w-3.5 transition-transform ${servicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            {servicesOpen && (
+              <div
+                className="absolute left-0 top-full z-50 mt-1 w-72 rounded-xl border border-surface-100 bg-white p-2 shadow-lg"
+                onMouseLeave={() => setServicesOpen(false)}
+              >
+                {SERVICE_ITEMS.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="block rounded-lg px-3 py-2.5 transition-colors hover:bg-surface-50"
+                  >
+                    <span className="text-sm font-medium text-surface-900">{item.label}</span>
+                    <span className="mt-0.5 block text-xs text-surface-500">{item.description}</span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
 
+          {NAV_ITEMS.filter(item => item.label !== "Tjänster").map((item) => {
+            const active = isActive(item.href);
             return (
               <Link
                 key={item.href}
@@ -67,7 +104,7 @@ export default function Header() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <Link
-            href="/elnatsinspektion-med-dronare/kontakt"
+            href="/kontakt"
             className="btn-primary whitespace-nowrap"
             onClick={() => events.clickBook()}
           >
@@ -99,9 +136,27 @@ export default function Header() {
       {mobileOpen && (
         <div className="border-t border-surface-100 bg-white shadow-soft lg:hidden">
           <div className="container-section space-y-1 py-4">
-            {NAV_ITEMS.map((item) => {
-              const active = isActive(item.href);
+            {/* Services section */}
+            <p className="eyebrow px-3 pb-1">Tjänster</p>
+            {SERVICE_ITEMS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${
+                  isActive(item.href)
+                    ? "bg-brand-50 text-brand-700"
+                    : "text-surface-700 hover:bg-surface-50 hover:text-brand-700"
+                }`}
+                onClick={() => setMobileOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
 
+            <div className="my-2 border-t border-surface-100" />
+
+            {NAV_ITEMS.filter(item => item.label !== "Tjänster").map((item) => {
+              const active = isActive(item.href);
               return (
                 <Link
                   key={item.href}
@@ -118,9 +173,10 @@ export default function Header() {
                 </Link>
               );
             })}
+
             <div className="pt-3">
               <Link
-                href="/elnatsinspektion-med-dronare/kontakt"
+                href="/kontakt"
                 className="btn-primary block w-full text-center"
                 onClick={() => {
                   setMobileOpen(false);

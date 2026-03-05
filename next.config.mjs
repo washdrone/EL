@@ -3,6 +3,26 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
   },
+  async redirects() {
+    return [
+      // Redirect old URL structure to new /tjanster/ structure
+      {
+        source: "/elnatsinspektion-med-dronare",
+        destination: "/tjanster/kraftledningsinspektion",
+        permanent: true,
+      },
+      {
+        source: "/elnatsinspektion-med-dronare/kontakt",
+        destination: "/kontakt",
+        permanent: true,
+      },
+      {
+        source: "/elnatsinspektion-med-dronare/:path*",
+        destination: "/tjanster/kraftledningsinspektion/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

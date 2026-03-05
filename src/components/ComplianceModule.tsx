@@ -59,7 +59,7 @@ export default function ComplianceModule() {
 
         <div className="mt-10 text-center">
           <Link
-            href="/elnatsinspektion-med-dronare/datasakerhet"
+            href="/tjanster/kraftledningsinspektion/datasakerhet"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-white/70 transition-colors hover:text-white"
           >
             Läs mer om vår datasäkerhetspolicy
