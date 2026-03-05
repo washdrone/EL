@@ -133,7 +133,7 @@ export default function MetodikKvalitetPage() {
                 "Tydlig metodbeskrivning med definierade flygprofiler",
                 "Leveransformat och kvalitetskrav",
                 "QA-process och rutiner för avvikelsehantering",
-                "HSE-dokumentation och riskanalys",
+                "HSE-rutiner och riskanalys",
                 "Prissättningsmodell (per km, per stolpe, eller fast pris)",
                 "Referensuppdrag och kontaktuppgifter",
               ].map((item) => (

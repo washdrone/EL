@@ -33,7 +33,7 @@ const trustBadges = [
   "EASA-utbildade piloter",
   "BVLOS-behörighet",
   "Ansvarsförsäkrad",
-  "HSE-dokumentation [VERIFIERAS]",
+  "HSE-fokuserat arbetssätt",
 ];
 
 export default function ProofBar() {
