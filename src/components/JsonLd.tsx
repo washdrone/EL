@@ -33,7 +33,7 @@ export default function JsonLd({
         "@context": "https://schema.org",
         "@type": "Organization",
         "@id": `${SITE_URL}#organization`,
-        name: `${COMPANY_NAME} AB`,
+        name: COMPANY_NAME,
         url: SITE_URL,
         logo: `${SITE_URL}/opengraph-image`,
         email: CONTACT_EMAIL,
@@ -43,20 +43,7 @@ export default function JsonLd({
           "@type": "Country",
           name: "Sweden",
         },
-        hasCredential: [
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: "BVLOS-certifiering Transportstyrelsen",
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: "PDRA S-01 EASA",
-          },
-          {
-            "@type": "EducationalOccupationalCredential",
-            name: "UAS-operatörstillstånd",
-          },
-        ],
+        // hasCredential: Borttaget – lägg till verifierade credentials här när de bekräftats.
         knowsAbout: [
           "Kraftledningsinspektion",
           "Drönarinspektion elnät",
@@ -90,7 +77,7 @@ export default function JsonLd({
         provider: {
           "@type": "Organization",
           "@id": `${SITE_URL}#organization`,
-          name: `${COMPANY_NAME} AB`,
+          name: COMPANY_NAME,
           url: SITE_URL,
         },
         areaServed: {
@@ -121,7 +108,7 @@ export default function JsonLd({
         publisher: {
           "@type": "Organization",
           "@id": `${SITE_URL}#organization`,
-          name: `${COMPANY_NAME} AB`,
+          name: COMPANY_NAME,
           url: SITE_URL,
         },
       };

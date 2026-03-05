@@ -8,7 +8,7 @@ import CTABand from "@/components/CTABand";
 export const metadata: Metadata = createPageMetadata({
   title: "BVLOS Drönare Kraftledning",
   description:
-    "BVLOS-certifierad drönarinspektion av kraftledningar. Inspektera 15+ km per flygdag. Transportstyrelsen-godkänt. För avlägsna och svårtillgängliga ledningsnät.",
+    "BVLOS drönarinspektion av kraftledningar. Inspektera långa ledningssträckor per flygdag. För avlägsna och svårtillgängliga ledningsnät.",
   path: "/tjanster/bvlos-inspektion",
   keywords: [
     "BVLOS drönare Sverige",
@@ -20,16 +20,16 @@ export const metadata: Metadata = createPageMetadata({
 
 const advantages = [
   {
-    title: "15+ km per flygdag",
-    desc: "Inspektera långa ledningssträckor på en enda dag — betydligt snabbare än konventionell drönarinspektion.",
+    title: "Långa sträckor per flygdag",
+    desc: "Inspektera långa ledningssträckor på en enda dag — betydligt snabbare än konventionell drönarinspektion. Räckvidd beror på utrustning och förhållanden.",
   },
   {
     title: "Avlägsna och svårtillgängliga nät",
     desc: "Nå ledningar i skog, fjäll och områden utan vägaccess. Ingen markåtkomst krävs.",
   },
   {
-    title: "Transportstyrelsen-godkänt",
-    desc: "Vi innehar nödvändiga tillstånd och certifieringar för BVLOS-flygning enligt gällande regelverk.",
+    title: "Behöriga piloter",
+    desc: "Våra piloter har BVLOS-behörighet enligt EASA-regelverket och flyger enligt gällande tillstånd.",
   },
   {
     title: "Kostnadseffektivt",
@@ -50,9 +50,9 @@ export default function BvlosInspektionPage() {
       />
 
       <Hero
-        title="BVLOS drönarinspektion — inspektera mil av ledning per dag"
+        title="BVLOS drönarinspektion — inspektera långa ledningssträckor"
         subtitle="BVLOS-inspektion"
-        description="Med BVLOS-certifiering (Beyond Visual Line of Sight) kan vi inspektera kraftledningar utom synhåll, vilket gör det möjligt att täcka 15+ km per flygdag. Perfekt för avlägsna och svårtillgängliga ledningsnät."
+        description="Med BVLOS (Beyond Visual Line of Sight) kan vi inspektera kraftledningar utom synhåll, vilket gör det möjligt att täcka långa sträckor per flygdag. Perfekt för avlägsna och svårtillgängliga ledningsnät."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
         secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
       />
@@ -85,20 +85,19 @@ export default function BvlosInspektionPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-surface-200 bg-surface-50 p-8">
-              <p className="eyebrow">Certifiering</p>
+              <p className="eyebrow">Vår behörighet</p>
               <h3 className="mt-3 text-lg font-semibold text-surface-900">
-                Transportstyrelsen-godkänd BVLOS-operatör
+                BVLOS-behöriga piloter
               </h3>
               <p className="mt-3 text-sm text-surface-500">
-                Vi har genomgått den fullständiga certifieringsprocessen för
-                BVLOS-flygning i Sverige. Våra tillstånd omfattar inspektion av
-                linjär infrastruktur inklusive kraftledningar och
-                distributionsnät.
+                Våra piloter är utbildade och behöriga för BVLOS-flygning
+                enligt EASA-regelverket. Vi uppfyller de krav som ställs
+                för inspektion av linjär infrastruktur.
               </p>
               <ul className="mt-4 space-y-2 text-sm text-surface-600">
                 <li className="flex items-start gap-2">
                   <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />
-                  Specifik kategori (STS) eller LUC-godkännande
+                  Godkännande i specifik kategori (STS/PDRA) eller LUC
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-brand-500" />

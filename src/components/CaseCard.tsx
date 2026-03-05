@@ -36,17 +36,25 @@ export function CaseCard({ data }: CaseCardProps) {
 }
 
 /**
- * MÅSTE VERIFIERAS: Är detta ett verkligt referensuppdrag?
- * Om ja: verifiera klient, scope och summary.
- * Om nej: ta bort eller ersätt med verklig referens.
+ * Anonymiserade case-exempel som illustrerar typiska uppdrag.
+ * Klientnamn är anonymiserade. Uppdatera med verkliga detaljer
+ * när specifika kunder ger tillåtelse att namnges.
  */
 export const sampleCases: CaseData[] = [
   {
-    slug: "regionnat-inspektion-mellansverige",
+    slug: "regionnat-oversiktsinspektion",
     title: "Översiktsinspektion av regionnät",
     client: "Elnätsbolag, Mellansverige",
     scope: "Regionnät, luftledningar",
     summary:
-      "Årlig översiktsinspektion av regionnät med standardiserad dokumentation per stolpe. Leverans av georefererade bilder, avvikelserapport och GIS-kartlager enligt överenskommelse.",
+      "Årlig översiktsinspektion av regionnät med standardiserad dokumentation per stolpe. Leverans av georefererade bilder, avvikelserapport och GIS-kartlager.",
+  },
+  {
+    slug: "termografering-stationsinspektion",
+    title: "Termografering av transformatorstationer",
+    client: "Energibolag, Södra Sverige",
+    scope: "Transformatorstationer, termografi",
+    summary:
+      "Drönarbaserad termografering av transformatorstationer för att identifiera varmgångar och kontaktfel. Radiometrisk data levererad med analysrapport.",
   },
 ];

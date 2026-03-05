@@ -39,7 +39,7 @@ export default function MalmoPage() {
       <Hero
         title="Kraftledningsinspektion med drönare i Malmö"
         subtitle="Malmö & Skåne"
-        description="Professionell drönarinspektion av kraftledningar, elnät och vindkraftparker i Skåneregionen. BVLOS-certifierat team."
+        description="Professionell drönarinspektion av kraftledningar, elnät och vindkraftparker i Skåneregionen."
         primaryCta={{ label: "Begär offert", href: "/kontakt" }}
         secondaryCta={{ label: "Våra tjänster", href: "/tjanster" }}
       />

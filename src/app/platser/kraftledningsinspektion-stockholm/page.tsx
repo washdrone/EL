@@ -9,7 +9,7 @@ import CTABand from "@/components/CTABand";
 export const metadata: Metadata = createPageMetadata({
   title: "Kraftledningsinspektion med drönare i Stockholm",
   description:
-    "GridDrone utför kraftledningsinspektion med drönare i Stockholm och Mälardalen. Visuell inspektion, termografering och LiDAR. BVLOS-certifierat. Begär offert.",
+    "GridDrone utför kraftledningsinspektion med drönare i Stockholm och Mälardalen. Visuell inspektion, termografering och LiDAR. Begär offert.",
   path: "/platser/kraftledningsinspektion-stockholm",
   keywords: [
     "kraftledningsinspektion Stockholm",
@@ -39,7 +39,7 @@ export default function StockholmPage() {
       <Hero
         title="Kraftledningsinspektion med drönare i Stockholm"
         subtitle="Stockholm & Mälardalen"
-        description="Vi utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i Stockholmsregionen och Mälardalen. BVLOS-certifierat team."
+        description="Vi utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i Stockholmsregionen och Mälardalen."
         primaryCta={{ label: "Begär offert", href: "/kontakt" }}
         secondaryCta={{ label: "Våra tjänster", href: "/tjanster" }}
       />
@@ -100,9 +100,9 @@ export default function StockholmPage() {
         <div className="container-section">
           <h2 className="heading-2">Täckningsområde</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Vi täcker hela Stockholmsregionen och Mälardalen, inklusive
+            Vi utför uppdrag i Stockholmsregionen och Mälardalen, inklusive
             Södertälje, Norrtälje, Uppsala, Västerås och Eskilstuna.
-            BVLOS-certifiering gör att vi kan inspektera längre sträckor
+            Med BVLOS-kapacitet kan längre sträckor inspekteras
             utan ompositionering.
           </p>
         </div>

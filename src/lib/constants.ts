@@ -48,7 +48,7 @@ export const SERVICE_ITEMS = [
   {
     label: "BVLOS-inspektion",
     href: "/tjanster/bvlos-inspektion",
-    description: "Lång räckvidd — inspektera mil av ledning per dag",
+    description: "Lång räckvidd — inspektera långa ledningssträckor effektivt",
   },
   {
     label: "Transformatorstation",

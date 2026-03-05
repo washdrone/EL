@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 export const metadata: Metadata = createPageMetadata({
   title: "Certifieringar & Tillstånd | GridDrone",
   description:
-    "GridDrones certifieringar: BVLOS-tillstånd, EASA-registrering, UAS-operatörstillstånd och ansvarsförsäkring. Dokumenterad kompetens för drönarinspektion av elnät.",
+    "GridDrones certifieringar och tillstånd för drönarinspektion av elnät. EASA-utbildade piloter med BVLOS-behörighet och mörkerflyg.",
   path: "/certifieringar",
   keywords: [
     "BVLOS certifiering",
@@ -21,24 +21,24 @@ export const metadata: Metadata = createPageMetadata({
 
 const certifications = [
   {
-    title: "BVLOS-tillstånd",
+    title: "EASA-utbildning",
     description:
-      "Tillstånd för flygning utanför synhåll (Beyond Visual Line of Sight). Möjliggör inspektion av långa ledningssträckor utan ompositionering.",
+      "Våra piloter är fullt utbildade enligt EASA:s regelverk för drönare. Utbildningen omfattar de kategorier och behörigheter som krävs för professionell inspektion.",
   },
   {
-    title: "UAS-operatörstillstånd",
+    title: "BVLOS-behörighet",
     description:
-      "Registrerad UAS-operatör hos Transportstyrelsen enligt EASA-regelverket.",
+      "Behörighet för flygning utanför synhåll (Beyond Visual Line of Sight). Möjliggör inspektion av långa ledningssträckor utan ompositionering.",
   },
   {
-    title: "PDRA S-01 EASA",
+    title: "Mörkerflyg",
     description:
-      "Predefined Risk Assessment för standardiserade BVLOS-operationer enligt EASA-regelverk.",
+      "Behörighet att utföra drönarflygning under mörka förhållanden, vilket ger flexibilitet i planering och genomförande av inspektioner.",
   },
   {
     title: "Ansvarsförsäkring",
     description:
-      "UAS-ansvarsförsäkring som täcker drönarbaserade inspektionsuppdrag.",
+      "Vi har ansvarsförsäkring som täcker vår UAS-verksamhet och drönarbaserade inspektionsuppdrag.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function CertifieringarPage() {
       <Hero
         title="Certifieringar och tillstånd"
         subtitle="Certifieringar"
-        description="GridDrones certifieringar: BVLOS-tillstånd, EASA-registrering, UAS-operatörstillstånd och ansvarsförsäkring. Dokumenterad kompetens för drönarinspektion av elnät."
+        description="GridDrones certifieringar och tillstånd för drönarinspektion av elnät. EASA-utbildade piloter med BVLOS-behörighet och mörkerflyg."
         compact
       />
 
@@ -88,9 +88,11 @@ export default function CertifieringarPage() {
                   <p className="mt-2 text-sm leading-relaxed text-surface-500">
                     {cert.description}
                   </p>
-                  <p className="mt-3 text-xs font-medium text-surface-400">
-                    (Verifieras)
-                  </p>
+                  {cert.title.includes("[VERIFIERAS]") && (
+                    <p className="mt-3 text-xs font-medium text-surface-400">
+                      (Kontakta oss för detaljer)
+                    </p>
+                  )}
                 </div>
               ))}
             </div>

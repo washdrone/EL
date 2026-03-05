@@ -10,7 +10,7 @@ import { SERVICE_ITEMS } from "@/lib/constants";
 export const metadata: Metadata = createPageMetadata({
   title: "Drönarinspektioner för elnät & energiinfrastruktur",
   description:
-    "GridDrone erbjuder professionell drönarinspektion av kraftledningar, elnät, vindkraftverk och solcellsparker. BVLOS-certifierat. Termografi och LiDAR.",
+    "GridDrone erbjuder professionell drönarinspektion av kraftledningar, elnät, vindkraftverk och solcellsparker. BVLOS-behöriga piloter. Termografi och LiDAR.",
   path: "/tjanster",
   keywords: [
     "drönarinspektion elnät",
@@ -31,7 +31,7 @@ export default function TjansterPage() {
       <Hero
         title="Drönarinspektioner för elnät & energiinfrastruktur"
         subtitle="Våra tjänster"
-        description="GridDrone erbjuder professionell drönarinspektion av kraftledningar, elnät, vindkraftverk och solcellsparker. BVLOS-certifierat. Termografi och LiDAR."
+        description="GridDrone erbjuder professionell drönarinspektion av kraftledningar, elnät, vindkraftverk och solcellsparker. BVLOS-behöriga piloter. Termografi och LiDAR."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
         secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
       />
