@@ -8,20 +8,20 @@ export const NAV_ITEMS = [
     href: "/tjanster/kraftledningsinspektion",
   },
   {
-    label: "Termografering",
-    href: "/tjanster/termografering-kraftledning",
+    label: "Branscher",
+    href: "/branscher/energibolag",
   },
   {
-    label: "Vindkraft",
-    href: "/tjanster/vindkraftinspektion",
+    label: "ROI-kalkylator",
+    href: "/roi-kalkylator",
   },
   {
     label: "Om oss",
     href: "/om-oss",
   },
   {
-    label: "FAQ",
-    href: "/tjanster/kraftledningsinspektion/faq",
+    label: "Blogg",
+    href: "/blogg",
   },
   {
     label: "Kontakt",
@@ -64,5 +64,63 @@ export const SERVICE_ITEMS = [
     label: "Vegetationskontroll",
     href: "/tjanster/vegetationskontroll",
     description: "LiDAR-baserad kartläggning av kraftledningsgator",
+  },
+  {
+    label: "Järnvägsinspektion",
+    href: "/tjanster/jarnvagsinspektion",
+    description: "Inspektion av kontaktledningar längs järnväg",
+  },
+  {
+    label: "Stormskadeinspektion",
+    href: "/tjanster/stormskadeinspektion",
+    description: "Akut skadekartläggning efter storm",
+  },
+  {
+    label: "Rörinspektioner",
+    href: "/tjanster/rorinspektioner",
+    description: "Inspektion av olje- och gasledningar",
+  },
+  {
+    label: "Underhållsabonnemang",
+    href: "/tjanster/underhallsabonnemang",
+    description: "Schemalagd inspektion med trendanalys",
+  },
+] as const;
+
+export const BRANCH_ITEMS = [
+  {
+    label: "Energibolag",
+    href: "/branscher/energibolag",
+    description: "Elnätsleverantörer & energibolag",
+  },
+  {
+    label: "Elnät",
+    href: "/branscher/elnat",
+    description: "Regionala & lokala nätägare",
+  },
+  {
+    label: "Trafikverket",
+    href: "/branscher/trafikverket",
+    description: "Järnväg & kontaktledning",
+  },
+  {
+    label: "Vindkraft",
+    href: "/branscher/vindkraft",
+    description: "Vindkraftoperatörer",
+  },
+  {
+    label: "Industri",
+    href: "/branscher/industri",
+    description: "Processindustri & industri-elnät",
+  },
+  {
+    label: "Kommuner",
+    href: "/branscher/kommuner",
+    description: "Kommuner & kommunala bolag",
+  },
+  {
+    label: "Försäkring",
+    href: "/branscher/forsakring",
+    description: "Försäkringsbolag — skadedokumentation",
   },
 ] as const;

@@ -74,4 +74,49 @@ export const faqItems: FAQItem[] = [
     answer:
       "De viktigaste prisdrivarna är: ledningens längd, terrängens tillgänglighet, inspektionstyp (översiktlig vs detaljerad), krav på leveranser/analys samt mobiliseringsavstånd. Kontakta oss för en kostnadsuppskattning baserad på ert specifika behov.",
   },
+  {
+    question: "Hur fungerar kraftledningsinspektion med drönare?",
+    answer:
+      "Drönaren flyger längs kraftledningen och fotograferar varje stolpe, isolator, traverser och ledningsgata med högupplöst kamera. Bilderna georefereras med GPS-koordinater och levereras i en strukturerad rapport. Inspektionen utförs utan driftstopp och med säkert avstånd till spänningsförande delar.",
+  },
+  {
+    question: "Vad är BVLOS och vilka tillstånd krävs i Sverige?",
+    answer:
+      "BVLOS (Beyond Visual Line of Sight) innebär att drönaren flyger bortom pilotens synhåll. Det krävs specifika tillstånd från Transportstyrelsen, inklusive godkänd riskbedömning (PDRA/SORA), redundanta kommunikationssystem och dokumenterade säkerhetsprocedurer. BVLOS möjliggör inspektion av långa ledningssträckor utan ompositionering.",
+  },
+  {
+    question: "Hur mycket billigare är drönare jämfört med helikopter för elnätsinspektion?",
+    answer:
+      "Kostnadsbesparingen varierar beroende på uppdragets förutsättningar. Generellt har drönarinspektioner lägre driftkostnad per kilometer jämfört med helikopter, särskilt vid kortare till medellånga sträckor. Använd vår ROI-kalkylator för en uppskattning baserad på era parametrar.",
+  },
+  {
+    question: "Hur snabbt kan GridDrone mobilisera efter en storm?",
+    answer:
+      "Vi har beredskap för snabb mobilisering efter stormlarm. Exakt mobiliseringstid beror på stormens omfattning, väderlägessituation och geografisk placering. Abonnemangskunder prioriteras vid stormskadeinspektioner.",
+  },
+  {
+    question: "Vad är termografering av elnät och vad kan det hitta?",
+    answer:
+      "Termografering innebär att använda en radiometrisk värmekamera för att identifiera temperaturavvikelser i elnätskomponenter. Det kan hitta varmgångar i skarvar, överbelastade transformatorer, defekta isolatorer med interna fel och kontaktmotstånd i kopplingsanordningar.",
+  },
+  {
+    question: "Hur inspekteras järnvägskontaktledningar med drönare?",
+    answer:
+      "Drönaren flyger längs spåret och fotograferar kontaktledningssystemets komponenter — hängare, bärlina, kontakttråd, isolatorer och fästanordningar. Inspektionen utförs under trafikfria tidsfönster i samordning med trafikledningen.",
+  },
+  {
+    question: "Vad ingår i ett prediktivt underhållsabonnemang?",
+    answer:
+      "Schemalagda inspektioner med överenskommen frekvens, historisk datalagring med trendanalyser, prioriterad respons vid stormskada, dedikerad kontaktperson och årlig sammanfattningsrapport med rekommendationer.",
+  },
+  {
+    question: "Kan drönare flyga säkert nära högspänningsledningar?",
+    answer:
+      "Ja, inspektionen utförs med säkert avstånd till spänningsförande delar och enligt gällande luftfartsregler. Våra piloter är utbildade i arbete nära elektriska anläggningar och följer nätägarens säkerhetsföreskrifter.",
+  },
+  {
+    question: "Hur ser en inspektionsrapport ut?",
+    answer:
+      "Rapporten innehåller försättsblad med uppdragsdata, sammanfattningstabell med fynd per klassificering, GPS-karta med fyndmarkeringar, detaljerade fyndkort med foto, koordinat och åtgärdsrekommendation, samt teknisk bilaga. Se vår exempelrapport för ett anonymiserat exempel.",
+  },
 ];
