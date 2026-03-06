@@ -27,7 +27,7 @@ export default function CTABand({
         <h2 className="heading-2 text-white text-balance">
           {heading}
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-white/70 sm:text-lg sm:leading-8">
+        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-blue-100 sm:text-lg sm:leading-8">
           {description}
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">

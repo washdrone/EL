@@ -40,7 +40,7 @@ export default function ProgramCards() {
               </p>
 
               {/* Row 3: INNEHÅLL heading */}
-              <h4 className="mt-6 text-xs font-semibold uppercase tracking-wider text-surface-400 lg:mt-0 lg:self-end">
+              <h4 className="mt-6 text-xs font-semibold uppercase tracking-wider text-surface-500 lg:mt-0 lg:self-end">
                 Innehåll
               </h4>
 
@@ -63,7 +63,7 @@ export default function ProgramCards() {
 
               {/* Row 5: LEVERANSER heading + list */}
               <div className="mt-6 lg:mt-0 lg:pt-6">
-                <h4 className="text-xs font-semibold uppercase tracking-wider text-surface-400">
+                <h4 className="text-xs font-semibold uppercase tracking-wider text-surface-500">
                   Leveranser
                 </h4>
                 <ul className="mt-3 space-y-1.5">
@@ -77,7 +77,7 @@ export default function ProgramCards() {
               </div>
 
               {/* Row 6: Frekvens */}
-              <p className="mt-5 text-xs text-surface-400 lg:mt-0 lg:self-end lg:pt-5">
+              <p className="mt-5 text-xs text-surface-500 lg:mt-0 lg:self-end lg:pt-5">
                 Frekvens: {program.frequency}
               </p>
 
@@ -106,7 +106,7 @@ export default function ProgramCards() {
                 <p className="mt-2 text-sm leading-6 text-surface-500">
                   {addon.description}
                 </p>
-                <p className="mt-3 text-xs text-surface-400 italic">
+                <p className="mt-3 text-xs text-surface-500 italic">
                   {addon.note}
                 </p>
               </div>

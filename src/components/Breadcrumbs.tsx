@@ -13,7 +13,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
     <nav aria-label="Breadcrumb" className="border-b border-surface-100 bg-surface-50 py-3">
       <div className="container-section">
-        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-surface-400">
+        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-surface-500">
           <li>
             <Link href="/" className="transition-colors hover:text-brand-600">
               Hem

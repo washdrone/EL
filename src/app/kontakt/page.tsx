@@ -94,7 +94,7 @@ export default function KontaktPage() {
                   <h2 className="text-lg font-semibold text-surface-900">
                     Skicka förfrågan
                   </h2>
-                  <p className="mt-1 text-sm text-surface-400">
+                  <p className="mt-1 text-sm text-surface-500">
                     Obligatoriska fält markerade med *
                   </p>
                   <div className="mt-6">

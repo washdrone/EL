@@ -103,7 +103,7 @@ export default function ROICalculator() {
                   <p className="mt-1 text-2xl font-bold text-surface-900">
                     {formatCurrency(traditionalCost)}
                   </p>
-                  <p className="mt-1 text-xs text-surface-400">
+                  <p className="mt-1 text-xs text-surface-500">
                     {formatCurrency(costPerKm[method])}/km × {km} km × {frequency} ggr/år
                   </p>
                 </div>
@@ -115,7 +115,7 @@ export default function ROICalculator() {
                   <p className="mt-1 text-2xl font-bold text-surface-900">
                     {formatCurrency(droneCost)}
                   </p>
-                  <p className="mt-1 text-xs text-surface-400">
+                  <p className="mt-1 text-xs text-surface-500">
                     {formatCurrency(droneCostPerKm)}/km × {km} km × {frequency} ggr/år
                   </p>
                 </div>
@@ -132,7 +132,7 @@ export default function ROICalculator() {
                   </p>
                 </div>
 
-                <p className="text-xs text-surface-400">
+                <p className="text-xs text-surface-500">
                   * Uppskattning baserad på generella branschdata. Faktisk kostnad
                   beror på uppdragets specifika förutsättningar.
                 </p>

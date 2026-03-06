@@ -195,7 +195,7 @@ export default function LeadForm() {
         <textarea id="message" name="message" rows={4} value={form.message} onChange={handleChange} className={inputClass} placeholder="Beskriv ert behov, bifoga gärna länk till GIS-underlag eller specifikation." />
       </div>
 
-      <p className="text-xs text-surface-400">
+      <p className="text-xs text-surface-500">
         Genom att skicka detta formulär godkänner ni att vi behandlar era
         uppgifter för att hantera er förfrågan.{" "}
         Vi sparar era uppgifter i enlighet med vår{" "}

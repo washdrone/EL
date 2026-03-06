@@ -46,7 +46,7 @@ export default function Hero({
               {title}
             </h1>
             {description && (
-              <p className="mt-6 text-base leading-7 text-white/70 sm:text-lg sm:leading-8 max-w-xl">
+              <p className="mt-6 text-base leading-7 text-blue-100 sm:text-lg sm:leading-8 max-w-xl">
                 {description}
               </p>
             )}
@@ -83,7 +83,7 @@ export default function Hero({
                       </div>
                       <div>
                         <p className="text-sm font-medium text-white/90">Strukturerad leverans</p>
-                        <p className="text-xs text-white/50">GIS, bilder, rapporter</p>
+                        <p className="text-xs text-blue-200">GIS, bilder, rapporter</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -94,7 +94,7 @@ export default function Hero({
                       </div>
                       <div>
                         <p className="text-sm font-medium text-white/90">Kvalitetssäkrad</p>
-                        <p className="text-xs text-white/50">Intern QA före leverans</p>
+                        <p className="text-xs text-blue-200">Intern QA före leverans</p>
                       </div>
                     </div>
                     <div className="flex items-center gap-3">
@@ -105,7 +105,7 @@ export default function Hero({
                       </div>
                       <div>
                         <p className="text-sm font-medium text-white/90">Spårbar process</p>
-                        <p className="text-xs text-white/50">Dokumenterat varje steg</p>
+                        <p className="text-xs text-blue-200">Dokumenterat varje steg</p>
                       </div>
                     </div>
                   </div>
@@ -117,7 +117,7 @@ export default function Hero({
                       </svg>
                       <div>
                         <p className="text-sm font-medium text-white/80">Standardiserade flygprofiler</p>
-                        <p className="text-xs text-white/40">Jämförbar data mellan inspektionstillfällen</p>
+                        <p className="text-xs text-blue-200">Jämförbar data mellan inspektionstillfällen</p>
                       </div>
                     </div>
                   </div>

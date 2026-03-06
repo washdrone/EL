@@ -37,7 +37,7 @@ export default function ImagePlaceholder({
 
       {/* Photo replacement hint (visible only in dev) */}
       <div className="absolute bottom-3 right-3">
-        <span className="rounded-lg bg-white/80 px-2.5 py-1 text-[10px] font-medium text-surface-400 backdrop-blur-sm">
+        <span className="rounded-lg bg-white/80 px-2.5 py-1 text-[10px] font-medium text-surface-500 backdrop-blur-sm">
           {alt}
         </span>
       </div>

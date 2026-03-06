@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Inter } from "next/font/google";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import JsonLd from "@/components/JsonLd";
+import CookieConsent from "@/components/CookieConsent";
 import {
   SITE_NAME,
   SITE_URL,
@@ -86,12 +87,16 @@ export default function RootLayout({
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
+                gtag('consent', 'default', {
+                  analytics_storage: localStorage.getItem('griddrone_cookie_consent') === 'accepted' ? 'granted' : 'denied'
+                });
                 gtag('js', new Date());
                 gtag('config', '${GA_MEASUREMENT_ID}');
               `}
             </Script>
           </>
         )}
+        <CookieConsent />
       </body>
     </html>
   );

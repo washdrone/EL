@@ -259,7 +259,7 @@ export default function HubPage() {
             {/* Header */}
             <div className="grid grid-cols-[1fr,1fr,1fr] border-b border-surface-200 bg-surface-50">
               <div className="p-4 sm:p-5">
-                <p className="text-xs font-semibold uppercase tracking-wider text-surface-400">Aspekt</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-surface-500">Aspekt</p>
               </div>
               <div className="border-l border-surface-200 p-4 text-center sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">Drönare</p>
@@ -302,7 +302,7 @@ export default function HubPage() {
             ))}
           </div>
 
-          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-surface-400">
+          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-surface-500">
             Jämförelsen avser visuell inspektion av luftledningar. Förutsättningar varierar beroende på spänningsnivå, terräng och inspektionstyp.
           </p>
         </div>

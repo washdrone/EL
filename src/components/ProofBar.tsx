@@ -52,7 +52,7 @@ export default function ProofBar() {
               <p className="mt-3 text-sm font-semibold text-surface-900">
                 {cap.title}
               </p>
-              <p className="mt-1 text-xs text-surface-400">
+              <p className="mt-1 text-xs text-surface-500">
                 {cap.desc}
               </p>
             </div>

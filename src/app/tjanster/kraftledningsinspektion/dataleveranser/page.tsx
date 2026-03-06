@@ -67,7 +67,7 @@ export default function DataleveranserPage() {
                   och sektion, vilket möjliggör konsekvent jämförelse mellan
                   inspektionstillfällen.
                 </p>
-                <p className="mt-2 text-sm text-surface-400">
+                <p className="mt-2 text-sm text-surface-500">
                   Format: JPEG eller TIFF. Namnkonvention anpassas efter er
                   specifikation.
                 </p>
@@ -81,7 +81,7 @@ export default function DataleveranserPage() {
                   struktureras efter er nätstruktur och kan filtreras
                   på avvikelstyp och prioritet.
                 </p>
-                <p className="mt-2 text-sm text-surface-400">
+                <p className="mt-2 text-sm text-surface-500">
                   Format: PDF och/eller CSV/Excel. Strukturen anpassas efter
                   ert behov.
                 </p>
@@ -94,7 +94,7 @@ export default function DataleveranserPage() {
                   GIS-system. Punkter (stolpar), linjer (sektioner) och
                   attribut (status, avvikelse, bildlänk) i standardformat.
                 </p>
-                <p className="mt-2 text-sm text-surface-400">
+                <p className="mt-2 text-sm text-surface-500">
                   Format: Shapefile, GeoJSON eller KML. Koordinatsystem
                   enligt överenskommelse (SWEREF 99 TM eller annat).
                 </p>

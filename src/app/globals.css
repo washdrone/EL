@@ -78,7 +78,7 @@ body {
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-wider text-surface-400;
+    @apply text-xs font-semibold uppercase tracking-wider text-surface-500;
   }
 
   .content-article {

@@ -41,7 +41,7 @@ export default function FAQ({
                 <span className="text-base font-medium text-surface-900">
                   {item.question}
                 </span>
-                <span className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-all ${openIndex === index ? "bg-brand-100 text-brand-700 rotate-180" : "bg-surface-100 text-surface-400"}`}>
+                <span className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-all ${openIndex === index ? "bg-brand-100 text-brand-700 rotate-180" : "bg-surface-100 text-surface-500"}`}>
                   <svg
                     className="h-3.5 w-3.5"
                     fill="none"
