@@ -37,11 +37,11 @@ export default function ProcessSteps() {
           </p>
         </div>
 
-        <div className="relative mt-16">
+        <div className="relative mt-10 sm:mt-14 md:mt-16">
           {/* Connector line */}
           <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-surface-200 lg:block" aria-hidden="true" />
 
-          <div className="grid gap-10 lg:grid-cols-4 lg:gap-0">
+          <div className="grid grid-cols-2 gap-8 md:gap-10 lg:grid-cols-4 lg:gap-0">
             {steps.map((step, index) => (
               <div key={step.number} className="relative flex flex-col items-center text-center">
                 {/* Horizontal connector on desktop */}
@@ -50,16 +50,16 @@ export default function ProcessSteps() {
                 )}
 
                 {/* Step number circle */}
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl gradient-hero shadow-elevated">
-                  <span className="text-lg font-bold text-accent-400">
+                <div className="relative z-10 flex h-14 w-14 items-center justify-center rounded-2xl gradient-hero shadow-elevated sm:h-16 sm:w-16">
+                  <span className="text-base font-bold text-accent-400 sm:text-lg">
                     {step.number}
                   </span>
                 </div>
 
-                <h3 className="mt-5 text-base font-semibold text-surface-900">
+                <h3 className="mt-4 text-sm font-semibold text-surface-900 sm:mt-5 sm:text-base">
                   {step.title}
                 </h3>
-                <p className="mt-2 max-w-[240px] text-sm leading-6 text-surface-500">
+                <p className="mt-1.5 text-xs leading-5 text-surface-500 sm:mt-2 sm:text-sm sm:leading-6">
                   {step.description}
                 </p>
               </div>

@@ -26,7 +26,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-surface-100 bg-white/90 backdrop-blur-lg">
       <nav
-        className="container-section flex items-center justify-between py-3.5"
+        className="container-section flex items-center justify-between py-3 sm:py-3.5"
         aria-label="Huvudnavigering"
       >
         <Link
@@ -135,14 +135,14 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-surface-100 bg-white shadow-soft lg:hidden">
-          <div className="container-section space-y-1 py-4">
+          <div className="container-section space-y-1 py-4 pb-6">
             {/* Services section */}
             <p className="eyebrow px-3 pb-1">Tjänster</p>
             {SERVICE_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${
+                className={`block rounded-lg px-3 py-2.5 text-sm font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 ${
                   isActive(item.href)
                     ? "bg-brand-50 text-brand-700"
                     : "text-surface-700 hover:bg-surface-50 hover:text-brand-700"
@@ -153,7 +153,7 @@ export default function Header() {
               </Link>
             ))}
 
-            <div className="my-2 border-t border-surface-100" />
+            <div className="my-3 border-t border-surface-100" />
 
             {NAV_ITEMS.filter(item => item.label !== "Tjänster").map((item) => {
               const active = isActive(item.href);
@@ -174,7 +174,7 @@ export default function Header() {
               );
             })}
 
-            <div className="pt-3">
+            <div className="pt-4">
               <Link
                 href="/kontakt"
                 className="btn-primary block w-full text-center"

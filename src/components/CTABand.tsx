@@ -18,7 +18,7 @@ export default function CTABand({
   secondaryHref = "/kontakt",
 }: CTABandProps) {
   return (
-    <section className="relative overflow-hidden gradient-hero py-16 sm:py-20">
+    <section className="relative overflow-hidden gradient-hero py-12 sm:py-16 md:py-20">
       {/* Decorative */}
       <div className="absolute -right-20 -top-20 h-[300px] w-[300px] rounded-full bg-accent-500/10 blur-3xl" aria-hidden="true" />
       <div className="absolute -bottom-10 -left-10 h-[200px] w-[200px] rounded-full bg-brand-400/10 blur-3xl" aria-hidden="true" />
@@ -27,10 +27,10 @@ export default function CTABand({
         <h2 className="heading-2 text-white text-balance">
           {heading}
         </h2>
-        <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-blue-100 sm:text-lg sm:leading-8">
+        <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-blue-100 sm:mt-5 sm:text-base sm:leading-7 md:text-lg md:leading-8">
           {description}
         </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row">
           <Link
             href={primaryHref}
             className="btn-primary w-full sm:w-auto"

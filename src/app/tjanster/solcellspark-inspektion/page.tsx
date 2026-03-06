@@ -103,9 +103,9 @@ export default function SolcellsparkInspektionPage() {
               produktion, säkerhet och livslängd.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-10 sm:mt-12 grid max-w-4xl gap-5 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {detectionItems.map((item) => (
-              <div key={item.title} className="card p-6">
+              <div key={item.title} className="card">
                 <h3 className="text-base font-semibold text-surface-900">
                   {item.title}
                 </h3>
@@ -124,9 +124,9 @@ export default function SolcellsparkInspektionPage() {
               Fördelar med drönarinspektion av solcellsparker
             </h2>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-10 sm:mt-12 grid max-w-4xl gap-5 sm:gap-6 md:gap-8 md:grid-cols-2">
             {benefits.map((item) => (
-              <div key={item.title} className="card p-6">
+              <div key={item.title} className="card">
                 <h3 className="text-base font-semibold text-surface-900">
                   {item.title}
                 </h3>

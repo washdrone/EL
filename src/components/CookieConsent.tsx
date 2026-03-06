@@ -52,7 +52,7 @@ export default function CookieConsent() {
       aria-label="Cookie-samtycke"
       className="fixed bottom-0 left-0 right-0 z-50 border-t border-surface-200 bg-white p-4 shadow-elevated sm:p-5"
     >
-      <div className="container-section flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+      <div className="container-section flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
         <p className="text-sm leading-6 text-surface-600">
           Vi använder cookies för att analysera besökstrafik och förbättra
           webbplatsen.{" "}

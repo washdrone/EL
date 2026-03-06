@@ -28,7 +28,7 @@ export default function HelikopterVsDronarePage() {
         ]}
       />
 
-      <section className="gradient-hero py-16 sm:py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Blogg</p>
           <h1 className="heading-1 mt-3 text-white">
@@ -64,7 +64,7 @@ export default function HelikopterVsDronarePage() {
             jämför vi de viktigaste faktorerna.
           </p>
 
-          <h2 className="heading-2 mt-12">Kostnad per kilometer</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Kostnad per kilometer</h2>
           <p className="body-text mt-4">
             Helikopterinspektion kräver flygtid, certifierad pilot, underhåll
             och bränsle — kostnader som gör metoden förhållandevis dyr per
@@ -80,7 +80,7 @@ export default function HelikopterVsDronarePage() {
             för en uppskattning baserad på era parametrar.
           </p>
 
-          <h2 className="heading-2 mt-12">Datakvalitet och upplösning</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Datakvalitet och upplösning</h2>
           <p className="body-text mt-4">
             Drönare kan flyga närmare ledningen och stolparna, vilket ger
             bilder med högre upplösning och mer detaljerad dokumentation.
@@ -88,14 +88,14 @@ export default function HelikopterVsDronarePage() {
             mindre defekter men ger snabb överblick över längre sträckor.
           </p>
 
-          <h2 className="heading-2 mt-12">Säkerhet</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Säkerhet</h2>
           <p className="body-text mt-4">
             Drönare eliminerar risken för personal i luften nära
             spänningssatta ledningar. Vid incidenter är konsekvenserna
             mindre allvarliga jämfört med bemannade helikoptrar.
           </p>
 
-          <h2 className="heading-2 mt-12">Effektivitet och räckvidd</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Effektivitet och räckvidd</h2>
           <p className="body-text mt-4">
             Helikoptrar har längre räckvidd och kan täcka mycket långa
             sträckor per dag. Drönare med BVLOS-kapacitet minskar detta
@@ -107,7 +107,7 @@ export default function HelikopterVsDronarePage() {
             var som helst, utan krav på landningsplats eller flygbas.
           </p>
 
-          <h2 className="heading-2 mt-12">Sammanfattning</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Sammanfattning</h2>
           <p className="body-text mt-4">
             Valet mellan helikopter och drönare beror på uppdragets specifika
             krav. Drönare erbjuder typiskt lägre kostnad per kilometer, högre
@@ -120,7 +120,7 @@ export default function HelikopterVsDronarePage() {
             översiktliga inspektioner av mycket långa sträckor.
           </p>
 
-          <div className="mt-12 rounded-xl border border-brand-200 bg-brand-50 p-6">
+          <div className="mt-10 sm:mt-12 rounded-xl border border-brand-200 bg-brand-50 p-5 sm:p-6">
             <h3 className="text-base font-semibold text-brand-800">Beräkna er besparing</h3>
             <p className="mt-2 text-sm text-brand-700">
               Använd vår ROI-kalkylator för att beräkna den uppskattade

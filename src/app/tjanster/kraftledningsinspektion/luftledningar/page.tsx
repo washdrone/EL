@@ -126,7 +126,7 @@ export default function LuftledningarPage() {
         <div className="container-section">
           <div className="mx-auto max-w-3xl">
             <h2 className="heading-2">Fördelar med drönareinspektion av luftledningar</h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="mt-8 grid gap-5 sm:gap-6 md:gap-8 md:grid-cols-2">
               {[
                 {
                   title: "Ingen klättring",
@@ -167,7 +167,7 @@ export default function LuftledningarPage() {
         <div className="container-section">
           <div className="mx-auto max-w-3xl">
             <h2 className="heading-2">Gå vidare</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
               <Link
                 href="/tjanster/kraftledningsinspektion/inspektionsprogram"
                 className="nav-card group"

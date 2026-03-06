@@ -98,7 +98,7 @@ export default function HubPage() {
       {/* Intro section */}
       <section className="section-padding bg-white">
         <div className="container-section">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="grid items-center gap-8 md:gap-10 lg:grid-cols-2 lg:gap-12">
             <div>
               <h2 className="heading-2">
                 Inspektion anpassad för elnätets behov
@@ -125,7 +125,7 @@ export default function HubPage() {
             />
           </div>
 
-          <div className="mx-auto mt-14 grid max-w-4xl gap-8 sm:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:mt-14 sm:gap-8 md:grid-cols-3">
             {[
               {
                 title: "Säkrare arbetsmetod",
@@ -323,7 +323,7 @@ export default function HubPage() {
                 Exempel på genomförda inspektionsuppdrag.
               </p>
             </div>
-            <div className="mx-auto mt-12 max-w-2xl">
+            <div className="mx-auto mt-10 max-w-2xl sm:mt-12">
               {sampleCases.map((c) => (
                 <CaseCard key={c.slug} data={c} />
               ))}

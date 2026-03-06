@@ -85,7 +85,7 @@ export default function ExempelrapportPage() {
         breadcrumbs={[{ name: "Exempelrapport" }]}
       />
 
-      <section className="gradient-hero py-16 sm:py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Dokumentation</p>
           <h1 className="heading-1 mt-3 text-white">
@@ -111,9 +111,9 @@ export default function ExempelrapportPage() {
               enkel jämförelse mellan inspektionstillfällen.
             </p>
           </div>
-          <div className="mx-auto mt-12 max-w-3xl space-y-4">
+          <div className="mx-auto mt-10 max-w-3xl space-y-3 sm:mt-12 sm:space-y-4">
             {reportSections.map((section) => (
-              <div key={section.number} className="flex gap-4 rounded-xl border border-surface-100 bg-surface-50 p-5">
+              <div key={section.number} className="flex gap-3 rounded-xl border border-surface-100 bg-surface-50 p-4 sm:gap-4 sm:p-5">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-50 text-sm font-bold text-brand-600">
                   {section.number}
                 </div>
@@ -137,7 +137,7 @@ export default function ExempelrapportPage() {
               och åtgärdsrekommendation. Nedan visas anonymiserade exempel.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
+          <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 md:gap-6">
             {exampleFindings.map((finding) => (
               <div key={finding.title} className="card overflow-hidden">
                 {/* Image placeholder */}

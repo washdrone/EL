@@ -29,7 +29,7 @@ export default function BVLOSTillstandPage() {
         ]}
       />
 
-      <section className="gradient-hero py-16 sm:py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Blogg</p>
           <h1 className="heading-1 mt-3 text-white">
@@ -67,7 +67,7 @@ export default function BVLOSTillstandPage() {
             kraftledningar i svårtillgänglig terräng.
           </p>
 
-          <h2 className="heading-2 mt-12">Regelverk i Sverige</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Regelverk i Sverige</h2>
           <p className="body-text mt-4">
             BVLOS-flygning regleras av EASA (European Union Aviation Safety
             Agency) och Transportstyrelsen i Sverige. Det kräver specifika
@@ -89,7 +89,7 @@ export default function BVLOSTillstandPage() {
             ))}
           </ul>
 
-          <h2 className="heading-2 mt-12">Krav för BVLOS-tillstånd</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Krav för BVLOS-tillstånd</h2>
           <p className="body-text mt-4">
             Att erhålla BVLOS-tillstånd kräver bland annat:
           </p>
@@ -109,7 +109,7 @@ export default function BVLOSTillstandPage() {
             ))}
           </ul>
 
-          <h2 className="heading-2 mt-12">Varför är BVLOS viktigt för elnätsinspektion?</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Varför är BVLOS viktigt för elnätsinspektion?</h2>
           <p className="body-text mt-4">
             Kraftledningar sträcker sig ofta genom skog, fjäll och glesbygd
             där det är opraktiskt att ha piloten inom synhåll av drönaren.
@@ -122,7 +122,7 @@ export default function BVLOSTillstandPage() {
             BVLOS-flygning i energiinfrastruktursammanhang.
           </p>
 
-          <div className="mt-12 rounded-xl border border-brand-200 bg-brand-50 p-6">
+          <div className="mt-10 sm:mt-12 rounded-xl border border-brand-200 bg-brand-50 p-5 sm:p-6">
             <h3 className="text-base font-semibold text-brand-800">GridDrone & BVLOS</h3>
             <p className="mt-2 text-sm text-brand-700">
               Läs mer om hur vi använder BVLOS-kapacitet för effektiv

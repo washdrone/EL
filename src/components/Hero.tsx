@@ -32,26 +32,26 @@ export default function Hero({
         </svg>
       </div>
 
-      <div className={`container-section relative ${compact ? "py-16 sm:py-20" : "py-20 sm:py-28 lg:py-36"}`}>
-        <div className="grid items-center gap-12 lg:grid-cols-5">
+      <div className={`container-section relative ${compact ? "py-12 sm:py-16 md:py-20" : "py-16 sm:py-20 md:py-28 lg:py-36"}`}>
+        <div className="grid items-center gap-8 md:gap-12 lg:grid-cols-5">
           {/* Text content */}
           <div className={compact ? "" : "lg:col-span-3"}>
-            <div className="inline-flex items-center rounded-full border border-accent-400/30 bg-accent-500/10 px-4 py-1.5">
+            <div className="inline-flex items-center rounded-full border border-accent-400/30 bg-accent-500/10 px-3 py-1 sm:px-4 sm:py-1.5">
               <div className="mr-2 h-1.5 w-1.5 rounded-full bg-accent-400 motion-safe:animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-wider text-accent-300">
                 {subtitle}
               </span>
             </div>
-            <h1 className="mt-6 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[3.25rem] lg:leading-[1.15] text-balance">
+            <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:mt-6 sm:text-3xl md:text-4xl lg:text-[3.25rem] lg:leading-[1.15] text-balance">
               {title}
             </h1>
             {description && (
-              <p className="mt-6 text-base leading-7 text-blue-100 sm:text-lg sm:leading-8 max-w-xl">
+              <p className="mt-4 text-sm leading-6 text-blue-100 sm:mt-6 sm:text-base sm:leading-7 md:text-lg md:leading-8 max-w-xl">
                 {description}
               </p>
             )}
             {(primaryCta || secondaryCta) && (
-              <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+              <div className="mt-8 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:items-center">
                 {primaryCta && (
                   <Link href={primaryCta.href} className="btn-primary w-full sm:w-auto">
                     {primaryCta.label}

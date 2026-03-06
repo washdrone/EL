@@ -34,8 +34,8 @@ export default function KontaktPage() {
 
       <section className="section-padding bg-white">
         <div className="container-section">
-          <div className="mx-auto max-w-4xl">
-            <div className="grid gap-12 lg:grid-cols-5">
+          <div className="mx-auto max-w-5xl">
+            <div className="grid gap-8 md:gap-10 lg:grid-cols-5 lg:gap-12">
               {/* Left: Info */}
               <div className="lg:col-span-2">
                 <h1 className="heading-1">Boka genomgång eller begär offert</h1>
@@ -44,7 +44,7 @@ export default function KontaktPage() {
                   anpassad efter ert behov.
                 </p>
 
-                <div className="mt-8 space-y-4">
+                <div className="mt-6 space-y-4 sm:mt-8">
                   <div>
                     <h2 className="eyebrow">
                       Kontaktuppgifter

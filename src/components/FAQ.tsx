@@ -24,7 +24,7 @@ export default function FAQ({
           {subheading && <p className="body-text mt-5">{subheading}</p>}
         </div>
 
-        <div className="mx-auto mt-14 max-w-3xl">
+        <div className="mx-auto mt-10 max-w-3xl sm:mt-14">
           {items.map((item, index) => (
             <div
               key={index}

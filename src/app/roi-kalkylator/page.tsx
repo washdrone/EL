@@ -26,7 +26,7 @@ export default function ROIKalkylatorPage() {
         breadcrumbs={[{ name: "ROI-kalkylator" }]}
       />
 
-      <section className="gradient-hero py-16 sm:py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Kostnadskalkylator</p>
           <h1 className="heading-1 mt-3 text-white">

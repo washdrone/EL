@@ -92,9 +92,9 @@ export default function VindkraftinspektionPage() {
               komponenter som är mest utsatta för slitage och skador.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-10 sm:mt-12 grid max-w-4xl gap-5 sm:gap-6 md:gap-8 md:grid-cols-2">
             {inspectionItems.map((item) => (
-              <div key={item.title} className="card p-6">
+              <div key={item.title} className="card">
                 <h3 className="text-base font-semibold text-surface-900">
                   {item.title}
                 </h3>
@@ -111,7 +111,7 @@ export default function VindkraftinspektionPage() {
           <div className="section-intro">
             <h2 className="heading-2">Så fungerar det</h2>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-3">
+          <div className="mx-auto mt-10 sm:mt-12 grid max-w-4xl gap-5 sm:gap-6 md:gap-8 md:grid-cols-3">
             {steps.map((item) => (
               <div key={item.step} className="text-center">
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-lg font-bold text-brand-600">

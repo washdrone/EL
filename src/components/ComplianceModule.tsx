@@ -34,18 +34,18 @@ export default function ComplianceModule() {
           <h2 className="heading-2 text-white">
             Säkerhet, kvalitet och regelefterlevnad
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-blue-100 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-blue-100 sm:mt-5 sm:text-base sm:leading-7 md:text-lg md:leading-8">
             Vi arbetar strukturerat med HSE, standardisering och datasäkerhet
             för att möta kraven från elnätsbolag och upphandlande
             organisationer.
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-5 md:grid-cols-2">
           {complianceItems.map((item) => (
             <div
               key={item.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-colors hover:bg-white/10"
+              className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm transition-colors hover:bg-white/10 sm:p-6"
             >
               <h3 className="text-base font-semibold text-white">
                 {item.title}

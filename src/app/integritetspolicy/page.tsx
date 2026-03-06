@@ -23,7 +23,7 @@ export default function IntegritetspolicyPage() {
               Senast uppdaterad: 2025-01-01
             </p>
 
-            <div className="mt-8 space-y-8 text-base leading-7 text-surface-600">
+            <div className="mt-6 space-y-6 text-sm leading-6 text-surface-600 sm:mt-8 sm:space-y-8 sm:text-base sm:leading-7">
               <section>
                 <h2 className="heading-3">Personuppgiftsansvarig</h2>
                 <p className="mt-2">
@@ -128,7 +128,7 @@ export default function IntegritetspolicyPage() {
               </section>
             </div>
 
-            <div className="mt-12">
+            <div className="mt-8 sm:mt-12">
               <Link
                 href="/tjanster/kraftledningsinspektion"
                 className="text-sm font-medium text-brand-600 hover:text-brand-700"

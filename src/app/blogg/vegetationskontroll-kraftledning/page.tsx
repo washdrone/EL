@@ -29,7 +29,7 @@ export default function VegetationskontrollBloggPage() {
         ]}
       />
 
-      <section className="gradient-hero py-16 sm:py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Blogg</p>
           <h1 className="heading-1 mt-3 text-white">
@@ -64,14 +64,14 @@ export default function VegetationskontrollBloggPage() {
             vegetationskontroll är en central del av detta arbete.
           </p>
 
-          <h2 className="heading-2 mt-12">Vad innebär ledningsgata?</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Vad innebär ledningsgata?</h2>
           <p className="body-text mt-4">
             Ledningsgatan är det markområde där kraftledningen löper och
             där vegetation ska hållas på säkert avstånd. Bredden beror på
             spänningsnivå och ledningstyp.
           </p>
 
-          <h2 className="heading-2 mt-12">Drönare och LiDAR för vegetationskontroll</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Drönare och LiDAR för vegetationskontroll</h2>
           <p className="body-text mt-4">
             LiDAR (Light Detection and Ranging) monterat på drönare mäter
             avståndet från vegetation till ledning med centimeternoggrannhet.
@@ -85,14 +85,14 @@ export default function VegetationskontrollBloggPage() {
             förvaltningssystem.
           </p>
 
-          <h2 className="heading-2 mt-12">Prioritering och planering</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Prioritering och planering</h2>
           <p className="body-text mt-4">
             Med data från LiDAR-kartläggningen kan elnätsägare prioritera
             röjningsinsatser baserat på faktisk risk snarare än generella
             tidsintervall — de mest kritiska områdena åtgärdas först.
           </p>
 
-          <div className="mt-12 rounded-xl border border-brand-200 bg-brand-50 p-6">
+          <div className="mt-10 sm:mt-12 rounded-xl border border-brand-200 bg-brand-50 p-5 sm:p-6">
             <h3 className="text-base font-semibold text-brand-800">Vegetationskontroll med GridDrone</h3>
             <p className="mt-2 text-sm text-brand-700">
               Läs mer om vår LiDAR-baserade vegetationskontroll för kraftledningsgator.

@@ -29,7 +29,7 @@ export default function JarnvagsinspektionGuidePage() {
         ]}
       />
 
-      <section className="gradient-hero py-16 sm:py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Blogg</p>
           <h1 className="heading-1 mt-3 text-white">
@@ -65,7 +65,7 @@ export default function JarnvagsinspektionGuidePage() {
             kontaktledningar.
           </p>
 
-          <h2 className="heading-2 mt-12">Drönare som inspektionsverktyg</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Drönare som inspektionsverktyg</h2>
           <p className="body-text mt-4">
             Drönare flyger längs spåret och dokumenterar
             kontaktledningssystemets komponenter med högupplöst kamera.
@@ -73,7 +73,7 @@ export default function JarnvagsinspektionGuidePage() {
             typiskt nattetid eller under planerade underhållsfönster.
           </p>
 
-          <h2 className="heading-2 mt-12">Vad kan inspekteras?</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Vad kan inspekteras?</h2>
           <ul className="mt-4 space-y-2">
             {[
               "Kontakttråd — slitage, höjdavvikelser och mekaniska skador",
@@ -89,14 +89,14 @@ export default function JarnvagsinspektionGuidePage() {
             ))}
           </ul>
 
-          <h2 className="heading-2 mt-12">Säkerhet och samordning</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Säkerhet och samordning</h2>
           <p className="body-text mt-4">
             Drönarinspektion av järnväg kräver noggrann samordning med
             trafikledningen. Flygning sker under trafikfria tidsfönster
             och med säkerhetsavstånd till spänningssatta komponenter.
           </p>
 
-          <h2 className="heading-2 mt-12">Fördelar</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Fördelar</h2>
           <p className="body-text mt-4">
             De viktigaste fördelarna med drönarbaserad järnvägsinspektion:
           </p>
@@ -114,7 +114,7 @@ export default function JarnvagsinspektionGuidePage() {
             ))}
           </ul>
 
-          <div className="mt-12 rounded-xl border border-brand-200 bg-brand-50 p-6">
+          <div className="mt-10 sm:mt-12 rounded-xl border border-brand-200 bg-brand-50 p-5 sm:p-6">
             <h3 className="text-base font-semibold text-brand-800">Järnvägsinspektion med GridDrone</h3>
             <p className="mt-2 text-sm text-brand-700">
               Läs mer om vår tjänst för inspektion av järnvägskontaktledningar.

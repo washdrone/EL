@@ -63,9 +63,9 @@ export default function CertifieringarPage() {
       <section className="section-padding bg-white">
         <div className="container-section">
           <div className="mx-auto max-w-5xl">
-            <div className="grid gap-8 sm:grid-cols-2">
+            <div className="grid gap-5 sm:gap-6 md:grid-cols-2 md:gap-8">
               {certifications.map((cert) => (
-                <div key={cert.title} className="card p-6">
+                <div key={cert.title} className="card">
                   <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50">
                     <svg
                       className="h-6 w-6 text-brand-600"
@@ -97,7 +97,7 @@ export default function CertifieringarPage() {
               ))}
             </div>
 
-            <div className="mt-12 rounded-2xl border border-surface-200 bg-surface-50 p-6 text-center">
+            <div className="mt-10 rounded-2xl border border-surface-200 bg-surface-50 p-5 text-center sm:mt-12 sm:p-6">
               <p className="text-sm leading-relaxed text-surface-500">
                 Alla certifieringar och tillstånd verifieras löpande. Kontakta
                 oss för aktuella intyg.

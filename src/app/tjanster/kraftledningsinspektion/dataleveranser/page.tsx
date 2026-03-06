@@ -118,7 +118,7 @@ export default function DataleveranserPage() {
         <div className="container-section">
           <div className="mx-auto max-w-3xl">
             <h2 className="heading-2">Relaterat</h2>
-            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+            <div className="mt-6 grid gap-4 md:grid-cols-3">
               <Link
                 href="/tjanster/kraftledningsinspektion/metodik-kvalitet"
                 className="nav-card group"

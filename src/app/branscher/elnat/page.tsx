@@ -58,7 +58,7 @@ export default function ElnatPage() {
             rapportering och uppföljning. Vår process är utformad för att
             leverera data som passar direkt i era befintliga system.
           </p>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2">
+          <div className="mt-10 sm:mt-12 grid gap-5 sm:gap-6 md:gap-8 md:grid-cols-2">
             {[
               {
                 title: "Årlig översiktsinspektion",
@@ -77,7 +77,7 @@ export default function ElnatPage() {
                 desc: "Kartlager i Shapefile, GeoJSON eller KML. Redo att importera direkt i ert nätförvaltningssystem.",
               },
             ].map((item) => (
-              <div key={item.title} className="card p-6">
+              <div key={item.title} className="card">
                 <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
                 <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
               </div>

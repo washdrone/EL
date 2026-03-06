@@ -137,9 +137,9 @@ export default function OmOssPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-5xl gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-10 grid max-w-5xl gap-5 sm:mt-12 sm:gap-6 md:grid-cols-2 md:gap-8">
             {reasons.map((item) => (
-              <div key={item.title} className="card p-6">
+              <div key={item.title} className="card">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-50">
                   <svg
                     className="h-6 w-6 text-brand-600"

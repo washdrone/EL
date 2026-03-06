@@ -49,7 +49,7 @@ export default function StormresponsPage() {
       <JsonLd type="Service" servicePath="/stormrespons" />
 
       {/* Hero with prominent contact */}
-      <section className="gradient-hero py-16 sm:py-24">
+      <section className="gradient-hero py-12 sm:py-16 md:py-24">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Akuttjänst</p>
           <h1 className="heading-1 mt-3 text-white">
@@ -60,10 +60,10 @@ export default function StormresponsPage() {
             Prioriterad skadeöversikt som beslutsunderlag för reparationsinsatser.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="inline-flex items-center gap-3 rounded-2xl bg-white px-8 py-4 text-lg font-bold text-brand-700 shadow-elevated transition-transform hover:scale-105"
+              className="inline-flex items-center gap-2.5 rounded-2xl bg-white px-6 py-3 text-base font-bold text-brand-700 shadow-elevated transition-transform hover:scale-105 sm:gap-3 sm:px-8 sm:py-4 sm:text-lg"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
@@ -91,7 +91,7 @@ export default function StormresponsPage() {
           <div className="section-intro">
             <h2 className="heading-2">Vad GridDrone levererar vid storm</h2>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 md:gap-6">
             {[
               {
                 title: "Snabb mobilisering",
@@ -110,7 +110,7 @@ export default function StormresponsPage() {
                 desc: "Skadeöversikt som beslutsunderlag för era reparationsteam, levererad så snart inspektionen är klar.",
               },
             ].map((item) => (
-              <div key={item.title} className="card p-6">
+              <div key={item.title} className="card">
                 <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
                 <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
               </div>
@@ -129,7 +129,7 @@ export default function StormresponsPage() {
               oss för att diskutera ett beredskapsavtal eller underhållsabonnemang
               som inkluderar prioriterad stormrespons.
             </p>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <div className="mt-6 flex flex-col items-center gap-3 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4">
               <Link href="/kontakt" className="btn-primary">
                 Kontakta oss
               </Link>

@@ -40,16 +40,16 @@ export default function ProofBar() {
   return (
     <section className="border-b border-surface-100 bg-white">
       {/* Capabilities row */}
-      <div className="container-section py-10">
-        <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:gap-8">
+      <div className="container-section py-8 sm:py-10">
+        <div className="grid grid-cols-2 gap-5 sm:gap-6 md:grid-cols-4 md:gap-8">
           {capabilities.map((cap) => (
             <div key={cap.title} className="flex flex-col items-center text-center">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-50">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-50 sm:h-11 sm:w-11">
                 <svg className="h-5 w-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   {cap.icon}
                 </svg>
               </div>
-              <p className="mt-3 text-sm font-semibold text-surface-900">
+              <p className="mt-2.5 text-sm font-semibold text-surface-900 sm:mt-3">
                 {cap.title}
               </p>
               <p className="mt-1 text-xs text-surface-500">
@@ -62,8 +62,8 @@ export default function ProofBar() {
 
       {/* Trust badges */}
       <div className="border-t border-surface-100 bg-surface-50/50">
-        <div className="container-section py-5">
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        <div className="container-section py-4 sm:py-5">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2.5 sm:gap-x-8 sm:gap-y-3">
             {trustBadges.map((badge) => (
               <div key={badge} className="flex items-center gap-2">
                 <svg className="h-4 w-4 text-accent-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

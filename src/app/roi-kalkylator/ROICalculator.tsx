@@ -31,7 +31,7 @@ export default function ROICalculator() {
     <section className="section-padding bg-white">
       <div className="container-section">
         <div className="mx-auto max-w-4xl">
-          <div className="grid gap-10 lg:grid-cols-2">
+          <div className="grid gap-8 md:gap-10 lg:grid-cols-2">
             {/* Input */}
             <div>
               <h2 className="heading-2">Dina parametrar</h2>

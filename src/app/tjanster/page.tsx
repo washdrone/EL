@@ -49,12 +49,12 @@ export default function TjansterPage() {
               efter era behov och levereras med strukturerade rapporter.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
             {SERVICE_ITEMS.map((service) => (
               <Link
                 key={service.href}
                 href={service.href}
-                className="card group p-6 transition-shadow hover:shadow-md"
+                className="card group transition-shadow hover:shadow-md"
               >
                 <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-600">
                   {service.label}

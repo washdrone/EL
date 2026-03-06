@@ -29,7 +29,7 @@ export default function TermograferingElnatPage() {
         ]}
       />
 
-      <section className="gradient-hero py-16 sm:py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Blogg</p>
           <h1 className="heading-1 mt-3 text-white">
@@ -64,7 +64,7 @@ export default function TermograferingElnatPage() {
             skarvar, klämmor och transformatorer.
           </p>
 
-          <h2 className="heading-2 mt-12">Vad kan termografering hitta?</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Vad kan termografering hitta?</h2>
           <p className="body-text mt-4">
             Temperaturavvikelser i elnätskomponenter kan indikera:
           </p>
@@ -83,7 +83,7 @@ export default function TermograferingElnatPage() {
             ))}
           </ul>
 
-          <h2 className="heading-2 mt-12">Drönare vs markbaserad termografi</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Drönare vs markbaserad termografi</h2>
           <p className="body-text mt-4">
             Traditionell termografi utförs från marken med handhållen
             värmekamera. Med drönare kan inspektionen utföras snabbare,
@@ -91,14 +91,14 @@ export default function TermograferingElnatPage() {
             större områden per session.
           </p>
 
-          <h2 className="heading-2 mt-12">Hur ofta bör termografering utföras?</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Hur ofta bör termografering utföras?</h2>
           <p className="body-text mt-4">
             Rekommendationen varierar beroende på nätets ålder, belastning
             och kritikalitet. Många elnätsbolag väljer att kombinera
             termografering med den årliga visuella inspektionen.
           </p>
 
-          <div className="mt-12 rounded-xl border border-brand-200 bg-brand-50 p-6">
+          <div className="mt-10 sm:mt-12 rounded-xl border border-brand-200 bg-brand-50 p-5 sm:p-6">
             <h3 className="text-base font-semibold text-brand-800">Termografering med GridDrone</h3>
             <p className="mt-2 text-sm text-brand-700">
               Läs mer om vår termograferingstjänst för kraftledningar och elnät.

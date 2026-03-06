@@ -37,7 +37,7 @@ export default function DeliverablesModule() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:mt-14 sm:gap-5 md:grid-cols-2">
           {deliverables.map((item, i) => (
             <div key={item.title} className="card group">
               <div className="flex items-start gap-4">

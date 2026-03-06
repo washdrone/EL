@@ -60,7 +60,7 @@ export default function DalarnaPage() {
             inspektionsmetod efter terräng och krav.
           </p>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 sm:mt-12 grid gap-5 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "Kraftledningsinspektion",
@@ -81,7 +81,7 @@ export default function DalarnaPage() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md"
+                className="card group transition-all hover:border-brand-200 hover:shadow-md"
               >
                 <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">
                   {item.title}

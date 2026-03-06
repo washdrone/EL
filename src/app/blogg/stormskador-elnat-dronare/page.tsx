@@ -29,7 +29,7 @@ export default function StormskadorBloggPage() {
         ]}
       />
 
-      <section className="gradient-hero py-16 sm:py-20">
+      <section className="gradient-hero py-12 sm:py-16 md:py-20">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Blogg</p>
           <h1 className="heading-1 mt-3 text-white">
@@ -65,7 +65,7 @@ export default function StormskadorBloggPage() {
             terrängen — ofta under svåra förhållanden.
           </p>
 
-          <h2 className="heading-2 mt-12">Drönare som kartläggningsverktyg</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Drönare som kartläggningsverktyg</h2>
           <p className="body-text mt-4">
             Drönare erbjuder en snabb och säker metod för
             stormskadekartläggning. De kan inspektera mil av ledning på
@@ -74,7 +74,7 @@ export default function StormskadorBloggPage() {
             träd.
           </p>
 
-          <h2 className="heading-2 mt-12">Process vid stormskadeinspektion</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Process vid stormskadeinspektion</h2>
           <p className="body-text mt-4">
             En typisk stormskadeinspektion med drönare följer dessa steg:
           </p>
@@ -96,7 +96,7 @@ export default function StormskadorBloggPage() {
             ))}
           </ol>
 
-          <h2 className="heading-2 mt-12">Fördelar med drönare vid stormskador</h2>
+          <h2 className="heading-2 mt-10 sm:mt-12">Fördelar med drönare vid stormskador</h2>
           <p className="body-text mt-4">
             De viktigaste fördelarna med drönarbaserad stormskadekartläggning:
           </p>
@@ -114,7 +114,7 @@ export default function StormskadorBloggPage() {
             ))}
           </ul>
 
-          <div className="mt-12 rounded-xl border border-brand-200 bg-brand-50 p-6">
+          <div className="mt-10 sm:mt-12 rounded-xl border border-brand-200 bg-brand-50 p-5 sm:p-6">
             <h3 className="text-base font-semibold text-brand-800">GridDrone stormrespons</h3>
             <p className="mt-2 text-sm text-brand-700">
               Kontakta oss för att diskutera beredskapsavtal eller akuta

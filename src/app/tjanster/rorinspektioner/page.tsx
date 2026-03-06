@@ -102,9 +102,9 @@ export default function RorinspektionerPage() {
               inspektion för en komplett bild av ledningens tillstånd.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-10 sm:mt-12 grid max-w-4xl gap-5 sm:gap-6 md:gap-8 md:grid-cols-2">
             {inspectionTypes.map((item) => (
-              <div key={item.title} className="card p-6">
+              <div key={item.title} className="card">
                 <h3 className="text-base font-semibold text-surface-900">
                   {item.title}
                 </h3>
@@ -121,7 +121,7 @@ export default function RorinspektionerPage() {
           <div className="section-intro">
             <h2 className="heading-2">Fördelar med drönarbaserad rörledningsinspektion</h2>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-3">
+          <div className="mx-auto mt-10 sm:mt-12 grid max-w-4xl gap-5 sm:gap-6 md:gap-8 md:grid-cols-3">
             {[
               {
                 title: "Svårtillgänglig terräng",
@@ -153,7 +153,7 @@ export default function RorinspektionerPage() {
           <div className="section-intro">
             <h2 className="heading-2">Relaterade tjänster</h2>
           </div>
-          <div className="mx-auto mt-8 grid max-w-4xl gap-6 sm:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-4xl gap-5 sm:gap-6 md:grid-cols-3">
             {[
               {
                 title: "Termografering",
@@ -174,7 +174,7 @@ export default function RorinspektionerPage() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md"
+                className="card group transition-all hover:border-brand-200 hover:shadow-md"
               >
                 <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">
                   {item.title}

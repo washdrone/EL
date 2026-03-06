@@ -80,12 +80,12 @@ export default function BloggPage() {
             <h2 className="heading-2">Artiklar & guider</h2>
           </div>
 
-          <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-10 grid max-w-5xl gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
             {articles.map((article) => (
               <Link
                 key={article.href}
                 href={article.href}
-                className="card group p-6 transition-shadow hover:shadow-md"
+                className="card group transition-shadow hover:shadow-md"
               >
                 <span className="inline-block rounded-lg bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">
                   {article.category}

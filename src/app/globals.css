@@ -22,7 +22,7 @@ body {
   }
 
   .container-section {
-    @apply mx-auto max-w-6xl px-5 sm:px-8 lg:px-10;
+    @apply mx-auto max-w-6xl px-5 sm:px-6 md:px-8 lg:px-10;
   }
 
   .btn-primary {
@@ -38,15 +38,15 @@ body {
   }
 
   .section-padding {
-    @apply py-16 sm:py-20 lg:py-24;
+    @apply py-12 sm:py-16 md:py-20 lg:py-24;
   }
 
   .heading-1 {
-    @apply text-3xl font-bold tracking-tight text-surface-900 sm:text-4xl lg:text-5xl;
+    @apply text-2xl font-bold tracking-tight text-surface-900 sm:text-3xl md:text-4xl lg:text-5xl;
   }
 
   .heading-2 {
-    @apply text-2xl font-bold tracking-tight text-surface-900 sm:text-3xl lg:text-4xl;
+    @apply text-xl font-bold tracking-tight text-surface-900 sm:text-2xl md:text-3xl lg:text-4xl;
   }
 
   .heading-3 {
@@ -54,11 +54,11 @@ body {
   }
 
   .body-text {
-    @apply text-base leading-7 text-surface-600 sm:text-lg sm:leading-8;
+    @apply text-sm leading-6 text-surface-600 sm:text-base sm:leading-7 md:text-lg md:leading-8;
   }
 
   .card {
-    @apply rounded-2xl border border-surface-200 bg-white p-5 shadow-soft transition-all duration-200 hover:shadow-card sm:p-6;
+    @apply rounded-2xl border border-surface-200 bg-white p-4 shadow-soft transition-all duration-200 hover:shadow-card sm:p-5 md:p-6;
   }
 
   .section-intro {
@@ -70,7 +70,7 @@ body {
   }
 
   .surface-panel {
-    @apply rounded-2xl border border-surface-200 bg-surface-50 p-6 sm:p-7;
+    @apply rounded-2xl border border-surface-200 bg-surface-50 p-5 sm:p-6 md:p-7;
   }
 
   .nav-card {

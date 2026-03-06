@@ -20,7 +20,7 @@ export default function ProgramCards() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 sm:mt-14 sm:gap-6 lg:grid-cols-3">
           {inspectionPrograms.map((program, i) => (
             <article
               key={program.id}
@@ -93,13 +93,13 @@ export default function ProgramCards() {
         </div>
 
         {/* Optional addons */}
-        <div className="mt-14 rounded-2xl border border-dashed border-surface-200 bg-surface-50 p-8">
+        <div className="mt-10 rounded-2xl border border-dashed border-surface-200 bg-surface-50 p-5 sm:mt-14 sm:p-8">
           <h3 className="text-sm font-semibold text-surface-900">
             Valbara tillägg
           </h3>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <div className="mt-4 grid gap-4 sm:mt-5 sm:grid-cols-2">
             {optionalAddons.map((addon) => (
-              <div key={addon.id} className="rounded-xl bg-white p-5 shadow-soft">
+              <div key={addon.id} className="rounded-xl bg-white p-4 shadow-soft sm:p-5">
                 <h4 className="text-sm font-semibold text-surface-900">
                   {addon.title}
                 </h4>

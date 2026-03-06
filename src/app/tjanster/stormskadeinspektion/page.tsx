@@ -105,9 +105,9 @@ export default function StormskadeinspektionPage() {
               mobiliserar vi snabbt för att kartlägga skador systematiskt.
             </p>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2">
+          <div className="mx-auto mt-10 sm:mt-12 grid max-w-4xl gap-5 sm:gap-6 md:gap-8 md:grid-cols-2">
             {processSteps.map((item) => (
-              <div key={item.step} className="card p-6">
+              <div key={item.step} className="card">
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-sm font-bold text-brand-600">
                   {item.step}
                 </div>
@@ -127,7 +127,7 @@ export default function StormskadeinspektionPage() {
           <div className="section-intro">
             <h2 className="heading-2">Varför drönare vid stormskador?</h2>
           </div>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-3">
+          <div className="mx-auto mt-10 sm:mt-12 grid max-w-4xl gap-5 sm:gap-6 md:gap-8 md:grid-cols-3">
             {[
               {
                 title: "Snabb överblick",
@@ -159,7 +159,7 @@ export default function StormskadeinspektionPage() {
           <div className="section-intro">
             <h2 className="heading-2">Vem anlitar stormskadeinspektion?</h2>
           </div>
-          <div className="mx-auto mt-8 grid max-w-3xl gap-4 sm:grid-cols-2">
+          <div className="mx-auto mt-8 grid max-w-3xl gap-4 md:grid-cols-2">
             {[
               "Elnätsbolag",
               "Kommuner",
@@ -181,7 +181,7 @@ export default function StormskadeinspektionPage() {
           <div className="section-intro">
             <h2 className="heading-2">Relaterade tjänster</h2>
           </div>
-          <div className="mx-auto mt-8 grid max-w-4xl gap-6 sm:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-4xl gap-5 sm:gap-6 md:grid-cols-3">
             {[
               {
                 title: "Kraftledningsinspektion",
@@ -202,7 +202,7 @@ export default function StormskadeinspektionPage() {
               <Link
                 key={item.title}
                 href={item.href}
-                className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md"
+                className="card group transition-all hover:border-brand-200 hover:shadow-md"
               >
                 <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">
                   {item.title}

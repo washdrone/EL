@@ -4,10 +4,10 @@ import { COMPANY_NAME, CONTACT_EMAIL, SERVICE_ITEMS, BRANCH_ITEMS } from "@/lib/
 export default function Footer() {
   return (
     <footer className="border-t border-surface-100 bg-surface-50">
-      <div className="container-section py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+      <div className="container-section py-12 sm:py-16">
+        <div className="grid gap-10 grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {/* Company */}
-          <div>
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <div className="flex items-center gap-2.5">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg gradient-hero">
                 <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -19,7 +19,7 @@ export default function Footer() {
                 {COMPANY_NAME}
               </span>
             </div>
-            <p className="mt-4 text-sm leading-6 text-surface-500">
+            <p className="mt-4 max-w-xs text-sm leading-6 text-surface-500">
               Professionell drönarinspektion av kraftledningar, elnät och
               energiinfrastruktur.
             </p>
@@ -154,7 +154,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-surface-200 pt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
+        <div className="mt-10 border-t border-surface-200 pt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-surface-500">
             &copy; {new Date().getFullYear()} {COMPANY_NAME}. Alla rättigheter förbehållna.
           </p>
