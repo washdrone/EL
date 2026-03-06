@@ -23,7 +23,7 @@ export function CaseCard({ data }: CaseCardProps) {
           <h3 className="text-base font-semibold text-surface-900">
             {data.title}
           </h3>
-          <p className="mt-1 text-sm text-surface-400">
+          <p className="mt-1 text-sm text-surface-500">
             {data.client} · {data.scope}
           </p>
           <p className="mt-3 text-sm leading-6 text-surface-500">

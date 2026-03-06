@@ -7,7 +7,6 @@ interface FormData {
   company: string;
   contact: string;
   email: string;
-  phone: string;
   region: string;
   inspectionType: string;
   scope: string;
@@ -19,7 +18,6 @@ const initialForm: FormData = {
   company: "",
   contact: "",
   email: "",
-  phone: "",
   region: "",
   inspectionType: "",
   scope: "",
@@ -145,12 +143,6 @@ export default function LeadForm() {
           </label>
           <input type="email" id="email" name="email" required value={form.email} onChange={handleChange} className={inputClass} placeholder="namn@foretag.se" />
         </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-surface-700">
-            Telefon
-          </label>
-          <input type="tel" id="phone" name="phone" value={form.phone} onChange={handleChange} className={inputClass} placeholder="+46 70 000 00 00" />
-        </div>
       </div>
 
       <div>
@@ -203,7 +195,7 @@ export default function LeadForm() {
         <textarea id="message" name="message" rows={4} value={form.message} onChange={handleChange} className={inputClass} placeholder="Beskriv ert behov, bifoga gärna länk till GIS-underlag eller specifikation." />
       </div>
 
-      <p className="text-xs text-surface-400">
+      <p className="text-xs text-surface-500">
         Genom att skicka detta formulär godkänner ni att vi behandlar era
         uppgifter för att hantera er förfrågan.{" "}
         Vi sparar era uppgifter i enlighet med vår{" "}

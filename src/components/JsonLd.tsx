@@ -1,5 +1,5 @@
 import { SITE_URL, SITE_NAME } from "@/lib/metadata";
-import { COMPANY_NAME, CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/constants";
+import { COMPANY_NAME, CONTACT_EMAIL } from "@/lib/constants";
 import type { BreadcrumbItem } from "@/components/Breadcrumbs";
 import type { FAQItem } from "@/data/faq";
 
@@ -37,7 +37,6 @@ export default function JsonLd({
         url: SITE_URL,
         logo: `${SITE_URL}/opengraph-image`,
         email: CONTACT_EMAIL,
-        telephone: CONTACT_PHONE,
         description: `${COMPANY_NAME} – professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i Sverige.`,
         areaServed: {
           "@type": "Country",
@@ -57,7 +56,6 @@ export default function JsonLd({
             "@type": "ContactPoint",
             contactType: "sales",
             email: CONTACT_EMAIL,
-            telephone: CONTACT_PHONE,
             availableLanguage: ["sv"],
           },
         ],

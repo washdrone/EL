@@ -89,7 +89,7 @@ export default function CertifieringarPage() {
                     {cert.description}
                   </p>
                   {cert.title.includes("[VERIFIERAS]") && (
-                    <p className="mt-3 text-xs font-medium text-surface-400">
+                    <p className="mt-3 text-xs font-medium text-surface-500">
                       (Kontakta oss för detaljer)
                     </p>
                   )}

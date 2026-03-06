@@ -57,7 +57,7 @@ export default function CasePage() {
               ))
             ) : (
               <div className="rounded-2xl border border-dashed border-surface-300 bg-surface-50 p-8 text-center">
-                <p className="text-sm text-surface-400">
+                <p className="text-sm text-surface-500">
                   Referensuppdrag publiceras här när de är verifierade. Kontakta oss för
                   referensuppgifter anpassade efter er upphandling.
                 </p>

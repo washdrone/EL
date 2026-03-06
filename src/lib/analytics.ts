@@ -19,7 +19,6 @@ export function trackEvent(
 export const events = {
   formStart: () => trackEvent("form_start", { form_name: "lead_capture" }),
   formSubmit: () => trackEvent("form_submit", { form_name: "lead_capture" }),
-  clickCall: () => trackEvent("click_call"),
   clickEmail: () => trackEvent("click_email"),
   clickBook: () => trackEvent("click_book"),
   scrollDepth: (percent: number) =>

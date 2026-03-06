@@ -5,7 +5,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import FAQ from "@/components/FAQ";
 import CTABand from "@/components/CTABand";
-import { CONTACT_PHONE } from "@/lib/constants";
+import { CONTACT_EMAIL } from "@/lib/constants";
 import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
@@ -48,7 +48,7 @@ export default function StormresponsPage() {
       />
       <JsonLd type="Service" servicePath="/stormrespons" />
 
-      {/* Hero with prominent phone number */}
+      {/* Hero with prominent contact */}
       <section className="gradient-hero py-16 sm:py-24">
         <div className="container-section text-center">
           <p className="eyebrow text-brand-200">Akuttjänst</p>
@@ -62,13 +62,13 @@ export default function StormresponsPage() {
 
           <div className="mt-10">
             <a
-              href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}
+              href={`mailto:${CONTACT_EMAIL}`}
               className="inline-flex items-center gap-3 rounded-2xl bg-white px-8 py-4 text-lg font-bold text-brand-700 shadow-elevated transition-transform hover:scale-105"
             >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
               </svg>
-              {CONTACT_PHONE}
+              {CONTACT_EMAIL}
             </a>
           </div>
 

@@ -1,5 +1,4 @@
-export const CONTACT_EMAIL = "kontakt@example.com";
-export const CONTACT_PHONE = "+46 10 000 00 00";
+export const CONTACT_EMAIL = "info@griddrone.se";
 export const COMPANY_NAME = "GridDrone";
 
 export const NAV_ITEMS = [

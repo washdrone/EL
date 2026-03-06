@@ -34,7 +34,7 @@ export default function ComplianceModule() {
           <h2 className="heading-2 text-white">
             Säkerhet, kvalitet och regelefterlevnad
           </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/65 sm:text-lg sm:leading-8">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-blue-100 sm:text-lg sm:leading-8">
             Vi arbetar strukturerat med HSE, standardisering och datasäkerhet
             för att möta kraven från elnätsbolag och upphandlande
             organisationer.
@@ -50,7 +50,7 @@ export default function ComplianceModule() {
               <h3 className="text-base font-semibold text-white">
                 {item.title}
               </h3>
-              <p className="mt-3 text-sm leading-6 text-white/60">
+              <p className="mt-3 text-sm leading-6 text-blue-100">
                 {item.description}
               </p>
             </div>
@@ -60,7 +60,7 @@ export default function ComplianceModule() {
         <div className="mt-10 text-center">
           <Link
             href="/tjanster/kraftledningsinspektion/datasakerhet"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-white/70 transition-colors hover:text-white"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-100 transition-colors hover:text-white"
           >
             Läs mer om vår datasäkerhetspolicy
             <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">

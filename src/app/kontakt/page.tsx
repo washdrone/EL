@@ -3,7 +3,7 @@ import { createPageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import LeadForm from "@/components/LeadForm";
 import JsonLd from "@/components/JsonLd";
-import { CONTACT_EMAIL, CONTACT_PHONE, COMPANY_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, COMPANY_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Kontakt och offert – drönareinspektion elnät",
@@ -59,12 +59,6 @@ export default function KontaktPage() {
                       >
                         {CONTACT_EMAIL}
                       </a>
-                      <a
-                        href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}
-                        className="block text-base text-brand-600 hover:text-brand-700"
-                      >
-                        {CONTACT_PHONE}
-                      </a>
                     </div>
                   </div>
 
@@ -100,7 +94,7 @@ export default function KontaktPage() {
                   <h2 className="text-lg font-semibold text-surface-900">
                     Skicka förfrågan
                   </h2>
-                  <p className="mt-1 text-sm text-surface-400">
+                  <p className="mt-1 text-sm text-surface-500">
                     Obligatoriska fält markerade med *
                   </p>
                   <div className="mt-6">
