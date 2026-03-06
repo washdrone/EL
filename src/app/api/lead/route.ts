@@ -4,7 +4,6 @@ interface LeadData {
   company: string;
   contact: string;
   email: string;
-  phone?: string;
   region?: string;
   inspectionType?: string;
   scope?: string;
@@ -49,13 +48,6 @@ export async function POST(request: NextRequest) {
     console.log(JSON.stringify(body, null, 2));
     console.log("Timestamp:", new Date().toISOString());
     console.log("================");
-
-    // TODO: Integrate with your CRM, email service, or webhook
-    // Examples:
-    // - Send email via SendGrid/Resend
-    // - Post to Slack webhook
-    // - Write to database
-    // - Forward to CRM API
 
     return NextResponse.json(
       { success: true, message: "Förfrågan mottagen." },

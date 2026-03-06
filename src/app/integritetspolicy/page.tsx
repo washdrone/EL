@@ -44,7 +44,7 @@ export default function IntegritetspolicyPage() {
                   <li>Företagsnamn</li>
                   <li>Kontaktpersons namn</li>
                   <li>E-postadress</li>
-                  <li>Telefonnummer (valfritt)</li>
+                  <li>Uppgifter om önskad tidsram</li>
                   <li>Uppgifter om inspektionsbehov (nätområde, typ, omfattning)</li>
                 </ul>
               </section>

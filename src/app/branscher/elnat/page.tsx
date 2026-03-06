@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";

@@ -7,7 +7,6 @@ interface FormData {
   company: string;
   contact: string;
   email: string;
-  phone: string;
   region: string;
   inspectionType: string;
   scope: string;
@@ -19,7 +18,6 @@ const initialForm: FormData = {
   company: "",
   contact: "",
   email: "",
-  phone: "",
   region: "",
   inspectionType: "",
   scope: "",
@@ -144,12 +142,6 @@ export default function LeadForm() {
             E-post <span className="text-red-500">*</span>
           </label>
           <input type="email" id="email" name="email" required value={form.email} onChange={handleChange} className={inputClass} placeholder="namn@foretag.se" />
-        </div>
-        <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-surface-700">
-            Telefon
-          </label>
-          <input type="tel" id="phone" name="phone" value={form.phone} onChange={handleChange} className={inputClass} placeholder="+46 70 000 00 00" />
         </div>
       </div>
 

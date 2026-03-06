@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { COMPANY_NAME, CONTACT_EMAIL, CONTACT_PHONE, SERVICE_ITEMS, BRANCH_ITEMS } from "@/lib/constants";
+import { COMPANY_NAME, CONTACT_EMAIL, SERVICE_ITEMS, BRANCH_ITEMS } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -140,14 +140,6 @@ export default function Footer() {
                   className="text-sm text-surface-600 transition-colors hover:text-brand-600"
                 >
                   {CONTACT_EMAIL}
-                </a>
-              </li>
-              <li>
-                <a
-                  href={`tel:${CONTACT_PHONE.replace(/\s/g, "")}`}
-                  className="text-sm text-surface-600 transition-colors hover:text-brand-600"
-                >
-                  {CONTACT_PHONE}
                 </a>
               </li>
               <li>
