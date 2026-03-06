@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { Inter } from "next/font/google";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import JsonLd from "@/components/JsonLd";
 import CookieConsent from "@/components/CookieConsent";
@@ -13,11 +12,6 @@ import {
   DEFAULT_TWITTER_IMAGE,
 } from "@/lib/metadata";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: {
@@ -69,7 +63,7 @@ export default function RootLayout({
   return (
     <html lang="sv" suppressHydrationWarning>
       <body
-        className={`${inter.className} min-h-screen bg-white font-sans text-surface-900 antialiased`}
+        className="min-h-screen bg-white font-sans text-surface-900 antialiased"
       >
         <a href="#main-content" className="skip-link">
           Hoppa till huvudinnehåll
