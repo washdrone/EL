@@ -7,24 +7,24 @@ export const NAV_ITEMS = [
     href: "/tjanster",
   },
   {
-    label: "Plattform",
-    href: "/plattform",
+    label: "Branscher",
+    href: "/branscher/energibolag",
   },
   {
-    label: "Målgrupper",
-    href: "/malgrupper",
+    label: "Exempelrapport",
+    href: "/exempelrapport",
   },
   {
-    label: "Säkerhet",
-    href: "/sakerhet",
-  },
-  {
-    label: "Case",
-    href: "/case",
+    label: "ROI-kalkylator",
+    href: "/roi-kalkylator",
   },
   {
     label: "Om oss",
     href: "/om-oss",
+  },
+  {
+    label: "Blogg",
+    href: "/blogg",
   },
   {
     label: "Kontakt",
