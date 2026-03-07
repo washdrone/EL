@@ -9,9 +9,9 @@ import CTABand from "@/components/CTABand";
 import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Stormskadeinspektion med Drönare — Snabb Skadeöversikt",
+  title: "Stormskadeinspektion med drönare",
   description:
-    "Akut skadekartläggning av elnät och kraftledningar efter storm. Prioritering av skadelägen för snabbast möjliga återuppbyggnad. Mobilisering inom 24h.",
+    "Akut skadekartläggning av elnät och kraftledningar efter storm. Prioritering av skadelägen för snabbast möjliga återuppbyggnad.",
   path: "/tjanster/stormskadeinspektion",
   keywords: [
     "stormskada elnät inspektion",
@@ -85,7 +85,7 @@ export default function StormskadeinspektionPage() {
         subtitle="Akut stormskadeinspektion"
         description="Akut skadekartläggning av elnät och kraftledningar efter storm, orkan eller exceptionella väderförhållanden. Prioritering av skadelägen för snabbast möjliga återuppbyggnad."
         primaryCta={{ label: "Kontakta oss", href: "/kontakt" }}
-        secondaryCta={{ label: "Stormrespons", href: "/stormrespons" }}
+        secondaryCta={{ label: "Se inspektionsprogram", href: "/tjanster/kraftledningsinspektion/inspektionsprogram" }}
       />
 
       <Breadcrumbs

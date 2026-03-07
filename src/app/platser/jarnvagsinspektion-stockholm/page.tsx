@@ -7,9 +7,9 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Järnvägsinspektion med drönare i Stockholm",
+  title: "Järnvägsinspektion Stockholm | Drönare",
   description:
-    "GridDrone utför drönarinspektion av järnvägskontaktledningar i Stockholmsregionen. Säker inspektion utan trafikstörning. Begär offert.",
+    "Drönarinspektion av järnvägskontaktledningar i Stockholm och Mälardalen. Säker inspektion utan trafikstörning. Begär offert.",
   path: "/platser/jarnvagsinspektion-stockholm",
   keywords: [
     "järnvägsinspektion drönare Stockholm",
@@ -25,7 +25,7 @@ export default function JarnvagsinspektionStockholmPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/kraftledningsinspektion-stockholm" },
+          { name: "Platser", href: "/platser/jarnvagsinspektion-stockholm" },
           { name: "Järnvägsinspektion Stockholm" },
         ]}
       />
@@ -39,7 +39,7 @@ export default function JarnvagsinspektionStockholmPage() {
       <Hero
         title="Järnvägsinspektion med drönare i Stockholm"
         subtitle="Stockholm & Mälardalen"
-        description="Drönarinspektion av kontaktledningssystem i Stockholmsregionen och Mälardalen. Hängare, bärlina, kontakttråd, isolatorer och fästanordningar."
+        description="Drönarinspektion av kontaktledningssystem i Stockholmsregionen och Mälardalen. Hängare, bärlina, kontakttråd, isolatorer och fästanordningar — utan trafikstörning."
         primaryCta={{ label: "Begär offert", href: "/kontakt" }}
         secondaryCta={{ label: "Järnvägsinspektion", href: "/tjanster/jarnvagsinspektion" }}
       />
@@ -56,8 +56,11 @@ export default function JarnvagsinspektionStockholmPage() {
           <h2 className="heading-2">Järnvägsinspektion i Stockholmsregionen</h2>
           <p className="body-text mt-4 max-w-3xl">
             Stockholmsregionen har ett av Sveriges mest trafikerade järnvägsnät
-            med tät tågtrafik och komplext kontaktledningssystem. Drönarinspektion
-            ger en säker och effektiv metod för tillsyn.
+            med tät pendel- och fjärrtågstrafik samt ett komplext
+            kontaktledningssystem. Hög trafikbelastning begränsar möjligheten
+            till banarbeten, vilket gör drönarinspektion till en effektiv metod
+            för tillsyn av kontaktledningar, isolatorer och fästanordningar
+            utan att störa tågtrafiken.
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -103,6 +106,38 @@ export default function JarnvagsinspektionStockholmPage() {
             Vi utför järnvägsinspektioner i Stockholmsregionen och Mälardalen,
             inklusive sträckor mot Uppsala, Södertälje, Västerås och Eskilstuna.
           </p>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-section">
+          <h2 className="heading-2">Relaterade tjänster och branscher</h2>
+          <ul className="mt-4 space-y-2 body-text max-w-3xl">
+            <li>
+              <Link href="/tjanster" className="text-brand-600 hover:underline">
+                Alla tjänster
+              </Link>{" "}
+              — översikt över GridDrones inspektionstjänster
+            </li>
+            <li>
+              <Link href="/tjanster/jarnvagsinspektion" className="text-brand-600 hover:underline">
+                Järnvägsinspektion
+              </Link>{" "}
+              — detaljerad beskrivning av metodik och leverabler
+            </li>
+            <li>
+              <Link href="/tjanster/kraftledningsinspektion" className="text-brand-600 hover:underline">
+                Kraftledningsinspektion
+              </Link>{" "}
+              — inspektion av kraftledningar och elnät
+            </li>
+            <li>
+              <Link href="/branscher/trafikverket" className="text-brand-600 hover:underline">
+                Trafikverket
+              </Link>{" "}
+              — hur vi stödjer järnvägsinfrastrukturens tillsyn
+            </li>
+          </ul>
         </div>
       </section>
 

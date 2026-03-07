@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Vindkraftinspektion Drönare",
+  title: "Vindkraftinspektion med drönare",
   description:
     "Professionell inspektion av vindkraftverk med drönare. Rotorblad, torn, nacelle och åskledare. Snabbare och säkrare än manuell klättring.",
   path: "/tjanster/vindkraftinspektion",

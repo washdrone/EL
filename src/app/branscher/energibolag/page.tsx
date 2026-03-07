@@ -7,14 +7,15 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Drönartjänster för energibolag & elnätsleverantörer",
+  title: "Drönarinspektion för nätägare & energibolag",
   description:
-    "GridDrone utför drönarinspektioner för energibolag och elnätsleverantörer. Kraftledningsinspektion, termografering och vegetationskontroll.",
+    "GridDrone inspekterar kraftledningar och elnät för regionala och lokala nätägare, elnätsleverantörer och energibolag. Strukturerade leveranser för ert nätförvaltningssystem.",
   path: "/branscher/energibolag",
   keywords: [
-    "drönartjänster energibolag",
-    "drönarinspektion elnätsbolag",
-    "kraftledningsinspektion energibolag",
+    "drönarinspektion nätägare",
+    "drönarinspektion energibolag",
+    "elnätsinspektion drönare",
+    "kraftledningsinspektion elnätsbolag",
   ],
 });
 
@@ -25,71 +26,71 @@ export default function EnergibolagPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Branscher", href: "/branscher/energibolag" },
-          { name: "Energibolag" },
+          { name: "Nätägare & energibolag" },
         ]}
       />
       <JsonLd
         type="Service"
         servicePath="/branscher/energibolag"
-        serviceName="Drönarinspektioner för energibolag"
-        serviceDescription="Professionell drönarinspektion av kraftledningar och elnät för energibolag och elnätsleverantörer i Sverige."
+        serviceName="Drönarinspektion för nätägare & energibolag"
+        serviceDescription="Professionell drönarinspektion av kraftledningar och elnät för nätägare och energibolag i Sverige."
       />
 
       <Hero
-        title="Drönarinspektioner för energibolag"
-        subtitle="Energibolag & elnätsleverantörer"
-        description="Vi hjälper elnätsbolag och energiföretag att inspektera sina kraftledningar, transformatorstationer och infrastruktur snabbare, säkrare och mer kostnadseffektivt med drönare."
+        title="Drönarinspektion för nätägare & energibolag"
+        subtitle="Nätägare, elnätsleverantörer & energibolag"
+        description="Vi inspekterar ert distributions- och regionnät med standardiserade metoder och levererar strukturerade data direkt till ert nätförvaltningssystem — utan driftstopp och utan klättring."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Se tjänster", href: "/tjanster" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs
         items={[
           { name: "Branscher" },
-          { name: "Energibolag" },
+          { name: "Nätägare & energibolag" },
         ]}
       />
 
       <section className="section-padding bg-white">
         <div className="container-section">
-          <h2 className="heading-2">Anpassat för elnätsbolagens behov</h2>
+          <h2 className="heading-2">Inspektionstjänster för ert elnät</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Energibolag har specifika krav på inspektion, dokumentation och
-            rapportering. Vi levererar standardiserade data som passar direkt
-            in i era nätförvaltningssystem.
+            Oavsett om ni äger ett regionalt stamnät eller ett lokalt
+            distributionsnät, anpassar vi inspektion och leveransformat
+            efter era krav på dokumentation, spårbarhet och systemintegration.
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "Kraftledningsinspektion",
-                desc: "Visuell inspektion av stolpar, isolatorer, traverser och ledningsgata. Georefererade bilder med EXIF-data.",
+                desc: "Visuell inspektion av stolpar, isolatorer, traverser och ledningsgata. Georefererade bilder med standardiserade bildvinklar.",
                 href: "/tjanster/kraftledningsinspektion",
               },
               {
                 title: "Termografering",
-                desc: "Drönarbaserad värmekamera för att identifiera varmgångar, kontaktfel och överbelastade komponenter.",
+                desc: "Radiometrisk värmekamera för att identifiera varmgångar, kontaktfel och överbelastade komponenter i drift.",
                 href: "/tjanster/termografering-kraftledning",
               },
               {
                 title: "Vegetationskontroll",
-                desc: "LiDAR-baserad kartläggning av vegetation längs kraftledningsgator. Identifiera riskträd.",
+                desc: "LiDAR-baserad kartläggning av vegetation längs kraftledningsgator för prioritering av röjningsinsatser.",
                 href: "/tjanster/vegetationskontroll",
               },
               {
                 title: "Transformatorstationer",
-                desc: "Säker inspektion av transformatorstationer utan att personal behöver arbeta i farlig miljö.",
+                desc: "Visuell och termisk kontroll av transformatorstationer utan att personal exponeras för farlig arbetsmiljö.",
                 href: "/tjanster/transformatorstation-inspektion",
               },
               {
-                title: "BVLOS — lång räckvidd",
-                desc: "Inspektera långa ledningssträckor utan ompositionering. Kräver BVLOS-tillstånd.",
+                title: "BVLOS-inspektion",
+                desc: "Inspektera långa ledningssträckor utan ompositionering. Effektivt för stamnät och svårtillgängliga sträckor.",
                 href: "/tjanster/bvlos-inspektion",
               },
               {
-                title: "Akutinspektion",
-                desc: "Snabb mobilisering vid storm, åskväder eller andra händelser som påverkar ert nät.",
-                href: "/tjanster/kraftledningsinspektion/inspektionsprogram",
+                title: "Stormskadeinspektion",
+                desc: "Akut skadekartläggning efter storm med prioriterad skadeöversikt som beslutsunderlag för reparation.",
+                href: "/tjanster/stormskadeinspektion",
               },
             ].map((item) => (
               <Link
@@ -112,22 +113,49 @@ export default function EnergibolagPage() {
 
       <section className="section-padding bg-surface-50">
         <div className="container-section">
-          <h2 className="heading-2">Kostnadseffektiv inspektion</h2>
+          <h2 className="heading-2">Varför drönare för nätinspektion?</h2>
+          <div className="mx-auto mt-10 grid max-w-4xl gap-8 sm:grid-cols-3">
+            <div className="text-center">
+              <h3 className="text-base font-semibold text-surface-900">Säkrare arbetsmetod</h3>
+              <p className="mt-2 text-sm text-surface-500">
+                Eliminera klättring och arbete på hög höjd. Minskad riskexponering
+                för er personal och underleverantörer.
+              </p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-base font-semibold text-surface-900">GIS-redo leveranser</h3>
+              <p className="mt-2 text-sm text-surface-500">
+                Georefererade bilder, avvikelserapporter och kartlager som
+                importeras direkt i ert nätförvaltningssystem.
+              </p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-base font-semibold text-surface-900">Repeterbar process</h3>
+              <p className="mt-2 text-sm text-surface-500">
+                Standardiserade bildvinklar och dokumentation som möjliggör
+                jämförelse och trendanalys mellan inspektionscykler.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-section">
+          <h2 className="heading-2">Från lokalt distributionsnät till regionnät</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Drönare kan ge betydande kostnadsbesparingar per inspekterad
-            kilometer jämfört med traditionell helikopterinspektion. Samtidigt
-            får ni bättre data, högre upplösning och standardiserad dokumentation.
-            Kontakta oss för en offert baserad på ert specifika behov.
+            Vi arbetar med nätägare av alla storlekar — från kommunala
+            energibolag med lokala distributionsnät till regionala nätägare med
+            omfattande ledningssträckor. Inspektionsprocessen skalas efter
+            ert näts omfattning och era specifika underhållsbehov.
           </p>
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <div className="text-center">
-              <p className="text-3xl font-bold text-brand-600">Lägre kostnad</p>
-              <p className="mt-1 text-sm text-surface-500">Jämfört med helikopterinspektion</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl font-bold text-brand-600">GIS-redo</p>
-              <p className="mt-1 text-sm text-surface-500">Data direkt i ert system</p>
-            </div>
+          <div className="mt-8">
+            <Link
+              href="/tjanster/underhallsabonnemang"
+              className="text-sm font-medium text-brand-600 hover:text-brand-700"
+            >
+              Läs om vårt underhållsabonnemang →
+            </Link>
           </div>
         </div>
       </section>

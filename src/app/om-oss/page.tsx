@@ -7,22 +7,36 @@ import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Om GridDrone — Drönarinspektion av Elnät & Energiinfrastruktur",
+  title: "Om GridDrone — Drönarinspektion av elnät & kraftledningar",
   description:
-    "GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. EASA-utbildade piloter med BVLOS-behörighet.",
+    "GridDrone är specialiserade på drönarinspektion av kraftledningar och elnät. EASA-utbildade piloter med BVLOS-behörighet för säker, effektiv nätinspektion.",
   path: "/om-oss",
   keywords: [
     "om GridDrone",
     "drönarinspektion företag Sverige",
     "kraftledningsinspektion företag",
+    "elnätsinspektion drönare",
   ],
 });
 
 const reasons = [
   {
-    title: "BVLOS-behörighet",
+    title: "Renodlat fokus på elnät",
     description:
-      "Våra piloter har BVLOS-behörighet (Beyond Visual Line of Sight), vilket gör det möjligt att inspektera långa ledningssträckor effektivt utan ompositionering.",
+      "Vi är specialiserade på inspektion av kraftledningar, transformatorstationer och tillhörande nätinfrastruktur. Det innebär att vår metodik, utrustning och kompetens är anpassad för elnätsbranschens krav – inte generell drönarfotografering.",
+    icon: (
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={1.5}
+        d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
+      />
+    ),
+  },
+  {
+    title: "BVLOS-kapacitet",
+    description:
+      "Våra piloter har BVLOS-behörighet (Beyond Visual Line of Sight), vilket möjliggör inspektion av långa ledningssträckor i en sammanhängande flygning – utan ompositionering och med lägre kostnad per inspekterad kilometer.",
     icon: (
       <path
         strokeLinecap="round"
@@ -41,22 +55,9 @@ const reasons = [
     ),
   },
   {
-    title: "Specialiserade på energi",
+    title: "Standardiserad datakvalitet",
     description:
-      "Vi är inget generellt drönarföretag. Vårt fokus ligger helt på inspektion av elnät och energiinfrastruktur, vilket ger djupare kompetens och bättre resultat.",
-    icon: (
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={1.5}
-        d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-      />
-    ),
-  },
-  {
-    title: "Standardiserad process",
-    description:
-      "Varje uppdrag följer samma beprövade metodik – från planering och datainsamling till leverans. Det ger repeterbar kvalitet och jämförbart underlag över tid.",
+      "Varje uppdrag följer en beprövad metodik – från flygplanering och datainsamling till strukturerad leverans. Det ger repeterbar kvalitet, jämförbart underlag över tid och data som kan integreras direkt i ert nätförvaltningssystem.",
     icon: (
       <path
         strokeLinecap="round"
@@ -69,7 +70,7 @@ const reasons = [
   {
     title: "Försäkrat & certifierat",
     description:
-      "Vi har ansvarsförsäkring och de tillstånd som krävs för professionell drönarinspektion. Se vår certifieringssida för detaljer.",
+      "Vi har ansvarsförsäkring och de tillstånd som krävs för professionell drönarinspektion av elnät. Se vår certifieringssida för fullständiga detaljer.",
     icon: (
       <path
         strokeLinecap="round"
@@ -92,7 +93,7 @@ export default function OmOssPage() {
       <Hero
         title="Om GridDrone"
         subtitle="Om oss"
-        description="GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur. EASA-utbildade piloter med BVLOS-behörighet."
+        description="Vi är specialiserade på drönarinspektion av kraftledningar, elnät och energiinfrastruktur. Vårt fokus ligger på att leverera strukturerad, tillförlitlig inspektionsdata till elnätsbolag och nätägare."
         compact
       />
 
@@ -102,25 +103,47 @@ export default function OmOssPage() {
       <section className="section-padding bg-white">
         <div className="container-section">
           <div className="mx-auto max-w-3xl">
-            <h2 className="heading-2">Vår mission</h2>
+            <h2 className="heading-2">Vår inriktning</h2>
             <p className="body-text mt-6">
-              GridDrone grundades med en tydlig mission: att göra inspektion av
-              elnät och energiinfrastruktur säkrare, snabbare och mer
-              kostnadseffektiv genom drönarteknologi.
+              GridDrone finns till för att lösa ett konkret problem: inspektion
+              av Sveriges elnät är resurskrävande, innebär arbete på hög höjd
+              och ger ofta begränsad dokumentation. Vi erbjuder ett
+              drönarbaserat alternativ som är säkrare för personalen, snabbare
+              att genomföra och ger mer detaljerad data.
             </p>
             <p className="body-text mt-4">
-              Traditionell inspektion av kraftledningar innebär arbete på hög
-              höjd, driftstopp och resurskrävande logistik. Vi ersätter och
-              kompletterar dessa metoder med standardiserad drönareinspektion som
-              levererar strukturerad, georefererad data – redo att användas
-              direkt i era nätförvaltningssystem.
+              Vi är specialiserade på inspektion av{" "}
+              <Link
+                href="/tjanster/kraftledningsinspektion"
+                className="text-brand-600 hover:text-brand-700 underline"
+              >
+                kraftledningar
+              </Link>
+              ,{" "}
+              <Link
+                href="/tjanster/transformatorstation-inspektion"
+                className="text-brand-600 hover:text-brand-700 underline"
+              >
+                transformatorstationer
+              </Link>{" "}
+              och tillhörande nätkomponenter. Genom att fokusera enbart på
+              elnätssektorn kan vi anpassa metodik, sensorer och
+              leveransformat efter de specifika behov som nätägare och
+              elnätsbolag har.
             </p>
             <p className="body-text mt-4">
-              Genom att kombinera BVLOS-kapacitet med branschspecifik kompetens
-              kan vi inspektera stora ledningssträckor effektivt, utan att
-              tumma på noggrannhet eller säkerhet. Vårt mål är att vara den
-              självklara partnern för elnätsbolag och energiföretag som vill
-              modernisera sin inspektionsprocess.
+              Vår{" "}
+              <Link
+                href="/tjanster/bvlos-inspektion"
+                className="text-brand-600 hover:text-brand-700 underline"
+              >
+                BVLOS-kapacitet
+              </Link>{" "}
+              gör det möjligt att inspektera långa ledningssträckor i
+              sammanhängande flygningar, vilket ger effektivitet utan att
+              kompromissa med noggrannhet. Inspektionsdata levereras
+              strukturerat och georefererat – redo att användas i era
+              befintliga nätförvaltningssystem.
             </p>
           </div>
         </div>
@@ -132,8 +155,8 @@ export default function OmOssPage() {
           <div className="section-intro">
             <h2 className="heading-2">Varför GridDrone</h2>
             <p className="body-text mt-4">
-              Vi kombinerar specialiserad branschkunskap med avancerad
-              drönarteknik för att leverera inspektion i toppklass.
+              Vi kombinerar branschspecifik kompetens inom elnätsinspektion med
+              avancerad drönarteknik och standardiserade leveransprocesser.
             </p>
           </div>
 
@@ -164,21 +187,44 @@ export default function OmOssPage() {
         </div>
       </section>
 
-      {/* Certifieringar */}
+      {/* Tjänster & certifieringar */}
       <section className="section-padding bg-white">
         <div className="container-section">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="heading-2">Certifieringar</h2>
-            <p className="body-text mt-4">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="heading-2 text-center">
+              Tjänster och certifieringar
+            </h2>
+            <p className="body-text mt-4 text-center">
               Våra piloter är EASA-utbildade med BVLOS-behörighet och
               mörkerflyg. Vi har ansvarsförsäkring för vår UAS-verksamhet.
+              Utforska våra tjänster eller läs mer om våra tillstånd.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/certifieringar"
                 className="btn-primary inline-flex items-center"
               >
-                Se alla certifieringar
+                Se certifieringar
+                <svg
+                  className="ml-2 h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+              </Link>
+              <Link
+                href="/tjanster"
+                className="btn-secondary inline-flex items-center"
+              >
+                Alla tjänster
                 <svg
                   className="ml-2 h-4 w-4"
                   fill="none"

@@ -4,18 +4,17 @@ import { Zap } from "lucide-react";
 
 const footerServices = [
   { label: "Kraftledningar", href: "/tjanster/kraftledningsinspektion" },
-  { label: "Stationer & Komponenter", href: "/tjanster/transformatorstation-inspektion" },
-  { label: "Termografi", href: "/tjanster/termografering-kraftledning" },
-  { label: "Vegetationsanalys", href: "/tjanster/vegetationskontroll" },
-  { label: "Störningsrespons", href: "/tjanster/stormskadeinspektion" },
+  { label: "Termografering", href: "/tjanster/termografering-kraftledning" },
+  { label: "Stationer", href: "/tjanster/transformatorstation-inspektion" },
+  { label: "Vegetationskontroll", href: "/tjanster/vegetationskontroll" },
+  { label: "BVLOS-inspektion", href: "/tjanster/bvlos-inspektion" },
+  { label: "Stormskadeinspektion", href: "/tjanster/stormskadeinspektion" },
 ];
 
 const footerBranches = [
-  { label: "Energibolag", href: "/branscher/energibolag" },
-  { label: "Elnät", href: "/branscher/elnat" },
+  { label: "Nätägare & energibolag", href: "/branscher/energibolag" },
   { label: "Vindkraft", href: "/branscher/vindkraft" },
   { label: "Trafikverket", href: "/branscher/trafikverket" },
-  { label: "Industri", href: "/branscher/industri" },
   { label: "Kommuner", href: "/branscher/kommuner" },
   { label: "Försäkring", href: "/branscher/forsakring" },
 ];
@@ -45,8 +44,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-6 text-slate-500">
-              Datadriven drönarinspektion av elnät och kritisk
-              energiinfrastruktur i hela Sverige.
+              Drönarbaserad inspektion av kraftledningar, elnät
+              och energiinfrastruktur i hela Sverige.
             </p>
           </div>
 

@@ -9,7 +9,7 @@ import CTABand from "@/components/CTABand";
 import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Inspektion av Järnvägskontaktledningar med Drönare",
+  title: "Inspektion av järnvägskontaktledningar",
   description:
     "Drönarinspektion av kontaktledningssystem längs järnväg — hängare, bärlina, kontakttråd, isolatorer och fästanordningar. Utan trafikstörning.",
   path: "/tjanster/jarnvagsinspektion",

@@ -19,16 +19,20 @@ export default function ProofSection() {
             <h2 className="heading-2 mb-5">
               Rätt åtgärd. På rätt plats. I rätt tid.
             </h2>
+            <p className="text-base leading-7 text-slate-600 mb-4">
+              Våra inspektionsrapporter ger er klassificerade avvikelser med
+              exakt position, fotodokumentation och rekommenderad åtgärd — redo
+              att importeras direkt i ert nätförvaltningssystem.
+            </p>
             <p className="text-base leading-7 text-slate-600 mb-8">
-              Se hur vi hjälpte ett ledande nätbolag att inspektera 120&nbsp;km
-              regionnät på en vecka och identifierade 14 kritiska riskpunkter
-              som annars hade orsakat oplanerade driftstopp under vintern.
+              Resultatet: underhållsbeslut baserade på faktisk anläggningsstatus
+              istället för schablonintervall.
             </p>
             <Link
-              href="/case"
+              href="/exempelrapport"
               className="btn-secondary inline-flex items-center gap-2"
             >
-              Läs hela kundcaset
+              Se en exempelrapport
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

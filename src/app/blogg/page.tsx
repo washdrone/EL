@@ -7,7 +7,7 @@ import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Blogg — Drönarinspektion av Elnät | GridDrone",
+  title: "Blogg — inspektion av elnät & kraftledningar",
   description:
     "Artiklar och guider om drönarinspektion av kraftledningar, termografering, BVLOS och elnätsinspektion. Branschnyheter och tekniska djupdykningar.",
   path: "/blogg",

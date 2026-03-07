@@ -9,7 +9,7 @@ import CTABand from "@/components/CTABand";
 export const metadata: Metadata = createPageMetadata({
   title: "Drönarinspektioner för vindkraftoperatörer",
   description:
-    "GridDrone inspekterar vindkraftverk med drönare — rotorblad, torn, nacelle och åskledare. Minimal driftstopp. Försäkringsgodkänd dokumentation.",
+    "Drönarinspektion av vindkraftverk — rotorblad, torn, nacelle och åskledare. Strukturerad dokumentation för underhåll och försäkringsärenden.",
   path: "/branscher/vindkraft",
   keywords: [
     "vindkraftinspektion drönare",
@@ -39,7 +39,7 @@ export default function VindkraftPage() {
       <Hero
         title="Drönarinspektioner för vindkraftoperatörer"
         subtitle="Vindkraft"
-        description="Vi inspekterar vindkraftverk med drönare — rotorblad, torn, nacelle och åskledarsystem. Minimal driftstopp och strukturerad dokumentation för försäkring och underhållsplanering."
+        description="Inspektion av vindkraftverk med drönare — rotorblad, torn, nacelle och åskledarsystem. Strukturerad dokumentation som kan användas som underlag vid underhållsplanering och försäkringsärenden."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
         secondaryCta={{ label: "Vindkraftinspektion", href: "/tjanster/vindkraftinspektion" }}
       />
@@ -79,7 +79,7 @@ export default function VindkraftPage() {
               },
               {
                 title: "Underhållsabonnemang",
-                desc: "Planerade årsinspektioner med trenduppföljning och prioriterad stormrespons.",
+                desc: "Planerade årsinspektioner med trenduppföljning och möjlighet till prioriterad stormrespons.",
                 href: "/tjanster/underhallsabonnemang",
               },
             ].map((item) => (
@@ -111,12 +111,12 @@ export default function VindkraftPage() {
                 desc: "Turbinen behöver stå still kortare tid jämfört med manuell inspektion med rep- eller plattformsaccess.",
               },
               {
-                title: "Försäkringsdokumentation",
-                desc: "Strukturerad fotodokumentation som uppfyller försäkringsbolagens krav på tillståndsdokumentation.",
+                title: "Dokumentation för försäkring",
+                desc: "Strukturerad fotodokumentation som kan användas som underlag vid försäkringsärenden och tillståndsbedömning.",
               },
               {
                 title: "Hela parker effektivt",
-                desc: "Drönare kan inspektera flera turbiner per dag — effektivt för stora vindkraftparker.",
+                desc: "Drönare kan inspektera flera turbiner per dag, vilket gör metoden väl lämpad för större vindkraftparker.",
               },
             ].map((item) => (
               <div key={item.title} className="text-center">
