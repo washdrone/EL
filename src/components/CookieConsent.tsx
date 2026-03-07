@@ -50,7 +50,7 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label="Cookie-samtycke"
-      className="fixed bottom-0 left-0 right-0 z-50 border-t border-surface-200 bg-white p-4 shadow-elevated sm:p-5"
+      className="fixed bottom-0 left-0 right-0 z-[45] border-t border-surface-200 bg-white p-4 shadow-elevated sm:p-5"
     >
       <div className="container-section flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm leading-6 text-surface-600">
@@ -66,12 +66,14 @@ export default function CookieConsent() {
         </p>
         <div className="flex flex-shrink-0 gap-3">
           <button
+            type="button"
             onClick={decline}
             className="rounded-xl border border-surface-200 bg-white px-4 py-2 text-sm font-medium text-surface-700 transition-colors hover:bg-surface-50"
           >
             Avböj
           </button>
           <button
+            type="button"
             onClick={accept}
             className="rounded-xl bg-brand-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-700"
           >
