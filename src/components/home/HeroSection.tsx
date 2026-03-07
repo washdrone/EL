@@ -11,12 +11,18 @@ const infoCards = [
 export default function HeroSection() {
   return (
     <section className="relative bg-slate-900 overflow-hidden">
-      {/* Background placeholder */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800">
-        <div className="absolute inset-0 flex items-center justify-center text-slate-700 text-sm font-mono">
-          [Background Video: High voltage pylon in nordic winter landscape with thermal overlay]
-        </div>
-        <div className="absolute inset-0 bg-slate-900/80" />
+      {/* Background video */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="h-full w-full object-cover"
+        >
+          <source src="/video/hero.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-slate-900/60" />
       </div>
 
       <div className="container-section relative z-10 py-24 sm:py-32 lg:py-40">
