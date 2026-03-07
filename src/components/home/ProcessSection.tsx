@@ -29,10 +29,10 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-slate-900">
       <div className="container-section">
         <div className="section-intro mb-14">
-          <h2 className="heading-2">
+          <h2 className="heading-2 text-white">
             Från flygning till åtgärdsplan.
           </h2>
         </div>
@@ -42,22 +42,22 @@ export default function ProcessSection() {
             <div key={step.number} className="relative">
               {/* Connector line (desktop) */}
               {index < steps.length - 1 && (
-                <div className="absolute top-6 left-[calc(50%+2rem)] right-0 hidden h-px bg-slate-200 lg:block" />
+                <div className="absolute top-6 left-[calc(50%+2rem)] right-0 hidden h-px bg-slate-700 lg:block" />
               )}
 
               <div className="flex flex-col items-start lg:items-center lg:text-center">
                 <div className="mb-4 flex items-center gap-3 lg:flex-col lg:gap-3">
-                  <div className="relative flex h-12 w-12 items-center justify-center rounded-sm border border-slate-200 bg-white">
-                    <step.icon className="h-5 w-5 text-cyan-600" strokeWidth={1.5} />
-                    <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-slate-900 text-[10px] font-bold text-white">
+                  <div className="relative flex h-12 w-12 items-center justify-center rounded-sm border border-slate-700 bg-slate-800">
+                    <step.icon className="h-5 w-5 text-cyan-400" strokeWidth={1.5} />
+                    <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500 text-[10px] font-bold text-slate-900">
                       {step.number}
                     </span>
                   </div>
                 </div>
-                <h3 className="text-sm font-semibold text-slate-900 mb-1.5 lg:mb-2">
+                <h3 className="text-sm font-semibold text-white mb-1.5 lg:mb-2">
                   {step.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-slate-600">
+                <p className="text-sm leading-relaxed text-slate-300">
                   {step.text}
                 </p>
               </div>
