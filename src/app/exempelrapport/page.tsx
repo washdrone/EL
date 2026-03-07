@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { Camera } from "lucide-react";
 import { createPageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
@@ -149,11 +149,14 @@ export default function ExempelrapportPage() {
           <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
             {exampleFindings.map((finding) => (
               <div key={finding.title} className="card overflow-hidden">
-                <div className="relative flex h-48 w-full items-center justify-center bg-slate-100">
-                  <div className="text-center text-slate-400">
-                    <Camera className="mx-auto h-8 w-8" />
-                    <p className="mt-1 text-xs">Inspektionsfoto</p>
-                  </div>
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={finding.image}
+                    alt={finding.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2">
