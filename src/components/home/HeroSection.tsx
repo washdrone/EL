@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+const infoCards = [
+  { title: "Multispektral", subtitle: "Djupanalys" },
+  { title: "NDVI & NIR", subtitle: "Fotosyntesmätning" },
+  { title: "SWEREF99 TM", subtitle: "Rikstäckande koordinater" },
+  { title: "GIS-redo", subtitle: "Direktimport i era system" },
+];
+
 export default function HeroSection() {
   return (
     <section className="relative bg-slate-900 overflow-hidden">
@@ -20,7 +27,7 @@ export default function HeroSection() {
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.25rem] xl:leading-[1.15]">
             Vi digitaliserar inspektion och underhåll av elnät.
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-slate-200">
             Från högupplöst fältdata till klassificerade åtgärdsunderlag
             – snabbare, säkrare och med absolut precision.
           </p>
@@ -31,12 +38,29 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/plattform"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-400 transition-colors hover:text-cyan-300"
+              className="inline-flex items-center gap-2 rounded-md border border-white bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-slate-900"
             >
               Se hur vi strukturerar leveransdata
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+        </div>
+
+        {/* Glassmorphism info cards */}
+        <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {infoCards.map((card) => (
+            <div
+              key={card.title}
+              className="rounded-lg border border-white/15 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+            >
+              <h3 className="text-sm font-semibold text-white">
+                {card.title}
+              </h3>
+              <p className="mt-1 text-xs text-slate-400">
+                {card.subtitle}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
 
