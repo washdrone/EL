@@ -10,11 +10,21 @@ const footerServices = [
   { label: "Störningsrespons", href: "/tjanster/stormskadeinspektion" },
 ];
 
+const footerBranches = [
+  { label: "Energibolag", href: "/branscher/energibolag" },
+  { label: "Elnät", href: "/branscher/elnat" },
+  { label: "Vindkraft", href: "/branscher/vindkraft" },
+  { label: "Trafikverket", href: "/branscher/trafikverket" },
+  { label: "Industri", href: "/branscher/industri" },
+  { label: "Kommuner", href: "/branscher/kommuner" },
+  { label: "Försäkring", href: "/branscher/forsakring" },
+];
+
 const footerNavigation = [
-  { label: "Plattform", href: "/plattform" },
-  { label: "Målgrupper", href: "/malgrupper" },
-  { label: "Säkerhet", href: "/sakerhet" },
-  { label: "Case", href: "/case" },
+  { label: "Exempelrapport", href: "/exempelrapport" },
+  { label: "ROI-kalkylator", href: "/roi-kalkylator" },
+  { label: "Certifieringar", href: "/certifieringar" },
+  { label: "Blogg", href: "/blogg" },
   { label: "Om oss", href: "/om-oss" },
   { label: "Kontakt", href: "/kontakt" },
 ];
@@ -23,7 +33,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
       <div className="container-section py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Company */}
           <div>
             <div className="flex items-center gap-2.5">
@@ -57,9 +67,26 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* Branches */}
+          <div>
+            <h3 className="eyebrow">Branscher</h3>
+            <ul className="mt-4 space-y-2.5">
+              {footerBranches.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-slate-600 transition-colors hover:text-cyan-600"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
           {/* Navigation */}
           <div>
-            <h3 className="eyebrow">Navigation</h3>
+            <h3 className="eyebrow">Resurser</h3>
             <ul className="mt-4 space-y-2.5">
               {footerNavigation.map((item) => (
                 <li key={item.href}>
