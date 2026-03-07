@@ -26,7 +26,6 @@ const certifications = [
     category: "Pilotbehörighet",
     description:
       "Våra piloter är utbildade enligt EASA:s regelverk för obemannade luftfartyg (UAS). Utbildningen omfattar de kategorier och behörigheter som krävs för professionell inspektion av elnätsinfrastruktur.",
-    details: "Certifikatnummer: [VERIFIERAS]",
     relevance: (
       <>
         Relevant för alla våra{" "}
@@ -45,7 +44,6 @@ const certifications = [
     category: "Operativt tillstånd",
     description:
       "Behörighet för flygning utanför synhåll (Beyond Visual Line of Sight). Möjliggör inspektion av långa ledningssträckor i sammanhängande flygningar utan ompositionering, vilket ger effektivare inspektion av stora nätområden.",
-    details: "Tillståndsnummer: [VERIFIERAS]",
     relevance: (
       <>
         Centralt för{" "}
@@ -71,7 +69,6 @@ const certifications = [
     category: "Operativt tillstånd",
     description:
       "Behörighet att utföra drönarflygning under mörka förhållanden. Ger flexibilitet i planering och genomförande, särskilt vid akuta inspektioner eller under vinterhalvårets begränsade dagsljus.",
-    details: "Tillståndsnummer: [VERIFIERAS]",
     relevance: (
       <>
         Viktigt vid{" "}
@@ -90,7 +87,6 @@ const certifications = [
     category: "Försäkring",
     description:
       "Ansvarsförsäkring som täcker vår UAS-verksamhet och drönarbaserade inspektionsuppdrag. Försäkringen är anpassad för professionell inspektion av elnäts- och energiinfrastruktur.",
-    details: "Försäkringsgivare och belopp: [VERIFIERAS]",
     relevance: <>Täcker samtliga inspektionsuppdrag.</>,
   },
 ];
@@ -159,10 +155,7 @@ export default function CertifieringarPage() {
                   <p className="mt-2 text-sm leading-relaxed text-surface-500">
                     {cert.description}
                   </p>
-                  <p className="mt-3 text-xs text-surface-400 italic">
-                    {cert.details}
-                  </p>
-                  <p className="mt-2 text-xs text-surface-500">
+                  <p className="mt-3 text-xs text-surface-500">
                     {cert.relevance}
                   </p>
                 </div>
