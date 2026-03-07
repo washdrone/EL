@@ -20,7 +20,7 @@ export default function HeroSection() {
           playsInline
           className="h-full w-full object-cover"
         >
-          <source src="/video/hero.mp4" type="video/mp4" />
+          <source src="/video/Drone_inspection_power_lines_summer_322cb98d5e.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-slate-900/60" />
       </div>
