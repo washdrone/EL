@@ -4,23 +4,27 @@ export const COMPANY_NAME = "GridDrone";
 export const NAV_ITEMS = [
   {
     label: "Tjänster",
-    href: "/tjanster/kraftledningsinspektion",
+    href: "/tjanster",
   },
   {
-    label: "Branscher",
-    href: "/branscher/energibolag",
+    label: "Plattform",
+    href: "/plattform",
   },
   {
-    label: "ROI-kalkylator",
-    href: "/roi-kalkylator",
+    label: "Målgrupper",
+    href: "/malgrupper",
+  },
+  {
+    label: "Säkerhet",
+    href: "/sakerhet",
+  },
+  {
+    label: "Case",
+    href: "/case",
   },
   {
     label: "Om oss",
     href: "/om-oss",
-  },
-  {
-    label: "Blogg",
-    href: "/blogg",
   },
   {
     label: "Kontakt",
