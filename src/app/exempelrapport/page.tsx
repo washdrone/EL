@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -53,6 +54,8 @@ const exampleFindings = [
     title: "Skadad isolator — stolpe [ANON-042]",
     desc: "Synlig spricka i porslinssolator, nedre skiva. Risk för genomslag vid belastning. Åtgärd: Byte rekommenderas omgående.",
     coord: "N 59.XXXX°, E 17.XXXX°",
+    image: "/images/skadad-isolator.jpg",
+    imageAlt: "Närbild på sprucken porslinssolator på kraftledningsstolpe",
   },
   {
     classification: "Brådskande",
@@ -60,6 +63,8 @@ const exampleFindings = [
     title: "Vegetationsintrång — sektion [ANON-18–22]",
     desc: "Träd inom kritiskt avstånd till faslednig. Röjning rekommenderas inom 30 dagar.",
     coord: "N 59.XXXX°, E 18.XXXX°",
+    image: "/images/vegetationsintrang.jpg",
+    imageAlt: "Träd med varningsskylt nära kraftledning som kräver röjning",
   },
   {
     classification: "Planerat",
@@ -67,6 +72,8 @@ const exampleFindings = [
     title: "Korrosion traversfot — stolpe [ANON-067]",
     desc: "Ytkorrosion på traversfot. Ej akut men bör planeras för underhåll vid nästa underhållscykel.",
     coord: "N 58.XXXX°, E 16.XXXX°",
+    image: "/images/korrosion-traversfot.jpg",
+    imageAlt: "Rostig traversfot på betongstolpe med synlig ytkorrosion",
   },
   {
     classification: "Observation",
@@ -74,6 +81,8 @@ const exampleFindings = [
     title: "Fågelbo på stolpe — stolpe [ANON-089]",
     desc: "Fågelbo identifierat på travers. Ingen åtgärd krävs om ej i konflikt med ledning.",
     coord: "N 59.XXXX°, E 17.XXXX°",
+    image: "/images/fagelbo-stolpe.jpg",
+    imageAlt: "Fågelbo byggt på kraftledningsmast",
   },
 ];
 
@@ -140,14 +149,14 @@ export default function ExempelrapportPage() {
           <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">
             {exampleFindings.map((finding) => (
               <div key={finding.title} className="card overflow-hidden">
-                {/* Image placeholder */}
-                <div className="flex h-40 items-center justify-center bg-surface-100">
-                  <div className="text-center">
-                    <svg className="mx-auto h-10 w-10 text-surface-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5a1.5 1.5 0 001.5-1.5V5.25a1.5 1.5 0 00-1.5-1.5H3.75a1.5 1.5 0 00-1.5 1.5v14.25a1.5 1.5 0 001.5 1.5z" />
-                    </svg>
-                    <p className="mt-2 text-xs text-surface-500">Inspektionsfoto</p>
-                  </div>
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={finding.image}
+                    alt={finding.imageAlt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                  />
                 </div>
                 <div className="p-5">
                   <div className="flex items-center gap-2">
