@@ -27,13 +27,13 @@ const services = [
   },
   {
     icon: TreePine,
-    title: "Vegetationsanalys",
-    text: "Datadriven kartläggning av ledningsgator för exakt prioritering av skogsröjning.",
+    title: "Vegetationskontroll",
+    text: "LiDAR-baserad kartläggning av ledningsgator för exakt prioritering av röjningsinsatser.",
   },
   {
     icon: AlertTriangle,
-    title: "Akut Störningsrespons",
-    text: "Omedelbar utryckning vid stormskador och haverier för snabb felplatslokalisering.",
+    title: "Stormskadeinspektion",
+    text: "Akut skadekartläggning efter storm för prioriterad återuppbyggnad av ert elnät.",
   },
 ];
 

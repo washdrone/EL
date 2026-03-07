@@ -9,7 +9,7 @@ import CTABand from "@/components/CTABand";
 import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Prediktivt Underhållsabonnemang — Schemalagd Inspektion & Trendanalys",
+  title: "Underhållsabonnemang — schemalagd inspektion",
   description:
     "Årsbaserat inspektionsavtal med garanterad frekvens, historisk datalagring och trendanalys. Identifiera försämring innan fel uppstår.",
   path: "/tjanster/underhallsabonnemang",

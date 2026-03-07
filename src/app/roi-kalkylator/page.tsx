@@ -6,7 +6,7 @@ import CTABand from "@/components/CTABand";
 import ROICalculator from "./ROICalculator";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "ROI-kalkylator — Helikopter vs Drönare Kostnad",
+  title: "ROI-kalkylator — helikopter vs drönare",
   description:
     "Beräkna kostnadsbesparingen med drönarinspektion jämfört med helikopter eller manuell inspektion. Interaktiv kalkylator för kraftledningsinspektion.",
   path: "/roi-kalkylator",

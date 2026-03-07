@@ -7,15 +7,15 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Drönarinspektioner för kommuner & kommunala bolag",
+  title: "Drönarinspektion för kommuner & energibolag",
   description:
-    "GridDrone utför drönarinspektion av kommunal infrastruktur — elnät, belysningsstolpar, VA-anläggningar och samhällsfastigheter.",
+    "Drönarinspektion av kraftledningar och elnät för kommuner och kommunala energibolag. Effektiv tillsyn av distributionsnät och belysningsinfrastruktur.",
   path: "/branscher/kommuner",
   keywords: [
     "drönarinspektion kommun",
-    "kommunal infrastruktur drönare",
+    "kommunalt energibolag inspektion",
     "elnätsinspektion kommun",
-    "drönare kommunalt bolag",
+    "kraftledningsinspektion kommunalt nät",
   ],
 });
 
@@ -32,16 +32,16 @@ export default function KommunerPage() {
       <JsonLd
         type="Service"
         servicePath="/branscher/kommuner"
-        serviceName="Drönarinspektioner för kommuner"
-        serviceDescription="Professionell drönarinspektion av kommunal infrastruktur i Sverige."
+        serviceName="Drönarinspektion för kommuner och kommunala energibolag"
+        serviceDescription="Drönarinspektion av kraftledningar, distributionsnät och belysningsinfrastruktur för kommuner och kommunala energibolag."
       />
 
       <Hero
-        title="Drönarinspektioner för kommuner & kommunala bolag"
+        title="Drönarinspektion för kommuner & kommunala energibolag"
         subtitle="Kommuner & offentlig sektor"
-        description="Inspektion av kommunal infrastruktur med drönare — elnät, belysningsstolpar, VA-anläggningar och samhällsfastigheter. Anpassat för offentlig upphandling."
+        description="Inspektion av kraftledningar, distributionsnät och belysningsinfrastruktur med drönare. Strukturerad dokumentation anpassad för kommunala elnätsägare och energibolag."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Se tjänster", href: "/tjanster" }}
+        secondaryCta={{ label: "Våra tjänster", href: "/tjanster" }}
       />
 
       <Breadcrumbs
@@ -53,33 +53,45 @@ export default function KommunerPage() {
 
       <section className="section-padding bg-white">
         <div className="container-section">
-          <h2 className="heading-2">Tjänster för kommuner</h2>
+          <h2 className="heading-2">Inspektion av kommunala elnät</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Kommuner ansvarar för stora mängder infrastruktur — från elnät och
-            gatubelysning till VA-anläggningar och fastigheter. Drönarinspektioner
-            ger en effektiv och kostnadseffektiv tillsyn.
+            Kommuner och kommunala energibolag äger och förvaltar
+            distributionsnät, belysningsinfrastruktur och
+            transformatorstationer. Drönarinspektion ger en systematisk
+            överblick av anläggningarnas tillstånd — utan att kräva
+            strömavbrott eller manuell klättring.
           </p>
 
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Elnät & belysning",
-                desc: "Inspektion av kommunala distributionsnät och belysningsstolpar.",
+                title: "Kraftledningsinspektion",
+                desc: "Visuell inspektion av stolpar, traverser, isolatorer och ledare i kommunala distributionsnät.",
                 href: "/tjanster/kraftledningsinspektion",
               },
               {
-                title: "Termografering",
-                desc: "Identifiera fel i elnät och elanläggningar med värmekamera.",
+                title: "Termografering av elnät",
+                desc: "Värmekamerainspektion för att identifiera hotspots i anslutningar, skarvar och transformatorer.",
                 href: "/tjanster/termografering-kraftledning",
               },
               {
                 title: "Stormskadeinspektion",
-                desc: "Snabb skadekartläggning efter storm för prioriterad åtgärdsplanering.",
+                desc: "Snabb kartläggning av skadeomfattning efter storm för prioritering av reparationsinsatser.",
                 href: "/tjanster/stormskadeinspektion",
               },
               {
+                title: "Vegetationskontroll",
+                desc: "Identifiera vegetation som riskerar att orsaka ledningsfel genom avståndsintrång i närheten av ledningsgator.",
+                href: "/tjanster/vegetationskontroll",
+              },
+              {
+                title: "Transformatorstationer",
+                desc: "Inspektion av transformatorstationer och nätstationer med drönare och värmekamera.",
+                href: "/tjanster/transformatorstation-inspektion",
+              },
+              {
                 title: "Underhållsabonnemang",
-                desc: "Löpande inspektion med planerad frekvens och trendrapportering.",
+                desc: "Löpande inspektion med planerad frekvens och trendrapportering av nätets tillstånd över tid.",
                 href: "/tjanster/underhallsabonnemang",
               },
             ].map((item) => (
@@ -103,12 +115,18 @@ export default function KommunerPage() {
 
       <section className="section-padding bg-surface-50">
         <div className="container-section">
-          <h2 className="heading-2">Offentlig upphandling</h2>
+          <h2 className="heading-2">Anpassat för offentlig upphandling</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Vi har erfarenhet av att arbeta med offentlig sektor och kan delta
-            i upphandlingsprocesser. GridDrone levererar strukturerade rapporter
-            och dokumentation som uppfyller offentliga krav på transparens och
-            spårbarhet.
+            GridDrone levererar strukturerade inspektionsrapporter med
+            georefererade bilder, tillståndsklassificering och
+            åtgärdsrekommendationer. Dokumentationen kan anpassas efter
+            de krav som ställs vid offentlig upphandling, inklusive
+            transparens och spårbarhet.
+          </p>
+          <p className="body-text mt-4 max-w-3xl">
+            Alla inspektioner genomförs i enlighet med gällande
+            luftfartsregler och med de tillstånd som krävs för
+            drönaroperationer i aktuellt område.
           </p>
         </div>
       </section>

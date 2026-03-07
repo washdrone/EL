@@ -120,14 +120,14 @@ export default function StormskadorBloggPage() {
               Kontakta oss för att diskutera beredskapsavtal eller akuta
               stormskadeinspektioner.
             </p>
-            <Link href="/stormrespons" className="mt-4 inline-block text-sm font-medium text-brand-600 hover:text-brand-700">
+            <Link href="/tjanster/stormskadeinspektion" className="mt-4 inline-block text-sm font-medium text-brand-600 hover:text-brand-700">
               Stormrespons →
             </Link>
           </div>
         </div>
       </article>
 
-      <CTABand primaryHref="/kontakt" secondaryHref="/stormrespons" />
+      <CTABand primaryHref="/kontakt" secondaryHref="/tjanster/stormskadeinspektion" />
     </>
   );
 }

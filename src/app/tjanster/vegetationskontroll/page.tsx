@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Vegetationskontroll Kraftledning med Drönare",
+  title: "Vegetationskontroll av kraftledningsgator",
   description:
     "LiDAR-baserad vegetationskontroll längs kraftledningsgator. Identifiera träd och grenar som hotar ledningen. Avståndsmätning med hög noggrannhet.",
   path: "/tjanster/vegetationskontroll",

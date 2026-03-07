@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "BVLOS Drönare Kraftledning",
+  title: "BVLOS-inspektion av kraftledningar med drönare",
   description:
     "BVLOS drönarinspektion av kraftledningar. Inspektera långa ledningssträckor per flygdag. För avlägsna och svårtillgängliga ledningsnät.",
   path: "/tjanster/bvlos-inspektion",

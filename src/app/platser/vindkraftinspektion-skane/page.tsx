@@ -7,9 +7,9 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Vindkraftinspektion med drönare i Skåne",
+  title: "Vindkraftinspektion Skåne | Drönare",
   description:
-    "GridDrone inspekterar vindkraftverk med drönare i Skåne. Rotorblad, torn och nacelle. Minimal driftstopp. Begär offert.",
+    "Drönarinspektion av vindkraftverk i Skåne. Rotorblad, torn och nacelle med minimal driftstopp. Begär offert.",
   path: "/platser/vindkraftinspektion-skane",
   keywords: [
     "vindkraftinspektion Skåne drönare",
@@ -25,7 +25,7 @@ export default function VindkraftSkanePage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/kraftledningsinspektion-stockholm" },
+          { name: "Platser", href: "/platser/vindkraftinspektion-skane" },
           { name: "Vindkraftinspektion Skåne" },
         ]}
       />
@@ -39,7 +39,7 @@ export default function VindkraftSkanePage() {
       <Hero
         title="Vindkraftinspektion med drönare i Skåne"
         subtitle="Skåne"
-        description="Skåne är en av Sveriges mest vindkraftintensiva regioner. Vi inspekterar vindkraftverk med drönare — rotorblad, torn, nacelle och åskledarsystem."
+        description="Skåne är en av Sveriges mest vindkraftintensiva regioner. Vi inspekterar vindkraftverk med drönare — rotorblad, torn, nacelle och åskledarsystem — med minimal påverkan på drift."
         primaryCta={{ label: "Begär offert", href: "/kontakt" }}
         secondaryCta={{ label: "Vindkraftinspektion", href: "/tjanster/vindkraftinspektion" }}
       />
@@ -56,8 +56,11 @@ export default function VindkraftSkanePage() {
           <h2 className="heading-2">Vindkraftinspektion i Skåne</h2>
           <p className="body-text mt-4 max-w-3xl">
             Skåne har ett stort antal vindkraftverk, både på land och i
-            kustnära miljö. Drönare ger en effektiv metod för att inspektera
-            turbiner med minimal driftstopp.
+            kustnära miljö. Regionens vindexponerade läge innebär att
+            turbinkomponenter utsätts för påfrestningar som kräver
+            regelbunden tillsyn. Drönarinspektion ger en effektiv metod
+            för att granska rotorblad, torn och nacelle med minimal
+            driftstopp jämfört med manuell repinspektion.
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -100,10 +103,42 @@ export default function VindkraftSkanePage() {
         <div className="container-section">
           <h2 className="heading-2">Täckningsområde</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Vi utför vindkraftinspektioner i hela Skåne — från Malmö och Helsingborg
-            till Ystad, Kristianstad och Ängelholm. Vi inspekterar enskilda turbiner
-            såväl som hela vindkraftparker.
+            Vi utför vindkraftinspektioner i hela Skåne — från Malmö och
+            Helsingborg till Ystad, Kristianstad och Ängelholm. Vi
+            inspekterar enskilda turbiner såväl som hela vindkraftparker.
           </p>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-section">
+          <h2 className="heading-2">Relaterade tjänster och branscher</h2>
+          <ul className="mt-4 space-y-2 body-text max-w-3xl">
+            <li>
+              <Link href="/tjanster" className="text-brand-600 hover:underline">
+                Alla tjänster
+              </Link>{" "}
+              — översikt över GridDrones inspektionstjänster
+            </li>
+            <li>
+              <Link href="/tjanster/vindkraftinspektion" className="text-brand-600 hover:underline">
+                Vindkraftinspektion
+              </Link>{" "}
+              — detaljerad beskrivning av metodik och leverabler
+            </li>
+            <li>
+              <Link href="/tjanster/kraftledningsinspektion" className="text-brand-600 hover:underline">
+                Kraftledningsinspektion
+              </Link>{" "}
+              — inspektion av kraftledningar och elnät
+            </li>
+            <li>
+              <Link href="/branscher/vindkraft" className="text-brand-600 hover:underline">
+                Vindkraftbranschen
+              </Link>{" "}
+              — hur vi stödjer vindkraftägare och operatörer
+            </li>
+          </ul>
         </div>
       </section>
 

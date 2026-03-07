@@ -8,14 +8,14 @@ import CTABand from "@/components/CTABand";
 import { SERVICE_ITEMS } from "@/lib/constants";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Drönarinspektioner för elnät & energiinfrastruktur",
+  title: "Inspektionstjänster för elnät & energiinfrastruktur",
   description:
-    "GridDrone erbjuder professionell drönarinspektion av kraftledningar, elnät, vindkraftverk och solcellsparker. BVLOS-behöriga piloter. Termografi och LiDAR.",
+    "GridDrones inspektionstjänster: kraftledningsinspektion, termografering, vegetationskontroll, transformatorstationer, BVLOS och stormskadeinspektion. Begär offert.",
   path: "/tjanster",
   keywords: [
     "drönarinspektion elnät",
-    "drönartjänster energibolag",
-    "inspektion kraftledning drönare",
+    "inspektionstjänster kraftledning",
+    "drönartjänster energiinfrastruktur",
   ],
 });
 
@@ -29,11 +29,11 @@ export default function TjansterPage() {
       />
 
       <Hero
-        title="Drönarinspektioner för elnät & energiinfrastruktur"
+        title="Inspektionstjänster för elnät & energiinfrastruktur"
         subtitle="Våra tjänster"
-        description="GridDrone erbjuder professionell drönarinspektion av kraftledningar, elnät, vindkraftverk och solcellsparker. BVLOS-behöriga piloter. Termografi och LiDAR."
+        description="Strukturerad drönarinspektion av kraftledningar, transformatorstationer och ledningsgator. Varje tjänst levereras med georefererade data och klassificerade åtgärdsunderlag."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs items={[{ name: "Tjänster" }]} />
@@ -44,9 +44,8 @@ export default function TjansterPage() {
           <div className="section-intro">
             <h2 className="heading-2">Våra inspektionstjänster</h2>
             <p className="body-text mt-4">
-              Vi erbjuder ett komplett utbud av drönarbaserade
-              inspektionstjänster för energiinfrastruktur. Varje tjänst anpassas
-              efter era behov och levereras med strukturerade rapporter.
+              Varje tjänst anpassas efter ert näts förutsättningar och levereras
+              med strukturerade rapporter redo för ert nätförvaltningssystem.
             </p>
           </div>
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">

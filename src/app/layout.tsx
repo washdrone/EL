@@ -15,13 +15,13 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: `Drönarinspektion Elnät & Kraftledningar — Hela Sverige | ${SITE_NAME}`,
+    default: `Drönarinspektion av Kraftledningar & Elnät | ${SITE_NAME}`,
     template: `%s | ${SITE_NAME}`,
   },
   description: DEFAULT_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: `${SITE_NAME} | Drönarinspektion Elnät & Kraftledningar — Hela Sverige`,
+    title: `${SITE_NAME} | Drönarinspektion av Kraftledningar & Elnät`,
     description: DEFAULT_DESCRIPTION,
     url: SITE_URL,
     siteName: SITE_NAME,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_NAME} | Drönarinspektion Elnät & Kraftledningar`,
+    title: `${SITE_NAME} | Drönarinspektion av Kraftledningar & Elnät`,
     description: DEFAULT_DESCRIPTION,
     images: [DEFAULT_TWITTER_IMAGE],
   },

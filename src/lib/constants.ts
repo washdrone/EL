@@ -41,27 +41,12 @@ export const SERVICE_ITEMS = [
   {
     label: "Termografering",
     href: "/tjanster/termografering-kraftledning",
-    description: "Drönarbaserad värmekamerainspektion av elnät",
-  },
-  {
-    label: "Vindkraftinspektion",
-    href: "/tjanster/vindkraftinspektion",
-    description: "Inspektion av rotorblad, torn och nacelle",
-  },
-  {
-    label: "BVLOS-inspektion",
-    href: "/tjanster/bvlos-inspektion",
-    description: "Lång räckvidd — inspektera långa ledningssträckor effektivt",
+    description: "Radiometrisk värmekamerainspektion av elnät och stationer",
   },
   {
     label: "Transformatorstation",
     href: "/tjanster/transformatorstation-inspektion",
-    description: "Säker inspektion av transformatorstationer",
-  },
-  {
-    label: "Solcellspark",
-    href: "/tjanster/solcellspark-inspektion",
-    description: "Termografi och visuell kontroll av solcellsparker",
+    description: "Visuell och termisk kontroll av transformatorstationer",
   },
   {
     label: "Vegetationskontroll",
@@ -69,37 +54,37 @@ export const SERVICE_ITEMS = [
     description: "LiDAR-baserad kartläggning av kraftledningsgator",
   },
   {
+    label: "BVLOS-inspektion",
+    href: "/tjanster/bvlos-inspektion",
+    description: "Inspektera långa ledningssträckor utan siktlinjekrav",
+  },
+  {
+    label: "Stormskadeinspektion",
+    href: "/tjanster/stormskadeinspektion",
+    description: "Akut skadekartläggning och prioritering efter storm",
+  },
+  {
+    label: "Vindkraftinspektion",
+    href: "/tjanster/vindkraftinspektion",
+    description: "Inspektion av rotorblad, torn och nacelle",
+  },
+  {
     label: "Järnvägsinspektion",
     href: "/tjanster/jarnvagsinspektion",
     description: "Inspektion av kontaktledningar längs järnväg",
   },
   {
-    label: "Stormskadeinspektion",
-    href: "/tjanster/stormskadeinspektion",
-    description: "Akut skadekartläggning efter storm",
-  },
-  {
-    label: "Rörinspektioner",
-    href: "/tjanster/rorinspektioner",
-    description: "Inspektion av olje- och gasledningar",
-  },
-  {
     label: "Underhållsabonnemang",
     href: "/tjanster/underhallsabonnemang",
-    description: "Schemalagd inspektion med trendanalys",
+    description: "Schemalagd inspektion med historisk jämförelse och trendanalys",
   },
 ] as const;
 
 export const BRANCH_ITEMS = [
   {
-    label: "Energibolag",
+    label: "Nätägare & energibolag",
     href: "/branscher/energibolag",
-    description: "Elnätsleverantörer & energibolag",
-  },
-  {
-    label: "Elnät",
-    href: "/branscher/elnat",
-    description: "Regionala & lokala nätägare",
+    description: "Regionala & lokala nätägare och elnätsleverantörer",
   },
   {
     label: "Trafikverket",
@@ -112,14 +97,9 @@ export const BRANCH_ITEMS = [
     description: "Vindkraftoperatörer",
   },
   {
-    label: "Industri",
-    href: "/branscher/industri",
-    description: "Processindustri & industri-elnät",
-  },
-  {
     label: "Kommuner",
     href: "/branscher/kommuner",
-    description: "Kommuner & kommunala bolag",
+    description: "Kommuner & kommunala energibolag",
   },
   {
     label: "Försäkring",

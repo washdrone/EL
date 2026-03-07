@@ -7,9 +7,9 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Kraftledningsinspektion med drönare i Norrland",
+  title: "Kraftledningsinspektion Norrland | Drönare",
   description:
-    "GridDrone utför kraftledningsinspektion med drönare i Norrland. BVLOS-kapacitet för långa sträckor i svårtillgänglig terräng. Begär offert.",
+    "Drönarinspektion av kraftledningar i Norrland. BVLOS-kapacitet för långa sträckor i svårtillgänglig terräng. Begär offert.",
   path: "/platser/kraftledningsinspektion-norrland",
   keywords: [
     "kraftledningsinspektion Norrland",
@@ -25,7 +25,7 @@ export default function NorrlandPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/kraftledningsinspektion-stockholm" },
+          { name: "Platser", href: "/platser/kraftledningsinspektion-norrland" },
           { name: "Norrland" },
         ]}
       />
@@ -39,7 +39,7 @@ export default function NorrlandPage() {
       <Hero
         title="Kraftledningsinspektion med drönare i Norrland"
         subtitle="Norrland"
-        description="Norrland har några av Sveriges längsta kraftledningssträckor i svårtillgänglig terräng. Med BVLOS-kapacitet inspekterar vi effektivt även de mest avlägsna ledningarna."
+        description="Norrland har några av Sveriges längsta kraftledningssträckor i svårtillgänglig terräng. Med BVLOS-kapacitet inspekterar vi effektivt även avlägsna ledningar i skog och fjällmiljö."
         primaryCta={{ label: "Begär offert", href: "/kontakt" }}
         secondaryCta={{ label: "Våra tjänster", href: "/tjanster" }}
       />
@@ -53,11 +53,14 @@ export default function NorrlandPage() {
 
       <section className="section-padding bg-white">
         <div className="container-section">
-          <h2 className="heading-2">Drönarinspektion i Norrland</h2>
+          <h2 className="heading-2">Drönarinspektion av elnät i Norrland</h2>
           <p className="body-text mt-4 max-w-3xl">
             Norrlands elnät sträcker sig genom skog, fjäll och glesbygd —
-            terräng som gör traditionell inspektion tidskrävande och kostsam.
-            Drönare med BVLOS-kapacitet är särskilt lämpade för dessa förhållanden.
+            terräng som gör traditionell inspektion med helikopter eller
+            markfordon tidskrävande och kostsam. Stora avstånd mellan
+            stolpar, begränsad väginfrastruktur och snörika vintrar förstärker
+            behovet av effektiva inspektionsmetoder. Drönare med
+            BVLOS-kapacitet är särskilt lämpade för dessa förhållanden.
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -102,8 +105,41 @@ export default function NorrlandPage() {
           <p className="body-text mt-4 max-w-3xl">
             Vi utför uppdrag i hela Norrland — från Gävleborg i söder till
             Norrbotten i norr. Regionens långa avstånd och svårtillgängliga
-            terräng gör BVLOS-inspektioner extra värdefulla.
+            terräng gör BVLOS-inspektioner extra värdefulla för elnätsägare
+            som ansvarar för stora nätområden.
           </p>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-section">
+          <h2 className="heading-2">Relaterade tjänster och branscher</h2>
+          <ul className="mt-4 space-y-2 body-text max-w-3xl">
+            <li>
+              <Link href="/tjanster" className="text-brand-600 hover:underline">
+                Alla tjänster
+              </Link>{" "}
+              — översikt över GridDrones inspektionstjänster
+            </li>
+            <li>
+              <Link href="/tjanster/kraftledningsinspektion" className="text-brand-600 hover:underline">
+                Kraftledningsinspektion
+              </Link>{" "}
+              — detaljerad beskrivning av metodik och leverabler
+            </li>
+            <li>
+              <Link href="/tjanster/bvlos-inspektion" className="text-brand-600 hover:underline">
+                BVLOS-inspektion
+              </Link>{" "}
+              — inspektion bortom synhåll för långa ledningssträckor
+            </li>
+            <li>
+              <Link href="/branscher/energibolag" className="text-brand-600 hover:underline">
+                Energibolag
+              </Link>{" "}
+              — hur vi stödjer elnätsägare och nätoperatörer
+            </li>
+          </ul>
         </div>
       </section>
 

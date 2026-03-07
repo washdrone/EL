@@ -7,13 +7,13 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Drönarinspektion energi i Dalarna",
+  title: "Kraftledningsinspektion Dalarna | Drönare",
   description:
-    "GridDrone utför drönarinspektion av kraftledningar och energiinfrastruktur i Dalarna. Visuell inspektion, termografering och LiDAR. Begär offert.",
+    "Drönarinspektion av kraftledningar och elnät i Dalarna. Visuell inspektion, termografering och LiDAR-vegetationskontroll. Begär offert.",
   path: "/platser/kraftledningsinspektion-dalarna",
   keywords: [
-    "drönarinspektion energi Dalarna",
     "kraftledningsinspektion Dalarna",
+    "drönarinspektion elnät Dalarna",
     "elnätsinspektion Dalarna drönare",
     "drönare kraftledning Dalarna",
   ],
@@ -25,21 +25,21 @@ export default function DalarnaPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/kraftledningsinspektion-stockholm" },
+          { name: "Platser", href: "/platser/kraftledningsinspektion-dalarna" },
           { name: "Dalarna" },
         ]}
       />
       <JsonLd
         type="Service"
         servicePath="/platser/kraftledningsinspektion-dalarna"
-        serviceName="Drönarinspektion energi Dalarna"
-        serviceDescription="Professionell drönarinspektion av kraftledningar och energiinfrastruktur i Dalarna."
+        serviceName="Kraftledningsinspektion Dalarna"
+        serviceDescription="Professionell drönarinspektion av kraftledningar och elnät i Dalarna."
       />
 
       <Hero
-        title="Drönarinspektion av energiinfrastruktur i Dalarna"
+        title="Kraftledningsinspektion med drönare i Dalarna"
         subtitle="Dalarna"
-        description="Vi utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i Dalarnas län — från Borlänge och Falun till glesbygden."
+        description="Professionell drönarinspektion av kraftledningar och elnät i Dalarnas län — från tätortsnära distributionsnät till ledningssträckor genom skog och bergsområden."
         primaryCta={{ label: "Begär offert", href: "/kontakt" }}
         secondaryCta={{ label: "Våra tjänster", href: "/tjanster" }}
       />
@@ -53,28 +53,31 @@ export default function DalarnaPage() {
 
       <section className="section-padding bg-white">
         <div className="container-section">
-          <h2 className="heading-2">Drönarinspektion i Dalarna</h2>
+          <h2 className="heading-2">Drönarinspektion av elnät i Dalarna</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Dalarna har ett varierat elnät med både tätortsnära distributionsnät
-            och långa ledningssträckor genom skog och bergsområden. Vi anpassar
-            inspektionsmetod efter terräng och krav.
+            Dalarna har ett varierat elnät med tätortsnära distributionsnät
+            kring Falun och Borlänge samt långa ledningssträckor genom
+            skogsmark och bergsområden i norr och väster. Regionens
+            skiftande terräng och klimat ställer krav på regelbunden
+            inspektion. Vi anpassar inspektionsmetod efter förutsättningarna
+            i varje uppdrag.
           </p>
 
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
                 title: "Kraftledningsinspektion",
-                desc: "Visuell inspektion av stolpar, isolatorer och ledningsgata.",
+                desc: "Visuell inspektion av stolpar, isolatorer och ledningsgata i distributions- och regionnät.",
                 href: "/tjanster/kraftledningsinspektion",
               },
               {
                 title: "Termografering",
-                desc: "Värmekamera för att hitta varmgångar och kontaktfel.",
+                desc: "Värmekamera för att identifiera varmgångar och kontaktfel i elnätskomponenter.",
                 href: "/tjanster/termografering-kraftledning",
               },
               {
                 title: "Vegetationskontroll",
-                desc: "LiDAR-kartläggning av vegetation längs ledningsgator.",
+                desc: "LiDAR-kartläggning av vegetation längs ledningsgator i skogsrik terräng.",
                 href: "/tjanster/vegetationskontroll",
               },
             ].map((item) => (
@@ -104,6 +107,38 @@ export default function DalarnaPage() {
             Mora, Leksand, Rättvik och Ludvika. Med BVLOS-kapacitet täcker vi
             även längre sträckor i skogsrik terräng.
           </p>
+        </div>
+      </section>
+
+      <section className="section-padding bg-white">
+        <div className="container-section">
+          <h2 className="heading-2">Relaterade tjänster och branscher</h2>
+          <ul className="mt-4 space-y-2 body-text max-w-3xl">
+            <li>
+              <Link href="/tjanster" className="text-brand-600 hover:underline">
+                Alla tjänster
+              </Link>{" "}
+              — översikt över GridDrones inspektionstjänster
+            </li>
+            <li>
+              <Link href="/tjanster/kraftledningsinspektion" className="text-brand-600 hover:underline">
+                Kraftledningsinspektion
+              </Link>{" "}
+              — detaljerad beskrivning av metodik och leverabler
+            </li>
+            <li>
+              <Link href="/tjanster/stormskadeinspektion" className="text-brand-600 hover:underline">
+                Stormskadeinspektion
+              </Link>{" "}
+              — snabb skadeinventering efter väderrelaterade händelser
+            </li>
+            <li>
+              <Link href="/branscher/energibolag" className="text-brand-600 hover:underline">
+                Energibolag
+              </Link>{" "}
+              — hur vi stödjer elnätsägare och nätoperatörer
+            </li>
+          </ul>
         </div>
       </section>
 

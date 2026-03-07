@@ -2,8 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 const infoCards = [
-  { title: "Multispektral", subtitle: "Djupanalys" },
-  { title: "NDVI & NIR", subtitle: "Fotosyntesmätning" },
+  { title: "RGB + Termografi", subtitle: "Visuell & termisk analys" },
+  { title: "RTK-positionering", subtitle: "Centimeternoggrannhet" },
   { title: "SWEREF99 TM", subtitle: "Rikstäckande koordinater" },
   { title: "GIS-redo", subtitle: "Direktimport i era system" },
 ];
@@ -28,14 +28,14 @@ export default function HeroSection() {
       <div className="container-section relative z-10 py-24 sm:py-32 lg:py-40">
         <div className="max-w-3xl">
           <p className="eyebrow-cyan mb-5">
-            BESLUTSUNDERLAG FÖR KRITISK INFRASTRUKTUR
+            DRÖNARINSPEKTION AV ELNÄT & KRAFTLEDNINGAR
           </p>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.25rem] xl:leading-[1.15]">
-            Vi digitaliserar inspektion och underhåll av elnät.
+            Strukturerad inspektion av kraftledningar och elnät — utan klättring, utan driftstopp.
           </h1>
           <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-slate-200">
-            Från högupplöst fältdata till klassificerade åtgärdsunderlag
-            – snabbare, säkrare och med absolut precision.
+            Georefererade bilder, termografisk analys och klassificerade åtgärdsunderlag
+            — direkt in i ert nätförvaltningssystem.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -43,10 +43,10 @@ export default function HeroSection() {
               Diskutera ert inspektionsbehov
             </Link>
             <Link
-              href="/plattform"
+              href="/exempelrapport"
               className="inline-flex items-center gap-2 rounded-md border border-white bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-slate-900"
             >
-              Se hur vi strukturerar leveransdata
+              Se en exempelrapport
               <ArrowRight className="h-4 w-4" />
             </Link>
           </div>

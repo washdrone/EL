@@ -6,25 +6,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const pages = [
     // Homepage
-    { path: "/", priority: 0.5, changeFrequency: "monthly" as const },
+    { path: "/", priority: 1.0, changeFrequency: "weekly" as const },
 
     // Service overview
-    { path: "/tjanster", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/tjanster", priority: 0.8, changeFrequency: "monthly" as const },
 
     // Service pages — Core infrastructure
     { path: "/tjanster/kraftledningsinspektion", priority: 1.0, changeFrequency: "weekly" as const },
     { path: "/tjanster/termografering-kraftledning", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/tjanster/vindkraftinspektion", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/tjanster/bvlos-inspektion", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/tjanster/transformatorstation-inspektion", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/tjanster/solcellspark-inspektion", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/tjanster/vegetationskontroll", priority: 0.8, changeFrequency: "monthly" as const },
-
-    // Service pages — New niches
-    { path: "/tjanster/jarnvagsinspektion", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/tjanster/bvlos-inspektion", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/tjanster/stormskadeinspektion", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/tjanster/rorinspektioner", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/tjanster/underhallsabonnemang", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/tjanster/vindkraftinspektion", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/tjanster/jarnvagsinspektion", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/tjanster/underhallsabonnemang", priority: 0.8, changeFrequency: "monthly" as const },
 
     // Kraftledningsinspektion sub-pages
     { path: "/tjanster/kraftledningsinspektion/luftledningar", priority: 0.9, changeFrequency: "monthly" as const },
@@ -37,27 +33,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     // Branch/Industry pages
     { path: "/branscher/energibolag", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/branscher/elnat", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/branscher/trafikverket", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/branscher/vindkraft", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/branscher/industri", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/branscher/trafikverket", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/branscher/vindkraft", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/branscher/kommuner", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/branscher/forsakring", priority: 0.7, changeFrequency: "monthly" as const },
 
     // Location pages
-    { path: "/platser/kraftledningsinspektion-stockholm", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/platser/kraftledningsinspektion-goteborg", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/platser/kraftledningsinspektion-malmo", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/platser/kraftledningsinspektion-norrland", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/platser/kraftledningsinspektion-dalarna", priority: 0.7, changeFrequency: "monthly" as const },
-    { path: "/platser/vindkraftinspektion-skane", priority: 0.7, changeFrequency: "monthly" as const },
-    { path: "/platser/jarnvagsinspektion-stockholm", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/platser/kraftledningsinspektion-stockholm", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/platser/kraftledningsinspektion-goteborg", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/platser/kraftledningsinspektion-malmo", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/platser/kraftledningsinspektion-norrland", priority: 0.7, changeFrequency: "monthly" as const },
+    { path: "/platser/kraftledningsinspektion-dalarna", priority: 0.6, changeFrequency: "monthly" as const },
+    { path: "/platser/vindkraftinspektion-skane", priority: 0.6, changeFrequency: "monthly" as const },
+    { path: "/platser/jarnvagsinspektion-stockholm", priority: 0.6, changeFrequency: "monthly" as const },
 
     // Conversion & differentiation pages
-    { path: "/roi-kalkylator", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/roi-kalkylator", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/exempelrapport", priority: 0.8, changeFrequency: "monthly" as const },
-    { path: "/stormrespons", priority: 0.9, changeFrequency: "monthly" as const },
-    { path: "/uppdrag", priority: 0.7, changeFrequency: "monthly" as const },
 
     // Blog articles
     { path: "/blogg", priority: 0.7, changeFrequency: "weekly" as const },
