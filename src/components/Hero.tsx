@@ -33,9 +33,9 @@ export default function Hero({
       </div>
 
       <div className={`container-section relative ${compact ? "py-16 sm:py-20" : "py-20 sm:py-28 lg:py-36"}`}>
-        <div className="grid items-center gap-12 lg:grid-cols-5">
+        <div className={`grid items-center gap-12 ${compact ? "" : "lg:grid-cols-5"}`}>
           {/* Text content */}
-          <div className={compact ? "" : "lg:col-span-3"}>
+          <div className={compact ? "max-w-2xl" : "lg:col-span-3"}>
             <div className="inline-flex items-center rounded-full border border-accent-400/30 bg-accent-500/10 px-4 py-1.5">
               <div className="mr-2 h-1.5 w-1.5 rounded-full bg-accent-400 motion-safe:animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-wider text-accent-300">
