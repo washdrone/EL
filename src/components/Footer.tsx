@@ -21,7 +21,7 @@ const footerBranches = [
 
 const footerNavigation = [
   { label: "Exempelrapport", href: "/exempelrapport" },
-  { label: "ROI-kalkylator", href: "/roi-kalkylator" },
+  { label: "Kostnadskalkylator", href: "/roi-kalkylator" },
   { label: "Certifieringar", href: "/certifieringar" },
   { label: "Blogg", href: "/blogg" },
   { label: "Om oss", href: "/om-oss" },

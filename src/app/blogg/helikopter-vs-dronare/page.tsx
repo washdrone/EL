@@ -75,7 +75,7 @@ export default function HelikopterVsDronarePage() {
             Den faktiska kostnaden varierar beroende på uppdragets
             förutsättningar. Använd vår{" "}
             <Link href="/roi-kalkylator" className="text-brand-600 hover:text-brand-700 underline">
-              ROI-kalkylator
+              kostnadskalkylator
             </Link>{" "}
             för en uppskattning baserad på era parametrar.
           </p>
@@ -123,11 +123,11 @@ export default function HelikopterVsDronarePage() {
           <div className="mt-12 rounded-xl border border-brand-200 bg-brand-50 p-6">
             <h3 className="text-base font-semibold text-brand-800">Beräkna er besparing</h3>
             <p className="mt-2 text-sm text-brand-700">
-              Använd vår ROI-kalkylator för att beräkna den uppskattade
+              Använd vår kostnadskalkylator för att beräkna den uppskattade
               kostnadsbesparingen för ert specifika scenario.
             </p>
             <Link href="/roi-kalkylator" className="mt-4 inline-block text-sm font-medium text-brand-600 hover:text-brand-700">
-              Öppna ROI-kalkylatorn →
+              Öppna kostnadskalkylator →
             </Link>
           </div>
         </div>
