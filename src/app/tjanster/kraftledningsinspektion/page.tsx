@@ -10,9 +10,9 @@ import ComplianceModule from "@/components/ComplianceModule";
 import FAQ from "@/components/FAQ";
 import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
+import Image from "next/image";
 import { CaseCard, sampleCases } from "@/components/CaseCard";
 import { faqItems } from "@/data/faq";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Kraftledningsinspektion med Drönare",
@@ -118,11 +118,15 @@ export default function HubPage() {
                 nätförvaltningssystem.
               </p>
             </div>
-            <ImagePlaceholder
-              alt="Drönare inspekterar luftledning"
-              illustration="drone"
-              aspect="4/3"
-            />
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-lg">
+              <Image
+                src="/images/kraftledningar.png"
+                alt="Drönarvy av kraftledningsstolpe och ledningsgata"
+                width={800}
+                height={600}
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
 
           <div className="mx-auto mt-14 grid max-w-4xl gap-8 sm:grid-cols-3">
