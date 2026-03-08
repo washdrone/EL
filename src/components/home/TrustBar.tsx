@@ -10,11 +10,11 @@ export default function TrustBar() {
   return (
     <section className="bg-slate-50 py-12 sm:py-14">
       <div className="container-section">
-        <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 sm:gap-x-8 md:flex-nowrap">
           {trustItems.map((item) => (
             <span
               key={item}
-              className="text-xs font-semibold uppercase tracking-widest text-slate-500"
+              className="whitespace-nowrap text-xs font-semibold uppercase tracking-wider text-slate-500"
             >
               {item}
             </span>
