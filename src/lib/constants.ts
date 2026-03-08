@@ -15,7 +15,7 @@ export const NAV_ITEMS = [
     href: "/exempelrapport",
   },
   {
-    label: "ROI-kalkylator",
+    label: "Kostnadskalkylator",
     href: "/roi-kalkylator",
   },
   {
