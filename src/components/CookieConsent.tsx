@@ -68,14 +68,14 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={decline}
-            className="rounded-xl border border-surface-200 bg-white px-4 py-2 text-sm font-medium text-surface-700 transition-colors hover:bg-surface-50"
+            className="rounded-sm border border-surface-200 bg-white px-4 py-2 text-sm font-medium text-surface-700 transition-colors hover:bg-surface-50"
           >
             Avböj
           </button>
           <button
             type="button"
             onClick={accept}
-            className="rounded-xl bg-brand-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-700"
+            className="rounded-sm bg-brand-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-brand-700"
           >
             Godkänn
           </button>

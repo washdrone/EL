@@ -13,6 +13,10 @@ const config: Config = {
       borderRadius: {
         sm: "2px",
       },
+      boxShadow: {
+        soft: "0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04)",
+        elevated: "0 4px 12px -2px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.04)",
+      },
       colors: {
         brand: {
           50: "#f0f7ff",

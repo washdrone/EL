@@ -38,9 +38,6 @@ export default function ProcessSteps() {
         </div>
 
         <div className="relative mt-16">
-          {/* Connector line */}
-          <div className="absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 bg-surface-200 lg:block" aria-hidden="true" />
-
           <div className="grid gap-10 lg:grid-cols-4 lg:gap-0">
             {steps.map((step, index) => (
               <div key={step.number} className="relative flex flex-col items-center text-center">

@@ -51,7 +51,7 @@ export default function ROICalculator() {
                     max={10000}
                     value={km}
                     onChange={(e) => setKm(Math.max(1, Number(e.target.value)))}
-                    className="mt-1.5 w-full rounded-xl border border-surface-200 px-4 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                    className="mt-1.5 w-full rounded-sm border border-surface-200 px-4 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
                   />
                 </div>
 
@@ -63,7 +63,7 @@ export default function ROICalculator() {
                     id="method"
                     value={method}
                     onChange={(e) => setMethod(e.target.value as InspectionMethod)}
-                    className="mt-1.5 w-full rounded-xl border border-surface-200 px-4 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                    className="mt-1.5 w-full rounded-sm border border-surface-200 px-4 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
                   >
                     <option value="helikopter">Helikopter</option>
                     <option value="manuell">Manuell / markbaserad</option>
@@ -78,7 +78,7 @@ export default function ROICalculator() {
                     id="frequency"
                     value={frequency}
                     onChange={(e) => setFrequency(Number(e.target.value))}
-                    className="mt-1.5 w-full rounded-xl border border-surface-200 px-4 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
+                    className="mt-1.5 w-full rounded-sm border border-surface-200 px-4 py-2.5 text-sm focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20"
                   >
                     <option value={1}>1 gång per år</option>
                     <option value={2}>2 gånger per år</option>

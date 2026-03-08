@@ -44,7 +44,7 @@ export default function HeroSection() {
             </Link>
             <Link
               href="/exempelrapport"
-              className="inline-flex items-center gap-2 rounded-md border border-white bg-white/10 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white hover:text-slate-900"
+              className="btn-ghost"
             >
               Se en exempelrapport
               <ArrowRight className="h-4 w-4" />
@@ -57,7 +57,7 @@ export default function HeroSection() {
           {infoCards.map((card) => (
             <div
               key={card.title}
-              className="rounded-lg border border-white/15 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
+              className="rounded-lg border border-white/25 bg-white/5 p-4 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:bg-white/10"
             >
               <h3 className="text-sm font-semibold text-white">
                 {card.title}

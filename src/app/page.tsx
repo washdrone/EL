@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import StickyCTA from "@/components/StickyCTA";
 import HeroSection from "@/components/home/HeroSection";
 import TrustBar from "@/components/home/TrustBar";
 import ProblemSection from "@/components/home/ProblemSection";
@@ -22,6 +23,7 @@ export default function Home() {
         <PreFooterCTA />
       </main>
       <Footer />
+      <StickyCTA />
     </>
   );
 }

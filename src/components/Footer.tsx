@@ -30,7 +30,7 @@ const footerNavigation = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white">
+    <footer className="border-t border-slate-200 bg-white pb-20 lg:pb-0">
       <div className="container-section py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           {/* Company */}
