@@ -73,6 +73,22 @@ export default function RootLayout({
         {children}
         {GA_MEASUREMENT_ID && (
           <>
+            {/* Google Consent Mode v2 – must run before gtag.js loads */}
+            <Script id="consent-default" strategy="beforeInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('consent', 'default', {
+                  ad_storage: 'denied',
+                  ad_user_data: 'denied',
+                  ad_personalization: 'denied',
+                  analytics_storage: localStorage.getItem('griddrone_cookie_consent') === 'accepted' ? 'granted' : 'denied',
+                  wait_for_update: 500
+                });
+              `}
+            </Script>
+
+            {/* Google tag (gtag.js) – GA4 */}
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
               strategy="afterInteractive"
@@ -81,11 +97,10 @@ export default function RootLayout({
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
-                gtag('consent', 'default', {
-                  analytics_storage: localStorage.getItem('griddrone_cookie_consent') === 'accepted' ? 'granted' : 'denied'
-                });
                 gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}');
+                gtag('config', '${GA_MEASUREMENT_ID}', {
+                  send_page_view: true
+                });
               `}
             </Script>
           </>

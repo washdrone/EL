@@ -26,10 +26,12 @@ export default function CookieConsent() {
   function accept() {
     localStorage.setItem(CONSENT_KEY, "accepted");
     setConsent("accepted");
-    // Enable GA4 by reloading — gtag consent update
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("consent", "update", {
         analytics_storage: "granted",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
       });
     }
   }
@@ -40,6 +42,9 @@ export default function CookieConsent() {
     if (typeof window !== "undefined" && window.gtag) {
       window.gtag("consent", "update", {
         analytics_storage: "denied",
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
       });
     }
   }
