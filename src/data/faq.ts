@@ -87,7 +87,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Hur mycket billigare är drönare jämfört med helikopter för elnätsinspektion?",
     answer:
-      "Kostnadsbesparingen varierar beroende på uppdragets förutsättningar. Generellt har drönarinspektioner lägre driftkostnad per kilometer jämfört med helikopter, särskilt vid kortare till medellånga sträckor. Använd vår ROI-kalkylator för en uppskattning baserad på era parametrar.",
+      "Kostnadsbesparingen varierar beroende på uppdragets förutsättningar. Generellt har drönarinspektioner lägre driftkostnad per kilometer jämfört med helikopter, särskilt vid kortare till medellånga sträckor. Använd vår kostnadskalkylator för en uppskattning baserad på era parametrar.",
   },
   {
     question: "Hur snabbt kan GridDrone mobilisera efter en storm?",
