@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { NAV_ITEMS, COMPANY_NAME, SERVICE_ITEMS, BRANCH_ITEMS } from "@/lib/constants";
-import { Zap } from "lucide-react";
 
 type OpenDropdown = null | "services" | "branches";
 
@@ -121,14 +121,16 @@ export default function Header() {
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600"
+          className="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600"
         >
-          <div className="flex h-8 w-8 items-center justify-center rounded-sm bg-slate-900">
-            <Zap className="h-4 w-4 text-cyan-400" strokeWidth={2.5} />
-          </div>
-          <span className="text-base font-bold tracking-tight text-slate-900">
-            {COMPANY_NAME}
-          </span>
+          <Image
+            src="/images/Logotyp.png"
+            alt={COMPANY_NAME}
+            width={160}
+            height={40}
+            className="h-9 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop nav */}
