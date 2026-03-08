@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -6,12 +7,14 @@ export default function ProofSection() {
     <section className="section-padding bg-slate-50">
       <div className="container-section">
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
-          {/* Image placeholder */}
-          <div className="aspect-[4/3] w-full rounded-sm bg-slate-200 flex items-center justify-center border border-slate-300">
-            <p className="text-sm font-mono text-slate-400 text-center px-8 leading-relaxed">
-              [Image: Split screen showing standard photo vs thermal image of a
-              broken insulator with a red bounding box]
-            </p>
+          <div className="aspect-[4/3] w-full rounded-sm overflow-hidden">
+            <Image
+              src="/images/Termiskvanlig.png"
+              alt="Jämförelse mellan standardfoto och termisk bild av en skadad isolator med markerad avvikelse"
+              width={800}
+              height={600}
+              className="w-full h-full object-cover rounded-sm"
+            />
           </div>
 
           {/* Text content */}
