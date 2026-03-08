@@ -257,7 +257,7 @@ export default function HubPage() {
           {/* Tablet/Desktop comparison table */}
           <div className="mx-auto mt-12 hidden max-w-4xl overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-soft md:block">
             {/* Header */}
-            <div className="grid grid-cols-[1fr,1fr,1fr] border-b border-surface-200 bg-surface-50">
+            <div className="grid grid-cols-[1.2fr,1fr,1fr] border-b border-surface-200 bg-surface-50">
               <div className="p-4 sm:p-5">
                 <p className="text-xs font-semibold uppercase tracking-wider text-surface-500">Aspekt</p>
               </div>
@@ -273,7 +273,7 @@ export default function HubPage() {
             {comparisonRows.map((row, i) => (
               <div
                 key={row.label}
-                className={`grid grid-cols-[1fr,1fr,1fr] ${i % 2 === 0 ? "bg-white" : "bg-surface-50/50"}`}
+                className={`grid grid-cols-[1.2fr,1fr,1fr] ${i % 2 === 0 ? "bg-white" : "bg-surface-50/50"}`}
               >
                 <div className="p-4 sm:p-5">
                   <p className="text-sm font-medium text-surface-800">{row.label}</p>
@@ -323,7 +323,7 @@ export default function HubPage() {
                 Exempel på genomförda inspektionsuppdrag.
               </p>
             </div>
-            <div className="mx-auto mt-12 max-w-2xl">
+            <div className="mx-auto mt-12 max-w-2xl space-y-4">
               {sampleCases.map((c) => (
                 <CaseCard key={c.slug} data={c} />
               ))}

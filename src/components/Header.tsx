@@ -148,6 +148,7 @@ export default function Header() {
               }`}
               onClick={() => toggleDropdown("services")}
               aria-expanded={openDropdown === "services"}
+              aria-haspopup="true"
             >
               Tjänster
               <svg
@@ -193,6 +194,7 @@ export default function Header() {
               }`}
               onClick={() => toggleDropdown("branches")}
               aria-expanded={openDropdown === "branches"}
+              aria-haspopup="true"
             >
               Branscher
               <svg
@@ -255,7 +257,7 @@ export default function Header() {
           className="inline-flex items-center justify-center rounded-sm p-2 text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-900 lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
-          aria-label="Öppna meny"
+          aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
         >
           {mobileOpen ? (
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -274,7 +276,7 @@ export default function Header() {
         <div className="max-h-[calc(100dvh-60px)] overflow-y-auto border-t border-slate-100 bg-white lg:hidden">
           <div className="container-section space-y-1 py-4">
             <p className="eyebrow px-3 pb-1">Tjänster</p>
-            {SERVICE_ITEMS.slice(0, 6).map((item) => (
+            {SERVICE_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
@@ -292,7 +294,7 @@ export default function Header() {
             <div className="my-2 border-t border-slate-100" />
 
             <p className="eyebrow px-3 pb-1">Branscher</p>
-            {BRANCH_ITEMS.slice(0, 5).map((item) => (
+            {BRANCH_ITEMS.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}

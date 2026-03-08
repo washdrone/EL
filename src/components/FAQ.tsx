@@ -60,7 +60,7 @@ export default function FAQ({
               </button>
               <div
                 className={`overflow-hidden transition-all duration-200 ${
-                  openIndex === index ? "max-h-96 pb-5" : "max-h-0"
+                  openIndex === index ? "max-h-[2000px] pb-5" : "max-h-0"
                 }`}
               >
                 <p className="pr-12 text-sm leading-6 text-surface-500">

@@ -14,7 +14,7 @@ export default function TrustBar() {
           {trustItems.map((item) => (
             <span
               key={item}
-              className="text-xs font-semibold uppercase tracking-widest text-slate-400"
+              className="text-xs font-semibold uppercase tracking-widest text-slate-500"
             >
               {item}
             </span>
