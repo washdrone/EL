@@ -35,7 +35,7 @@ export default function JsonLd({
         "@id": `${SITE_URL}#organization`,
         name: COMPANY_NAME,
         url: SITE_URL,
-        logo: `${SITE_URL}/opengraph-image`,
+        logo: `${SITE_URL}/images/Logotyp.png`,
         email: CONTACT_EMAIL,
         description: `${COMPANY_NAME} – professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i Sverige.`,
         areaServed: {
