@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Cable,
   CircuitBoard,
@@ -14,26 +15,31 @@ const services = [
     icon: Cable,
     title: "Kraftledningar",
     text: "Års- och detaljinspektion av stolpar, linor, stag och isolatorer.",
+    image: "/images/kraftledningar.png",
   },
   {
     icon: CircuitBoard,
     title: "Stationer & Komponenter",
     text: "Detaljerad statuskontroll av transformatorer, brytare och frånskiljare under drift.",
+    image: "/images/stationer-komponenter.png",
   },
   {
     icon: Thermometer,
     title: "Termografi",
     text: "Säker identifiering av överhettning och obalans i nätet för att förhindra haverier.",
+    image: "/images/termografi.png",
   },
   {
     icon: TreePine,
     title: "Vegetationskontroll",
     text: "LiDAR-baserad kartläggning av ledningsgator för exakt prioritering av röjningsinsatser.",
+    image: "/images/vegetationskontroll.png",
   },
   {
     icon: AlertTriangle,
     title: "Stormskadeinspektion",
     text: "Akut skadekartläggning efter storm för prioriterad återuppbyggnad av ert elnät.",
+    image: "/images/stormskadeanalys.png",
   },
 ];
 
@@ -93,12 +99,16 @@ export default function ServicesSection() {
             ))}
           </div>
 
-          {/* Right: image placeholder */}
+          {/* Right: image */}
           <div className="lg:col-span-7 flex items-center justify-center">
-            <div className="aspect-[4/3] w-full rounded-sm bg-slate-200 flex items-center justify-center border border-slate-300">
-              <p className="text-sm font-mono text-slate-400 text-center px-8">
-                [Image: {services[activeIndex].title} – drönarperspektiv]
-              </p>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-sm">
+              <Image
+                src={services[activeIndex].image}
+                alt={`${services[activeIndex].title} – drönarperspektiv`}
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 58vw, 100vw"
+              />
             </div>
           </div>
         </div>
