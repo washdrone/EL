@@ -38,7 +38,7 @@ export default function KontaktPage() {
             <div className="grid gap-12 lg:grid-cols-5">
               {/* Left: Info */}
               <div className="lg:col-span-2">
-                <h1 className="heading-1">Boka genomgång eller begär offert</h1>
+                <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl text-balance">Boka genomgång eller begär offert</h1>
                 <p className="body-text mt-4">
                   Fyll i formuläret så återkommer vi med en genomgång
                   anpassad efter ert behov.
