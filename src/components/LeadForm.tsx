@@ -57,7 +57,10 @@ export default function LeadForm() {
       });
 
       if (!res.ok) {
-        throw new Error("Något gick fel. Försök igen eller kontakta oss direkt.");
+        const data = await res.json().catch(() => null);
+        throw new Error(
+          data?.error || "Något gick fel. Försök igen eller kontakta oss direkt."
+        );
       }
 
       events.formSubmit();
