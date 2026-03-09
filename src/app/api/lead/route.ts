@@ -37,26 +37,35 @@ function isValidEmail(email: string): boolean {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 function buildEmailHtml(body: LeadData): string {
   const rows = [
-    ["Företag", body.company],
-    ["Kontaktperson", body.contact],
-    ["E-post", body.email],
-    ["Region / nätområde", body.region],
+    ["Företag", escapeHtml(body.company)],
+    ["Kontaktperson", escapeHtml(body.contact)],
+    ["E-post", escapeHtml(body.email)],
+    ["Region / nätområde", body.region ? escapeHtml(body.region) : undefined],
     [
       "Typ av inspektion",
       body.inspectionType
-        ? inspectionLabels[body.inspectionType] || body.inspectionType
+        ? inspectionLabels[body.inspectionType] || escapeHtml(body.inspectionType)
         : undefined,
     ],
-    ["Omfattning", body.scope],
+    ["Omfattning", body.scope ? escapeHtml(body.scope) : undefined],
     [
       "Önskad tidsram",
       body.timeframe
-        ? timeframeLabels[body.timeframe] || body.timeframe
+        ? timeframeLabels[body.timeframe] || escapeHtml(body.timeframe)
         : undefined,
     ],
-    ["Meddelande", body.message],
+    ["Meddelande", body.message ? escapeHtml(body.message) : undefined],
   ];
 
   const tableRows = rows
@@ -111,13 +120,21 @@ export async function POST(request: NextRequest) {
       : "Ej angiven";
 
     if (resend) {
-      await resend.emails.send({
+      const { error } = await resend.emails.send({
         from: `${COMPANY_NAME} <noreply@griddrone.se>`,
         to: [CONTACT_EMAIL],
         replyTo: body.email,
         subject: `Ny förfrågan: ${body.company} — ${inspectionLabel}`,
         html: buildEmailHtml(body),
       });
+
+      if (error) {
+        console.error("Resend API error:", error);
+        return NextResponse.json(
+          { error: "Kunde inte skicka meddelandet. Försök igen." },
+          { status: 502 }
+        );
+      }
     } else {
       // Fallback: log to console if Resend is not configured
       console.log("=== NEW LEAD (email not configured) ===");
