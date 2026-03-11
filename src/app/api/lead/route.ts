@@ -119,29 +119,31 @@ export async function POST(request: NextRequest) {
       ? inspectionLabels[body.inspectionType] || body.inspectionType
       : "Ej angiven";
 
-    if (resend) {
-      const { error } = await resend.emails.send({
-        from: `${COMPANY_NAME} <noreply@griddrone.se>`,
-        to: [CONTACT_EMAIL],
-        replyTo: body.email,
-        subject: `Ny förfrågan: ${body.company} — ${inspectionLabel}`,
-        html: buildEmailHtml(body),
-      });
-
-      if (error) {
-        console.error("Resend API error:", error);
-        return NextResponse.json(
-          { error: "Kunde inte skicka meddelandet. Försök igen." },
-          { status: 502 }
-        );
-      }
-    } else {
-      // Fallback: log to console if Resend is not configured
-      console.log("=== NEW LEAD (email not configured) ===");
-      console.log(JSON.stringify(body, null, 2));
-      console.log("Timestamp:", new Date().toISOString());
-      console.log("========================================");
+    if (!resend) {
+      console.error("RESEND_API_KEY is not configured – cannot send email");
+      return NextResponse.json(
+        { error: "E-post är inte konfigurerad. Kontakta oss direkt på " + CONTACT_EMAIL + "." },
+        { status: 503 }
+      );
     }
+
+    const { data, error } = await resend.emails.send({
+      from: `${COMPANY_NAME} <noreply@griddrone.se>`,
+      to: [CONTACT_EMAIL],
+      replyTo: body.email,
+      subject: `Ny förfrågan: ${body.company} — ${inspectionLabel}`,
+      html: buildEmailHtml(body),
+    });
+
+    if (error) {
+      console.error("Resend API error:", JSON.stringify(error));
+      return NextResponse.json(
+        { error: "Kunde inte skicka meddelandet. Försök igen eller kontakta oss direkt på " + CONTACT_EMAIL + "." },
+        { status: 502 }
+      );
+    }
+
+    console.log("Email sent successfully, id:", data?.id);
 
     return NextResponse.json(
       { success: true, message: "Förfrågan mottagen." },
