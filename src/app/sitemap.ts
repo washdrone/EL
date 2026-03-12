@@ -2,14 +2,15 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+  // Use a fixed date for stable lastModified values (update when content changes)
+  const siteLastModified = new Date("2026-03-12");
 
   const pages = [
     // Homepage
     { path: "/", priority: 1.0, changeFrequency: "weekly" as const },
 
     // Service overview
-    { path: "/tjanster", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/tjanster", priority: 0.9, changeFrequency: "weekly" as const },
 
     // Service pages — Core infrastructure
     { path: "/tjanster/kraftledningsinspektion", priority: 1.0, changeFrequency: "weekly" as const },
@@ -71,7 +72,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return pages.map((page) => ({
     url: `${SITE_URL}${page.path}`,
-    lastModified,
+    lastModified: siteLastModified,
     changeFrequency: page.changeFrequency,
     priority: page.priority,
   }));

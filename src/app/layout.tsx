@@ -20,6 +20,12 @@ export const metadata: Metadata = {
   },
   description: DEFAULT_DESCRIPTION,
   metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      "sv-SE": SITE_URL,
+    },
+  },
   openGraph: {
     title: `${SITE_NAME} | Drönarinspektion av Kraftledningar & Elnät`,
     description: DEFAULT_DESCRIPTION,
