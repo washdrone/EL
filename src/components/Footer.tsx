@@ -9,6 +9,9 @@ const footerServices = [
   { label: "Vegetationskontroll", href: "/tjanster/vegetationskontroll" },
   { label: "BVLOS-inspektion", href: "/tjanster/bvlos-inspektion" },
   { label: "Stormskadeinspektion", href: "/tjanster/stormskadeinspektion" },
+  { label: "Vindkraftinspektion", href: "/tjanster/vindkraftinspektion" },
+  { label: "Järnvägsinspektion", href: "/tjanster/jarnvagsinspektion" },
+  { label: "Underhållsabonnemang", href: "/tjanster/underhallsabonnemang" },
 ];
 
 const footerBranches = [
@@ -17,6 +20,16 @@ const footerBranches = [
   { label: "Trafikverket", href: "/branscher/trafikverket" },
   { label: "Kommuner", href: "/branscher/kommuner" },
   { label: "Försäkring", href: "/branscher/forsakring" },
+];
+
+const footerLocations = [
+  { label: "Stockholm", href: "/platser/kraftledningsinspektion-stockholm" },
+  { label: "Göteborg", href: "/platser/kraftledningsinspektion-goteborg" },
+  { label: "Malmö", href: "/platser/kraftledningsinspektion-malmo" },
+  { label: "Norrland", href: "/platser/kraftledningsinspektion-norrland" },
+  { label: "Dalarna", href: "/platser/kraftledningsinspektion-dalarna" },
+  { label: "Vindkraft Skåne", href: "/platser/vindkraftinspektion-skane" },
+  { label: "Järnväg Stockholm", href: "/platser/jarnvagsinspektion-stockholm" },
 ];
 
 const footerNavigation = [
@@ -32,7 +45,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white pb-20 lg:pb-0">
       <div className="container-section py-16">
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
           {/* Company */}
           <div>
             <div className="flex items-center gap-2.5">
@@ -71,6 +84,23 @@ export default function Footer() {
             <h3 className="eyebrow">Branscher</h3>
             <ul className="mt-4 space-y-2.5">
               {footerBranches.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="text-sm text-slate-600 transition-colors hover:text-cyan-600"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Locations */}
+          <div>
+            <h3 className="eyebrow">Platser</h3>
+            <ul className="mt-4 space-y-2.5">
+              {footerLocations.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
