@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://griddrone.se").replace(
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.griddrone.se").replace(
   /\/+$/,
   ""
 );
