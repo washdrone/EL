@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "griddrone.se" }],
+      "destination": "https://www.griddrone.se/$1",
+      "permanent": true
+    }
+  ]
+}
