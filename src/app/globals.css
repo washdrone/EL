@@ -5,10 +5,12 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
+  --header-h: 57px;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {

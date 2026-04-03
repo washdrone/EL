@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState, useId } from "react";
 import { NAV_ITEMS, COMPANY_NAME, SERVICE_ITEMS, BRANCH_ITEMS } from "@/lib/constants";
 
 type OpenDropdown = null | "services" | "branches";
@@ -14,7 +14,10 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const navRef = useRef<HTMLElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const mobileMenuId = useId();
 
   // Close all menus on route change
   useEffect(() => {
@@ -98,6 +101,19 @@ export default function Header() {
     }
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
+  }, [mobileOpen]);
+
+  // Focus management: move focus into menu when opened, return when closed
+  useEffect(() => {
+    if (mobileOpen && mobileMenuRef.current) {
+      const firstLink = mobileMenuRef.current.querySelector<HTMLElement>("a, button");
+      firstLink?.focus();
+    } else if (!mobileOpen && mobileToggleRef.current) {
+      // Only return focus if it was inside the menu
+      if (document.activeElement && mobileMenuRef.current?.contains(document.activeElement)) {
+        mobileToggleRef.current.focus();
+      }
+    }
   }, [mobileOpen]);
 
   const isActive = (href: string) => {
@@ -255,10 +271,12 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
+          ref={mobileToggleRef}
           type="button"
           className="inline-flex items-center justify-center rounded-sm p-2 text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-900 lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
+          aria-controls={mobileMenuId}
           aria-label={mobileOpen ? "Stäng meny" : "Öppna meny"}
         >
           {mobileOpen ? (
@@ -273,17 +291,76 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu backdrop — closes menu on tap outside */}
       {mobileOpen && (
-        <div className="max-h-[calc(100dvh-60px)] overflow-y-auto border-t border-slate-100 bg-white lg:hidden">
-          <div className="container-section space-y-1 py-4">
-            <p className="eyebrow px-3 pb-1">Tjänster</p>
-            {SERVICE_ITEMS.map((item) => (
+        <div
+          className="fixed inset-0 top-[var(--header-h)] z-40 bg-slate-900/20 backdrop-blur-[2px] lg:hidden"
+          aria-hidden="true"
+          onClick={() => setMobileOpen(false)}
+        />
+      )}
+
+      {/* Mobile menu */}
+      <div
+        ref={mobileMenuRef}
+        id={mobileMenuId}
+        role="region"
+        aria-label="Mobilmeny"
+        className={`max-h-[calc(100dvh-60px)] overflow-y-auto border-t border-slate-100 bg-white transition-all duration-200 ease-out lg:hidden ${
+          mobileOpen
+            ? "visible opacity-100 translate-y-0"
+            : "invisible opacity-0 -translate-y-2 pointer-events-none h-0 max-h-0 border-t-0"
+        }`}
+      >
+        <div className="container-section space-y-1 py-4">
+          <p className="eyebrow px-3 pb-1">Tjänster</p>
+          {SERVICE_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              tabIndex={mobileOpen ? 0 : -1}
+              className={`block rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
+                isActive(item.href)
+                  ? "bg-slate-100 text-slate-900"
+                  : "text-slate-700 hover:bg-slate-50"
+              }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          <div className="my-2 border-t border-slate-100" />
+
+          <p className="eyebrow px-3 pb-1">Branscher</p>
+          {BRANCH_ITEMS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              tabIndex={mobileOpen ? 0 : -1}
+              className={`block rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
+                isActive(item.href)
+                  ? "bg-slate-100 text-slate-900"
+                  : "text-slate-700 hover:bg-slate-50"
+              }`}
+              onClick={() => setMobileOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+
+          <div className="my-2 border-t border-slate-100" />
+
+          {NAV_ITEMS.filter((item) => item.label !== "Tjänster" && item.label !== "Branscher").map((item) => {
+            const active = isActive(item.href);
+            return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`block rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive(item.href)
+                tabIndex={mobileOpen ? 0 : -1}
+                aria-current={active ? "page" : undefined}
+                className={`block rounded-sm px-3 py-2.5 text-base font-medium transition-colors ${
+                  active
                     ? "bg-slate-100 text-slate-900"
                     : "text-slate-700 hover:bg-slate-50"
                 }`}
@@ -291,59 +368,21 @@ export default function Header() {
               >
                 {item.label}
               </Link>
-            ))}
+            );
+          })}
 
-            <div className="my-2 border-t border-slate-100" />
-
-            <p className="eyebrow px-3 pb-1">Branscher</p>
-            {BRANCH_ITEMS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`block rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
-                  isActive(item.href)
-                    ? "bg-slate-100 text-slate-900"
-                    : "text-slate-700 hover:bg-slate-50"
-                }`}
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </Link>
-            ))}
-
-            <div className="my-2 border-t border-slate-100" />
-
-            {NAV_ITEMS.filter((item) => item.label !== "Tjänster" && item.label !== "Branscher").map((item) => {
-              const active = isActive(item.href);
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  aria-current={active ? "page" : undefined}
-                  className={`block rounded-sm px-3 py-2.5 text-base font-medium transition-colors ${
-                    active
-                      ? "bg-slate-100 text-slate-900"
-                      : "text-slate-700 hover:bg-slate-50"
-                  }`}
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-
-            <div className="pt-3">
-              <Link
-                href="/kontakt"
-                className="btn-primary block w-full text-center"
-                onClick={() => setMobileOpen(false)}
-              >
-                Diskutera ert behov
-              </Link>
-            </div>
+          <div className="pt-3">
+            <Link
+              href="/kontakt"
+              tabIndex={mobileOpen ? 0 : -1}
+              className="btn-primary block w-full text-center"
+              onClick={() => setMobileOpen(false)}
+            >
+              Diskutera ert behov
+            </Link>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }
