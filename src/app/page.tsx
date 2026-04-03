@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main id="main-content">
+      <main id="main-content" className="pb-24 lg:pb-0">
         <HeroSection />
         <TrustBar />
         <ProblemSection />
