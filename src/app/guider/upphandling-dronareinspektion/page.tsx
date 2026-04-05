@@ -107,7 +107,15 @@ export default function UpphandlingGuidePage() {
               </p>
               <p className="body-text mt-4">
                 Denna guide hjälper er att formulera kravspec, välja utvärderingskriterier
-                och strukturera ert förfrågningsunderlag.
+                och strukturera ert förfrågningsunderlag. Se vår{" "}
+                <Link href="/guider/komponenter-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  guide om elnätskomponenter
+                </Link>{" "}
+                för detaljerad information om vilka komponenter som bör inkluderas, och{" "}
+                <Link href="/guider/feltyper-kraftledningar" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  vår feltypguide
+                </Link>{" "}
+                för att förstå vilka avvikelser inspektionen ska identifiera.
               </p>
             </div>
           </div>
@@ -179,6 +187,28 @@ export default function UpphandlingGuidePage() {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Mid-content CTA */}
+        <section className="bg-brand-50 py-12">
+          <div className="container-section text-center">
+            <h3 className="text-lg font-semibold text-brand-900">
+              Planerar ni en upphandling av drönarinspektion?
+            </h3>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-brand-700">
+              Vi tillhandahåller information för er upphandlingsprocess — metodbeskrivning,
+              leveransformat och prissättningsmodell. Se även vår{" "}
+              <Link href="/guider/termografering-kraftledningar" className="text-brand-600 underline hover:text-brand-800">
+                guide om termografering
+              </Link>{" "}
+              om ni överväger termisk inspektion som tillval.
+            </p>
+            <div className="mt-6">
+              <Link href="/kontakt" className="btn-primary">
+                Be om kostnadsanalys
+              </Link>
             </div>
           </div>
         </section>

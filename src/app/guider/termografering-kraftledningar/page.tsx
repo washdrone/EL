@@ -120,7 +120,11 @@ export default function TermograferingGuidePage() {
               <p className="body-text mt-4">
                 Till skillnad från enklare värmekameror ger radiometrisk termografi exakta
                 temperaturvärden per pixel, vilket möjliggör kvantitativ analys och klassificering
-                enligt gällande standarder.
+                enligt gällande standarder. För en fullständig översikt av alla fel som
+                identifieras med visuell kamera och termografi, se vår{" "}
+                <Link href="/guider/feltyper-kraftledningar" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  guide om feltyper i kraftledningar
+                </Link>.
               </p>
             </div>
           </div>
@@ -166,6 +170,34 @@ export default function TermograferingGuidePage() {
                   <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
                 </div>
               ))}
+            </div>
+            <p className="mt-6 text-sm text-surface-500">
+              Detaljerad information om vilka{" "}
+              <Link href="/guider/komponenter-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700">
+                elnätskomponenter som inspekteras
+              </Link>{" "}
+              och hur{" "}
+              <Link href="/guider/dataleverans-gis-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700">
+                termiska data levereras i GIS-format
+              </Link>.
+            </p>
+          </div>
+        </section>
+
+        {/* Mid-content CTA */}
+        <section className="bg-brand-50 py-12">
+          <div className="container-section text-center">
+            <h3 className="text-lg font-semibold text-brand-900">
+              Vill ni identifiera dolda termiska fel i ert elnät?
+            </h3>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-brand-700">
+              Vi genomför termografering parallellt med visuell inspektion — kontakta oss
+              för en teknisk genomgång av ert inspektionsbehov.
+            </p>
+            <div className="mt-6">
+              <Link href="/kontakt" className="btn-primary">
+                Få rådgivning
+              </Link>
             </div>
           </div>
         </section>
@@ -242,6 +274,11 @@ export default function TermograferingGuidePage() {
                 <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Guide: Drönarinspektion av elnät</h3>
                 <p className="mt-2 text-sm text-surface-500">Komplett guide om drönarinspektion — utrustning, process och leveranser.</p>
                 <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
+              <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Helikopter vs drönare</h3>
+                <p className="mt-2 text-sm text-surface-500">Jämför termografisk detaljnivå och kostnad mellan metoderna.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Se jämförelsen →</span>
               </Link>
             </div>
           </div>

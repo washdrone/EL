@@ -196,6 +196,27 @@ export default function EnergibolagPage() {
         </div>
       </section>
 
+      {/* Mid-content CTA */}
+      <section className="bg-brand-50 py-12">
+        <div className="container-section text-center">
+          <h3 className="text-lg font-semibold text-brand-900">
+            Vill ni se hur inspektionen kan anpassas till ert nät?
+          </h3>
+          <p className="mx-auto mt-2 max-w-lg text-sm text-brand-700">
+            Vi skräddarsyr inspektionsomfång och leveransformat efter era
+            specifika krav. Jämför även{" "}
+            <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="text-brand-600 underline hover:text-brand-800">
+              drönare vs helikopter för ert nät
+            </Link>.
+          </p>
+          <div className="mt-6">
+            <Link href="/kontakt" className="btn-primary">
+              Begär offert
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="section-padding bg-white">
         <div className="container-section">
           <h2 className="heading-2">Från lokalt distributionsnät till regionnät</h2>
@@ -204,6 +225,20 @@ export default function EnergibolagPage() {
             energibolag med lokala distributionsnät till regionala nätägare med
             omfattande ledningssträckor. Inspektionsprocessen skalas efter
             ert näts omfattning och era specifika underhållsbehov.
+          </p>
+          <p className="body-text mt-4 max-w-3xl">
+            Läs vår{" "}
+            <Link href="/guider/upphandling-dronareinspektion" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+              guide om upphandling av drönarinspektion
+            </Link>{" "}
+            för kravspec och utvärderingskriterier, eller se vilka{" "}
+            <Link href="/guider/komponenter-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+              elnätskomponenter som inspekteras
+            </Link>{" "}
+            och vilka{" "}
+            <Link href="/guider/feltyper-kraftledningar" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+              feltyper som identifieras
+            </Link>.
           </p>
           <div className="mt-8">
             <Link

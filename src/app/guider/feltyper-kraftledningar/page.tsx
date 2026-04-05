@@ -159,6 +159,27 @@ export default function FeltyperGuidePage() {
           </div>
         </section>
 
+        {/* Mid-content CTA */}
+        <section className="bg-brand-50 py-12">
+          <div className="container-section text-center">
+            <h3 className="text-lg font-semibold text-brand-900">
+              Vill ni kartlägga vilka fel som finns i ert elnät?
+            </h3>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-brand-700">
+              Vi identifierar och klassificerar alla typer av avvikelser med visuell
+              och termisk inspektion. Se även hur{" "}
+              <Link href="/guider/termografering-kraftledningar" className="text-brand-600 underline hover:text-brand-800">
+                termografering avslöjar dolda termiska fel
+              </Link>.
+            </p>
+            <div className="mt-6">
+              <Link href="/kontakt" className="btn-primary">
+                Få rådgivning
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Termiska fel */}
         <section className="section-padding bg-white">
           <div className="container-section">

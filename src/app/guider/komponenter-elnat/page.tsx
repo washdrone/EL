@@ -168,6 +168,28 @@ export default function KomponenterGuidePage() {
           </div>
         </section>
 
+        {/* Mid-content CTA */}
+        <section className="bg-brand-50 py-12">
+          <div className="container-section text-center">
+            <h3 className="text-lg font-semibold text-brand-900">
+              Vill ni inspektera alla komponenter i ert elnät?
+            </h3>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-brand-700">
+              Vi dokumenterar varje komponent med standardiserade bildvinklar och
+              georefererade bilder. Se även{" "}
+              <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="text-brand-600 underline hover:text-brand-800">
+                hur drönare jämförs med helikopter
+              </Link>{" "}
+              för komponentinspektion.
+            </p>
+            <div className="mt-6">
+              <Link href="/kontakt" className="btn-primary">
+                Få rådgivning
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Ledningslinor */}
         <section className="section-padding bg-surface-50">
           <div className="container-section">

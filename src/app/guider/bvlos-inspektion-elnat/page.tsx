@@ -102,7 +102,15 @@ export default function BvlosGuidePage() {
                 som vid VLOS-flygning, men med längre räckvidd per flygpass.
               </p>
               <p className="body-text mt-4">
-                BVLOS-flygning kräver specifika tillstånd från Transportstyrelsen,
+                Alla{" "}
+                <Link href="/guider/komponenter-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  elnätskomponenter
+                </Link>{" "}
+                som inspekteras vid VLOS dokumenteras även vid BVLOS, och{" "}
+                <Link href="/guider/feltyper-kraftledningar" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  samma feltyper
+                </Link>{" "}
+                identifieras. BVLOS-flygning kräver specifika tillstånd från Transportstyrelsen,
                 inklusive godkänd riskbedömning och redundanta säkerhetssystem. Läs vår{" "}
                 <Link href="/blogg/bvlos-tillstand-sverige" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
                   artikel om BVLOS-tillstånd i Sverige
@@ -150,6 +158,28 @@ export default function BvlosGuidePage() {
                   <p className="mt-1 text-sm text-surface-500">{item.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Mid-content CTA */}
+        <section className="bg-brand-50 py-12">
+          <div className="container-section text-center">
+            <h3 className="text-lg font-semibold text-brand-900">
+              Har ni långa ledningssträckor som behöver inspekteras?
+            </h3>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-brand-700">
+              BVLOS kan vara rätt metod för ert nät. Kontakta oss för en teknisk
+              genomgång av möjligheterna. Se även vår{" "}
+              <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="text-brand-600 underline hover:text-brand-800">
+                jämförelse mellan helikopter och drönare
+              </Link>{" "}
+              för kostnadsperspektiv.
+            </p>
+            <div className="mt-6">
+              <Link href="/kontakt" className="btn-primary">
+                Få rådgivning
+              </Link>
             </div>
           </div>
         </section>

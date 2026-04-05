@@ -302,7 +302,45 @@ export default function ComparisonPage() {
           </div>
         </section>
 
-        {/* Tabell 2: Datakvalitet */}
+        {/* Tabell 2: Use-case */}
+        <section className="section-padding bg-white">
+          <div className="container-section">
+            <h2 className="heading-2">Rekommenderad metod per scenario</h2>
+            <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-soft">
+              <div className="grid grid-cols-[1.5fr,1fr] border-b border-surface-200 bg-surface-50">
+                <div className="p-4 sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-surface-500">Scenario</p>
+                </div>
+                <div className="border-l border-surface-200 p-4 text-center sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">Rekommendation</p>
+                </div>
+              </div>
+              {[
+                { scenario: "Detaljinspektion av isolatorer och skarvar", rec: "Drönare" },
+                { scenario: "Termografering av strömförande komponenter", rec: "Drönare" },
+                { scenario: "Årlig översiktsinspektion av regionnät (<50 km)", rec: "Drönare" },
+                { scenario: "Akut stormskadekartläggning", rec: "Drönare (snabb mobilisering)" },
+                { scenario: "Inspektion i svårtillgänglig skog- eller fjällterräng", rec: "Drönare (BVLOS)" },
+                { scenario: "Långt stamnät i öppen terräng (>100 km)", rec: "Helikopter eller kombination" },
+                { scenario: "Snabb screening av stort nätområde", rec: "Helikopter" },
+                { scenario: "Prediktivt underhåll med trendanalys", rec: "Drönare (standardiserade flygprofiler)" },
+              ].map((row, i) => (
+                <div key={row.scenario} className={`grid grid-cols-[1.5fr,1fr] ${i % 2 === 0 ? "bg-white" : "bg-surface-50/50"}`}>
+                  <div className="p-4 sm:p-5">
+                    <p className="text-sm text-surface-800">{row.scenario}</p>
+                  </div>
+                  <div className="border-l border-surface-100 p-4 text-center sm:p-5">
+                    <span className={`text-sm font-medium ${row.rec.startsWith("Drönare") ? "text-brand-700" : row.rec.startsWith("Helikopter") ? "text-surface-600" : "text-amber-700"}`}>
+                      {row.rec}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Tabell 3: Datakvalitet */}
         <section className="section-padding bg-surface-50">
           <div className="container-section">
             <h2 className="heading-2">Datakvalitet och detektionsförmåga</h2>
@@ -364,6 +402,95 @@ export default function ComparisonPage() {
                   <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Risk och begränsningar */}
+        <section className="section-padding bg-surface-50">
+          <div className="container-section">
+            <h2 className="heading-2">Risker och begränsningar</h2>
+            <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-soft">
+              <div className="grid grid-cols-[1.2fr,1fr,1fr] border-b border-surface-200 bg-surface-50">
+                <div className="p-4 sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-surface-500">Riskfaktor</p>
+                </div>
+                <div className="border-l border-surface-200 p-4 text-center sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">Drönare</p>
+                </div>
+                <div className="border-l border-surface-200 p-4 text-center sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-surface-600">Helikopter</p>
+                </div>
+              </div>
+              {[
+                { factor: "Väderkänslighet", drone: "Begränsad av vind och nederbörd", helicopter: "Högre vindtolerans, men kostsamma avbokningar" },
+                { factor: "Batterikapacitet", drone: "Kräver batteribyte — begränsar sammanhängande flygtid", helicopter: "Långa flygpass utan avbrott" },
+                { factor: "Regelverkskomplexitet", drone: "BVLOS kräver PDRA/SORA-godkännande", helicopter: "Etablerat regelverk med befintliga tillstånd" },
+                { factor: "Fysisk åtkomst till komponent", drone: "Ej möjlig — enbart visuell/termisk", helicopter: "Ej möjlig — kräver klättring eller skylift" },
+                { factor: "Personrisk i luft", drone: "Ingen — obemannat luftfartyg", helicopter: "Pilot och observatör nära spänningsförande delar" },
+              ].map((row, i) => (
+                <div key={row.factor} className={`grid grid-cols-[1.2fr,1fr,1fr] ${i % 2 === 0 ? "bg-white" : "bg-surface-50/50"}`}>
+                  <div className="p-4 sm:p-5">
+                    <p className="text-sm font-medium text-surface-800">{row.factor}</p>
+                  </div>
+                  <div className="border-l border-surface-100 p-4 text-center sm:p-5">
+                    <span className="text-sm text-surface-600">{row.drone}</span>
+                  </div>
+                  <div className="border-l border-surface-100 p-4 text-center sm:p-5">
+                    <span className="text-sm text-surface-600">{row.helicopter}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* När passar drönare INTE */}
+        <section className="section-padding bg-white">
+          <div className="container-section">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="heading-2">När ska man inte välja drönare?</h2>
+              <p className="body-text mt-6">
+                Drönare är inte alltid den optimala metoden. Överväg alternativ i dessa situationer:
+              </p>
+              <ul className="mt-6 space-y-4">
+                {[
+                  "Mycket långa, sammanhängande stamnätssträckor (>100 km) i öppen terräng där snabb screening prioriteras framför detaljnivå",
+                  "Förhållanden med ihållande stark vind som överstiger drönarsystemets gränsvärden under lång period",
+                  "Situationer där fysisk åtkomst till komponenter krävs (provtagning, utbyte) — då behövs klättring eller skylift",
+                  "Områden med permanenta restriktioner i luftrummet som förhindrar drönarflygning",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-sm text-surface-700">
+                    <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-surface-400" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Beslutsstöd för energibolag */}
+        <section className="bg-brand-50 py-12">
+          <div className="container-section">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="text-xl font-bold text-brand-900">Beslutsstöd för nätägare och energibolag</h2>
+              <p className="mt-4 text-sm text-brand-700">
+                Valet mellan drönare och helikopter beror på ledningslängd, terräng, detaljkrav och budget.
+                Vi hjälper er att utvärdera rätt metod baserat på ert specifika nät. Se även vår{" "}
+                <Link href="/guider/upphandling-dronareinspektion" className="text-brand-600 underline hover:text-brand-800">
+                  upphandlingsguide
+                </Link>{" "}
+                och{" "}
+                <Link href="/roi-kalkylator" className="text-brand-600 underline hover:text-brand-800">
+                  kostnadskalkylator
+                </Link>.
+              </p>
+              <div className="mt-6">
+                <Link href="/kontakt" className="btn-primary">
+                  Be om kostnadsanalys för ert nät
                 </Link>
               </div>
             </div>

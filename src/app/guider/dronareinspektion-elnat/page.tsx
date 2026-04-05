@@ -143,6 +143,23 @@ export default function DroneInspectionGuidePage() {
           </div>
         </section>
 
+        {/* Mid-content CTA */}
+        <section className="bg-brand-50 py-12">
+          <div className="container-section text-center">
+            <h3 className="text-lg font-semibold text-brand-900">
+              Vill ni veta om drönarinspektion passar ert elnät?
+            </h3>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-brand-700">
+              Kontakta oss för en kostnadsfri genomgång av era inspektionsbehov.
+            </p>
+            <div className="mt-6">
+              <Link href="/kontakt" className="btn-primary">
+                Få rådgivning
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Sensorteknik — brief overview, links to thermography guide */}
         <section className="section-padding bg-white">
           <div className="container-section">

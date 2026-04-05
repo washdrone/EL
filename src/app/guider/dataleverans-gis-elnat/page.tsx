@@ -108,7 +108,14 @@ export default function DataleveransGuidePage() {
               <p className="body-text mt-4">
                 Leveransformatet anpassas efter nätägarens system och specifikation. Målet
                 är att inspektionsdata ska kunna användas direkt i er underhållsplanering
-                utan manuell bearbetning.
+                utan manuell bearbetning. Data inkluderar klassificerade fynd baserat på vår{" "}
+                <Link href="/guider/feltyper-kraftledningar" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  systematiska feltypklassificering
+                </Link>{" "}
+                av alla inspekterade{" "}
+                <Link href="/guider/komponenter-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  elnätskomponenter
+                </Link>.
               </p>
             </div>
           </div>
@@ -193,6 +200,24 @@ export default function DataleveransGuidePage() {
           </div>
         </section>
 
+        {/* Mid-content CTA */}
+        <section className="bg-brand-50 py-12">
+          <div className="container-section text-center">
+            <h3 className="text-lg font-semibold text-brand-900">
+              Behöver ni inspektionsdata anpassat för ert system?
+            </h3>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-brand-700">
+              Vi anpassar leveransformat efter er specifikation. Kontakta oss för att
+              diskutera integration med ert nätförvaltningssystem.
+            </p>
+            <div className="mt-6">
+              <Link href="/kontakt" className="btn-primary">
+                Få rådgivning
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* QA-process */}
         <section className="section-padding bg-surface-50">
           <div className="container-section">
@@ -236,8 +261,18 @@ export default function DataleveransGuidePage() {
               </Link>
               <Link href="/tjanster/kraftledningsinspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
                 <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Kraftledningsinspektion med drönare</h3>
-                <p className="mt-2 text-sm text-surface-500">Systematisk inspektion av stolpar, isolatorer, ledningslinor och traverser.</p>
+                <p className="mt-2 text-sm text-surface-500">Systematisk inspektion som genererar den data som levereras.</p>
                 <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs mer →</span>
+              </Link>
+              <Link href="/guider/termografering-kraftledningar" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Termografering av kraftledningar</h3>
+                <p className="mt-2 text-sm text-surface-500">Termiska data — hur värmekameran levererar radiometriska bilder.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
+              <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Helikopter vs drönare</h3>
+                <p className="mt-2 text-sm text-surface-500">Jämför datakvalitet och georefereringsnoggrannhet mellan metoderna.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Se jämförelsen →</span>
               </Link>
             </div>
           </div>
