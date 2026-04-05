@@ -125,7 +125,14 @@ export default function HubPage() {
             <p className="body-text mt-4">
               Inspektionen utförs normalt utan driftstopp och utan att personal behöver
               klättra. Metoden möjliggör repeterbar dokumentation som kan jämföras mellan
-              inspektionstillfällen för trendanalys och prediktivt underhåll.
+              inspektionstillfällen för trendanalys och prediktivt underhåll. Läs vår{" "}
+              <Link href="/guider/dronareinspektion-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                kompletta guide om drönarinspektion av elnät
+              </Link>{" "}
+              eller jämför{" "}
+              <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                helikopter vs drönare för elnätsinspektion
+              </Link>.
             </p>
             <div className="mt-8">
               <Link href="/kontakt" className="btn-primary inline-flex items-center">
@@ -139,8 +146,52 @@ export default function HubPage() {
         </div>
       </section>
 
-      {/* Intro section */}
+      {/* Entity Depth: Vilka komponenter inspekteras */}
       <section className="section-padding bg-white">
+        <div className="container-section">
+          <h2 className="heading-2">Vilka elnätskomponenter inspekteras?</h2>
+          <p className="body-text mt-4 max-w-3xl">
+            Vid kraftledningsinspektion med drönare dokumenteras varje komponent systematiskt
+            med standardiserade bildvinklar och georefererade bilder.
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Stolpar och fundament",
+                desc: "Trästolpar, betongstolpar och stålstolpar inspekteras för sprickor, lutning, röta och fundamentskador. Traversfötter kontrolleras för korrosion.",
+              },
+              {
+                title: "Isolatorer",
+                desc: "Glas-, porslins- och kompositisolatorer granskas visuellt för sprickor, avflagning, brännskador och kontaminering. Termisk analys avslöjar interna fel.",
+              },
+              {
+                title: "Ledningslinor och topplinor",
+                desc: "Fasledare, topplinor och jordlinor inspekteras för trådbrott, korrosion, slitage vid klämfästen och mekanisk skada.",
+              },
+              {
+                title: "Traverser och fästen",
+                desc: "Traverser, konsoler och fästjärn kontrolleras för korrosion, deformation, lösa bultar och bristande infästningar.",
+              },
+              {
+                title: "Ledningsgata och vegetation",
+                desc: "Vegetationsavstånd dokumenteras för prioritering av röjningsinsatser. Kombineras med LiDAR-baserad{' '}<a href='/tjanster/vegetationskontroll' class='text-brand-600 underline'>vegetationskontroll</a> vid behov.",
+              },
+              {
+                title: "Skarvar och kopplingar",
+                desc: "Skarvar, kopplingar och anslutningspunkter inspekteras visuellt och termiskt. Termografering identifierar varmgångar som indikerar kontaktmotstånd.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="card p-6">
+                <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Intro section */}
+      <section className="section-padding bg-surface-50">
         <div className="container-section">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div>
@@ -394,6 +445,45 @@ export default function HubPage() {
           Se alla vanliga frågor →
         </Link>
       </div>
+
+      {/* Relaterat & intern länkning */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-section">
+          <h2 className="heading-2">Fördjupa er i drönarinspektion</h2>
+          <div className="mx-auto mt-8 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <Link href="/guider/dronareinspektion-elnat" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+              <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Guide: Drönarinspektion av elnät</h3>
+              <p className="mt-2 text-sm text-surface-500">Komplett guide om hur drönarinspektion fungerar — utrustning, process och leveranser.</p>
+              <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+            </Link>
+            <Link href="/guider/termografering-kraftledningar" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+              <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Guide: Termografering av kraftledningar</h3>
+              <p className="mt-2 text-sm text-surface-500">Hur termisk analys identifierar varmgångar, kontaktmotstånd och dolda fel i elnätet.</p>
+              <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+            </Link>
+            <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+              <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Helikopter vs drönare</h3>
+              <p className="mt-2 text-sm text-surface-500">Jämförelse av kostnad, datakvalitet och säkerhet mellan helikopter och drönare.</p>
+              <span className="mt-3 inline-block text-sm font-medium text-brand-600">Se jämförelsen →</span>
+            </Link>
+            <Link href="/guider/dataleverans-gis-elnat" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+              <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Guide: Dataleverans och GIS</h3>
+              <p className="mt-2 text-sm text-surface-500">Så levereras inspektionsdata i GIS-kompatibla format till ert nätförvaltningssystem.</p>
+              <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+            </Link>
+            <Link href="/guider/bvlos-inspektion-elnat" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+              <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Guide: BVLOS-inspektion</h3>
+              <p className="mt-2 text-sm text-surface-500">Inspektion bortom synhåll — regler, teknik och tillämpningar för elnät.</p>
+              <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+            </Link>
+            <Link href="/guider/upphandling-dronareinspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+              <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Guide: Upphandling</h3>
+              <p className="mt-2 text-sm text-surface-500">Vad ni bör tänka på vid upphandling av drönarinspektion — kravspec, metodik och leveransformat.</p>
+              <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <CTABand />
     </>

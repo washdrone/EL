@@ -30,7 +30,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Vad ingår i en stormskadeinspektion?",
     answer:
-      "Snabb flyginspektion av drabbade ledningssträckor, identifiering och GPS-märkning av skadelägen, prioriteringsklassificering av skador efter allvarlighetsgrad, samt en sammanfattande rapport som beslutsunderlag för reparationsinsatser.",
+      "Snabb flyginspektion av drabbade ledningssträckor, identifiering och GPS-märkning av skadelägen (stolpar, isolatorer, ledningslinor, traverser), prioriteringsklassificering efter allvarlighetsgrad, samt en sammanfattande rapport med GIS-data som beslutsunderlag.",
   },
   {
     question: "Kan drönare flyga direkt efter en storm?",
@@ -40,7 +40,17 @@ const faqItems: FAQItem[] = [
   {
     question: "Vilka typer av stormskador identifieras?",
     answer:
-      "Fallna stolpar, brutna ledningar, nedfallna träd på ledningar, skadade isolatorer, deformerade traverser och fundament som har påverkats av markrörelse eller rotvältor.",
+      "Fallna eller lutande stolpar, brutna ledningslinor och topplinor, nedfallna träd på ledningar, krossade isolatorer, deformerade traverser och fästen, samt fundament som påverkats av markrörelse eller rotvältor.",
+  },
+  {
+    question: "Hur levereras data från stormskadeinspektionen?",
+    answer:
+      "Data levereras som en prioriterad skaderapport med GPS-koordinater för varje skadat objekt, klassificerade bilder och GIS-lager. Formatet anpassas för direktimport i ert nätförvaltningssystem — GeoTIFF, shapefiler eller CSV.",
+  },
+  {
+    question: "Kan stormskadeinspektion kombineras med termografering?",
+    answer:
+      "Ja, vid stormskadeinspektion kan termografering utföras parallellt för att identifiera varmgångar i skarvar och kontakter som kan ha uppstått av mekanisk påverkan under stormen. Detta ger ett kompletterande underlag för reparationsprioritering.",
   },
 ];
 
@@ -157,8 +167,52 @@ export default function StormskadeinspektionPage() {
         </div>
       </section>
 
-      {/* Värde */}
+      {/* Entity depth: Skadetyper */}
       <section className="section-padding bg-surface-50">
+        <div className="container-section">
+          <h2 className="heading-2">Vilka stormskador identifieras vid drönarinspektion?</h2>
+          <p className="body-text mt-4 max-w-3xl">
+            Drönaren dokumenterar alla typer av stormskador systematiskt med GPS-märkta bilder och
+            klassificerar dem efter allvarlighetsgrad. Här är de vanligaste skadorna som identifieras:
+          </p>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {[
+              {
+                title: "Fallna och lutande stolpar",
+                desc: "Trästolpar, betongstolpar och stålstolpar som vält, knäckts eller lutar till följd av vindlast eller rotvältor i marken.",
+              },
+              {
+                title: "Brutna ledningslinor och topplinor",
+                desc: "Fasledare, topplinor och jordlinor som brustit av mekanisk belastning från vind, is eller nedfallna träd.",
+              },
+              {
+                title: "Skadade isolatorer",
+                desc: "Glas- och porslinsisolatorer som krossats av fallande grenar eller deformerats av mekanisk påverkan.",
+              },
+              {
+                title: "Deformerade traverser och fästen",
+                desc: "Traverser, konsoler och fästjärn som böjts, vridits eller lossnat från stolpen vid extrema vindlaster.",
+              },
+              {
+                title: "Nedfallna träd på ledning",
+                desc: "Träd och grova grenar som fallit över ledningsgatan och ligger på eller nära spänningsförande ledningar.",
+              },
+              {
+                title: "Fundamentskador",
+                desc: "Stolpfundament som påverkats av markrörelse, erosion eller rotvältor som destabiliserat stolpen.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="card p-6">
+                <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
+                <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Värde */}
+      <section className="section-padding bg-white">
         <div className="container-section">
           <div className="section-intro">
             <h2 className="heading-2">Varför drönare vid stormskador?</h2>
@@ -167,15 +221,15 @@ export default function StormskadeinspektionPage() {
             {[
               {
                 title: "Snabb överblick",
-                desc: "Drönare ger en snabb och systematisk översikt av skadeläget över stora områden.",
+                desc: "Drönare ger en snabb och systematisk översikt av skadeläget över stora områden utan markåtkomst.",
               },
               {
                 title: "Säker inspektion",
-                desc: "Inga personer behöver ta sig ut i farlig terräng med nedfallna ledningar och instabila stolpar.",
+                desc: "Inga personer behöver ta sig ut i farlig terräng med nedfallna ledningslinor och instabila stolpar.",
               },
               {
                 title: "Prioriterat underlag",
-                desc: "Klassificerade skador ger era reparationsteam ett tydligt beslutsunderlag för effektiv åtgärdsplan.",
+                desc: "Klassificerade skador ger era reparationsteam ett tydligt beslutsunderlag med GPS-positioner för varje skadat objekt.",
               },
             ].map((item) => (
               <div key={item.title} className="text-center">
@@ -185,6 +239,14 @@ export default function StormskadeinspektionPage() {
                 <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link href="/kontakt" className="btn-primary inline-flex items-center">
+              Begär offert för beredskapsavtal
+              <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -217,22 +279,37 @@ export default function StormskadeinspektionPage() {
           <div className="section-intro">
             <h2 className="heading-2">Relaterade tjänster</h2>
           </div>
-          <div className="mx-auto mt-8 grid max-w-4xl gap-6 sm:grid-cols-3">
+          <div className="mx-auto mt-8 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                title: "Kraftledningsinspektion",
-                desc: "Planerad visuell inspektion av stolpar, isolatorer och ledningsgata.",
+                title: "Kraftledningsinspektion med drönare",
+                desc: "Planerad visuell inspektion av stolpar, isolatorer, ledningslinor och ledningsgata.",
                 href: "/tjanster/kraftledningsinspektion",
               },
               {
-                title: "BVLOS-inspektion",
-                desc: "Inspektera långa sträckor snabbt med lång räckvidd.",
+                title: "BVLOS-inspektion av elnät",
+                desc: "Inspektera långa sträckor bortom synhåll — effektivt vid stormskadekartläggning.",
                 href: "/tjanster/bvlos-inspektion",
               },
               {
                 title: "Underhållsabonnemang",
-                desc: "Inkluderar prioriterad respons vid stormskada som del av abonnemanget.",
+                desc: "Inkluderar prioriterad stormrespons som del av abonnemanget.",
                 href: "/tjanster/underhallsabonnemang",
+              },
+              {
+                title: "Guide: Drönarinspektion av elnät",
+                desc: "Komplett guide om hur drönarinspektion fungerar — utrustning, process och leveranser.",
+                href: "/guider/dronareinspektion-elnat",
+              },
+              {
+                title: "Termografering av kraftledningar",
+                desc: "Termisk analys som identifierar varmgångar och dolda fel efter stormskada.",
+                href: "/tjanster/termografering-kraftledning",
+              },
+              {
+                title: "Helikopter vs drönare inspektion",
+                desc: "Jämförelse av kostnad, datakvalitet och effektivitet mellan metoderna.",
+                href: "/jamforelser/helikopter-vs-dronare-inspektion",
               },
             ].map((item) => (
               <Link

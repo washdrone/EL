@@ -121,6 +121,97 @@ export default function Home() {
         <ProcessSection />
         <ProofSection />
 
+        {/* Entity depth: Vilka komponenter inspekteras */}
+        <section className="section-padding bg-white">
+          <div className="container-section">
+            <h2 className="heading-2">Vilka elnätskomponenter inspekteras med drönare?</h2>
+            <p className="body-text mt-4 max-w-3xl">
+              Drönareinspektion dokumenterar alla kritiska komponenter i ert elnät systematiskt
+              med standardiserade bildvinklar, georefererade bilder och termisk analys:
+            </p>
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                {
+                  title: "Stolpar och fundament",
+                  desc: "Trä-, betong- och stålstolpar inspekteras för sprickor, lutning, röta och fundamentskador.",
+                },
+                {
+                  title: "Isolatorer",
+                  desc: "Glas-, porslins- och kompositisolatorer granskas visuellt och termiskt för sprickor, brännskador och interna fel.",
+                },
+                {
+                  title: "Ledningslinor och topplinor",
+                  desc: "Fasledare, topplinor och jordlinor inspekteras för trådbrott, korrosion och slitage vid klämfästen.",
+                },
+                {
+                  title: "Traverser och fästen",
+                  desc: "Traverser, konsoler och fästjärn kontrolleras för korrosion, deformation och bristande infästningar.",
+                },
+                {
+                  title: "Skarvar och kopplingar",
+                  desc: "Skarvar och kopplingar inspekteras termiskt för varmgångar som indikerar kontaktmotstånd.",
+                },
+                {
+                  title: "Ledningsgata och vegetation",
+                  desc: "Vegetationsavstånd dokumenteras och kombineras med LiDAR-baserad vegetationskontroll.",
+                },
+              ].map((item) => (
+                <div key={item.title} className="card p-6">
+                  <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
+                  <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-10 text-center">
+              <Link href="/tjanster/kraftledningsinspektion" className="text-sm font-medium text-brand-600 hover:text-brand-700">
+                Läs mer om kraftledningsinspektion med drönare →
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Guider och resurser */}
+        <section className="section-padding bg-surface-50">
+          <div className="container-section">
+            <h2 className="heading-2">Guider och resurser</h2>
+            <p className="body-text mt-4 max-w-3xl">
+              Fördjupa er i drönarinspektion av elnät — utrustning, process, leveranser och upphandling.
+            </p>
+            <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <Link href="/guider/dronareinspektion-elnat" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Vad är drönarinspektion av elnät?</h3>
+                <p className="mt-2 text-sm text-surface-500">Komplett guide om hur drönarinspektion fungerar.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
+              <Link href="/guider/termografering-kraftledningar" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Termografering av kraftledningar</h3>
+                <p className="mt-2 text-sm text-surface-500">Hur värmekamera identifierar varmgångar och dolda fel.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
+              <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Helikopter vs drönare</h3>
+                <p className="mt-2 text-sm text-surface-500">Jämförelse av kostnad, datakvalitet och säkerhet.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Se jämförelsen →</span>
+              </Link>
+              <Link href="/guider/dataleverans-gis-elnat" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Dataleverans och GIS</h3>
+                <p className="mt-2 text-sm text-surface-500">Leveransformat, GIS-integration och rapportstruktur.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
+              <Link href="/guider/bvlos-inspektion-elnat" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">BVLOS-inspektion av elnät</h3>
+                <p className="mt-2 text-sm text-surface-500">Inspektion bortom synhåll — regler, teknik och tillämpningar.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
+              <Link href="/guider/upphandling-dronareinspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Upphandla drönarinspektion</h3>
+                <p className="mt-2 text-sm text-surface-500">Kravspec, utvärderingskriterier och avtalsupplägg.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <FAQ
           items={homepageFaqItems}
           heading="Vanliga frågor om drönarinspektion av elnät"
