@@ -3,18 +3,27 @@ import { COMPANY_NAME, CONTACT_EMAIL } from "@/lib/constants";
 import type { BreadcrumbItem } from "@/components/Breadcrumbs";
 import type { FAQItem } from "@/data/faq";
 
+interface HowToStep {
+  name: string;
+  text: string;
+}
+
 interface JsonLdProps {
   type:
     | "Organization"
     | "Service"
     | "FAQPage"
     | "BreadcrumbList"
-    | "WebSite";
+    | "WebSite"
+    | "HowTo";
   breadcrumbs?: BreadcrumbItem[];
   faqItems?: FAQItem[];
   serviceName?: string;
   serviceDescription?: string;
   servicePath?: string;
+  howToName?: string;
+  howToDescription?: string;
+  howToSteps?: HowToStep[];
 }
 
 export default function JsonLd({
@@ -24,6 +33,9 @@ export default function JsonLd({
   serviceName,
   serviceDescription,
   servicePath,
+  howToName,
+  howToDescription,
+  howToSteps,
 }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
@@ -146,6 +158,22 @@ export default function JsonLd({
             ...(item.href ? { item: `${SITE_URL}${item.href}` } : {}),
           })) || []),
         ],
+      };
+      break;
+
+    case "HowTo":
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: howToName || "",
+        description: howToDescription || "",
+        step:
+          howToSteps?.map((step, index) => ({
+            "@type": "HowToStep",
+            position: index + 1,
+            name: step.name,
+            text: step.text,
+          })) || [],
       };
       break;
   }
