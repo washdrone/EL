@@ -11,9 +11,9 @@ interface BreadcrumbsProps {
 
 export default function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
-    <nav aria-label="Breadcrumb" className="border-b border-surface-100 bg-surface-50 py-3">
+    <nav aria-label="Breadcrumb" className="border-b border-slate-100 bg-surface-50 py-3">
       <div className="container-section">
-        <ol className="flex flex-wrap items-center gap-1.5 text-sm text-surface-500">
+        <ol className="flex flex-wrap items-center gap-1.5 text-[13px] text-surface-400">
           <li>
             <Link href="/" className="transition-colors hover:text-brand-600">
               Hem
