@@ -55,6 +55,18 @@ const articles = [
     href: "/blogg/jarnvagsinspektion-guide",
     category: "Guide",
   },
+  {
+    title: "AI-bildanalys vid drönarinspektion av elnät",
+    description: "Hur maskininlärning automatiserar feldetektering i drönarbild och vad det innebär för nätägare.",
+    href: "/blogg/ai-bildanalys-dronare-elnat",
+    category: "Teknik",
+  },
+  {
+    title: "Prediktivt underhåll av elnät — från reaktivt till datadrivet",
+    description: "Hur drönardata möjliggör prediktivt underhåll och längre livslängd på elnätskomponenter.",
+    href: "/blogg/prediktivt-underhall-elnat",
+    category: "Strategi",
+  },
 ];
 
 export default function BloggPage() {
@@ -76,30 +88,32 @@ export default function BloggPage() {
 
       <section className="section-padding bg-white">
         <div className="container-section">
-          <div className="section-intro">
-            <h2 className="heading-2">Artiklar & guider</h2>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px w-8 bg-brand-500" />
+            <span className="eyebrow-brand">Artiklar</span>
           </div>
+          <h2 className="heading-2">Artiklar & guider</h2>
 
-          <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-px bg-slate-200 sm:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
               <Link
                 key={article.href}
                 href={article.href}
-                className="card group p-6 transition-shadow hover:shadow-md"
+                className="group flex flex-col bg-white p-6 transition-colors hover:bg-surface-50"
               >
-                <span className="inline-block rounded-lg bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">
+                <span className="inline-flex self-start border border-brand-200 bg-brand-50 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-brand-700">
                   {article.category}
                 </span>
-                <h3 className="mt-3 text-base font-semibold text-surface-900 group-hover:text-brand-600">
+                <h3 className="mt-4 text-base font-semibold leading-snug text-surface-900 group-hover:text-brand-700">
                   {article.title}
                 </h3>
-                <p className="mt-2 text-sm text-surface-500">
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-surface-500">
                   {article.description}
                 </p>
-                <span className="mt-4 inline-flex items-center text-sm font-medium text-brand-600 group-hover:text-brand-700">
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-brand-600 group-hover:text-brand-700">
                   Läs mer
                   <svg
-                    className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                    className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

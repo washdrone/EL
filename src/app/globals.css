@@ -134,6 +134,34 @@ body {
   }
 }
 
+/* ── Article Content ───────────────────────────────────── */
+
+@layer components {
+  .content-article {
+    @apply mx-auto max-w-[680px] px-5 sm:px-8 lg:px-0;
+  }
+
+  .content-article h2 {
+    @apply mt-12 first:mt-0;
+  }
+
+  .content-article .info-box {
+    @apply mt-10 border-l-[3px] border-brand-500 bg-surface-50 p-6 sm:p-8;
+  }
+
+  .content-article .info-box h3 {
+    @apply text-base font-semibold text-slate-900;
+  }
+
+  .content-article .info-box p {
+    @apply mt-2 text-sm leading-6 text-slate-600;
+  }
+
+  .content-article .info-box a {
+    @apply mt-3 inline-flex items-center gap-1 text-sm font-medium text-brand-600 hover:text-brand-700;
+  }
+}
+
 /* ── Utilities ─────────────────────────────────────────── */
 
 @layer utilities {
