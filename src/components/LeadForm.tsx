@@ -26,7 +26,7 @@ const initialForm: FormData = {
 };
 
 const inputClass =
-  "mt-1.5 block min-h-11 w-full rounded-sm border border-surface-200 bg-white px-4 py-3 text-sm text-surface-900 shadow-soft transition-colors placeholder:text-surface-400 focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-100";
+  "mt-1.5 block min-h-[44px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-surface-900 transition-colors placeholder:text-surface-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100";
 
 export default function LeadForm() {
   const [form, setForm] = useState<FormData>(initialForm);
@@ -79,9 +79,9 @@ export default function LeadForm() {
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-accent-200 bg-accent-50 p-8 text-center">
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-accent-100">
-          <svg className="h-7 w-7 text-accent-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <div className="border border-brand-200 bg-brand-50 p-8 text-center">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center border border-brand-200 bg-white">
+          <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
@@ -91,19 +91,19 @@ export default function LeadForm() {
         <p className="mt-2 text-sm text-surface-600">
           Vi har tagit emot ert meddelande och återkommer så snart vi kan.
         </p>
-        <div className="mt-6 rounded-xl bg-white p-5 text-left text-sm">
+        <div className="mt-6 border border-slate-200 bg-white p-5 text-left text-sm">
           <p className="font-medium text-surface-900">Nästa steg:</p>
           <ul className="mt-3 space-y-2 text-surface-500">
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent-500" />
+              <span className="mt-1.5 h-1 w-1 flex-shrink-0 bg-brand-500" />
               Vi granskar er förfrågan och eventuella GIS-underlag
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent-500" />
+              <span className="mt-1.5 h-1 w-1 flex-shrink-0 bg-brand-500" />
               Vi kontaktar er för en genomgång av behov och omfattning
             </li>
             <li className="flex items-start gap-2">
-              <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-accent-500" />
+              <span className="mt-1.5 h-1 w-1 flex-shrink-0 bg-brand-500" />
               Ni får en offert anpassad efter ert specifika uppdrag
             </li>
           </ul>
@@ -122,7 +122,7 @@ export default function LeadForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {status === "error" && (
-        <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700" role="alert">
+        <div className="border border-red-200 bg-red-50 p-4 text-sm text-red-700" role="alert">
           {errorMsg}
         </div>
       )}

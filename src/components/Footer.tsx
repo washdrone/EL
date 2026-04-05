@@ -51,20 +51,20 @@ const footerNavigation = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-white pb-20 lg:pb-0">
-      <div className="container-section py-16">
+    <footer className="border-t border-slate-200 bg-navy-950 pb-20 lg:pb-0">
+      <div className="container-section py-16 lg:py-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-6">
           {/* Company */}
           <div>
             <div className="flex items-center gap-2.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-sm bg-slate-900">
-                <Zap className="h-4 w-4 text-cyan-400" strokeWidth={2.5} />
+              <div className="flex h-8 w-8 items-center justify-center bg-brand-600">
+                <Zap className="h-4 w-4 text-white" strokeWidth={2.5} />
               </div>
-              <span className="text-sm font-bold tracking-tight text-slate-900">
+              <span className="text-sm font-bold tracking-tight text-white">
                 {COMPANY_NAME}
               </span>
             </div>
-            <p className="mt-4 text-sm leading-6 text-slate-500">
+            <p className="mt-5 text-sm leading-6 text-slate-400">
               Drönarbaserad inspektion av kraftledningar, elnät
               och energiinfrastruktur i hela Sverige.
             </p>
@@ -72,13 +72,13 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="eyebrow">Inspektion</h3>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">Inspektion</h3>
             <ul className="mt-4 space-y-2.5">
               {footerServices.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-slate-600 transition-colors hover:text-cyan-600"
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -89,13 +89,13 @@ export default function Footer() {
 
           {/* Branches */}
           <div>
-            <h3 className="eyebrow">Branscher</h3>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">Branscher</h3>
             <ul className="mt-4 space-y-2.5">
               {footerBranches.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-slate-600 transition-colors hover:text-cyan-600"
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -106,13 +106,13 @@ export default function Footer() {
 
           {/* Locations */}
           <div>
-            <h3 className="eyebrow">Platser</h3>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">Platser</h3>
             <ul className="mt-4 space-y-2.5">
               {footerLocations.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-slate-600 transition-colors hover:text-cyan-600"
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -123,13 +123,13 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="eyebrow">Resurser</h3>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">Resurser</h3>
             <ul className="mt-4 space-y-2.5">
               {footerNavigation.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-slate-600 transition-colors hover:text-cyan-600"
+                    className="text-sm text-slate-400 transition-colors hover:text-white"
                   >
                     {item.label}
                   </Link>
@@ -140,12 +140,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="eyebrow">Kontakt</h3>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.12em] text-slate-500">Kontakt</h3>
             <ul className="mt-4 space-y-2.5">
               <li>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
-                  className="text-sm text-slate-600 transition-colors hover:text-cyan-600"
+                  className="text-sm text-slate-400 transition-colors hover:text-white"
                 >
                   {CONTACT_EMAIL}
                 </a>
@@ -153,7 +153,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/kontakt"
-                  className="text-sm text-slate-600 transition-colors hover:text-cyan-600"
+                  className="text-sm text-slate-400 transition-colors hover:text-white"
                 >
                   Kontaktformulär
                 </Link>
@@ -162,14 +162,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-slate-200 pt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
+        <div className="mt-14 border-t border-slate-800 pt-6 flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-slate-500">
             &copy; {new Date().getFullYear()} {COMPANY_NAME}. Alla rättigheter förbehållna.
           </p>
           <div className="flex gap-4">
             <Link
               href="/integritetspolicy"
-              className="text-xs text-slate-500 hover:text-slate-600"
+              className="text-xs text-slate-500 hover:text-slate-300"
             >
               Integritetspolicy
             </Link>

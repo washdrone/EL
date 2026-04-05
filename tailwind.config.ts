@@ -16,6 +16,9 @@ const config: Config = {
       boxShadow: {
         soft: "0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04)",
         elevated: "0 4px 12px -2px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.04)",
+        "card": "0 1px 2px 0 rgb(0 0 0 / 0.03)",
+        "card-hover": "0 8px 24px -4px rgb(0 0 0 / 0.08), 0 2px 6px -2px rgb(0 0 0 / 0.04)",
+        "header": "0 1px 0 0 rgb(0 0 0 / 0.05)",
       },
       colors: {
         brand: {
@@ -45,6 +48,7 @@ const config: Config = {
           950: "#003332",
         },
         navy: {
+          600: "#1e3354",
           700: "#1a2942",
           800: "#111d32",
           900: "#0b1525",
@@ -61,6 +65,27 @@ const config: Config = {
           700: "#374151",
           800: "#1f2937",
           900: "#111827",
+        },
+      },
+      spacing: {
+        "18": "4.5rem",
+        "22": "5.5rem",
+      },
+      maxWidth: {
+        "content": "72rem",
+        "prose": "42rem",
+      },
+      fontSize: {
+        "display": ["3.5rem", { lineHeight: "1.1", letterSpacing: "-0.025em", fontWeight: "700" }],
+        "display-sm": ["2.75rem", { lineHeight: "1.12", letterSpacing: "-0.02em", fontWeight: "700" }],
+      },
+      animation: {
+        "fade-in": "fadeIn 0.5s ease-out",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
     },

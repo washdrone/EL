@@ -10,7 +10,6 @@ export default function StickyCTA() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Hide while cookie consent banner is showing to avoid stacking
     const consent = localStorage.getItem(CONSENT_KEY);
     setVisible(consent === "accepted" || consent === "declined");
 
@@ -20,7 +19,6 @@ export default function StickyCTA() {
     }
     window.addEventListener("storage", handleStorage);
 
-    // Poll briefly for same-tab consent updates
     const interval = setInterval(handleStorage, 500);
     const cleanup = setTimeout(() => clearInterval(interval), 15000);
 
@@ -34,7 +32,7 @@ export default function StickyCTA() {
   if (!visible) return null;
 
   return (
-    <div className="mobile-safe-padding fixed bottom-0 left-0 right-0 z-40 border-t border-surface-100 bg-white/95 p-3 shadow-elevated backdrop-blur-lg lg:hidden">
+    <div className="mobile-safe-padding fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 bg-white/95 p-3 shadow-elevated backdrop-blur-lg lg:hidden">
       <div className="flex items-center justify-center gap-3">
         <Link
           href="/kontakt"

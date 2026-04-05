@@ -109,7 +109,6 @@ export default function Header() {
       const firstLink = mobileMenuRef.current.querySelector<HTMLElement>("a, button");
       firstLink?.focus();
     } else if (!mobileOpen && mobileToggleRef.current) {
-      // Only return focus if it was inside the menu
       if (document.activeElement && mobileMenuRef.current?.contains(document.activeElement)) {
         mobileToggleRef.current.focus();
       }
@@ -123,21 +122,24 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b transition-all duration-200 ${
+      className={`sticky top-0 z-50 transition-all duration-200 ${
         scrolled
-          ? "border-slate-200 bg-white/95 backdrop-blur-md shadow-sm"
-          : "border-transparent bg-white"
+          ? "bg-white/95 shadow-header backdrop-blur-md"
+          : "bg-white"
       }`}
     >
+      {/* Top accent line */}
+      <div className="h-[2px] bg-brand-600" />
+
       <nav
         ref={navRef}
-        className="container-section flex items-center justify-between py-3"
+        className="container-section flex items-center justify-between py-3.5"
         aria-label="Huvudnavigering"
       >
         {/* Logo */}
         <Link
           href="/"
-          className="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600"
+          className="flex items-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-600"
         >
           <Image
             src="/images/Logotyp.png"
@@ -159,10 +161,10 @@ export default function Header() {
           >
             <button
               type="button"
-              className={`flex items-center gap-1 whitespace-nowrap rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
+              className={`flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-[13px] font-medium transition-colors ${
                 pathname.startsWith("/tjanster")
-                  ? "bg-slate-100 text-slate-900"
-                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                  ? "text-brand-700"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
               onClick={() => toggleDropdown("services")}
               aria-expanded={openDropdown === "services"}
@@ -170,7 +172,7 @@ export default function Header() {
             >
               Tjänster
               <svg
-                className={`h-3.5 w-3.5 transition-transform ${openDropdown === "services" ? "rotate-180" : ""}`}
+                className={`h-3 w-3 transition-transform duration-200 ${openDropdown === "services" ? "rotate-180" : ""}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -180,17 +182,15 @@ export default function Header() {
               </svg>
             </button>
             {openDropdown === "services" && (
-              <div
-                className="absolute left-0 top-full z-50 mt-1 w-72 rounded-sm border border-slate-200 bg-white p-1.5 shadow-lg"
-              >
+              <div className="absolute left-0 top-full z-50 mt-2 w-80 border border-slate-200 bg-white p-2 shadow-elevated">
                 {SERVICE_ITEMS.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block rounded-sm px-3 py-2.5 transition-colors hover:bg-slate-50"
+                    className="block px-3.5 py-2.5 transition-colors hover:bg-surface-50"
                   >
-                    <span className="text-sm font-medium text-slate-900">{item.label}</span>
-                    <span className="mt-0.5 block text-xs text-slate-500">{item.description}</span>
+                    <span className="text-[13px] font-medium text-slate-900">{item.label}</span>
+                    <span className="mt-0.5 block text-xs leading-relaxed text-slate-400">{item.description}</span>
                   </Link>
                 ))}
               </div>
@@ -205,10 +205,10 @@ export default function Header() {
           >
             <button
               type="button"
-              className={`flex items-center gap-1 whitespace-nowrap rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
+              className={`flex items-center gap-1.5 whitespace-nowrap px-3.5 py-2 text-[13px] font-medium transition-colors ${
                 pathname.startsWith("/branscher")
-                  ? "bg-slate-100 text-slate-900"
-                  : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                  ? "text-brand-700"
+                  : "text-slate-600 hover:text-slate-900"
               }`}
               onClick={() => toggleDropdown("branches")}
               aria-expanded={openDropdown === "branches"}
@@ -216,7 +216,7 @@ export default function Header() {
             >
               Branscher
               <svg
-                className={`h-3.5 w-3.5 transition-transform ${openDropdown === "branches" ? "rotate-180" : ""}`}
+                className={`h-3 w-3 transition-transform duration-200 ${openDropdown === "branches" ? "rotate-180" : ""}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -226,17 +226,15 @@ export default function Header() {
               </svg>
             </button>
             {openDropdown === "branches" && (
-              <div
-                className="absolute left-0 top-full z-50 mt-1 w-64 rounded-sm border border-slate-200 bg-white p-1.5 shadow-lg"
-              >
+              <div className="absolute left-0 top-full z-50 mt-2 w-72 border border-slate-200 bg-white p-2 shadow-elevated">
                 {BRANCH_ITEMS.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block rounded-sm px-3 py-2.5 transition-colors hover:bg-slate-50"
+                    className="block px-3.5 py-2.5 transition-colors hover:bg-surface-50"
                   >
-                    <span className="text-sm font-medium text-slate-900">{item.label}</span>
-                    <span className="mt-0.5 block text-xs text-slate-500">{item.description}</span>
+                    <span className="text-[13px] font-medium text-slate-900">{item.label}</span>
+                    <span className="mt-0.5 block text-xs leading-relaxed text-slate-400">{item.description}</span>
                   </Link>
                 ))}
               </div>
@@ -250,10 +248,10 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`whitespace-nowrap rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
+                className={`whitespace-nowrap px-3.5 py-2 text-[13px] font-medium transition-colors ${
                   active
-                    ? "bg-slate-100 text-slate-900"
-                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                    ? "text-brand-700"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 {item.label}
@@ -263,8 +261,8 @@ export default function Header() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link href="/kontakt" className="btn-primary whitespace-nowrap">
+        <div className="hidden items-center lg:flex">
+          <Link href="/kontakt" className="btn-primary whitespace-nowrap text-[13px]">
             Diskutera ert behov
           </Link>
         </div>
@@ -273,7 +271,7 @@ export default function Header() {
         <button
           ref={mobileToggleRef}
           type="button"
-          className="inline-flex items-center justify-center rounded-sm p-2 text-slate-500 transition-colors hover:bg-slate-50 hover:text-slate-900 lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center text-slate-500 transition-colors hover:text-slate-900 lg:hidden"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-expanded={mobileOpen}
           aria-controls={mobileMenuId}
@@ -291,10 +289,10 @@ export default function Header() {
         </button>
       </nav>
 
-      {/* Mobile menu backdrop — closes menu on tap outside */}
+      {/* Mobile menu backdrop */}
       {mobileOpen && (
         <div
-          className="fixed inset-0 top-[var(--header-h)] z-40 bg-slate-900/20 backdrop-blur-[2px] lg:hidden"
+          className="fixed inset-0 top-[var(--header-h)] z-40 bg-navy-900/30 backdrop-blur-[2px] lg:hidden"
           aria-hidden="true"
           onClick={() => setMobileOpen(false)}
         />
@@ -306,23 +304,23 @@ export default function Header() {
         id={mobileMenuId}
         role="region"
         aria-label="Mobilmeny"
-        className={`max-h-[calc(100dvh-60px)] overflow-y-auto border-t border-slate-100 bg-white transition-all duration-200 ease-out lg:hidden ${
+        className={`max-h-[calc(100dvh-64px)] overflow-y-auto border-t border-slate-100 bg-white transition-all duration-200 ease-out lg:hidden ${
           mobileOpen
             ? "visible opacity-100 translate-y-0"
             : "invisible opacity-0 -translate-y-2 pointer-events-none h-0 max-h-0 border-t-0"
         }`}
       >
-        <div className="container-section space-y-1 py-4">
-          <p className="eyebrow px-3 pb-1">Tjänster</p>
+        <div className="container-section space-y-1 py-5">
+          <p className="eyebrow px-3 pb-2">Tjänster</p>
           {SERVICE_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               tabIndex={mobileOpen ? 0 : -1}
-              className={`block rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
+              className={`block px-3 py-2.5 text-sm font-medium transition-colors ${
                 isActive(item.href)
-                  ? "bg-slate-100 text-slate-900"
-                  : "text-slate-700 hover:bg-slate-50"
+                  ? "text-brand-700"
+                  : "text-slate-700 hover:text-slate-900"
               }`}
               onClick={() => setMobileOpen(false)}
             >
@@ -330,18 +328,18 @@ export default function Header() {
             </Link>
           ))}
 
-          <div className="my-2 border-t border-slate-100" />
+          <div className="my-3 border-t border-slate-100" />
 
-          <p className="eyebrow px-3 pb-1">Branscher</p>
+          <p className="eyebrow px-3 pb-2">Branscher</p>
           {BRANCH_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               tabIndex={mobileOpen ? 0 : -1}
-              className={`block rounded-sm px-3 py-2 text-sm font-medium transition-colors ${
+              className={`block px-3 py-2.5 text-sm font-medium transition-colors ${
                 isActive(item.href)
-                  ? "bg-slate-100 text-slate-900"
-                  : "text-slate-700 hover:bg-slate-50"
+                  ? "text-brand-700"
+                  : "text-slate-700 hover:text-slate-900"
               }`}
               onClick={() => setMobileOpen(false)}
             >
@@ -349,7 +347,7 @@ export default function Header() {
             </Link>
           ))}
 
-          <div className="my-2 border-t border-slate-100" />
+          <div className="my-3 border-t border-slate-100" />
 
           {NAV_ITEMS.filter((item) => item.label !== "Tjänster" && item.label !== "Branscher").map((item) => {
             const active = isActive(item.href);
@@ -359,10 +357,10 @@ export default function Header() {
                 href={item.href}
                 tabIndex={mobileOpen ? 0 : -1}
                 aria-current={active ? "page" : undefined}
-                className={`block rounded-sm px-3 py-2.5 text-base font-medium transition-colors ${
+                className={`block px-3 py-3 text-base font-medium transition-colors ${
                   active
-                    ? "bg-slate-100 text-slate-900"
-                    : "text-slate-700 hover:bg-slate-50"
+                    ? "text-brand-700"
+                    : "text-slate-700 hover:text-slate-900"
                 }`}
                 onClick={() => setMobileOpen(false)}
               >
@@ -371,7 +369,7 @@ export default function Header() {
             );
           })}
 
-          <div className="pt-3">
+          <div className="pt-4">
             <Link
               href="/kontakt"
               tabIndex={mobileOpen ? 0 : -1}

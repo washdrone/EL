@@ -20,55 +20,67 @@ export default function FAQ({
     <section className="section-padding bg-white" id="faq">
       <div className="container-section">
         <div className="section-intro">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-8 bg-brand-500" />
+            <span className="eyebrow-brand">FAQ</span>
+            <div className="h-px w-8 bg-brand-500" />
+          </div>
           <h2 className="heading-2">{heading}</h2>
           {subheading && <p className="body-text mt-5">{subheading}</p>}
         </div>
 
         <div className="mx-auto mt-14 max-w-3xl">
-          {items.map((item, index) => (
-            <div
-              key={index}
-              className="border-b border-surface-100"
-            >
-              <button
-                type="button"
-                className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-brand-700"
-                onClick={() =>
-                  setOpenIndex(openIndex === index ? null : index)
-                }
-                aria-expanded={openIndex === index}
-              >
-                <span className="text-base font-medium text-surface-900">
-                  {item.question}
-                </span>
-                <span className={`flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full transition-all ${openIndex === index ? "bg-brand-100 text-brand-700 rotate-180" : "bg-surface-100 text-surface-500"}`}>
-                  <svg
-                    className="h-3.5 w-3.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2.5}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </span>
-              </button>
+          {items.map((item, index) => {
+            const isOpen = openIndex === index;
+            return (
               <div
-                className={`overflow-hidden transition-all duration-200 ${
-                  openIndex === index ? "max-h-[2000px] pb-5" : "max-h-0"
-                }`}
+                key={index}
+                className="border-b border-surface-100"
               >
-                <p className="pr-12 text-sm leading-6 text-surface-500">
-                  {item.answer}
-                </p>
+                <button
+                  type="button"
+                  className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-brand-700"
+                  onClick={() =>
+                    setOpenIndex(isOpen ? null : index)
+                  }
+                  aria-expanded={isOpen}
+                >
+                  <span className={`text-base font-medium transition-colors ${isOpen ? "text-brand-700" : "text-surface-900"}`}>
+                    {item.question}
+                  </span>
+                  <span className={`flex h-7 w-7 flex-shrink-0 items-center justify-center border transition-all duration-200 ${
+                    isOpen
+                      ? "border-brand-200 bg-brand-50 text-brand-600 rotate-180"
+                      : "border-surface-200 bg-surface-50 text-surface-400"
+                  }`}>
+                    <svg
+                      className="h-3.5 w-3.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-200 ${
+                    isOpen ? "max-h-[2000px] pb-6" : "max-h-0"
+                  }`}
+                >
+                  <p className="pr-12 text-sm leading-7 text-surface-500">
+                    {item.answer}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

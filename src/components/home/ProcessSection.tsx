@@ -29,38 +29,36 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="section-padding bg-slate-900">
+    <section className="section-padding gradient-dark-section">
       <div className="container-section">
         <div className="section-intro mb-14">
-          <h2 className="heading-2 text-white">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-8 bg-brand-400" />
+            <span className="eyebrow-cyan">Process</span>
+            <div className="h-px w-8 bg-brand-400" />
+          </div>
+          <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">
             Från flygning till åtgärdsplan.
           </h2>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {steps.map((step, index) => (
-            <div key={step.number} className="relative">
-              {/* Connector line (desktop) */}
-              {index < steps.length - 1 && (
-                <div className="absolute top-6 left-[calc(50%+2rem)] right-0 hidden h-px bg-slate-700 lg:block" />
-              )}
-
-              <div className="flex flex-col items-start lg:items-center lg:text-center">
-                <div className="mb-4 flex items-center gap-3 lg:flex-col lg:gap-3">
-                  <div className="relative flex h-12 w-12 items-center justify-center rounded-sm border border-slate-700 bg-slate-800">
-                    <step.icon className="h-5 w-5 text-cyan-400" strokeWidth={1.5} />
-                    <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-cyan-500 text-[10px] font-bold text-slate-900">
-                      {step.number}
-                    </span>
-                  </div>
+        <div className="grid gap-px bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((step) => (
+            <div key={step.number} className="group bg-navy-900/80 p-8 transition-colors hover:bg-navy-800/80">
+              <div className="mb-5 flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center border border-white/10 bg-white/5">
+                  <step.icon className="h-5 w-5 text-brand-300" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-sm font-semibold text-white mb-1.5 lg:mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-slate-300">
-                  {step.text}
-                </p>
+                <span className="text-2xl font-bold text-brand-400/40">
+                  {step.number}
+                </span>
               </div>
+              <h3 className="text-sm font-semibold text-white mb-2">
+                {step.title}
+              </h3>
+              <p className="text-sm leading-relaxed text-slate-400">
+                {step.text}
+              </p>
             </div>
           ))}
         </div>

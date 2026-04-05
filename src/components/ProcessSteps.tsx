@@ -27,9 +27,14 @@ const steps = [
 
 export default function ProcessSteps() {
   return (
-    <section className="section-padding gradient-subtle" id="process">
+    <section className="section-padding bg-surface-50" id="process">
       <div className="container-section">
         <div className="section-intro">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="h-px w-8 bg-brand-500" />
+            <span className="eyebrow-brand">Process</span>
+            <div className="h-px w-8 bg-brand-500" />
+          </div>
           <h2 className="heading-2">Så går det till</h2>
           <p className="body-text mt-5">
             Från planering till leverans &ndash; en strukturerad process som
@@ -37,31 +42,23 @@ export default function ProcessSteps() {
           </p>
         </div>
 
-        <div className="relative mt-16">
-          <div className="grid gap-10 lg:grid-cols-4 lg:gap-0">
-            {steps.map((step, index) => (
-              <div key={step.number} className="relative flex flex-col items-center text-center">
-                {/* Horizontal connector on desktop */}
-                {index < steps.length - 1 && (
-                  <div className="absolute right-0 top-8 hidden h-px w-full bg-surface-200 lg:block" aria-hidden="true" />
-                )}
-
-                {/* Step number circle */}
-                <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-2xl gradient-hero shadow-elevated">
-                  <span className="text-lg font-bold text-accent-400">
-                    {step.number}
-                  </span>
-                </div>
-
-                <h3 className="mt-5 text-base font-semibold text-surface-900">
-                  {step.title}
-                </h3>
-                <p className="mt-2 max-w-[240px] text-sm leading-6 text-surface-500">
-                  {step.description}
-                </p>
+        <div className="mt-16 grid gap-px bg-slate-200 lg:grid-cols-4">
+          {steps.map((step) => (
+            <div key={step.number} className="bg-white p-8 text-center">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center border border-brand-200 bg-brand-50">
+                <span className="text-lg font-bold text-brand-600">
+                  {step.number}
+                </span>
               </div>
-            ))}
-          </div>
+
+              <h3 className="mt-5 text-base font-semibold text-surface-900">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-sm leading-6 text-surface-500">
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
