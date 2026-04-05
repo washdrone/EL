@@ -42,6 +42,8 @@ const footerNavigation = [
   { label: "Guide: Dataleverans GIS", href: "/guider/dataleverans-gis-elnat" },
   { label: "Guide: BVLOS-inspektion", href: "/guider/bvlos-inspektion-elnat" },
   { label: "Guide: Upphandling", href: "/guider/upphandling-dronareinspektion" },
+  { label: "Guide: Feltyper", href: "/guider/feltyper-kraftledningar" },
+  { label: "Guide: Komponenter", href: "/guider/komponenter-elnat" },
   { label: "Helikopter vs drönare", href: "/jamforelser/helikopter-vs-dronare-inspektion" },
   { label: "Om oss", href: "/om-oss" },
   { label: "Kontakt", href: "/kontakt" },

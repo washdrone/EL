@@ -167,47 +167,40 @@ export default function StormskadeinspektionPage() {
         </div>
       </section>
 
-      {/* Entity depth: Skadetyper */}
+      {/* Stormspecifika skadetyper — unique to this page */}
       <section className="section-padding bg-surface-50">
         <div className="container-section">
-          <h2 className="heading-2">Vilka stormskador identifieras vid drönarinspektion?</h2>
+          <h2 className="heading-2">Typiska stormskador i elnätet</h2>
           <p className="body-text mt-4 max-w-3xl">
-            Drönaren dokumenterar alla typer av stormskador systematiskt med GPS-märkta bilder och
-            klassificerar dem efter allvarlighetsgrad. Här är de vanligaste skadorna som identifieras:
+            Storm orsakar mekaniska skador på elnätet genom vindlast, nedfallande träd och
+            markrörelse. Drönaren kartlägger och GPS-märker skador längs drabbade sträckor
+            för prioriterad reparation:
           </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-10 max-w-4xl grid gap-4 sm:grid-cols-2">
             {[
-              {
-                title: "Fallna och lutande stolpar",
-                desc: "Trästolpar, betongstolpar och stålstolpar som vält, knäckts eller lutar till följd av vindlast eller rotvältor i marken.",
-              },
-              {
-                title: "Brutna ledningslinor och topplinor",
-                desc: "Fasledare, topplinor och jordlinor som brustit av mekanisk belastning från vind, is eller nedfallna träd.",
-              },
-              {
-                title: "Skadade isolatorer",
-                desc: "Glas- och porslinsisolatorer som krossats av fallande grenar eller deformerats av mekanisk påverkan.",
-              },
-              {
-                title: "Deformerade traverser och fästen",
-                desc: "Traverser, konsoler och fästjärn som böjts, vridits eller lossnat från stolpen vid extrema vindlaster.",
-              },
-              {
-                title: "Nedfallna träd på ledning",
-                desc: "Träd och grova grenar som fallit över ledningsgatan och ligger på eller nära spänningsförande ledningar.",
-              },
-              {
-                title: "Fundamentskador",
-                desc: "Stolpfundament som påverkats av markrörelse, erosion eller rotvältor som destabiliserat stolpen.",
-              },
+              "Fallna eller kraftigt lutande stolpar (vind, rotvältor)",
+              "Brutna fasledare och topplinor (mekanisk överbelastning)",
+              "Nedfallna träd på eller nära spänningsförande ledning",
+              "Krossade isolatorer (fallande grenar, vindburna föremål)",
+              "Deformerade traverser och lossnade fästen",
+              "Fundament med sättningar, erosion eller rotvälteskador",
             ].map((item) => (
-              <div key={item.title} className="card p-6">
-                <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
-                <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
+              <div key={item} className="flex items-start gap-3 rounded-xl border border-surface-100 bg-white px-5 py-3">
+                <div className="mt-1 h-2 w-2 shrink-0 rounded-full bg-amber-500" />
+                <span className="text-sm text-surface-700">{item}</span>
               </div>
             ))}
           </div>
+          <p className="mt-8 text-center text-sm text-surface-500">
+            Läs mer om{" "}
+            <Link href="/guider/feltyper-kraftledningar" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700">
+              alla feltyper som identifieras vid drönarinspektion
+            </Link>{" "}
+            eller{" "}
+            <Link href="/guider/komponenter-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700">
+              vilka komponenter som inspekteras
+            </Link>.
+          </p>
         </div>
       </section>
 

@@ -146,46 +146,25 @@ export default function HubPage() {
         </div>
       </section>
 
-      {/* Entity Depth: Vilka komponenter inspekteras */}
+      {/* Inspektionsomfång — brief, links to dedicated pages */}
       <section className="section-padding bg-white">
         <div className="container-section">
-          <h2 className="heading-2">Vilka elnätskomponenter inspekteras?</h2>
-          <p className="body-text mt-4 max-w-3xl">
-            Vid kraftledningsinspektion med drönare dokumenteras varje komponent systematiskt
-            med standardiserade bildvinklar och georefererade bilder.
-          </p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              {
-                title: "Stolpar och fundament",
-                desc: "Trästolpar, betongstolpar och stålstolpar inspekteras för sprickor, lutning, röta och fundamentskador. Traversfötter kontrolleras för korrosion.",
-              },
-              {
-                title: "Isolatorer",
-                desc: "Glas-, porslins- och kompositisolatorer granskas visuellt för sprickor, avflagning, brännskador och kontaminering. Termisk analys avslöjar interna fel.",
-              },
-              {
-                title: "Ledningslinor och topplinor",
-                desc: "Fasledare, topplinor och jordlinor inspekteras för trådbrott, korrosion, slitage vid klämfästen och mekanisk skada.",
-              },
-              {
-                title: "Traverser och fästen",
-                desc: "Traverser, konsoler och fästjärn kontrolleras för korrosion, deformation, lösa bultar och bristande infästningar.",
-              },
-              {
-                title: "Ledningsgata och vegetation",
-                desc: "Vegetationsavstånd dokumenteras för prioritering av röjningsinsatser. Kombineras med LiDAR-baserad{' '}<a href='/tjanster/vegetationskontroll' class='text-brand-600 underline'>vegetationskontroll</a> vid behov.",
-              },
-              {
-                title: "Skarvar och kopplingar",
-                desc: "Skarvar, kopplingar och anslutningspunkter inspekteras visuellt och termiskt. Termografering identifierar varmgångar som indikerar kontaktmotstånd.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="card p-6">
-                <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
-                <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
-              </div>
-            ))}
+          <div className="mx-auto max-w-3xl">
+            <h2 className="heading-2">Vad inspekteras vid kraftledningsinspektion?</h2>
+            <p className="body-text mt-6">
+              Inspektionen omfattar alla bärande och elektriska komponenter i luftledningsnätet —
+              stolpar, isolatorer, fasledare, topplinor, traverser, fästen, skarvar och ledningsgata.
+              Varje komponent dokumenteras med standardiserade bildvinklar och georefererade bilder.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/guider/komponenter-elnat" className="text-sm font-medium text-brand-600 hover:text-brand-700 underline decoration-brand-200 underline-offset-2">
+                Se alla inspekterade komponenter →
+              </Link>
+              <span className="text-surface-300">|</span>
+              <Link href="/guider/feltyper-kraftledningar" className="text-sm font-medium text-brand-600 hover:text-brand-700 underline decoration-brand-200 underline-offset-2">
+                Se vilka feltyper som identifieras →
+              </Link>
+            </div>
           </div>
         </div>
       </section>

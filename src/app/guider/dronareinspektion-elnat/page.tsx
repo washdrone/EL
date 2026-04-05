@@ -28,17 +28,7 @@ const guideFaqItems: FAQItem[] = [
   {
     question: "Vad ingår i en drönarinspektion av elnät?",
     answer:
-      "En drönarinspektion av elnät omfattar systematisk flygning längs kraftledningar med RGB-kamera och värmekamera, georeferering av alla bilder med RTK-positionering, kvalitetskontroll och klassificering av fynd, samt leverans av strukturerad rapport med GIS-lager och åtgärdsrekommendationer.",
-  },
-  {
-    question: "Vilka fel upptäcks vid drönarinspektion?",
-    answer:
-      "Drönareinspektion identifierar skadade isolatorer, korrosion på traverser och stag, varmgångar i skarvar och kontakter (via termografi), fågelbon på stolpar, vegetationsröjningsbehov, deformerade stolpar, ledningsskador och fundament som påverkats av markrörelse.",
-  },
-  {
-    question: "Vilken utrustning används vid drönarinspektion av elnät?",
-    answer:
-      "Branschledande multirotordrönare med högupplöst RGB-kamera för visuell inspektion, radiometrisk värmekamera för termografering, RTK-positionering för centimeternoggrann georeferering i SWEREF99 TM. LiDAR finns som tillval för 3D-kartläggning och vegetationskontroll.",
+      "Systematisk flygning längs kraftledningar, dokumentation av varje stolpe och sektion, georeferering av bilder, kvalitetskontroll, klassificering av fynd och leverans av strukturerad rapport med GIS-lager. Inspektionsomfång definieras i förväg mellan beställare och utförare.",
   },
   {
     question: "Påverkar drönarinspektion driften av elnätet?",
@@ -46,19 +36,19 @@ const guideFaqItems: FAQItem[] = [
       "Nej, drönareinspektion genomförs normalt utan driftstopp. Drönaren flyger i säkert avstånd från spänningsförande delar och inspektionen koordineras med nätägaren för att minimera eventuell påverkan.",
   },
   {
-    question: "Hur levereras data från drönarinspektion?",
+    question: "Hur skiljer sig drönarinspektion från traditionell stolpklättring?",
     answer:
-      "Data levereras digitalt i GIS-kompatibla format — GeoTIFF, shapefiler, CSV och georefererade bilder. Leveransen inkluderar strukturerad rapport med klassificerade fynd, GPS-karta och åtgärdsrekommendationer. Leveransformat anpassas efter nätägarens system.",
-  },
-  {
-    question: "Krävs BVLOS-tillstånd för elnätsinspektion?",
-    answer:
-      "För inspektion inom synhåll (VLOS) krävs inget särskilt BVLOS-tillstånd. För inspektion av långa ledningssträckor bortom pilotens synhåll krävs BVLOS-tillstånd från Transportstyrelsen, inklusive godkänd riskbedömning och redundanta kommunikationssystem.",
+      "Drönare eliminerar arbete på höjd, kräver ingen markåtkomst och ger automatiskt georefererade bilder. Klättring ger dock direkt fysisk åtkomst till komponenter för provtagning och byte — metoderna kompletterar varandra.",
   },
   {
     question: "Hur ofta bör elnätet inspekteras med drönare?",
     answer:
-      "Inspektionsfrekvensen beror på nätets ålder, belastning och miljöförhållanden. Många nätägare genomför en årlig översiktsinspektion kompletterad med detaljinspektion vid behov. Prediktiva underhållsabonnemang med schemalagda inspektioner möjliggör trendanalys över tid.",
+      "Inspektionsfrekvensen beror på nätets ålder, belastning och miljöförhållanden. Många nätägare genomför en årlig översiktsinspektion kompletterad med detaljinspektion vid behov.",
+  },
+  {
+    question: "Kan drönarinspektion användas i alla väderförhållanden?",
+    answer:
+      "Flygning kräver acceptabla väderförhållanden — begränsad av vind, nederbörd och sikt. Termografering kräver dessutom att komponenter är strömförande. Inspektioner planeras efter väderprognos.",
   },
 ];
 
@@ -126,84 +116,54 @@ export default function DroneInspectionGuidePage() {
           </div>
         </section>
 
-        {/* Vilka fel upptäcks */}
+        {/* Vad inspekteras och vilka fel hittas — links to dedicated pages */}
         <section className="section-padding bg-surface-50">
           <div className="container-section">
-            <h2 className="heading-2">Vilka fel upptäcks vid drönarinspektion av elnät?</h2>
-            <p className="body-text mt-4 max-w-3xl">
-              Drönareinspektion med visuell kamera och termografi identifierar ett brett spektrum
-              av fel och avvikelser i elnätskomponenter:
-            </p>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: "Skadade isolatorer",
-                  desc: "Sprickor, avflagning, brännskador och interna fel som syns termiskt.",
-                },
-                {
-                  title: "Korrosion och slitage",
-                  desc: "Korrosion på traverser, stag, bärlinor och traversfötter.",
-                },
-                {
-                  title: "Varmgångar",
-                  desc: "Termisk avvikelse i skarvar, kontakter och anslutningar som indikerar kontaktmotstånd.",
-                },
-                {
-                  title: "Fågelbon och djurskador",
-                  desc: "Fågelbon på stolpar och traverser som ökar risk för jordfel och kortslutning.",
-                },
-                {
-                  title: "Vegetationsröjningsbehov",
-                  desc: "Träd och grenar som växer in i ledningsgatan och hotar driftsäkerheten.",
-                },
-                {
-                  title: "Stolp- och fundamentskador",
-                  desc: "Lutande stolpar, deformerade fundament och markrörelse vid stolpfot.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="card p-6">
-                  <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
-                  <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
-                </div>
-              ))}
+            <div className="mx-auto max-w-3xl">
+              <h2 className="heading-2">Vad inspekteras och vilka fel hittas?</h2>
+              <p className="body-text mt-6">
+                Drönarinspektion täcker alla kritiska komponenter i kraftledningsnätet.
+                Visuell kamera identifierar mekaniska skador medan termografi avslöjar
+                dolda elektriska fel under drift. Fynd klassificeras som kritiskt,
+                brådskande eller planerat underhåll.
+              </p>
+              <div className="mt-8 grid gap-4 sm:grid-cols-2">
+                <Link href="/guider/komponenter-elnat" className="card group p-5 transition-all hover:border-brand-200 hover:shadow-md">
+                  <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Vilka komponenter inspekteras?</h3>
+                  <p className="mt-1 text-sm text-surface-500">Stolpar, isolatorer, ledningslinor, traverser, fästen, skarvar — alla komponenter i detalj.</p>
+                  <span className="mt-3 inline-block text-sm font-medium text-brand-600">Se komponentguiden →</span>
+                </Link>
+                <Link href="/guider/feltyper-kraftledningar" className="card group p-5 transition-all hover:border-brand-200 hover:shadow-md">
+                  <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Vilka feltyper identifieras?</h3>
+                  <p className="mt-1 text-sm text-surface-500">Visuella och termiska fel — isolatorskador, korrosion, varmgångar, trådbrott.</p>
+                  <span className="mt-3 inline-block text-sm font-medium text-brand-600">Se feltypguiden →</span>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Utrustning */}
+        {/* Sensorteknik — brief overview, links to thermography guide */}
         <section className="section-padding bg-white">
           <div className="container-section">
             <div className="mx-auto max-w-3xl">
-              <h2 className="heading-2">Vilken utrustning används vid drönarinspektion?</h2>
+              <h2 className="heading-2">Vilka sensorer används?</h2>
               <p className="body-text mt-6">
-                Professionell drönarinspektion av elnät utförs med branschledande
-                multirotordrönare utrustade med följande sensorer:
+                En inspektionsdrönare bär typiskt tre typer av sensorer: högupplöst RGB-kamera
+                för visuell dokumentation, radiometrisk värmekamera för termisk analys av
+                strömförande komponenter, och RTK-GPS för centimeternoggrann georeferering
+                av alla bilder i SWEREF99 TM. LiDAR finns som tillval för 3D-kartläggning.
               </p>
-              <div className="mt-8 space-y-6">
-                {[
-                  {
-                    title: "RGB-kamera (visuell)",
-                    desc: "Högupplöst kamera för detaljerad visuell dokumentation av stolpar, isolatorer, traverser och ledningsgata. Bilderna används för att identifiera synliga skador och avvikelser.",
-                  },
-                  {
-                    title: "Radiometrisk värmekamera",
-                    desc: "Termisk sensor som mäter temperaturfördelning i elnätskomponenter. Identifierar varmgångar, kontaktmotstånd och överbelastade komponenter som inte syns visuellt.",
-                  },
-                  {
-                    title: "RTK-positionering",
-                    desc: "GPS-system med centimeternoggrannhet för exakt georeferering av alla bilder i SWEREF99 TM. Möjliggör precis kartläggning och återbesök av exakt samma punkter.",
-                  },
-                  {
-                    title: "LiDAR (tillval)",
-                    desc: "Laserscanner för 3D-kartläggning av ledningsgator. Används främst för vegetationskontroll och avståndsmätning mellan vegetation och ledning.",
-                  },
-                ].map((item) => (
-                  <div key={item.title} className="border-l-2 border-brand-500 pl-5">
-                    <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
-                    <p className="mt-1 text-sm text-surface-500">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              <p className="body-text mt-4">
+                Fördjupa er i termisk sensorik i vår{" "}
+                <Link href="/guider/termografering-kraftledningar" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  guide om termografering av kraftledningar
+                </Link>{" "}
+                eller läs om{" "}
+                <Link href="/guider/dataleverans-gis-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  hur inspektionsdata levereras i GIS-format
+                </Link>.
+              </p>
             </div>
           </div>
         </section>
@@ -236,97 +196,26 @@ export default function DroneInspectionGuidePage() {
           </div>
         </section>
 
-        {/* Drönarinspektion vs traditionella metoder */}
+        {/* Fördjupande guider */}
         <section className="section-padding bg-white">
           <div className="container-section">
-            <div className="mx-auto max-w-3xl">
-              <h2 className="heading-2">Drönarinspektion vs. traditionella metoder</h2>
-              <p className="body-text mt-6">
-                Drönarinspektion kompletterar traditionella inspektionsmetoder och har specifika
-                fördelar beroende på förutsättningar:
-              </p>
-              <div className="mt-8 space-y-4">
-                <div className="rounded-lg border border-surface-200 bg-surface-50 p-5">
-                  <h3 className="text-base font-semibold text-surface-900">Vs. stolpklättring</h3>
-                  <p className="mt-2 text-sm text-surface-500">
-                    Drönare eliminerar arbete på höjd och minskar riskexponeringen för personal.
-                    Klättring ger dock direkt fysisk åtkomst för provtagning och komponentbyte.
-                  </p>
-                </div>
-                <div className="rounded-lg border border-surface-200 bg-surface-50 p-5">
-                  <h3 className="text-base font-semibold text-surface-900">Vs. helikopter</h3>
-                  <p className="mt-2 text-sm text-surface-500">
-                    Drönare har generellt lägre driftkostnad per kilometer, särskilt vid kortare
-                    sträckor. Helikopter är effektivare vid mycket långa, sammanhängande sträckor
-                    med fri sikt. Läs vår{" "}
-                    <Link href="/blogg/helikopter-vs-dronare" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700">
-                      jämförelse mellan helikopter och drönare
-                    </Link>.
-                  </p>
-                </div>
-                <div className="rounded-lg border border-surface-200 bg-surface-50 p-5">
-                  <h3 className="text-base font-semibold text-surface-900">Vs. markbaserad inspektion</h3>
-                  <p className="mt-2 text-sm text-surface-500">
-                    Drönare kräver ingen markåtkomst eller fordon och når komponenter i otillgänglig
-                    terräng. Markbaserad inspektion ger kompletterande perspektiv på fundament och markförhållanden.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Relaterade tjänster */}
-        <section className="section-padding bg-surface-50">
-          <div className="container-section">
-            <h2 className="heading-2">Relaterade tjänster</h2>
+            <h2 className="heading-2">Fördjupande guider</h2>
             <div className="mx-auto mt-8 grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: "Kraftledningsinspektion",
-                  desc: "Vår kärntjänst — systematisk inspektion av stolpar, isolatorer och ledningsgata.",
-                  href: "/tjanster/kraftledningsinspektion",
-                },
-                {
-                  title: "Termografering",
-                  desc: "Radiometrisk värmekamera för identifiering av varmgångar och kontaktfel.",
-                  href: "/tjanster/termografering-kraftledning",
-                },
-                {
-                  title: "BVLOS-inspektion",
-                  desc: "Inspektion av långa ledningssträckor bortom pilotens synhåll.",
-                  href: "/tjanster/bvlos-inspektion",
-                },
-                {
-                  title: "Vegetationskontroll",
-                  desc: "LiDAR-baserad kartläggning av vegetation längs kraftledningsgator.",
-                  href: "/tjanster/vegetationskontroll",
-                },
-                {
-                  title: "Stormskadeinspektion",
-                  desc: "Akut skadekartläggning efter storm med prioriterad beslutsunderlag.",
-                  href: "/tjanster/stormskadeinspektion",
-                },
-                {
-                  title: "Underhållsabonnemang",
-                  desc: "Schemalagda inspektioner med trendanalys och prioriterad stormrespons.",
-                  href: "/tjanster/underhallsabonnemang",
-                },
-              ].map((item) => (
-                <Link
-                  key={item.title}
-                  href={item.href}
-                  className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md"
-                >
-                  <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
-                  <span className="mt-3 inline-block text-sm font-medium text-brand-600">
-                    Läs mer →
-                  </span>
-                </Link>
-              ))}
+              <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Helikopter vs drönare</h3>
+                <p className="mt-2 text-sm text-surface-500">Detaljerad jämförelse av kostnad, datakvalitet och säkerhet.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Se jämförelsen →</span>
+              </Link>
+              <Link href="/guider/bvlos-inspektion-elnat" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">BVLOS-inspektion</h3>
+                <p className="mt-2 text-sm text-surface-500">Regler, teknik och tillämpningar för inspektion bortom synhåll.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
+              <Link href="/guider/upphandling-dronareinspektion" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+                <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Upphandla drönarinspektion</h3>
+                <p className="mt-2 text-sm text-surface-500">Kravspec, utvärderingskriterier och avtalsmodeller.</p>
+                <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
+              </Link>
             </div>
           </div>
         </section>

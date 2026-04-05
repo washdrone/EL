@@ -35,24 +35,24 @@ const homepageFaqItems: FAQItem[] = [
       "Drönarinspektion av elnät innebär att en EASA-utbildad pilot flyger en drönare utrustad med högupplöst RGB-kamera och radiometrisk värmekamera längs kraftledningar och elnätskomponenter. Varje stolpe, isolator och ledningssektion dokumenteras med georefererade bilder som levereras strukturerat till nätägarens förvaltningssystem — utan klättring och normalt utan driftstopp.",
   },
   {
-    question: "Hur fungerar kraftledningsinspektion med drönare?",
+    question: "Vilka fördelar har drönare jämfört med traditionell inspektion?",
     answer:
-      "Drönaren flyger systematiskt längs kraftledningen och fotograferar varje stolpe, isolator, traverser och ledningsgata med standardiserade bildvinklar. Bilderna georefereras automatiskt via RTK-positionering och levereras i en strukturerad rapport med klassificerade fynd och åtgärdsrekommendationer.",
+      "Drönare eliminerar behovet av stolpklättring och arbete på höjd, kräver ingen markåtkomst, och möjliggör inspektion utan driftstopp. Data georefereras automatiskt med RTK-positionering och levereras i GIS-kompatibla format för direkt import i nätförvaltningssystem.",
   },
   {
-    question: "Vilka fel kan upptäckas vid drönarinspektion av elnät?",
+    question: "Vilka tjänster erbjuder GridDrone?",
     answer:
-      "Drönareinspektion med visuell kamera och termografi identifierar skadade isolatorer, korrosion på traverser, varmgångar i skarvar och kontakter, fågelbon, vegetationsröjningsbehov, deformerade stolpar och ledningsskador. Termisk analys avslöjar även dolda fel som kontaktmotstånd och överbelastade komponenter.",
+      "Vi erbjuder kraftledningsinspektion, termografering, vegetationskontroll, transformatorstationsinspektion, BVLOS-inspektion av långa sträckor, stormskadeinspektion, vindkraftinspektion och prediktiva underhållsabonnemang.",
   },
   {
-    question: "Hur levereras data från en drönarinspektion?",
+    question: "Hur begär man en offert från GridDrone?",
     answer:
-      "Data levereras digitalt i GIS-kompatibla format (GeoTIFF, shapefiler, CSV) redo för direktimport i nätförvaltningssystem. Leveransen inkluderar georefererade bilder, avvikelserapport med klassificering, GPS-karta med fyndmarkeringar och åtgärdsrekommendationer per komponent.",
+      "Kontakta oss med ungefärlig sträcka (km ledning), nättyp, spänningsnivå och önskad inspektionstyp. Vi återkommer med en offert baserad på era specifika förutsättningar. Eventuella GIS-underlag underlättar planeringen.",
   },
   {
-    question: "Vad kostar drönarinspektion av kraftledningar?",
+    question: "Var i Sverige utför GridDrone inspektioner?",
     answer:
-      "Kostnaden beror på ledningslängd, terräng, inspektionstyp och krav på leveranser. Drönarinspektion har generellt lägre driftkostnad per kilometer jämfört med helikopter, särskilt vid kortare till medellånga sträckor. Kontakta oss för en offert baserad på era specifika förutsättningar.",
+      "Vi utför drönarinspektion av kraftledningar och elnät i hela Sverige — från Skåne till Norrland. Vi har kapacitet för rikstäckande uppdrag och kan anpassa logistik efter ert näts geografiska placering.",
   },
 ];
 
@@ -121,51 +121,38 @@ export default function Home() {
         <ProcessSection />
         <ProofSection />
 
-        {/* Entity depth: Vilka komponenter inspekteras */}
+        {/* Vad inspekteras — brief hub with links (details on dedicated pages) */}
         <section className="section-padding bg-white">
           <div className="container-section">
-            <h2 className="heading-2">Vilka elnätskomponenter inspekteras med drönare?</h2>
-            <p className="body-text mt-4 max-w-3xl">
-              Drönareinspektion dokumenterar alla kritiska komponenter i ert elnät systematiskt
-              med standardiserade bildvinklar, georefererade bilder och termisk analys:
-            </p>
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: "Stolpar och fundament",
-                  desc: "Trä-, betong- och stålstolpar inspekteras för sprickor, lutning, röta och fundamentskador.",
-                },
-                {
-                  title: "Isolatorer",
-                  desc: "Glas-, porslins- och kompositisolatorer granskas visuellt och termiskt för sprickor, brännskador och interna fel.",
-                },
-                {
-                  title: "Ledningslinor och topplinor",
-                  desc: "Fasledare, topplinor och jordlinor inspekteras för trådbrott, korrosion och slitage vid klämfästen.",
-                },
-                {
-                  title: "Traverser och fästen",
-                  desc: "Traverser, konsoler och fästjärn kontrolleras för korrosion, deformation och bristande infästningar.",
-                },
-                {
-                  title: "Skarvar och kopplingar",
-                  desc: "Skarvar och kopplingar inspekteras termiskt för varmgångar som indikerar kontaktmotstånd.",
-                },
-                {
-                  title: "Ledningsgata och vegetation",
-                  desc: "Vegetationsavstånd dokumenteras och kombineras med LiDAR-baserad vegetationskontroll.",
-                },
-              ].map((item) => (
-                <div key={item.title} className="card p-6">
-                  <h3 className="text-base font-semibold text-surface-900">{item.title}</h3>
-                  <p className="mt-2 text-sm text-surface-500">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-10 text-center">
-              <Link href="/tjanster/kraftledningsinspektion" className="text-sm font-medium text-brand-600 hover:text-brand-700">
-                Läs mer om kraftledningsinspektion med drönare →
-              </Link>
+            <div className="mx-auto max-w-3xl">
+              <h2 className="heading-2">Heltäckande inspektion av alla elnätskomponenter</h2>
+              <p className="body-text mt-6">
+                Vid drönarinspektion dokumenteras alla kritiska delar i ert elnät — från stolptopp
+                till fundament. Visuell kamera och termografi avslöjar både synliga skador och dolda
+                termiska avvikelser i{" "}
+                <Link href="/guider/komponenter-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  isolatorer, ledningslinor, traverser och fästen
+                </Link>.
+              </p>
+              <p className="body-text mt-4">
+                Varje fynd GPS-märks, fotograferas och klassificeras med åtgärdsrekommendation.
+                Läs mer om{" "}
+                <Link href="/guider/feltyper-kraftledningar" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  vilka feltyper som identifieras
+                </Link>{" "}
+                eller{" "}
+                <Link href="/guider/dataleverans-gis-elnat" className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400">
+                  hur data levereras i GIS-format
+                </Link>.
+              </p>
+              <div className="mt-8">
+                <Link href="/tjanster/kraftledningsinspektion" className="btn-primary inline-flex items-center">
+                  Begär offert
+                  <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
             </div>
           </div>
         </section>

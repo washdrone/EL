@@ -302,6 +302,74 @@ export default function ComparisonPage() {
           </div>
         </section>
 
+        {/* Tabell 2: Datakvalitet */}
+        <section className="section-padding bg-surface-50">
+          <div className="container-section">
+            <h2 className="heading-2">Datakvalitet och detektionsförmåga</h2>
+            <div className="mx-auto mt-10 max-w-5xl overflow-hidden rounded-2xl border border-surface-200 bg-white shadow-soft">
+              <div className="grid grid-cols-[1.2fr,1fr,1fr] border-b border-surface-200 bg-surface-50">
+                <div className="p-4 sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-surface-500">Datakvalitet</p>
+                </div>
+                <div className="border-l border-surface-200 p-4 text-center sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-700">Drönare</p>
+                </div>
+                <div className="border-l border-surface-200 p-4 text-center sm:p-5">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-surface-600">Helikopter</p>
+                </div>
+              </div>
+              {[
+                { aspect: "Bildupplösning", drone: "Hög — kort avstånd till objekt", helicopter: "Lägre — större avstånd", advantage: "drone" },
+                { aspect: "Termografisk detaljnivå", drone: "Hög — radiometrisk per komponent", helicopter: "Begränsad — översiktlig", advantage: "drone" },
+                { aspect: "Georeferering", drone: "RTK — cm-noggrannhet automatiskt", helicopter: "Kräver efterbearbetning", advantage: "drone" },
+                { aspect: "Standardiserade bildvinklar", drone: "Programmerbara, repeterbara", helicopter: "Observatörsberoende", advantage: "drone" },
+                { aspect: "Täckning per timme", drone: "Begränsad av batteri och VLOS/BVLOS", helicopter: "Hög — långa sträckor snabbt", advantage: "helicopter" },
+              ].map((row, i) => (
+                <div key={row.aspect} className={`grid grid-cols-[1.2fr,1fr,1fr] ${i % 2 === 0 ? "bg-white" : "bg-surface-50/50"}`}>
+                  <div className="p-4 sm:p-5">
+                    <p className="text-sm font-medium text-surface-800">{row.aspect}</p>
+                  </div>
+                  <div className={`border-l border-surface-100 p-4 text-center sm:p-5 ${row.advantage === "drone" ? "bg-brand-50/30" : ""}`}>
+                    <span className={`text-sm ${row.advantage === "drone" ? "font-medium text-brand-700" : "text-surface-500"}`}>{row.drone}</span>
+                  </div>
+                  <div className={`border-l border-surface-100 p-4 text-center sm:p-5 ${row.advantage === "helicopter" ? "bg-brand-50/30" : ""}`}>
+                    <span className={`text-sm ${row.advantage === "helicopter" ? "font-medium text-brand-700" : "text-surface-500"}`}>{row.helicopter}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Slutsats */}
+        <section className="section-padding bg-white">
+          <div className="container-section">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="heading-2">Slutsats: vilken metod bör ni välja?</h2>
+              <p className="body-text mt-6">
+                För de flesta nätägare med distributions- och regionnät är drönarinspektion
+                den mest kostnadseffektiva metoden. Drönare ger högre bildkvalitet, bättre
+                termografisk detaljnivå och automatisk georeferering — och eliminerar
+                riskfyllt arbete på höjd.
+              </p>
+              <p className="body-text mt-4">
+                Helikopter kan fortfarande vara motiverat för mycket långa stamnätssträckor
+                i öppen terräng där täckning per timme prioriteras framför detaljnivå.
+                Metoderna utesluter inte varandra — många nätägare använder drönare för
+                detaljinspektion och helikopter för snabb överblick.
+              </p>
+              <div className="mt-8">
+                <Link href="/kontakt" className="btn-primary inline-flex items-center">
+                  Be om kostnadsanalys
+                  <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Relaterade sidor */}
         <section className="section-padding bg-surface-50">
           <div className="container-section">
