@@ -79,12 +79,25 @@ export default function HubPage() {
         breadcrumbs={[{ name: "Elnätsinspektion med drönare" }]}
       />
 
+      <JsonLd type="FAQPage" faqItems={faqItems.slice(0, 6)} />
+      <JsonLd
+        type="HowTo"
+        howToName="Så fungerar kraftledningsinspektion med drönare"
+        howToDescription="Steg-för-steg-process för drönarinspektion av kraftledningar och elnät."
+        howToSteps={[
+          { name: "Planering och GIS-integration", text: "Vi tar emot era nätkartor och GIS-underlag, sätter inspektionsparametrar och planerar flygvägar baserat på ledningens sträckning, spänningsnivå och terräng." },
+          { name: "Systematisk datainsamling", text: "Drönare med RGB-kamera, radiometrisk värmekamera och RTK-positionering flyger längs ledningen. Varje stolpe dokumenteras med standardiserade bildvinklar." },
+          { name: "Kvalitetskontroll och klassificering", text: "Bilder genomgår QA-kontroll. Fynd klassificeras efter allvarlighetsgrad, georefereras och sammanställs med åtgärdsrekommendationer." },
+          { name: "Leverans i GIS-format", text: "Strukturerad rapport, georefererade bilder och GIS-lager levereras digitalt — redo för import i ert nätförvaltningssystem." },
+        ]}
+      />
+
       <Hero
-        title="Säkrare och mer effektiv inspektion av ert elnät"
-        subtitle="Elnätsinspektion med drönare"
-        description="Standardiserad drönareinspektion av luftledningar – från översikt till detaljgranskning. Strukturerade dataleveranser som ger er bättre underlag för underhållsplanering."
+        title="Kraftledningsinspektion med drönare — säkrare, mer effektiv"
+        subtitle="Kraftledningsinspektion drönare"
+        description="Standardiserad drönareinspektion av luftledningar – från översikt till detaljgranskning. Strukturerade dataleveranser direkt till ert nätförvaltningssystem."
         primaryCta={{
-          label: "Boka genomgång",
+          label: "Begär offert",
           href: "/kontakt",
         }}
         secondaryCta={{
@@ -94,6 +107,37 @@ export default function HubPage() {
       />
 
       <ProofBar />
+
+      {/* AEO Answer-First Block */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-section">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="heading-2">Hur fungerar kraftledningsinspektion med drönare?</h2>
+            <p className="body-text mt-6">
+              Kraftledningsinspektion med drönare innebär att en EASA-utbildad pilot flyger en
+              drönare utrustad med högupplöst RGB-kamera och radiometrisk värmekamera längs
+              kraftledningen. Varje stolpe, isolator, traverser och ledningsgata fotograferas
+              med standardiserade bildvinklar. Bilderna georefereras automatiskt via
+              RTK-positionering (centimeternoggrannhet) och levereras i en strukturerad
+              rapport med klassificerade fynd och åtgärdsrekommendationer — redo för
+              ert nätförvaltningssystem.
+            </p>
+            <p className="body-text mt-4">
+              Inspektionen utförs normalt utan driftstopp och utan att personal behöver
+              klättra. Metoden möjliggör repeterbar dokumentation som kan jämföras mellan
+              inspektionstillfällen för trendanalys och prediktivt underhåll.
+            </p>
+            <div className="mt-8">
+              <Link href="/kontakt" className="btn-primary inline-flex items-center">
+                Begär offert
+                <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Intro section */}
       <section className="section-padding bg-white">

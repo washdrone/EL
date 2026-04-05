@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Use a fixed date for stable lastModified values (update when content changes)
-  const siteLastModified = new Date("2026-03-19");
+  const siteLastModified = new Date("2026-04-05");
 
   const pages = [
     // Homepage
@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/kontakt", priority: 0.9, changeFrequency: "monthly" as const },
     { path: "/om-oss", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/certifieringar", priority: 0.7, changeFrequency: "monthly" as const },
+
+    // Guides
+    { path: "/guider/dronareinspektion-elnat", priority: 0.8, changeFrequency: "monthly" as const },
+
+    // Comparisons
+    { path: "/jamforelser/helikopter-vs-dronare-inspektion", priority: 0.8, changeFrequency: "monthly" as const },
 
     // Legal
     { path: "/integritetspolicy", priority: 0.3, changeFrequency: "yearly" as const },

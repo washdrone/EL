@@ -5,19 +5,50 @@ import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
+import FAQ from "@/components/FAQ";
+import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Drönarinspektion för nätägare & energibolag",
+  title: "Drönarinspektion för energibolag & nätägare",
   description:
-    "GridDrone inspekterar kraftledningar och elnät för regionala och lokala nätägare, elnätsleverantörer och energibolag. Strukturerade leveranser för ert nätförvaltningssystem.",
+    "GridDrone inspekterar kraftledningar och elnät för nätägare och energibolag. GIS-redo leveranser, termografi och BVLOS. Begär offert.",
   path: "/branscher/energibolag",
   keywords: [
-    "drönarinspektion nätägare",
     "drönarinspektion energibolag",
+    "drönarinspektion nätägare",
     "elnätsinspektion drönare",
     "kraftledningsinspektion elnätsbolag",
+    "drönartjänster elnät",
   ],
 });
+
+const energiFaqItems: FAQItem[] = [
+  {
+    question: "Vilka inspektionstjänster erbjuder GridDrone till energibolag?",
+    answer:
+      "Vi erbjuder kraftledningsinspektion, termografering, vegetationskontroll, transformatorstationsinspektion, BVLOS-inspektion av långa sträckor, stormskadeinspektion och prediktiva underhållsabonnemang. Alla tjänster levereras med GIS-kompatibla data redo för ert nätförvaltningssystem.",
+  },
+  {
+    question: "Hur integreras drönardata med vårt befintliga nätförvaltningssystem?",
+    answer:
+      "Vi levererar data i standardiserade format — GeoTIFF, shapefiler, CSV och georefererade bilder i SWEREF99 TM — som är kompatibla med de flesta GIS- och nätförvaltningssystem. Vid behov anpassar vi leveransformat efter ert systems krav.",
+  },
+  {
+    question: "Kan GridDrone hantera inspektion av både distributions- och regionnät?",
+    answer:
+      "Ja, vi inspekterar allt från lokala distributionsnät till regionala ledningssträckor. Inspektionsprocessen skalas efter ert näts omfattning, spänningsnivå och specifika underhållsbehov.",
+  },
+  {
+    question: "Hur fungerar upphandling av drönarinspektion?",
+    answer:
+      "Vi tillhandahåller fullständig dokumentation för upphandling: metodbeskrivning, leveransformat, QA-process, prissättningsmodell och referensinformation. Vi anpassar efter ert förfrågningsunderlag.",
+  },
+  {
+    question: "Erbjuder ni ramavtal för löpande inspektioner?",
+    answer:
+      "Ja, vi erbjuder underhållsabonnemang med schemalagda inspektioner, historisk datalagring, trendanalyser, prioriterad stormskaderespons och dedikerad kontaktperson. Kontakta oss för att diskutera ett upplägg anpassat efter ert nät.",
+  },
+];
 
 export default function EnergibolagPage() {
   return (
@@ -35,12 +66,13 @@ export default function EnergibolagPage() {
         serviceName="Drönarinspektion för nätägare & energibolag"
         serviceDescription="Professionell drönarinspektion av kraftledningar och elnät för nätägare och energibolag i Sverige."
       />
+      <JsonLd type="FAQPage" faqItems={energiFaqItems} />
 
       <Hero
-        title="Drönarinspektion för nätägare & energibolag"
-        subtitle="Nätägare, elnätsleverantörer & energibolag"
+        title="Drönarinspektion för energibolag och nätägare"
+        subtitle="Drönarinspektion energibolag"
         description="Vi inspekterar ert distributions- och regionnät med standardiserade metoder och levererar strukturerade data direkt till ert nätförvaltningssystem — utan driftstopp och utan klättring."
-        primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
+        primaryCta={{ label: "Begär offert", href: "/kontakt" }}
         secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
@@ -50,6 +82,30 @@ export default function EnergibolagPage() {
           { name: "Nätägare & energibolag" },
         ]}
       />
+
+      {/* AEO Answer-First Block */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-section">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="heading-2">Varför väljer energibolag drönarinspektion?</h2>
+            <p className="body-text mt-6">
+              Energibolag och nätägare i Sverige använder drönarinspektion för att effektivisera
+              underhåll av kraftledningar och elnät. Drönare med RGB-kamera och värmekamera dokumenterar
+              varje stolpe, isolator och ledningssektion utan klättring och utan driftstopp. Data levereras
+              i GIS-kompatibla format direkt till nätförvaltningssystemet, vilket ger ett strukturerat
+              underlag för underhållsplanering baserat på faktisk anläggningsstatus.
+            </p>
+            <div className="mt-8">
+              <Link href="/kontakt" className="btn-primary inline-flex items-center">
+                Begär offert
+                <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section-padding bg-white">
         <div className="container-section">
@@ -159,6 +215,12 @@ export default function EnergibolagPage() {
           </div>
         </div>
       </section>
+
+      <FAQ
+        items={energiFaqItems}
+        heading="Vanliga frågor från energibolag"
+        subheading="Har ni fler frågor? Kontakta oss för en genomgång anpassad efter ert nät."
+      />
 
       <CTABand />
     </>

@@ -37,6 +37,8 @@ const footerNavigation = [
   { label: "Kostnadskalkylator", href: "/roi-kalkylator" },
   { label: "Certifieringar", href: "/certifieringar" },
   { label: "Blogg", href: "/blogg" },
+  { label: "Guide: Drönarinspektion", href: "/guider/dronareinspektion-elnat" },
+  { label: "Helikopter vs drönare", href: "/jamforelser/helikopter-vs-dronare-inspektion" },
   { label: "Om oss", href: "/om-oss" },
   { label: "Kontakt", href: "/kontakt" },
 ];

@@ -79,6 +79,17 @@ export default function StormskadeinspektionPage() {
         ]}
       />
       <JsonLd type="FAQPage" faqItems={faqItems} />
+      <JsonLd
+        type="HowTo"
+        howToName="Så fungerar stormskadeinspektion med drönare"
+        howToDescription="Process för akut skadekartläggning av elnät och kraftledningar efter storm."
+        howToSteps={[
+          { name: "Larm och mobilisering", text: "Ni larmar GridDrone. Vi bekräftar tillgänglighet och planerar insatsen baserat på drabbat område och väderprognos." },
+          { name: "Flyginspektion", text: "Drönare inspekterar drabbade ledningssträckor systematiskt. Alla fynd GPS-märks och fotograferas med högupplöst kamera." },
+          { name: "Skadeklassificering", text: "Skador klassificeras efter allvarlighetsgrad och reparationsprioritet — kritiskt, brådskande eller planerat underhåll." },
+          { name: "Rapport och beslutsunderlag", text: "Prioriterad skadeöversikt levereras som beslutsunderlag för era reparationsteam." },
+        ]}
+      />
 
       <Hero
         title="Stormskadeinspektion med drönare — snabb skadeöversikt"
@@ -94,6 +105,31 @@ export default function StormskadeinspektionPage() {
           { name: "Stormskadeinspektion" },
         ]}
       />
+
+      {/* AEO Answer-First Block */}
+      <section className="section-padding bg-surface-50">
+        <div className="container-section">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="heading-2">Vad är stormskadeinspektion med drönare?</h2>
+            <p className="body-text mt-6">
+              Stormskadeinspektion med drönare innebär att en utbildad pilot snabbt flyger
+              över drabbade elnäts- och kraftledningssträckor efter storm, orkan eller andra
+              extremväderförhållanden. Drönaren identifierar och GPS-märker fallna stolpar,
+              brutna ledningar, nedfallna träd och skadade isolatorer. Skadorna klassificeras
+              efter allvarlighetsgrad och levereras som ett prioriterat beslutsunderlag för
+              reparationsteam — utan att personal behöver ta sig ut i farlig terräng.
+            </p>
+            <div className="mt-8">
+              <Link href="/kontakt" className="btn-primary inline-flex items-center">
+                Kontakta oss om beredskapsavtal
+                <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Process */}
       <section className="section-padding bg-white">

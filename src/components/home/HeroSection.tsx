@@ -31,7 +31,7 @@ export default function HeroSection() {
             DRÖNARINSPEKTION AV ELNÄT & KRAFTLEDNINGAR
           </p>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.25rem] xl:leading-[1.15]">
-            Strukturerad inspektion av kraftledningar och elnät — utan klättring, utan driftstopp.
+            Drönarinspektion av elnät och kraftledningar — utan klättring, utan driftstopp
           </h1>
           <p className="mt-6 max-w-2xl text-lg font-medium leading-8 text-slate-200">
             Georefererade bilder, termografisk analys och klassificerade åtgärdsunderlag
