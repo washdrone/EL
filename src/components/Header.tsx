@@ -304,7 +304,7 @@ export default function Header() {
         id={mobileMenuId}
         role="region"
         aria-label="Mobilmeny"
-        className={`max-h-[calc(100dvh-64px)] overflow-y-auto border-t border-slate-100 bg-white transition-all duration-200 ease-out lg:hidden ${
+        className={`relative z-50 max-h-[calc(100dvh-64px)] overflow-y-auto border-t border-slate-100 bg-white transition-all duration-200 ease-out lg:hidden ${
           mobileOpen
             ? "visible opacity-100 translate-y-0"
             : "invisible opacity-0 -translate-y-2 pointer-events-none h-0 max-h-0 border-t-0"
