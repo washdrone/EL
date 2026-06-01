@@ -42,6 +42,16 @@ const faqItems: FAQItem[] = [
     answer:
       "Visuell inspektion hittar synliga skador som korrosion, sprickor och mekaniskt slitage. Termografi upptäcker dolda elektriska och termiska fel som inte syns med blotta ögat, exempelvis interna isolatorfel och kontaktmotstånd.",
   },
+  {
+    question: "Kan ni inspektera ledningar utan att koppla bort strömmen?",
+    answer:
+      "Ja. Termografering förutsätter att anläggningen är spänningssatt och under last för att varmgångar ska bli synliga. Drönaren håller säkert avstånd och inspekterar under drift, vilket innebär att inga frånkopplingar eller driftstopp behövs.",
+  },
+  {
+    question: "Vilka väderförhållanden krävs för termografering?",
+    answer:
+      "Termografering ger bäst resultat under torra förhållanden utan kraftig nederbörd, och helst när anläggningen är under last så att temperaturskillnader framträder tydligt. Vid uppdraget anpassas tidpunkt och förutsättningar efter ledningens belastning och rådande väder.",
+  },
 ];
 
 const findings = [
