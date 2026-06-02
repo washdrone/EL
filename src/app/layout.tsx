@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import Script from "next/script";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics";
 import JsonLd from "@/components/JsonLd";
@@ -12,6 +13,13 @@ import {
   DEFAULT_TWITTER_IMAGE,
 } from "@/lib/metadata";
 import "./globals.css";
+
+// Self-hosted via next/font — no render-blocking request, no layout shift (CLS).
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -67,7 +75,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="sv" suppressHydrationWarning>
+    <html lang="sv" className={inter.variable} suppressHydrationWarning>
       <body
         className="min-h-screen bg-white font-sans text-surface-900 antialiased"
       >
