@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
+import FAQ from "@/components/FAQ";
+import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
   title: "BVLOS-inspektion av kraftledningar med drönare",
@@ -37,10 +39,39 @@ const advantages = [
   },
 ];
 
+const bvlosFaqItems: FAQItem[] = [
+  {
+    question: "Vad är BVLOS-inspektion av kraftledningar?",
+    answer:
+      "BVLOS (Beyond Visual Line of Sight) innebär att drönaren flyger bortom pilotens synhåll. Det gör det möjligt att inspektera långa ledningssträckor i ett svep utan ompositionering — särskilt värdefullt för avlägsna och svårtillgängliga ledningsnät i skog och fjäll.",
+  },
+  {
+    question: "Vilka tillstånd krävs för BVLOS-flygning i Sverige?",
+    answer:
+      "BVLOS-flygning kräver särskilt tillstånd från Transportstyrelsen: godkännande i specifik kategori (STS/PDRA) eller LUC, riskbedömning enligt SORA-metodik samt redundanta kommunikations- och navigeringssystem. GridDrones piloter är utbildade och behöriga för BVLOS-flygning enligt EASA-regelverket.",
+  },
+  {
+    question: "När är BVLOS-inspektion rätt metod?",
+    answer:
+      "BVLOS passar när långa sammanhängande ledningssträckor ska inspekteras, eller när nätet går genom skog, fjäll eller områden utan vägaccess. Färre mobiliseringar och mindre personalbehov ger lägre kostnad per inspekterad kilometer jämfört med konventionell drönarinspektion inom synhåll.",
+  },
+  {
+    question: "Vad kostar en BVLOS-inspektion?",
+    answer:
+      "De viktigaste prisdrivarna är ledningens längd, terrängens tillgänglighet, inspektionstyp, krav på leveranser och analys samt mobiliseringsavstånd. Kontakta GridDrone med ungefärlig sträcka, nättyp och spänningsnivå för en offert baserad på era förutsättningar.",
+  },
+  {
+    question: "Vilka data levereras vid en BVLOS-inspektion?",
+    answer:
+      "Standardleveransen omfattar georefererade högupplösta bilder, strukturerad rapport per stolpe/sektion och kartlager kompatibla med vanliga GIS-system. Exakt format och detaljnivå anpassas efter er specifikation.",
+  },
+];
+
 export default function BvlosInspektionPage() {
   return (
     <>
       <JsonLd type="Service" servicePath="/tjanster/bvlos-inspektion" />
+      <JsonLd type="FAQPage" faqItems={bvlosFaqItems} />
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
@@ -131,6 +162,11 @@ export default function BvlosInspektionPage() {
           </div>
         </div>
       </section>
+
+      <FAQ
+        items={bvlosFaqItems}
+        heading="Vanliga frågor om BVLOS-inspektion"
+      />
 
       <CTABand
         primaryHref="/kontakt"

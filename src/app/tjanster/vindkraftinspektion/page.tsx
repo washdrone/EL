@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
+import FAQ from "@/components/FAQ";
+import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Vindkraftinspektion med drönare",
@@ -55,10 +57,39 @@ const steps = [
   },
 ];
 
+const vindkraftFaqItems: FAQItem[] = [
+  {
+    question: "Vad inspekteras vid en vindkraftinspektion med drönare?",
+    answer:
+      "Rotorblad (framkantserosion, sprickor, blixtskador och delaminering), torn (korrosion, ytskador, sprickor i svetsar och bultförband), nacelle (tätningar, kablar, kylsystem och utvändiga skador) samt åskledarreceptorer på bladspetsar och ledarsystem längs bladen.",
+  },
+  {
+    question: "Varför drönarinspektion i stället för manuell klättring?",
+    answer:
+      "Drönarinspektion är snabbare och säkrare än manuell klättring — ingen personal behöver arbeta på hög höjd. Hela bladytan dokumenteras med högupplösta bilder, och varje turbin inspekteras systematiskt enligt samma rutin.",
+  },
+  {
+    question: "Hur lång tid tar inspektionen per vindkraftverk?",
+    answer:
+      "Tidsåtgången beror på turbinstorlek och inspektionsomfattning. Flygningen kräver acceptabla väderförhållanden — vind, nederbörd och sikt påverkar planeringen. Vid en genomgång uppskattar GridDrone tidsåtgången för er specifika park.",
+  },
+  {
+    question: "Vad ingår i inspektionsrapporten?",
+    answer:
+      "Bildmaterialet granskas och klassificeras, och ni får en strukturerad inspektionsrapport med skadebedömning och åtgärdsrekommendationer. Dokumentationen kan användas som underlag för underhållsplanering och försäkringsärenden.",
+  },
+  {
+    question: "Var i Sverige utförs vindkraftinspektioner?",
+    answer:
+      "GridDrone utför drönarinspektioner i hela Sverige och kan anpassa logistiken efter vindkraftparkens geografiska placering. Kontakta oss med antal turbiner och placering för en offert.",
+  },
+];
+
 export default function VindkraftinspektionPage() {
   return (
     <>
       <JsonLd type="Service" servicePath="/tjanster/vindkraftinspektion" />
+      <JsonLd type="FAQPage" faqItems={vindkraftFaqItems} />
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
@@ -68,7 +99,7 @@ export default function VindkraftinspektionPage() {
       />
 
       <Hero
-        title="Vindkraftverksinspektion med drönare"
+        title="Vindkraftinspektion med drönare"
         subtitle="Vindkraftinspektion"
         description="Professionell inspektion av vindkraftverk med drönare. Vi dokumenterar rotorblad, torn, nacelle och åskledare — snabbare och säkrare än manuell klättring."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
@@ -126,6 +157,11 @@ export default function VindkraftinspektionPage() {
           </div>
         </div>
       </section>
+
+      <FAQ
+        items={vindkraftFaqItems}
+        heading="Vanliga frågor om vindkraftinspektion"
+      />
 
       <CTABand
         primaryHref="/kontakt"

@@ -15,6 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Guide om termografering av kraftledningar och elnät med drönare. Identifiera varmgångar, kontaktmotstånd och dolda fel. Radiometrisk värmekamera.",
   path: "/guider/termografering-kraftledningar",
+  ogType: "article",
   keywords: [
     "termografering kraftledningar",
     "termografering elnät drönare",
@@ -87,11 +88,22 @@ export default function TermograferingGuidePage() {
             { name: "Rapportering med termiska bilder", text: "Varje termisk avvikelse dokumenteras med termisk bild, visuellt foto, GPS-koordinat och åtgärdsrekommendation. Data levereras i GIS-kompatibelt format." },
           ]}
         />
+        <JsonLd
+          type="Article"
+          articleHeadline={"Termografering av kraftledningar med drönare"}
+          articleDescription={
+            "Guide om termografering av kraftledningar och elnät med drönare. Identifiera varmgångar, kontaktmotstånd och dolda fel. Radiometrisk värmekamera."
+          }
+          articlePath="/guider/termografering-kraftledningar"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="Termografering av kraftledningar med drönare"
           subtitle="Guide: termografering elnät"
           description="Hur radiometrisk värmekamera på drönare identifierar varmgångar, kontaktmotstånd och dolda fel i kraftledningar och elnätskomponenter — under drift, utan driftstopp."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Begär offert", href: "/kontakt" }}
           secondaryCta={{ label: "Se termograferingstjänst", href: "/tjanster/termografering-kraftledning" }}
           compact

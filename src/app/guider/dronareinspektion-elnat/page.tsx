@@ -15,6 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Lär dig hur drönarinspektion av elnät fungerar, vilka fel som upptäcks, vilken utrustning som används och hur data levereras. Guide för nätägare och energibolag.",
   path: "/guider/dronareinspektion-elnat",
+  ogType: "article",
   keywords: [
     "vad är drönarinspektion av elnät",
     "hur fungerar drönarinspektion",
@@ -33,7 +34,7 @@ const guideFaqItems: FAQItem[] = [
   {
     question: "Påverkar drönarinspektion driften av elnätet?",
     answer:
-      "Nej, drönareinspektion genomförs normalt utan driftstopp. Drönaren flyger i säkert avstånd från spänningsförande delar och inspektionen koordineras med nätägaren för att minimera eventuell påverkan.",
+      "Nej, drönarinspektion genomförs normalt utan driftstopp. Drönaren flyger i säkert avstånd från spänningsförande delar och inspektionen koordineras med nätägaren för att minimera eventuell påverkan.",
   },
   {
     question: "Hur skiljer sig drönarinspektion från traditionell stolpklättring?",
@@ -78,11 +79,22 @@ export default function DroneInspectionGuidePage() {
             { name: "Leverans", text: "Strukturerad rapport, GIS-lager och åtgärdsrekommendationer levereras digitalt i överenskommet format." },
           ]}
         />
+        <JsonLd
+          type="Article"
+          articleHeadline={"Vad är drönarinspektion av elnät? Komplett guide"}
+          articleDescription={
+            "Lär dig hur drönarinspektion av elnät fungerar, vilka fel som upptäcks, vilken utrustning som används och hur data levereras. Guide för nätägare och energibolag."
+          }
+          articlePath="/guider/dronareinspektion-elnat"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="Vad är drönarinspektion av elnät? Komplett guide"
           subtitle="Guide: drönarinspektion elnät"
           description="Allt du behöver veta om hur drönarinspektion av kraftledningar och elnät fungerar — utrustning, process, leveranser och vanliga frågor."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Begär offert", href: "/kontakt" }}
           secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
           compact
