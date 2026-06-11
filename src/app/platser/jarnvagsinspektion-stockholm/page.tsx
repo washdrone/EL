@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Järnvägsinspektion Stockholm | Drönare",
+  title: "Järnvägsinspektion Stockholm – kontaktledning med drönare",
   description:
     "Drönarinspektion av järnvägskontaktledningar i Stockholm och Mälardalen. Säker inspektion utan trafikstörning. Begär offert.",
   path: "/platser/jarnvagsinspektion-stockholm",

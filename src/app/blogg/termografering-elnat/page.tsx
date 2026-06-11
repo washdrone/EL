@@ -6,10 +6,11 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Vad är termografering av elnät — guide för elnätsägare",
+  title: "Termografering av elnät — guide för elnätsägare",
   description:
     "Komplett guide om termografering av elnät. Hur fungerar det, vad hittar det och varför är det viktigt för elnätsägare? Allt du behöver veta.",
   path: "/blogg/termografering-elnat",
+  ogType: "article",
   keywords: [
     "vad är termografering av elnät",
     "termografering elnät guide",
@@ -28,6 +29,16 @@ export default function TermograferingElnatPage() {
           { name: "Termografering av elnät" },
         ]}
       />
+      <JsonLd
+        type="Article"
+        articleHeadline={"Termografering av elnät — guide för elnätsägare"}
+        articleDescription={
+          "Komplett guide om termografering av elnät. Hur fungerar det, vad hittar det och varför är det viktigt för elnätsägare? Allt du behöver veta."
+        }
+        articlePath="/blogg/termografering-elnat"
+        datePublished="2026-03-05"
+        dateModified="2026-03-05"
+      />
 
       <section className="gradient-hero py-16 sm:py-20">
         <div className="container-section text-center">
@@ -39,6 +50,7 @@ export default function TermograferingElnatPage() {
             En guide om termografering av elnät — hur det fungerar, vad det
             kan hitta och varför det är en viktig del av elnätsunderhåll.
           </p>
+          <p className="mt-4 text-sm text-blue-200">Uppdaterad: 5 mars 2026</p>
         </div>
       </section>
 

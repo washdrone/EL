@@ -1,0 +1,45 @@
+# GridDrone
+
+> GridDrone utför professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i hela Sverige. EASA-utbildade piloter med BVLOS-behörighet. Inspektion med högupplöst RGB-kamera, radiometrisk värmekamera och LiDAR. RTK-positionering med centimeternoggrann georeferering, koordinater i SWEREF99 TM och leveranser i GIS-kompatibla format (GeoTIFF, shapefiler, CSV).
+
+GridDrone riktar sig till nätägare, energibolag, Trafikverket/järnväg, vindkraftoperatörer, kommuner och försäkringsbolag. Inspektioner genomförs normalt utan driftstopp och utan klättring.
+
+## Tjänster
+
+- [Kraftledningsinspektion med drönare](https://www.griddrone.se/tjanster/kraftledningsinspektion): Visuell inspektion av luftledningar, stolpar och isolatorer
+- [Termografering av kraftledningar och elnät](https://www.griddrone.se/tjanster/termografering-kraftledning): Radiometrisk värmekamerainspektion av elnät och stationer
+- [Transformatorstationsinspektion](https://www.griddrone.se/tjanster/transformatorstation-inspektion): Visuell och termisk kontroll av transformatorstationer
+- [Vegetationskontroll av ledningsgator](https://www.griddrone.se/tjanster/vegetationskontroll): LiDAR-baserad kartläggning av kraftledningsgator och riskträd
+- [BVLOS-inspektion](https://www.griddrone.se/tjanster/bvlos-inspektion): Inspektion av långa ledningssträckor bortom synhåll
+- [Stormskadeinspektion](https://www.griddrone.se/tjanster/stormskadeinspektion): Akut skadekartläggning och prioritering efter storm
+- [Vindkraftinspektion](https://www.griddrone.se/tjanster/vindkraftinspektion): Inspektion av rotorblad, torn, nacelle och åskledare
+- [Järnvägsinspektion](https://www.griddrone.se/tjanster/jarnvagsinspektion): Inspektion av kontaktledningar längs järnväg
+- [Underhållsabonnemang](https://www.griddrone.se/tjanster/underhallsabonnemang): Schemalagd inspektion med historisk jämförelse och trendanalys
+
+## Guider
+
+- [Vad är drönarinspektion av elnät?](https://www.griddrone.se/guider/dronareinspektion-elnat): Komplett guide för nätägare och energibolag
+- [Termografering av kraftledningar](https://www.griddrone.se/guider/termografering-kraftledningar): Hur värmekamerainspektion identifierar varmgångar och dolda fel
+- [BVLOS-inspektion av elnät](https://www.griddrone.se/guider/bvlos-inspektion-elnat): Tillstånd, teknik och riskbedömning (SORA/PDRA)
+- [Dataleverans och GIS](https://www.griddrone.se/guider/dataleverans-gis-elnat): GeoTIFF, shapefiler, SWEREF99 TM och systemintegration
+- [Feltyper i kraftledningar](https://www.griddrone.se/guider/feltyper-kraftledningar): Vilka fel och skador drönarinspektion upptäcker
+- [Komponenter i elnät](https://www.griddrone.se/guider/komponenter-elnat): Vad som inspekteras — stolpar, isolatorer, traverser, linor
+- [Upphandla drönarinspektion](https://www.griddrone.se/guider/upphandling-dronareinspektion): Kravspec och utvärderingskriterier för nätägare
+- [Helikopter vs drönare](https://www.griddrone.se/jamforelser/helikopter-vs-dronare-inspektion): Jämförelse av kostnad, säkerhet och datakvalitet
+
+## Geografisk täckning
+
+Rikstäckande i Sverige, med lokala sidor för Stockholm, Göteborg, Malmö/Skåne, Dalarna och Norrland:
+- [Kraftledningsinspektion Stockholm](https://www.griddrone.se/platser/kraftledningsinspektion-stockholm)
+- [Kraftledningsinspektion Göteborg](https://www.griddrone.se/platser/kraftledningsinspektion-goteborg)
+- [Kraftledningsinspektion Malmö](https://www.griddrone.se/platser/kraftledningsinspektion-malmo)
+- [Kraftledningsinspektion Norrland](https://www.griddrone.se/platser/kraftledningsinspektion-norrland)
+- [Kraftledningsinspektion Dalarna](https://www.griddrone.se/platser/kraftledningsinspektion-dalarna)
+
+## Kontakt
+
+- E-post: info@griddrone.se
+- Offert: https://www.griddrone.se/kontakt
+- Exempelrapport: https://www.griddrone.se/exempelrapport
+- Kostnadskalkylator: https://www.griddrone.se/roi-kalkylator
+- Certifieringar: https://www.griddrone.se/certifieringar

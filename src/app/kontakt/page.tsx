@@ -6,7 +6,7 @@ import JsonLd from "@/components/JsonLd";
 import { CONTACT_EMAIL, COMPANY_NAME } from "@/lib/constants";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Kontakt och offert – drönareinspektion elnät",
+  title: "Kontakt och offert – drönarinspektion elnät",
   description:
     "Boka en genomgång eller begär offert för drönarinspektion av ert elnät. GridDrone utför kraftledningsinspektion, termografering och vindkraftinspektion.",
   path: "/kontakt",
@@ -14,7 +14,7 @@ export const metadata: Metadata = createPageMetadata({
     "kontakt GridDrone",
     "offert drönarinspektion",
     "boka kraftledningsinspektion",
-    "kontakt drönareinspektion elnät",
+    "kontakt drönarinspektion elnät",
     "offert elnätsinspektion drönare",
     "boka elnätsinspektion",
   ],

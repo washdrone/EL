@@ -8,14 +8,14 @@ import JsonLd from "@/components/JsonLd";
 import { faqItems } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Vanliga frågor om drönareinspektion av elnät",
+  title: "Vanliga frågor om drönarinspektion av elnät",
   description:
-    "Svar på vanliga frågor om drönareinspektion av elnät: upphandling, arbetsmiljö, leveranser, utrustning, tidsåtgång och prisdrivare.",
+    "Svar på vanliga frågor om drönarinspektion av elnät: upphandling, arbetsmiljö, leveranser, utrustning, tidsåtgång och prisdrivare.",
   path: "/tjanster/kraftledningsinspektion/faq",
   keywords: [
-    "frågor drönareinspektion elnät",
+    "frågor drönarinspektion elnät",
     "FAQ elnätsinspektion",
-    "drönareinspektion frågor svar",
+    "drönarinspektion frågor svar",
   ],
 });
 

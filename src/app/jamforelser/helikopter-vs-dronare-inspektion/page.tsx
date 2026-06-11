@@ -15,9 +15,10 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Jämförelse mellan helikopter och drönare för inspektion av kraftledningar och elnät. Kostnad, säkerhet, datakvalitet och effektivitet. Vilken metod passar ert nät?",
   path: "/jamforelser/helikopter-vs-dronare-inspektion",
+  ogType: "article",
   keywords: [
     "helikopter vs drönare inspektion",
-    "kostnad drönareinspektion",
+    "kostnad drönarinspektion",
     "helikopter elnätsinspektion jämförelse",
     "drönare eller helikopter kraftledning",
     "manuell vs drönare elnät",
@@ -122,11 +123,22 @@ export default function ComparisonPage() {
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
+        <JsonLd
+          type="Article"
+          articleHeadline={"Helikopter vs drönare för elnätsinspektion"}
+          articleDescription={
+            "Jämförelse mellan helikopter och drönare för inspektion av kraftledningar och elnät. Kostnad, säkerhet, datakvalitet och effektivitet. Vilken metod passar ert nät?"
+          }
+          articlePath="/jamforelser/helikopter-vs-dronare-inspektion"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="Helikopter vs drönare för elnätsinspektion"
           subtitle="Jämförelse inspektionsmetoder"
           description="Vilken metod passar ert elnät? Jämförelse av kostnad, datakvalitet, säkerhet och effektivitet mellan helikopter- och drönarinspektion av kraftledningar."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Begär offert", href: "/kontakt" }}
           secondaryCta={{ label: "Se kostnadskalkylator", href: "/roi-kalkylator" }}
           compact

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import Hero from "@/components/Hero";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import ProofBar from "@/components/ProofBar";
 import ProgramCards from "@/components/ProgramCards";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -95,7 +96,7 @@ export default function HubPage() {
       <Hero
         title="Kraftledningsinspektion med drönare — säkrare, mer effektiv"
         subtitle="Kraftledningsinspektion drönare"
-        description="Standardiserad drönareinspektion av luftledningar – från översikt till detaljgranskning. Strukturerade dataleveranser direkt till ert nätförvaltningssystem."
+        description="Standardiserad drönarinspektion av luftledningar – från översikt till detaljgranskning. Strukturerade dataleveranser direkt till ert nätförvaltningssystem."
         primaryCta={{
           label: "Begär offert",
           href: "/kontakt",
@@ -104,6 +105,13 @@ export default function HubPage() {
           label: "Se inspektionsprogram",
           href: "/tjanster/kraftledningsinspektion/inspektionsprogram",
         }}
+      />
+
+      <Breadcrumbs
+        items={[
+          { name: "Tjänster", href: "/tjanster" },
+          { name: "Kraftledningsinspektion" },
+        ]}
       />
 
       <ProofBar />
@@ -178,7 +186,7 @@ export default function HubPage() {
                 Inspektion anpassad för elnätets behov
               </h2>
               <p className="body-text mt-6">
-                Drönareinspektion ger er detaljerad dokumentation av{" "}
+                Drönarinspektion ger er detaljerad dokumentation av{" "}
                 <Link
                   href="/tjanster/kraftledningsinspektion/luftledningar"
                   className="text-brand-600 underline decoration-brand-200 underline-offset-2 hover:text-brand-700 hover:decoration-brand-400"

@@ -10,6 +10,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Hur drönare används för att kartlägga stormskador på elnät och kraftledningar. Process, fördelar och vad energibolag bör tänka på.",
   path: "/blogg/stormskador-elnat-dronare",
+  ogType: "article",
   keywords: [
     "stormskada elnät inspektion",
     "drönare skadekartläggning storm",
@@ -28,6 +29,16 @@ export default function StormskadorBloggPage() {
           { name: "Stormskador & drönare" },
         ]}
       />
+      <JsonLd
+        type="Article"
+        articleHeadline={"Stormskador på elnät — så kartlägger drönare skador"}
+        articleDescription={
+          "Hur drönare används för att kartlägga stormskador på elnät och kraftledningar. Process, fördelar och vad energibolag bör tänka på."
+        }
+        articlePath="/blogg/stormskador-elnat-dronare"
+        datePublished="2026-03-05"
+        dateModified="2026-03-07"
+      />
 
       <section className="gradient-hero py-16 sm:py-20">
         <div className="container-section text-center">
@@ -38,6 +49,9 @@ export default function StormskadorBloggPage() {
           <p className="body-text mx-auto mt-4 max-w-2xl text-blue-100">
             Hur drönare används för att snabbt och systematiskt kartlägga
             stormskador på elnät och kraftledningar.
+          </p>
+          <p className="mt-4 text-sm text-blue-200">
+            Publicerad: 5 mars 2026 · Uppdaterad: 7 mars 2026
           </p>
         </div>
       </section>

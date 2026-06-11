@@ -57,7 +57,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Påverkar inspektionen driften av elnätet?",
     answer:
-      "Drönareinspektion genomförs normalt utan driftstopp. Vi flyger i säkert avstånd från spänningsförande delar och koordinerar med nätägaren för att minimera eventuell påverkan på driften.",
+      "Drönarinspektion genomförs normalt utan driftstopp. Vi flyger i säkert avstånd från spänningsförande delar och koordinerar med nätägaren för att minimera eventuell påverkan på driften.",
   },
   {
     question: "Hur hanterar ni vår data?",

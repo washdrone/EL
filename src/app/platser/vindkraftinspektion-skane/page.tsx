@@ -7,9 +7,9 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Vindkraftinspektion Skåne | Drönare",
+  title: "Vindkraftinspektion Skåne – drönare & rotorbladskontroll",
   description:
-    "Drönarinspektion av vindkraftverk i Skåne. Rotorblad, torn och nacelle med minimal driftstopp. Begär offert.",
+    "Drönarinspektion av vindkraftverk i Skåne — rotorblad, torn, nacelle och åskledare. Strukturerad rapport med skadebedömning och åtgärdsförslag. Begär offert.",
   path: "/platser/vindkraftinspektion-skane",
   keywords: [
     "vindkraftinspektion Skåne drönare",

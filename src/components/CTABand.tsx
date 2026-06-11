@@ -11,7 +11,7 @@ interface CTABandProps {
 
 export default function CTABand({
   heading = "Redo att effektivisera er elnätsinspektion?",
-  description = "Kontakta oss för en genomgång av hur drönareinspektion kan anpassas till ert nät och era behov.",
+  description = "Kontakta oss för en genomgång av hur drönarinspektion kan anpassas till ert nät och era behov.",
   primaryLabel = "Boka genomgång",
   primaryHref = "/kontakt",
   secondaryLabel = "Begär offert",

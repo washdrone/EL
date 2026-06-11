@@ -10,6 +10,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Guide om drönarinspektion av järnvägskontaktledningar. Möjligheter, krav, säkerhet och fördelar jämfört med manuell inspektion.",
   path: "/blogg/jarnvagsinspektion-guide",
+  ogType: "article",
   keywords: [
     "järnvägsinspektion drönare",
     "vad kostar järnvägsinspektion med drönare",
@@ -28,6 +29,16 @@ export default function JarnvagsinspektionGuidePage() {
           { name: "Järnvägsinspektion guide" },
         ]}
       />
+      <JsonLd
+        type="Article"
+        articleHeadline={"Järnvägsinspektion med drönare — möjligheter och krav"}
+        articleDescription={
+          "Guide om drönarinspektion av järnvägskontaktledningar. Möjligheter, krav, säkerhet och fördelar jämfört med manuell inspektion."
+        }
+        articlePath="/blogg/jarnvagsinspektion-guide"
+        datePublished="2026-03-05"
+        dateModified="2026-03-05"
+      />
 
       <section className="gradient-hero py-16 sm:py-20">
         <div className="container-section text-center">
@@ -40,6 +51,7 @@ export default function JarnvagsinspektionGuidePage() {
             järnvägskontaktledningar — vad som inspekteras, säkerhetskrav
             och fördelar jämfört med traditionella metoder.
           </p>
+          <p className="mt-4 text-sm text-blue-200">Uppdaterad: 5 mars 2026</p>
         </div>
       </section>
 
