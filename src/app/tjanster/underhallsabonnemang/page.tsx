@@ -242,6 +242,15 @@ export default function UnderhallsabonnemangPage() {
 
       <FAQ items={faqItems} heading="Vanliga frågor om underhållsabonnemang" />
 
+      {/* Relaterat innehåll */}
+      <section className="border-t border-surface-100 bg-surface-50 py-10">
+        <div className="container-section text-center">
+          <p className="text-sm text-surface-600">
+            Fördjupning: läs vår guide om att <Link href="/guider/upphandling-dronareinspektion" className="text-brand-600 underline hover:text-brand-700">upphandla drönarinspektion av elnät</Link>.
+          </p>
+        </div>
+      </section>
+
       <CTABand primaryHref="/kontakt" secondaryHref="/kontakt" />
     </>
   );

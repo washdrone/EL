@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -162,6 +163,15 @@ export default function VindkraftinspektionPage() {
         items={vindkraftFaqItems}
         heading="Vanliga frågor om vindkraftinspektion"
       />
+
+      {/* Relaterat innehåll */}
+      <section className="border-t border-surface-100 bg-surface-50 py-10">
+        <div className="container-section text-center">
+          <p className="text-sm text-surface-600">
+            Se även <Link href="/platser/vindkraftinspektion-skane" className="text-brand-600 underline hover:text-brand-700">vindkraftinspektion i Skåne</Link> och vår sida för <Link href="/branscher/vindkraft" className="text-brand-600 underline hover:text-brand-700">vindkraftoperatörer</Link>.
+          </p>
+        </div>
+      </section>
 
       <CTABand
         primaryHref="/kontakt"

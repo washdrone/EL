@@ -307,7 +307,16 @@ export default function UpphandlingGuidePage() {
           subheading="Behöver ni hjälp med ert förfrågningsunderlag? Kontakta oss."
         />
 
-        <CTABand
+        {/* Relaterat innehåll */}
+      <section className="border-t border-surface-100 bg-surface-50 py-10">
+        <div className="container-section text-center">
+          <p className="text-sm text-surface-600">
+            Se även vår tjänst <Link href="/tjanster/kraftledningsinspektion" className="text-brand-600 underline hover:text-brand-700">kraftledningsinspektion med drönare</Link> och våra <Link href="/tjanster/kraftledningsinspektion/dataleveranser" className="text-brand-600 underline hover:text-brand-700">dataleveranser för elnätsinspektion</Link>.
+          </p>
+        </div>
+      </section>
+
+      <CTABand
           heading="Planerar ni att upphandla drönarinspektion?"
           description="Vi tillhandahåller information för upphandling — metodbeskrivning, leveransformat, QA-process och prissättningsmodell."
           primaryLabel="Begär offert"

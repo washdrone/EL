@@ -9,7 +9,7 @@ import { COMPANY_NAME, CONTACT_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Integritetspolicy",
-  description: `Integritetspolicy för ${COMPANY_NAME}. Så behandlar vi personuppgifter som lämnas vid kontakt- och offertförfrågningar — vilka uppgifter som samlas in, varför och hur länge.`,
+  description: `Integritetspolicy för ${COMPANY_NAME}. Så behandlar vi personuppgifter som lämnas vid kontakt- och offertförfrågningar — vilka uppgifter som samlas in och varför.`,
   path: "/integritetspolicy",
 });
 

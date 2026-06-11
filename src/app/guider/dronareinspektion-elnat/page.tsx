@@ -255,7 +255,16 @@ export default function DroneInspectionGuidePage() {
           subheading="Har ni fler frågor? Kontakta oss direkt så berättar vi mer."
         />
 
-        <CTABand
+        {/* Relaterat innehåll */}
+      <section className="border-t border-surface-100 bg-surface-50 py-10">
+        <div className="container-section text-center">
+          <p className="text-sm text-surface-600">
+            Redo att gå vidare? Se vår tjänst <Link href="/tjanster/kraftledningsinspektion" className="text-brand-600 underline hover:text-brand-700">kraftledningsinspektion med drönare</Link> eller jämför metoder i <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="text-brand-600 underline hover:text-brand-700">helikopter vs drönare för elnätsinspektion</Link>.
+          </p>
+        </div>
+      </section>
+
+      <CTABand
           heading="Vill ni veta mer om drönarinspektion?"
           description="Kontakta oss för en genomgång av hur drönarinspektion kan effektivisera ert elnätsunderhåll."
         />
