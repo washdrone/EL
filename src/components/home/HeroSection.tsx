@@ -18,6 +18,8 @@ export default function HeroSection() {
           muted
           loop
           playsInline
+          preload="metadata"
+          poster="/images/kraftledningar.png"
           className="h-full w-full object-cover"
         >
           <source src="/video/Drone_inspection_power_lines_summer_322cb98d5e.mp4" type="video/mp4" />

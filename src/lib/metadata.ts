@@ -17,6 +17,7 @@ interface PageMetadataOptions {
   path: string;
   keywords?: string[];
   noIndex?: boolean;
+  ogType?: "website" | "article";
 }
 
 export function createPageMetadata({
@@ -25,6 +26,7 @@ export function createPageMetadata({
   path,
   keywords = [],
   noIndex = false,
+  ogType = "website",
 }: PageMetadataOptions): Metadata {
   const canonicalPath = path.startsWith("/") ? path : `/${path}`;
   const url = `${SITE_URL}${canonicalPath}`;
@@ -64,7 +66,7 @@ export function createPageMetadata({
       url,
       siteName: SITE_NAME,
       locale: SITE_LOCALE,
-      type: "website",
+      type: ogType,
       images: [
         {
           url: DEFAULT_OG_IMAGE,
