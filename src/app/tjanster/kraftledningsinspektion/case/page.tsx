@@ -7,14 +7,14 @@ import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Referensuppdrag – drönareinspektion av elnät",
+  title: "Referensuppdrag – drönarinspektion av elnät",
   description:
-    "Exempel på genomförda drönareinspektion av elnät och luftledningar. Se hur vi har hjälpt elnätsbolag med standardiserad inspektion.",
+    "Exempel på genomförda drönarinspektion av elnät och luftledningar. Se hur vi har hjälpt elnätsbolag med standardiserad inspektion.",
   path: "/tjanster/kraftledningsinspektion/case",
   keywords: [
-    "referensuppdrag drönareinspektion",
+    "referensuppdrag drönarinspektion",
     "case elnätsinspektion",
-    "exempel drönareinspektion elnät",
+    "exempel drönarinspektion elnät",
   ],
 });
 

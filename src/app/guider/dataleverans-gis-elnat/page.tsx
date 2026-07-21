@@ -15,6 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Hur inspektionsdata från drönarinspektion levereras i GIS-format. GeoTIFF, shapefiler, SWEREF99 TM och integration med nätförvaltningssystem.",
   path: "/guider/dataleverans-gis-elnat",
+  ogType: "article",
   keywords: [
     "GIS data drönarinspektion",
     "dataleverans elnätsinspektion",
@@ -76,11 +77,22 @@ export default function DataleveransGuidePage() {
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
+        <JsonLd
+          type="Article"
+          articleHeadline={"Dataleverans och GIS vid drönarinspektion av elnät"}
+          articleDescription={
+            "Hur inspektionsdata från drönarinspektion levereras i GIS-format. GeoTIFF, shapefiler, SWEREF99 TM och integration med nätförvaltningssystem."
+          }
+          articlePath="/guider/dataleverans-gis-elnat"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="Dataleverans och GIS vid drönarinspektion av elnät"
           subtitle="Guide: dataleverans GIS elnät"
           description="Hur inspektionsdata levereras i GIS-kompatibla format redo för ert nätförvaltningssystem — GeoTIFF, shapefiler, SWEREF99 TM och strukturerade rapporter."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Begär offert", href: "/kontakt" }}
           secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
           compact

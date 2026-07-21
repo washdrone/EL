@@ -6,12 +6,12 @@ import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Datasäkerhet vid drönareinspektion av elnät",
+  title: "Datasäkerhet vid drönarinspektion av elnät",
   description:
-    "Hur vi hanterar inspektionsdata: konfidentialitet, åtkomstkontroll, lagring och delning. Datasäkerhet vid drönareinspektion av elnät.",
+    "Hur vi hanterar inspektionsdata: konfidentialitet, åtkomstkontroll, lagring och delning. Datasäkerhet vid drönarinspektion av elnät.",
   path: "/tjanster/kraftledningsinspektion/datasakerhet",
   keywords: [
-    "datasäkerhet drönareinspektion",
+    "datasäkerhet drönarinspektion",
     "konfidentialitet inspektionsdata",
     "datahantering elnätsinspektion",
     "säkerhet inspektionsdata elnät",

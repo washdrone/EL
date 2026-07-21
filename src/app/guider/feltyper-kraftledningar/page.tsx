@@ -11,10 +11,11 @@ import CTABand from "@/components/CTABand";
 import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Feltyper i kraftledningar — vad drönarinspektion hittar",
+  title: "Feltyper i kraftledningar vid drönarinspektion",
   description:
     "Vilka fel och skador upptäcks vid drönarinspektion av kraftledningar? Varmgångar, isolatorfel, korrosion, trådbrott och vegetationsröjningsbehov.",
   path: "/guider/feltyper-kraftledningar",
+  ogType: "article",
   keywords: [
     "vilka fel upptäcks i elnät",
     "feltyper kraftledning",
@@ -71,11 +72,22 @@ export default function FeltyperGuidePage() {
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
+        <JsonLd
+          type="Article"
+          articleHeadline={"Feltyper i kraftledningar vid drönarinspektion"}
+          articleDescription={
+            "Vilka fel och skador upptäcks vid drönarinspektion av kraftledningar? Varmgångar, isolatorfel, korrosion, trådbrott och vegetationsröjningsbehov."
+          }
+          articlePath="/guider/feltyper-kraftledningar"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="Feltyper i kraftledningar — vad drönarinspektion hittar"
           subtitle="Guide: feltyper kraftledning"
           description="Systematisk genomgång av alla fel- och skadetyper som identifieras vid drönarinspektion av kraftledningar — visuellt och termiskt."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Få rådgivning", href: "/kontakt" }}
           secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
           compact

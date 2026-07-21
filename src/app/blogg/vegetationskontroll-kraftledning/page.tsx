@@ -6,10 +6,11 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Vegetationskontroll längs kraftledningar — vad säger lagen?",
+  title: "Vegetationskontroll vid kraftledningar — lagkrav",
   description:
     "Guide om vegetationskontroll längs kraftledningsgator. Regler, krav och hur drönare med LiDAR effektiviserar kartläggning av riskträd.",
   path: "/blogg/vegetationskontroll-kraftledning",
+  ogType: "article",
   keywords: [
     "vegetationskontroll kraftledning",
     "vad är vegetationskontroll kraftledning",
@@ -28,6 +29,16 @@ export default function VegetationskontrollBloggPage() {
           { name: "Vegetationskontroll kraftledning" },
         ]}
       />
+      <JsonLd
+        type="Article"
+        articleHeadline={"Vegetationskontroll vid kraftledningar — lagkrav"}
+        articleDescription={
+          "Guide om vegetationskontroll längs kraftledningsgator. Regler, krav och hur drönare med LiDAR effektiviserar kartläggning av riskträd."
+        }
+        articlePath="/blogg/vegetationskontroll-kraftledning"
+        datePublished="2026-03-05"
+        dateModified="2026-03-05"
+      />
 
       <section className="gradient-hero py-16 sm:py-20">
         <div className="container-section text-center">
@@ -39,6 +50,7 @@ export default function VegetationskontrollBloggPage() {
             Guide om vegetationskontroll och ledningsgator — regelverk,
             ansvar och hur drönare med LiDAR effektiviserar kartläggningen.
           </p>
+          <p className="mt-4 text-sm text-blue-200">Uppdaterad: 5 mars 2026</p>
         </div>
       </section>
 

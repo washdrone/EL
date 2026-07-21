@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
+import FAQ from "@/components/FAQ";
+import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Vegetationskontroll av kraftledningsgator",
@@ -55,10 +58,39 @@ const benefits = [
   },
 ];
 
+const vegetationFaqItems: FAQItem[] = [
+  {
+    question: "Vad är LiDAR-baserad vegetationskontroll av kraftledningsgator?",
+    answer:
+      "En drönare med LiDAR-sensor flyger längs ledningsgatan och skapar ett detaljerat punktmoln — en 3D-modell av ledning, terräng och vegetation. Ur modellen mäts avstånden mellan vegetation och ledning, så att träd och grenar som hotar säkerhetsavstånden kan identifieras.",
+  },
+  {
+    question: "Vilka vegetationsrisker upptäcks vid kontrollen?",
+    answer:
+      "Träd som växer in i eller riskerar att falla mot ledningsgatan, höjdtillväxt som närmar sig tillåtna säkerhetsavstånd, lutande eller skadade träd utanför gatan som kan falla mot ledningen vid storm, samt uppväxande sly i ledningsgatan som behöver röjas.",
+  },
+  {
+    question: "Hur används resultatet för röjningsplanering?",
+    answer:
+      "Data sorteras efter risk och avstånd till ledningen, vilket ger ett färdigt underlag för att prioritera röjningsinsatser. Eftersom datan är georefererad kan mätningar jämföras mellan tillfällen — vegetationens tillväxt kan följas över tid för proaktiv planering.",
+  },
+  {
+    question: "I vilka format levereras vegetationsdata?",
+    answer:
+      "Data levereras i standardiserade format som GeoTIFF, shapefiler och CSV, kompatibla med de flesta GIS- och nätförvaltningssystem. Vid behov anpassas leveransformatet efter ert system.",
+  },
+  {
+    question: "Vad kostar en vegetationskontroll med drönare?",
+    answer:
+      "De viktigaste prisdrivarna är ledningsgatans längd, terrängens tillgänglighet, krav på leveranser och analys samt mobiliseringsavstånd. Kontakta GridDrone med ungefärlig sträcka för en kostnadsuppskattning.",
+  },
+];
+
 export default function VegetationskontrollPage() {
   return (
     <>
       <JsonLd type="Service" servicePath="/tjanster/vegetationskontroll" />
+      <JsonLd type="FAQPage" faqItems={vegetationFaqItems} />
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
@@ -123,6 +155,20 @@ export default function VegetationskontrollPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <FAQ
+        items={vegetationFaqItems}
+        heading="Vanliga frågor om vegetationskontroll"
+      />
+
+      {/* Relaterat innehåll */}
+      <section className="border-t border-surface-100 bg-surface-50 py-10">
+        <div className="container-section text-center">
+          <p className="text-sm text-surface-600">
+            Fördjupning: läs vår artikel om <Link href="/blogg/vegetationskontroll-kraftledning" className="text-brand-600 underline hover:text-brand-700">vegetationskontroll längs kraftledningar och vad lagen kräver</Link>.
+          </p>
         </div>
       </section>
 

@@ -42,7 +42,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Vilken utrustning använder ni?",
     answer:
-      "Vi använder branschledande multirotordrönare med högupplösta RGB-kameror, RTK-positionering för centimeternoggrann georeferering och radiometrisk värmekamera för termografering. LiDAR finns som tillval för 3D-kartläggning och vegetationskontroll. Utrustningen anpassas efter uppdragets krav.",
+      "Vi använder professionella multirotordrönare med högupplösta RGB-kameror, RTK-positionering för centimeternoggrann georeferering och radiometrisk värmekamera för termografering. LiDAR finns som tillval för 3D-kartläggning och vegetationskontroll. Utrustningen anpassas efter uppdragets krav.",
   },
   {
     question: "Hur levereras data och hur snabbt?",
@@ -57,7 +57,7 @@ export const faqItems: FAQItem[] = [
   {
     question: "Påverkar inspektionen driften av elnätet?",
     answer:
-      "Drönareinspektion genomförs normalt utan driftstopp. Vi flyger i säkert avstånd från spänningsförande delar och koordinerar med nätägaren för att minimera eventuell påverkan på driften.",
+      "Drönarinspektion genomförs normalt utan driftstopp. Vi flyger i säkert avstånd från spänningsförande delar och koordinerar med nätägaren för att minimera eventuell påverkan på driften.",
   },
   {
     question: "Hur hanterar ni vår data?",

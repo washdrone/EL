@@ -15,6 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Vilka komponenter inspekteras vid drönarinspektion av elnät? Stolpar, isolatorer, ledningslinor, traverser, fästen, topplinor och ledningsgata.",
   path: "/guider/komponenter-elnat",
+  ogType: "article",
   keywords: [
     "stolpinspektion drönare",
     "isolatorinspektion",
@@ -66,11 +67,22 @@ export default function KomponenterGuidePage() {
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
+        <JsonLd
+          type="Article"
+          articleHeadline={"Komponenter i elnät — vad inspekteras med drönare?"}
+          articleDescription={
+            "Vilka komponenter inspekteras vid drönarinspektion av elnät? Stolpar, isolatorer, ledningslinor, traverser, fästen, topplinor och ledningsgata."
+          }
+          articlePath="/guider/komponenter-elnat"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="Komponenter i elnät — vad inspekteras med drönare?"
           subtitle="Guide: elnätskomponenter"
           description="Detaljerad genomgång av alla komponenter i kraftledningar som dokumenteras vid drönarinspektion — från stolptopp till fundament."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Få rådgivning", href: "/kontakt" }}
           secondaryCta={{ label: "Se inspektionsprogram", href: "/tjanster/kraftledningsinspektion/inspektionsprogram" }}
           compact

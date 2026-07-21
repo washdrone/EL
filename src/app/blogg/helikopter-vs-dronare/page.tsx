@@ -6,10 +6,11 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Helikopter vs Drönare — Kostnadsanalys Kraftledningsinspektion",
+  title: "Helikopter vs drönare — kostnadsjämförelse inspektion",
   description:
-    "Jämförelse av helikopter och drönare för kraftledningsinspektion. Kostnad, effektivitet, datakvalitet och säkerhet.",
+    "Jämförelse av helikopter och drönare för kraftledningsinspektion: kostnad, effektivitet, datakvalitet och säkerhet. Se vilken metod som passar ert nät.",
   path: "/blogg/helikopter-vs-dronare",
+  ogType: "article",
   keywords: [
     "helikopter vs drönare kraftledning kostnad",
     "helikopter drönare jämförelse inspektion",
@@ -27,6 +28,16 @@ export default function HelikopterVsDronarePage() {
           { name: "Helikopter vs Drönare" },
         ]}
       />
+      <JsonLd
+        type="Article"
+        articleHeadline={"Helikopter vs drönare — kostnadsjämförelse inspektion"}
+        articleDescription={
+          "Jämförelse av helikopter och drönare för kraftledningsinspektion: kostnad, effektivitet, datakvalitet och säkerhet. Se vilken metod som passar ert nät."
+        }
+        articlePath="/blogg/helikopter-vs-dronare"
+        datePublished="2026-03-05"
+        dateModified="2026-03-08"
+      />
 
       <section className="gradient-hero py-16 sm:py-20">
         <div className="container-section text-center">
@@ -38,6 +49,9 @@ export default function HelikopterVsDronarePage() {
             En jämförelse av helikopter och drönare som inspektionsmetod för
             kraftledningar. Vi tittar på kostnad, effektivitet, datakvalitet
             och säkerhet.
+          </p>
+          <p className="mt-4 text-sm text-blue-200">
+            Publicerad: 5 mars 2026 · Uppdaterad: 8 mars 2026
           </p>
         </div>
       </section>

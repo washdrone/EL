@@ -3,7 +3,7 @@ import { SITE_URL } from "@/lib/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Use a fixed date for stable lastModified values (update when content changes)
-  const siteLastModified = new Date("2026-04-05");
+  const siteLastModified = new Date("2026-06-11");
 
   const pages = [
     // Homepage

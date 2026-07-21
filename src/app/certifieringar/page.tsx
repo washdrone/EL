@@ -7,7 +7,7 @@ import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Certifieringar & tillstånd | GridDrone",
+  title: "Certifieringar & tillstånd för drönarinspektion",
   description:
     "GridDrones certifieringar för drönarinspektion av elnät. EASA-utbildade piloter, BVLOS-behörighet, mörkerflyg och ansvarsförsäkring.",
   path: "/certifieringar",

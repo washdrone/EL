@@ -9,7 +9,7 @@ import JsonLd from "@/components/JsonLd";
 export const metadata: Metadata = createPageMetadata({
   title: "Inspektion av luftledningar med drönare",
   description:
-    "Drönareinspektion av luftledningar i distributions- och regionnät. Dokumentation av stolpar, isolatorer, traverser och ledningsgata utan driftstopp.",
+    "Drönarinspektion av luftledningar i distributions- och regionnät. Dokumentation av stolpar, isolatorer, traverser och ledningsgata utan driftstopp.",
   path: "/tjanster/kraftledningsinspektion/luftledningar",
   keywords: [
     "inspektion luftledningar drönare",
@@ -36,7 +36,7 @@ export default function LuftledningarPage() {
       <JsonLd
         type="Service"
         serviceName="Inspektion av luftledningar med drönare"
-        serviceDescription="Systematisk drönareinspektion av luftledningar i elnät – stolpar, isolatorer, traverser och ledningsgata."
+        serviceDescription="Systematisk drönarinspektion av luftledningar i elnät – stolpar, isolatorer, traverser och ledningsgata."
         servicePath="/tjanster/kraftledningsinspektion/luftledningar"
       />
 
@@ -125,7 +125,7 @@ export default function LuftledningarPage() {
       <section className="section-padding bg-surface-50">
         <div className="container-section">
           <div className="mx-auto max-w-3xl">
-            <h2 className="heading-2">Fördelar med drönareinspektion av luftledningar</h2>
+            <h2 className="heading-2">Fördelar med drönarinspektion av luftledningar</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {[
                 {

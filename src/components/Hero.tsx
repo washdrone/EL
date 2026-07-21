@@ -4,6 +4,7 @@ interface HeroProps {
   title: string;
   subtitle: string;
   description?: string;
+  dateLine?: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   compact?: boolean;
@@ -13,6 +14,7 @@ export default function Hero({
   title,
   subtitle,
   description,
+  dateLine,
   primaryCta,
   secondaryCta,
   compact = false,
@@ -48,6 +50,9 @@ export default function Hero({
               <p className="mt-6 text-base leading-7 text-slate-300 sm:text-lg sm:leading-8 max-w-xl">
                 {description}
               </p>
+            )}
+            {dateLine && (
+              <p className="mt-4 text-sm text-slate-400">{dateLine}</p>
             )}
             {(primaryCta || secondaryCta) && (
               <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">

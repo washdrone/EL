@@ -10,6 +10,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Guide till BVLOS-flygning med drönare i Sverige. Vad innebär Beyond Visual Line of Sight, vilka tillstånd krävs och hur ansöker man hos Transportstyrelsen?",
   path: "/blogg/bvlos-tillstand-sverige",
+  ogType: "article",
   keywords: [
     "BVLOS drönare tillstånd",
     "vad är BVLOS",
@@ -28,6 +29,16 @@ export default function BVLOSTillstandPage() {
           { name: "BVLOS-tillstånd Sverige" },
         ]}
       />
+      <JsonLd
+        type="Article"
+        articleHeadline={"Vad är BVLOS och vilka tillstånd krävs i Sverige?"}
+        articleDescription={
+          "Guide till BVLOS-flygning med drönare i Sverige. Vad innebär Beyond Visual Line of Sight, vilka tillstånd krävs och hur ansöker man hos Transportstyrelsen?"
+        }
+        articlePath="/blogg/bvlos-tillstand-sverige"
+        datePublished="2026-03-05"
+        dateModified="2026-03-05"
+      />
 
       <section className="gradient-hero py-16 sm:py-20">
         <div className="container-section text-center">
@@ -40,6 +51,7 @@ export default function BVLOSTillstandPage() {
             drönare i Sverige — regelverk, tillståndskrav och vad det innebär
             för inspektionsuppdrag.
           </p>
+          <p className="mt-4 text-sm text-blue-200">Uppdaterad: 5 mars 2026</p>
         </div>
       </section>
 

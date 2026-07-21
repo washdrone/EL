@@ -8,12 +8,12 @@ import CTABand from "@/components/CTABand";
 import JsonLd from "@/components/JsonLd";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Metodik och kvalitetssäkring – drönareinspektion",
+  title: "Metodik och kvalitetssäkring – drönarinspektion",
   description:
     "Vår inspektionsmetodik: standardiserade flygprofiler, kvalitetskontroll, spårbarhet och HSE. Upphandlingsvänlig process för elnätsbolag.",
   path: "/tjanster/kraftledningsinspektion/metodik-kvalitet",
   keywords: [
-    "metodik drönareinspektion elnät",
+    "metodik drönarinspektion elnät",
     "kvalitetssäkring inspektionsdata",
     "HSE drönare elnät",
     "standardiserad inspektion luftledningar",

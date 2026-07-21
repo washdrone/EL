@@ -11,12 +11,13 @@ import CTABand from "@/components/CTABand";
 import type { FAQItem } from "@/data/faq";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Upphandla drönarinspektion av elnät — guide för nätägare",
+  title: "Upphandla drönarinspektion av elnät — guide",
   description:
     "Guide för upphandling av drönarinspektion av kraftledningar och elnät. Kravspec, utvärderingskriterier, leveransformat och avtalsupplägg.",
   path: "/guider/upphandling-dronareinspektion",
+  ogType: "article",
   keywords: [
-    "upphandla drönareinspektion",
+    "upphandla drönarinspektion",
     "offert drönarinspektion",
     "leverantör drönarinspektion elnät",
     "kravspec drönarinspektion",
@@ -75,11 +76,22 @@ export default function UpphandlingGuidePage() {
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
+        <JsonLd
+          type="Article"
+          articleHeadline={"Upphandla drönarinspektion av elnät — guide"}
+          articleDescription={
+            "Guide för upphandling av drönarinspektion av kraftledningar och elnät. Kravspec, utvärderingskriterier, leveransformat och avtalsupplägg."
+          }
+          articlePath="/guider/upphandling-dronareinspektion"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="Upphandla drönarinspektion av elnät — guide för nätägare"
           subtitle="Guide: upphandling drönarinspektion"
           description="Vad ni bör tänka på vid upphandling av drönarinspektion av kraftledningar — kravspec, utvärderingskriterier, leveransformat och avtalsupplägg."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Begär offert", href: "/kontakt" }}
           secondaryCta={{ label: "Se kostnadskalkylator", href: "/roi-kalkylator" }}
           compact
@@ -295,7 +307,16 @@ export default function UpphandlingGuidePage() {
           subheading="Behöver ni hjälp med ert förfrågningsunderlag? Kontakta oss."
         />
 
-        <CTABand
+        {/* Relaterat innehåll */}
+      <section className="border-t border-surface-100 bg-surface-50 py-10">
+        <div className="container-section text-center">
+          <p className="text-sm text-surface-600">
+            Se även vår tjänst <Link href="/tjanster/kraftledningsinspektion" className="text-brand-600 underline hover:text-brand-700">kraftledningsinspektion med drönare</Link> och våra <Link href="/tjanster/kraftledningsinspektion/dataleveranser" className="text-brand-600 underline hover:text-brand-700">dataleveranser för elnätsinspektion</Link>.
+          </p>
+        </div>
+      </section>
+
+      <CTABand
           heading="Planerar ni att upphandla drönarinspektion?"
           description="Vi tillhandahåller information för upphandling — metodbeskrivning, leveransformat, QA-process och prissättningsmodell."
           primaryLabel="Begär offert"

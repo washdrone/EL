@@ -7,7 +7,7 @@ import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Kraftledningsinspektion Stockholm | Drönare",
+  title: "Kraftledningsinspektion Stockholm – drönare & termografi",
   description:
     "Drönarinspektion av kraftledningar och elnät i Stockholm och Mälardalen. Visuell inspektion, termografering och LiDAR-vegetationskontroll. Begär offert.",
   path: "/platser/kraftledningsinspektion-stockholm",

@@ -15,7 +15,8 @@ interface JsonLdProps {
     | "FAQPage"
     | "BreadcrumbList"
     | "WebSite"
-    | "HowTo";
+    | "HowTo"
+    | "Article";
   breadcrumbs?: BreadcrumbItem[];
   faqItems?: FAQItem[];
   serviceName?: string;
@@ -24,6 +25,11 @@ interface JsonLdProps {
   howToName?: string;
   howToDescription?: string;
   howToSteps?: HowToStep[];
+  articleHeadline?: string;
+  articleDescription?: string;
+  articlePath?: string;
+  datePublished?: string;
+  dateModified?: string;
 }
 
 export default function JsonLd({
@@ -36,6 +42,11 @@ export default function JsonLd({
   howToName,
   howToDescription,
   howToSteps,
+  articleHeadline,
+  articleDescription,
+  articlePath,
+  datePublished,
+  dateModified,
 }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
@@ -158,6 +169,37 @@ export default function JsonLd({
             ...(item.href ? { item: `${SITE_URL}${item.href}` } : {}),
           })) || []),
         ],
+      };
+      break;
+
+    case "Article":
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "@id": `${SITE_URL}${articlePath || ""}#article`,
+        headline: articleHeadline || "",
+        description: articleDescription || "",
+        url: `${SITE_URL}${articlePath || ""}`,
+        mainEntityOfPage: {
+          "@type": "WebPage",
+          "@id": `${SITE_URL}${articlePath || ""}`,
+        },
+        inLanguage: "sv-SE",
+        image: `${SITE_URL}/opengraph-image`,
+        ...(datePublished ? { datePublished } : {}),
+        ...(dateModified ? { dateModified } : {}),
+        author: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}#organization`,
+          name: COMPANY_NAME,
+          url: SITE_URL,
+        },
+        publisher: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}#organization`,
+          name: COMPANY_NAME,
+          url: SITE_URL,
+        },
       };
       break;
 

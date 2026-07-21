@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
 import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
@@ -161,6 +162,15 @@ export default function TermograferingKraftledningPage() {
       </section>
 
       <FAQ items={faqItems} heading="Vanliga frågor om termografering" />
+
+      {/* Relaterat innehåll */}
+      <section className="border-t border-surface-100 bg-surface-50 py-10">
+        <div className="container-section text-center">
+          <p className="text-sm text-surface-600">
+            Fördjupning: läs vår guide om <Link href="/guider/termografering-kraftledningar" className="text-brand-600 underline hover:text-brand-700">termografering av kraftledningar med drönare</Link>.
+          </p>
+        </div>
+      </section>
 
       <CTABand
         primaryHref="/kontakt"

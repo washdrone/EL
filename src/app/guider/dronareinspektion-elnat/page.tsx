@@ -15,6 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Lär dig hur drönarinspektion av elnät fungerar, vilka fel som upptäcks, vilken utrustning som används och hur data levereras. Guide för nätägare och energibolag.",
   path: "/guider/dronareinspektion-elnat",
+  ogType: "article",
   keywords: [
     "vad är drönarinspektion av elnät",
     "hur fungerar drönarinspektion",
@@ -33,7 +34,7 @@ const guideFaqItems: FAQItem[] = [
   {
     question: "Påverkar drönarinspektion driften av elnätet?",
     answer:
-      "Nej, drönareinspektion genomförs normalt utan driftstopp. Drönaren flyger i säkert avstånd från spänningsförande delar och inspektionen koordineras med nätägaren för att minimera eventuell påverkan.",
+      "Nej, drönarinspektion genomförs normalt utan driftstopp. Drönaren flyger i säkert avstånd från spänningsförande delar och inspektionen koordineras med nätägaren för att minimera eventuell påverkan.",
   },
   {
     question: "Hur skiljer sig drönarinspektion från traditionell stolpklättring?",
@@ -78,11 +79,22 @@ export default function DroneInspectionGuidePage() {
             { name: "Leverans", text: "Strukturerad rapport, GIS-lager och åtgärdsrekommendationer levereras digitalt i överenskommet format." },
           ]}
         />
+        <JsonLd
+          type="Article"
+          articleHeadline={"Vad är drönarinspektion av elnät? Komplett guide"}
+          articleDescription={
+            "Lär dig hur drönarinspektion av elnät fungerar, vilka fel som upptäcks, vilken utrustning som används och hur data levereras. Guide för nätägare och energibolag."
+          }
+          articlePath="/guider/dronareinspektion-elnat"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="Vad är drönarinspektion av elnät? Komplett guide"
           subtitle="Guide: drönarinspektion elnät"
           description="Allt du behöver veta om hur drönarinspektion av kraftledningar och elnät fungerar — utrustning, process, leveranser och vanliga frågor."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Begär offert", href: "/kontakt" }}
           secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
           compact
@@ -243,7 +255,16 @@ export default function DroneInspectionGuidePage() {
           subheading="Har ni fler frågor? Kontakta oss direkt så berättar vi mer."
         />
 
-        <CTABand
+        {/* Relaterat innehåll */}
+      <section className="border-t border-surface-100 bg-surface-50 py-10">
+        <div className="container-section text-center">
+          <p className="text-sm text-surface-600">
+            Redo att gå vidare? Se vår tjänst <Link href="/tjanster/kraftledningsinspektion" className="text-brand-600 underline hover:text-brand-700">kraftledningsinspektion med drönare</Link> eller jämför metoder i <Link href="/jamforelser/helikopter-vs-dronare-inspektion" className="text-brand-600 underline hover:text-brand-700">helikopter vs drönare för elnätsinspektion</Link>.
+          </p>
+        </div>
+      </section>
+
+      <CTABand
           heading="Vill ni veta mer om drönarinspektion?"
           description="Kontakta oss för en genomgång av hur drönarinspektion kan effektivisera ert elnätsunderhåll."
         />

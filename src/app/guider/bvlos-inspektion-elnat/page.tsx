@@ -15,6 +15,7 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Guide om BVLOS-inspektion av kraftledningar och elnät. Tillstånd, teknik, riskbedömning (SORA/PDRA) och tillämpningar. Inspektion bortom synhåll.",
   path: "/guider/bvlos-inspektion-elnat",
+  ogType: "article",
   keywords: [
     "BVLOS inspektion elnät",
     "BVLOS tillstånd Sverige",
@@ -71,11 +72,22 @@ export default function BvlosGuidePage() {
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
+        <JsonLd
+          type="Article"
+          articleHeadline={"BVLOS-inspektion av elnät — guide och regler"}
+          articleDescription={
+            "Guide om BVLOS-inspektion av kraftledningar och elnät. Tillstånd, teknik, riskbedömning (SORA/PDRA) och tillämpningar. Inspektion bortom synhåll."
+          }
+          articlePath="/guider/bvlos-inspektion-elnat"
+          datePublished="2026-04-05"
+          dateModified="2026-04-05"
+        />
 
         <Hero
           title="BVLOS-inspektion av elnät — guide, regler och teknik"
           subtitle="Guide: BVLOS inspektion elnät"
           description="Hur inspektion av kraftledningar bortom synhåll (BVLOS) fungerar — tillståndskrav, riskbedömning, teknik och tillämpningar för nätägare och energibolag."
+          dateLine="Uppdaterad: 5 april 2026"
           primaryCta={{ label: "Begär offert", href: "/kontakt" }}
           secondaryCta={{ label: "Se BVLOS-tjänst", href: "/tjanster/bvlos-inspektion" }}
           compact
