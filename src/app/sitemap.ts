@@ -2,9 +2,6 @@ import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/metadata";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  // Use a fixed date for stable lastModified values (update when content changes)
-  const siteLastModified = new Date("2026-06-11");
-
   const pages = [
     // Homepage
     { path: "/", priority: 1.0, changeFrequency: "weekly" as const },
@@ -83,8 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   return pages.map((page) => ({
-    url: `${SITE_URL}${page.path}`,
-    lastModified: siteLastModified,
+    url: page.path === "/" ? SITE_URL : `${SITE_URL}${page.path}`,
     changeFrequency: page.changeFrequency,
     priority: page.priority,
   }));
