@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/tjanster/kraftledningsinspektion/case", priority: 0.6, changeFrequency: "monthly" as const },
 
     // Branch/Industry pages
+    { path: "/branscher", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/branscher/energibolag", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/branscher/trafikverket", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/branscher/vindkraft", priority: 0.7, changeFrequency: "monthly" as const },
@@ -37,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/branscher/forsakring", priority: 0.7, changeFrequency: "monthly" as const },
 
     // Location pages
+    { path: "/platser", priority: 0.6, changeFrequency: "monthly" as const },
     { path: "/platser/kraftledningsinspektion-stockholm", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/platser/kraftledningsinspektion-goteborg", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/platser/kraftledningsinspektion-malmo", priority: 0.7, changeFrequency: "monthly" as const },
@@ -64,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/certifieringar", priority: 0.7, changeFrequency: "monthly" as const },
 
     // Guides
+    { path: "/guider", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/guider/dronareinspektion-elnat", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/guider/termografering-kraftledningar", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/guider/dataleverans-gis-elnat", priority: 0.8, changeFrequency: "monthly" as const },

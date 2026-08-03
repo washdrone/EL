@@ -61,6 +61,7 @@ export default function DroneInspectionGuidePage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
+            { name: "Guider", href: "/guider" },
             { name: "Drönarinspektion av elnät", href: "/guider/dronareinspektion-elnat" },
           ]}
         />
@@ -101,7 +102,7 @@ export default function DroneInspectionGuidePage() {
 
         <Breadcrumbs
           items={[
-            { name: "Guider" },
+            { name: "Guider", href: "/guider" },
             { name: "Drönarinspektion av elnät" },
           ]}
         />

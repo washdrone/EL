@@ -25,6 +25,7 @@ export default function GoteborgPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
+          { name: "Platser", href: "/platser" },
           { name: "Göteborg & Västra Götaland", href: "/platser/kraftledningsinspektion-goteborg" },
         ]}
       />
@@ -45,7 +46,7 @@ export default function GoteborgPage() {
 
       <Breadcrumbs
         items={[
-          { name: "Platser" },
+          { name: "Platser", href: "/platser" },
           { name: "Göteborg & Västra Götaland" },
         ]}
       />

@@ -25,6 +25,7 @@ export default function VindkraftSkanePage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
+          { name: "Platser", href: "/platser" },
           { name: "Vindkraftinspektion Skåne", href: "/platser/vindkraftinspektion-skane" },
         ]}
       />
@@ -45,7 +46,7 @@ export default function VindkraftSkanePage() {
 
       <Breadcrumbs
         items={[
-          { name: "Platser" },
+          { name: "Platser", href: "/platser" },
           { name: "Vindkraftinspektion Skåne" },
         ]}
       />

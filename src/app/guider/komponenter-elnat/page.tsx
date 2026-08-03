@@ -62,6 +62,7 @@ export default function KomponenterGuidePage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
+            { name: "Guider", href: "/guider" },
             { name: "Komponenter i elnät", href: "/guider/komponenter-elnat" },
           ]}
         />
@@ -89,7 +90,7 @@ export default function KomponenterGuidePage() {
 
         <Breadcrumbs
           items={[
-            { name: "Guider" },
+            { name: "Guider", href: "/guider" },
             { name: "Komponenter i elnät" },
           ]}
         />

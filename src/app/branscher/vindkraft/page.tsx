@@ -25,7 +25,7 @@ export default function VindkraftPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Branscher", href: "/branscher/energibolag" },
+          { name: "Branscher", href: "/branscher" },
           { name: "Vindkraft", href: "/branscher/vindkraft" },
         ]}
       />
@@ -46,7 +46,7 @@ export default function VindkraftPage() {
 
       <Breadcrumbs
         items={[
-          { name: "Branscher" },
+          { name: "Branscher", href: "/branscher" },
           { name: "Vindkraft" },
         ]}
       />

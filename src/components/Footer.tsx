@@ -20,6 +20,7 @@ const footerBranches = [
   { label: "Trafikverket", href: "/branscher/trafikverket" },
   { label: "Kommuner", href: "/branscher/kommuner" },
   { label: "Försäkring", href: "/branscher/forsakring" },
+  { label: "Alla branscher", href: "/branscher" },
 ];
 
 const footerLocations = [
@@ -30,6 +31,7 @@ const footerLocations = [
   { label: "Dalarna", href: "/platser/kraftledningsinspektion-dalarna" },
   { label: "Vindkraft Skåne", href: "/platser/vindkraftinspektion-skane" },
   { label: "Järnväg Stockholm", href: "/platser/jarnvagsinspektion-stockholm" },
+  { label: "Alla platser", href: "/platser" },
 ];
 
 const footerNavigation = [
@@ -37,6 +39,7 @@ const footerNavigation = [
   { label: "Kostnadskalkylator", href: "/roi-kalkylator" },
   { label: "Certifieringar", href: "/certifieringar" },
   { label: "Blogg", href: "/blogg" },
+  { label: "Alla guider", href: "/guider" },
   { label: "Guide: Drönarinspektion", href: "/guider/dronareinspektion-elnat" },
   { label: "Guide: Termografering", href: "/guider/termografering-kraftledningar" },
   { label: "Guide: Dataleverans GIS", href: "/guider/dataleverans-gis-elnat" },

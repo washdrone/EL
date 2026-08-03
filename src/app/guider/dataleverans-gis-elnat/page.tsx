@@ -72,6 +72,7 @@ export default function DataleveransGuidePage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
+            { name: "Guider", href: "/guider" },
             { name: "Dataleverans och GIS", href: "/guider/dataleverans-gis-elnat" },
           ]}
         />
@@ -99,7 +100,7 @@ export default function DataleveransGuidePage() {
 
         <Breadcrumbs
           items={[
-            { name: "Guider" },
+            { name: "Guider", href: "/guider" },
             { name: "Dataleverans och GIS" },
           ]}
         />

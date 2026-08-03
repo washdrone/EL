@@ -89,9 +89,20 @@ Validatorskript (GSC-simulering) körd mot **byggd HTML** i `.next/server/app`, 
 
 Redan på plats och verifierat: självhostad `next/font` med `display: swap` (ingen CLS/render-blocking), hero-video med `preload="metadata"` + poster, `next/image` med AVIF/WebP på samtliga bilder (alla med alt-text), GA4 laddas `afterInteractive` med Consent Mode v2, First Load JS ~87–102 kB. Inga åtgärder krävdes.
 
+## Uppföljning samma dag: sektionshubbar genomförda
+
+Rekommendation 1 är nu implementerad:
+
+- **Nya indexsidor** för `/guider`, `/branscher` och `/platser` — hubbsidor som listar samtliga undersidor med befintlig, verifierad copy (rubriker/beskrivningar återanvända från respektive undersidas metadata; inga nya faktapåståenden). Varje hub har egen metadata/canonical, `ItemList`- och `BreadcrumbList`-schema.
+- **Sektionsnivån återinförd i breadcrumbs** på alla 19 undersidor (5 branscher, 7 platser, 7 guider) — både i JSON-LD (med giltig `item`-URL till hubben) och som klickbar länk i den synliga navigeringen.
+- **Sitemap** utökad med de tre hubbarna; **sidfoten** länkar nu till "Alla branscher/platser/guider" från hela sajten; toppnavigeringens "Branscher"-post pekar på `/branscher`.
+- `/jamforelser` fick medvetet **ingen** indexsida — sektionen innehåller bara en sida, och en hubb med en enda länk vore tunt innehåll. Skapa hubben när fler jämförelser publiceras.
+
+**Omverifierat efter ändringarna:** 54 sidor, 226 JSON-LD-block — 0 fel, 0 varningar. Sitemap ↔ rutter stämmer exakt, 0 brutna interna länkar, `build` + `lint` gröna.
+
 ## Rekommendationer (ej fel — framtida förbättringar)
 
-1. **Indexsidor för `/guider`, `/branscher`, `/platser`, `/jamforelser`** — skulle ge naturliga hubbsidor, återinföra sektionsnivån i breadcrumb-trailen och stärka intern länkstruktur.
-2. **LocalBusiness-schema** kräver verifierad besöksadress + telefonnummer — läggs till först när ägaren bekräftat uppgifterna (per CLAUDE.md-regeln).
-3. **`sameAs` i Organization-schemat** när företagets officiella profiler (LinkedIn m.m.) bekräftats.
-4. Efter deploy: kör *Verifiera korrigering* i GSC för breadcrumb-felet samt testa några sidor i [Rich Results Test](https://search.google.com/test/rich-results).
+1. **LocalBusiness-schema** kräver verifierad besöksadress + telefonnummer — läggs till först när ägaren bekräftat uppgifterna (per CLAUDE.md-regeln).
+2. **`sameAs` i Organization-schemat** när företagets officiella profiler (LinkedIn m.m.) bekräftats.
+3. **Indexsida för `/jamforelser`** när fler jämförelsesidor finns.
+4. Efter deploy: kör *Verifiera korrigering* i GSC för breadcrumb-felet (Förbättringar → Menysökvägar) samt testa några sidor i [Rich Results Test](https://search.google.com/test/rich-results). Detta kräver inloggning i ert GSC-konto och kan inte göras härifrån.
