@@ -25,8 +25,7 @@ export default function MalmoPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/kraftledningsinspektion-malmo" },
-          { name: "Malmö & Skåne" },
+          { name: "Malmö & Skåne", href: "/platser/kraftledningsinspektion-malmo" },
         ]}
       />
       <JsonLd

@@ -26,7 +26,7 @@ export default function ForsakringPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Branscher", href: "/branscher/energibolag" },
-          { name: "Försäkring" },
+          { name: "Försäkring", href: "/branscher/forsakring" },
         ]}
       />
       <JsonLd

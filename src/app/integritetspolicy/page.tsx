@@ -19,7 +19,7 @@ export default function IntegritetspolicyPage() {
       <Header />
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Integritetspolicy" }]}
+        breadcrumbs={[{ name: "Integritetspolicy", href: "/integritetspolicy" }]}
       />
       <Breadcrumbs items={[{ name: "Integritetspolicy" }]} />
       <main id="main-content" className="section-padding bg-white">

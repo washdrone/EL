@@ -25,8 +25,7 @@ export default function JarnvagsinspektionStockholmPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/jarnvagsinspektion-stockholm" },
-          { name: "Järnvägsinspektion Stockholm" },
+          { name: "Järnvägsinspektion Stockholm", href: "/platser/jarnvagsinspektion-stockholm" },
         ]}
       />
       <JsonLd

@@ -27,7 +27,7 @@ export default function KostnadskalkylatorPage() {
     <>
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Kostnadskalkylator" }]}
+        breadcrumbs={[{ name: "Kostnadskalkylator", href: "/roi-kalkylator" }]}
       />
 
       {/* ── HERO ── */}

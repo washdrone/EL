@@ -4,15 +4,18 @@ import { SITE_URL } from "@/lib/metadata";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
+      // OBS: /opengraph-image och /twitter-image får INTE blockeras –
+      // de används som og:image och i Article-schemats image-fält,
+      // och Google kräver att bilder i structured data är crawlbara.
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/twitter-image*", "/opengraph-image*"],
+        disallow: ["/api/"],
       },
       {
         userAgent: "Googlebot",
         allow: "/",
-        disallow: ["/api/", "/twitter-image*", "/opengraph-image*"],
+        disallow: ["/api/"],
       },
       // AI-botar — tillåt indexering för AEO (AI Engine Optimization)
       {

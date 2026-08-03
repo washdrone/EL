@@ -86,7 +86,7 @@ export default function JarnvagsinspektionPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Tjänster", href: "/tjanster" },
-          { name: "Järnvägsinspektion" },
+          { name: "Järnvägsinspektion", href: "/tjanster/jarnvagsinspektion" },
         ]}
       />
       <JsonLd type="FAQPage" faqItems={faqItems} />

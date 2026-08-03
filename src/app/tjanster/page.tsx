@@ -22,10 +22,17 @@ export const metadata: Metadata = createPageMetadata({
 export default function TjansterPage() {
   return (
     <>
-      <JsonLd type="Service" servicePath="/tjanster" />
+      <JsonLd
+        type="ItemList"
+        itemListName="Inspektionstjänster för elnät och energiinfrastruktur"
+        itemListItems={SERVICE_ITEMS.map((service) => ({
+          name: service.label,
+          href: service.href,
+        }))}
+      />
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Tjänster" }]}
+        breadcrumbs={[{ name: "Tjänster", href: "/tjanster" }]}
       />
 
       <Hero

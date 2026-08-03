@@ -25,7 +25,7 @@ export default function KontaktPage() {
     <>
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Kontakt" }]}
+        breadcrumbs={[{ name: "Kontakt", href: "/kontakt" }]}
       />
 
       <Breadcrumbs

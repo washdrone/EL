@@ -91,7 +91,7 @@ export default function ExempelrapportPage() {
     <>
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Exempelrapport" }]}
+        breadcrumbs={[{ name: "Exempelrapport", href: "/exempelrapport" }]}
       />
 
       <section className="gradient-hero py-16 sm:py-20">

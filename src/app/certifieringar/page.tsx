@@ -96,7 +96,7 @@ export default function CertifieringarPage() {
     <>
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Certifieringar" }]}
+        breadcrumbs={[{ name: "Certifieringar", href: "/certifieringar" }]}
       />
 
       <Hero

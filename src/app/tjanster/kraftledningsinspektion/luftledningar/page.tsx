@@ -26,11 +26,8 @@ export default function LuftledningarPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          {
-            name: "Elnätsinspektion med drönare",
-            href: "/tjanster/kraftledningsinspektion",
-          },
-          { name: "Luftledningar" },
+          { name: "Elnätsinspektion med drönare", href: "/tjanster/kraftledningsinspektion" },
+          { name: "Luftledningar", href: "/tjanster/kraftledningsinspektion/luftledningar" },
         ]}
       />
       <JsonLd

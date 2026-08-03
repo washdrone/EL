@@ -95,7 +95,7 @@ export default function VegetationskontrollPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Tjänster", href: "/tjanster" },
-          { name: "Vegetationskontroll" },
+          { name: "Vegetationskontroll", href: "/tjanster/vegetationskontroll" },
         ]}
       />
 

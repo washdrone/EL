@@ -27,11 +27,8 @@ export default function MetodikKvalitetPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          {
-            name: "Elnätsinspektion med drönare",
-            href: "/tjanster/kraftledningsinspektion",
-          },
-          { name: "Metodik & kvalitet" },
+          { name: "Elnätsinspektion med drönare", href: "/tjanster/kraftledningsinspektion" },
+          { name: "Metodik & kvalitet", href: "/tjanster/kraftledningsinspektion/metodik-kvalitet" },
         ]}
       />
 

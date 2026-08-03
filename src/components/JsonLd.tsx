@@ -1,11 +1,22 @@
 import { SITE_URL, SITE_NAME } from "@/lib/metadata";
 import { COMPANY_NAME, CONTACT_EMAIL } from "@/lib/constants";
-import type { BreadcrumbItem } from "@/components/Breadcrumbs";
 import type { FAQItem } from "@/data/faq";
 
 interface HowToStep {
   name: string;
   text: string;
+}
+
+// href är obligatoriskt: Google kräver fältet `item` på varje ListItem
+// (GSC-fel "Fältet item saknas" uppstår annars). Sista posten ska ha sidans egen URL.
+interface JsonLdBreadcrumb {
+  name: string;
+  href: string;
+}
+
+interface ItemListEntry {
+  name: string;
+  href: string;
 }
 
 interface JsonLdProps {
@@ -16,8 +27,9 @@ interface JsonLdProps {
     | "BreadcrumbList"
     | "WebSite"
     | "HowTo"
-    | "Article";
-  breadcrumbs?: BreadcrumbItem[];
+    | "Article"
+    | "ItemList";
+  breadcrumbs?: JsonLdBreadcrumb[];
   faqItems?: FAQItem[];
   serviceName?: string;
   serviceDescription?: string;
@@ -30,6 +42,8 @@ interface JsonLdProps {
   articlePath?: string;
   datePublished?: string;
   dateModified?: string;
+  itemListName?: string;
+  itemListItems?: ItemListEntry[];
 }
 
 export default function JsonLd({
@@ -47,6 +61,8 @@ export default function JsonLd({
   articlePath,
   datePublished,
   dateModified,
+  itemListName,
+  itemListItems,
 }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
@@ -166,7 +182,7 @@ export default function JsonLd({
             "@type": "ListItem",
             position: index + 2,
             name: item.name,
-            ...(item.href ? { item: `${SITE_URL}${item.href}` } : {}),
+            item: `${SITE_URL}${item.href}`,
           })) || []),
         ],
       };
@@ -200,6 +216,21 @@ export default function JsonLd({
           name: COMPANY_NAME,
           url: SITE_URL,
         },
+      };
+      break;
+
+    case "ItemList":
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: itemListName || "",
+        itemListElement:
+          itemListItems?.map((entry, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: entry.name,
+            url: `${SITE_URL}${entry.href}`,
+          })) || [],
       };
       break;
 

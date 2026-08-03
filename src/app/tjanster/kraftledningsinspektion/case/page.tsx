@@ -24,11 +24,8 @@ export default function CasePage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          {
-            name: "Elnätsinspektion med drönare",
-            href: "/tjanster/kraftledningsinspektion",
-          },
-          { name: "Referensuppdrag" },
+          { name: "Elnätsinspektion med drönare", href: "/tjanster/kraftledningsinspektion" },
+          { name: "Referensuppdrag", href: "/tjanster/kraftledningsinspektion/case" },
         ]}
       />
 

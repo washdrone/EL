@@ -25,11 +25,8 @@ export default function FAQPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          {
-            name: "Elnätsinspektion med drönare",
-            href: "/tjanster/kraftledningsinspektion",
-          },
-          { name: "FAQ" },
+          { name: "Elnätsinspektion med drönare", href: "/tjanster/kraftledningsinspektion" },
+          { name: "FAQ", href: "/tjanster/kraftledningsinspektion/faq" },
         ]}
       />
       <JsonLd type="FAQPage" faqItems={faqItems} />

@@ -62,8 +62,7 @@ export default function KomponenterGuidePage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
-            { name: "Guider" },
-            { name: "Komponenter i elnät" },
+            { name: "Komponenter i elnät", href: "/guider/komponenter-elnat" },
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />

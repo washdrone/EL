@@ -56,8 +56,7 @@ export default function EnergibolagPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Branscher", href: "/branscher/energibolag" },
-          { name: "Nätägare & energibolag" },
+          { name: "Nätägare & energibolag", href: "/branscher/energibolag" },
         ]}
       />
       <JsonLd

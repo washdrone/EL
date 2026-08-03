@@ -26,7 +26,7 @@ export default function TrafikverketPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Branscher", href: "/branscher/energibolag" },
-          { name: "Järnväg & Trafikverket" },
+          { name: "Järnväg & Trafikverket", href: "/branscher/trafikverket" },
         ]}
       />
       <JsonLd
