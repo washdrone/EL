@@ -87,7 +87,7 @@ export default function OmOssPage() {
     <>
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Om oss" }]}
+        breadcrumbs={[{ name: "Om oss", href: "/om-oss" }]}
       />
 
       <Hero

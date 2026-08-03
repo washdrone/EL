@@ -77,7 +77,7 @@ export default function HubPage() {
       <JsonLd type="Service" servicePath="/tjanster/kraftledningsinspektion" />
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Elnätsinspektion med drönare" }]}
+        breadcrumbs={[{ name: "Elnätsinspektion med drönare", href: "/tjanster/kraftledningsinspektion" }]}
       />
 
       <JsonLd type="FAQPage" faqItems={faqItems.slice(0, 6)} />

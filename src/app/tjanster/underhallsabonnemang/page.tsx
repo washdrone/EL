@@ -79,7 +79,7 @@ export default function UnderhallsabonnemangPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Tjänster", href: "/tjanster" },
-          { name: "Underhållsabonnemang" },
+          { name: "Underhållsabonnemang", href: "/tjanster/underhallsabonnemang" },
         ]}
       />
       <JsonLd type="FAQPage" faqItems={faqItems} />

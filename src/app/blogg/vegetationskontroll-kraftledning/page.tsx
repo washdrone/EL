@@ -26,7 +26,7 @@ export default function VegetationskontrollBloggPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Blogg", href: "/blogg" },
-          { name: "Vegetationskontroll kraftledning" },
+          { name: "Vegetationskontroll kraftledning", href: "/blogg/vegetationskontroll-kraftledning" },
         ]}
       />
       <JsonLd

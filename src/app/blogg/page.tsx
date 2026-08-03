@@ -62,7 +62,7 @@ export default function BloggPage() {
     <>
       <JsonLd
         type="BreadcrumbList"
-        breadcrumbs={[{ name: "Blogg" }]}
+        breadcrumbs={[{ name: "Blogg", href: "/blogg" }]}
       />
 
       <Hero

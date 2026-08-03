@@ -26,7 +26,7 @@ export default function JarnvagsinspektionGuidePage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Blogg", href: "/blogg" },
-          { name: "Järnvägsinspektion guide" },
+          { name: "Järnvägsinspektion guide", href: "/blogg/jarnvagsinspektion-guide" },
         ]}
       />
       <JsonLd

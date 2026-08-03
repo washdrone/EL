@@ -25,8 +25,8 @@ export default function DalarnaPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/kraftledningsinspektion-dalarna" },
-          { name: "Dalarna" },
+          { name: "Platser", href: "/platser" },
+          { name: "Dalarna", href: "/platser/kraftledningsinspektion-dalarna" },
         ]}
       />
       <JsonLd
@@ -46,7 +46,7 @@ export default function DalarnaPage() {
 
       <Breadcrumbs
         items={[
-          { name: "Platser" },
+          { name: "Platser", href: "/platser" },
           { name: "Dalarna" },
         ]}
       />

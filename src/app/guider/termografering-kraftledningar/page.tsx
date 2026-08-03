@@ -72,8 +72,8 @@ export default function TermograferingGuidePage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
-            { name: "Guider" },
-            { name: "Termografering av kraftledningar" },
+            { name: "Guider", href: "/guider" },
+            { name: "Termografering av kraftledningar", href: "/guider/termografering-kraftledningar" },
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
@@ -111,7 +111,7 @@ export default function TermograferingGuidePage() {
 
         <Breadcrumbs
           items={[
-            { name: "Guider" },
+            { name: "Guider", href: "/guider" },
             { name: "Termografering av kraftledningar" },
           ]}
         />

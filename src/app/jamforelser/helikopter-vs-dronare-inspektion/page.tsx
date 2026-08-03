@@ -118,8 +118,7 @@ export default function ComparisonPage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
-            { name: "Jämförelser", href: "/jamforelser/helikopter-vs-dronare-inspektion" },
-            { name: "Helikopter vs drönare" },
+            { name: "Helikopter vs drönare", href: "/jamforelser/helikopter-vs-dronare-inspektion" },
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />

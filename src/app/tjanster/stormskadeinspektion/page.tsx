@@ -85,7 +85,7 @@ export default function StormskadeinspektionPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Tjänster", href: "/tjanster" },
-          { name: "Stormskadeinspektion" },
+          { name: "Stormskadeinspektion", href: "/tjanster/stormskadeinspektion" },
         ]}
       />
       <JsonLd type="FAQPage" faqItems={faqItems} />

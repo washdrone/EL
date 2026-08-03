@@ -5,68 +5,68 @@ import Hero from "@/components/Hero";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import JsonLd from "@/components/JsonLd";
 import CTABand from "@/components/CTABand";
-import { SERVICE_ITEMS } from "@/lib/constants";
+import { BRANCH_ITEMS } from "@/lib/constants";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Inspektionstjänster för elnät & energiinfrastruktur",
+  title: "Branscher — drönarinspektion per bransch",
   description:
-    "GridDrones inspektionstjänster: kraftledningsinspektion, termografering, vegetationskontroll, transformatorstationer, BVLOS och stormskadeinspektion. Begär offert.",
-  path: "/tjanster",
+    "Drönarinspektion anpassad per bransch: nätägare och energibolag, järnväg och Trafikverket, vindkraft, kommuner och försäkringsbolag. Se hur vi arbetar med er bransch.",
+  path: "/branscher",
   keywords: [
-    "drönarinspektion elnät",
-    "inspektionstjänster kraftledning",
-    "drönartjänster energiinfrastruktur",
+    "drönarinspektion energibolag",
+    "drönarinspektion nätägare",
+    "drönarinspektion branscher",
   ],
 });
 
-export default function TjansterPage() {
+export default function BranscherPage() {
   return (
     <>
       <JsonLd
-        type="ItemList"
-        itemListName="Inspektionstjänster för elnät och energiinfrastruktur"
-        itemListItems={SERVICE_ITEMS.map((service) => ({
-          name: service.label,
-          href: service.href,
-        }))}
+        type="BreadcrumbList"
+        breadcrumbs={[{ name: "Branscher", href: "/branscher" }]}
       />
       <JsonLd
-        type="BreadcrumbList"
-        breadcrumbs={[{ name: "Tjänster", href: "/tjanster" }]}
+        type="ItemList"
+        itemListName="Branscher — drönarinspektion av energiinfrastruktur"
+        itemListItems={BRANCH_ITEMS.map((branch) => ({
+          name: branch.label,
+          href: branch.href,
+        }))}
       />
 
       <Hero
-        title="Inspektionstjänster för elnät & energiinfrastruktur"
-        subtitle="Våra tjänster"
-        description="Strukturerad drönarinspektion av kraftledningar, transformatorstationer och ledningsgator. Varje tjänst levereras med georefererade data och klassificerade åtgärdsunderlag."
+        title="Drönarinspektion för er bransch"
+        subtitle="Branscher"
+        description="Inspektionsbehoven skiljer sig mellan nätägare, järnväg, vindkraft, kommuner och försäkring. Varje bransch har en egen sida som beskriver hur inspektionen anpassas efter era förutsättningar."
         primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
+        secondaryCta={{ label: "Våra tjänster", href: "/tjanster" }}
+        compact
       />
 
-      <Breadcrumbs items={[{ name: "Tjänster" }]} />
+      <Breadcrumbs items={[{ name: "Branscher" }]} />
 
-      {/* Service grid */}
       <section className="section-padding bg-white">
         <div className="container-section">
           <div className="section-intro">
-            <h2 className="heading-2">Våra inspektionstjänster</h2>
+            <h2 className="heading-2">Branscher vi arbetar med</h2>
             <p className="body-text mt-4">
-              Varje tjänst anpassas efter ert näts förutsättningar och levereras
-              med strukturerade rapporter redo för ert nätförvaltningssystem.
+              Välj er bransch för att se hur drönarinspektionen anpassas —
+              från datainsamling till leveransformat.
             </p>
           </div>
           <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {SERVICE_ITEMS.map((service) => (
+            {BRANCH_ITEMS.map((branch) => (
               <Link
-                key={service.href}
-                href={service.href}
+                key={branch.href}
+                href={branch.href}
                 className="card group p-6 transition-shadow hover:shadow-md"
               >
                 <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-600">
-                  {service.label}
+                  {branch.label}
                 </h3>
                 <p className="mt-2 text-sm text-surface-500">
-                  {service.description}
+                  {branch.description}
                 </p>
                 <span className="mt-4 inline-flex items-center text-sm font-medium text-brand-600 group-hover:text-brand-700">
                   Läs mer
@@ -91,7 +91,7 @@ export default function TjansterPage() {
         </div>
       </section>
 
-      <CTABand primaryHref="/kontakt" secondaryHref="/kontakt" />
+      <CTABand />
     </>
   );
 }

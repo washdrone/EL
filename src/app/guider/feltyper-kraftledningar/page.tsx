@@ -67,8 +67,8 @@ export default function FeltyperGuidePage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
-            { name: "Guider" },
-            { name: "Feltyper i kraftledningar" },
+            { name: "Guider", href: "/guider" },
+            { name: "Feltyper i kraftledningar", href: "/guider/feltyper-kraftledningar" },
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
@@ -95,7 +95,7 @@ export default function FeltyperGuidePage() {
 
         <Breadcrumbs
           items={[
-            { name: "Guider" },
+            { name: "Guider", href: "/guider" },
             { name: "Feltyper i kraftledningar" },
           ]}
         />

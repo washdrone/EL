@@ -67,8 +67,8 @@ export default function BvlosGuidePage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
-            { name: "Guider" },
-            { name: "BVLOS-inspektion av elnät" },
+            { name: "Guider", href: "/guider" },
+            { name: "BVLOS-inspektion av elnät", href: "/guider/bvlos-inspektion-elnat" },
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
@@ -95,7 +95,7 @@ export default function BvlosGuidePage() {
 
         <Breadcrumbs
           items={[
-            { name: "Guider" },
+            { name: "Guider", href: "/guider" },
             { name: "BVLOS-inspektion av elnät" },
           ]}
         />

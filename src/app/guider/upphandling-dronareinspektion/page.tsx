@@ -71,8 +71,8 @@ export default function UpphandlingGuidePage() {
         <JsonLd
           type="BreadcrumbList"
           breadcrumbs={[
-            { name: "Guider" },
-            { name: "Upphandla drönarinspektion" },
+            { name: "Guider", href: "/guider" },
+            { name: "Upphandla drönarinspektion", href: "/guider/upphandling-dronareinspektion" },
           ]}
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
@@ -99,7 +99,7 @@ export default function UpphandlingGuidePage() {
 
         <Breadcrumbs
           items={[
-            { name: "Guider" },
+            { name: "Guider", href: "/guider" },
             { name: "Upphandla drönarinspektion" },
           ]}
         />

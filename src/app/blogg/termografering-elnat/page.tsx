@@ -26,7 +26,7 @@ export default function TermograferingElnatPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Blogg", href: "/blogg" },
-          { name: "Termografering av elnät" },
+          { name: "Termografering av elnät", href: "/blogg/termografering-elnat" },
         ]}
       />
       <JsonLd

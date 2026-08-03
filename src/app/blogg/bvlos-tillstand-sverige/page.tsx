@@ -26,7 +26,7 @@ export default function BVLOSTillstandPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Blogg", href: "/blogg" },
-          { name: "BVLOS-tillstånd Sverige" },
+          { name: "BVLOS-tillstånd Sverige", href: "/blogg/bvlos-tillstand-sverige" },
         ]}
       />
       <JsonLd

@@ -74,9 +74,9 @@ export default function HeroSection() {
               key={card.title}
               className="bg-navy-950/80 p-5 backdrop-blur-sm transition-colors duration-200 hover:bg-navy-900/80"
             >
-              <h3 className="text-sm font-semibold text-white">
+              <p className="text-sm font-semibold text-white">
                 {card.title}
-              </h3>
+              </p>
               <p className="mt-1 text-xs text-slate-400">
                 {card.subtitle}
               </p>

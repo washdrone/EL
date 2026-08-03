@@ -97,7 +97,7 @@ export default function TermograferingKraftledningPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Tjänster", href: "/tjanster" },
-          { name: "Termografering" },
+          { name: "Termografering", href: "/tjanster/termografering-kraftledning" },
         ]}
       />
       <JsonLd type="FAQPage" faqItems={faqItems} />

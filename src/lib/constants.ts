@@ -8,7 +8,7 @@ export const NAV_ITEMS = [
   },
   {
     label: "Branscher",
-    href: "/branscher/energibolag",
+    href: "/branscher",
   },
   {
     label: "Exempelrapport",

@@ -25,8 +25,8 @@ export default function KommunerPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Branscher", href: "/branscher/energibolag" },
-          { name: "Kommuner" },
+          { name: "Branscher", href: "/branscher" },
+          { name: "Kommuner", href: "/branscher/kommuner" },
         ]}
       />
       <JsonLd
@@ -46,7 +46,7 @@ export default function KommunerPage() {
 
       <Breadcrumbs
         items={[
-          { name: "Branscher" },
+          { name: "Branscher", href: "/branscher" },
           { name: "Kommuner" },
         ]}
       />

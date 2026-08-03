@@ -77,7 +77,7 @@ export default function BvlosInspektionPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Tjänster", href: "/tjanster" },
-          { name: "BVLOS-inspektion" },
+          { name: "BVLOS-inspektion", href: "/tjanster/bvlos-inspektion" },
         ]}
       />
 

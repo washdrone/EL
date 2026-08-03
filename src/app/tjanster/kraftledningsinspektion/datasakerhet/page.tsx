@@ -24,11 +24,8 @@ export default function DatasakerhetPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          {
-            name: "Elnätsinspektion med drönare",
-            href: "/tjanster/kraftledningsinspektion",
-          },
-          { name: "Datasäkerhet" },
+          { name: "Elnätsinspektion med drönare", href: "/tjanster/kraftledningsinspektion" },
+          { name: "Datasäkerhet", href: "/tjanster/kraftledningsinspektion/datasakerhet" },
         ]}
       />
 

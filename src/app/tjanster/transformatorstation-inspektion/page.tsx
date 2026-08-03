@@ -106,7 +106,7 @@ export default function TransformatorstationInspektionPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Tjänster", href: "/tjanster" },
-          { name: "Transformatorstation inspektion" },
+          { name: "Transformatorstation inspektion", href: "/tjanster/transformatorstation-inspektion" },
         ]}
       />
 

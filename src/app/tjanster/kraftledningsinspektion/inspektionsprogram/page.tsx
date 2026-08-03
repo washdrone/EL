@@ -26,11 +26,8 @@ export default function InspektionsprogramPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          {
-            name: "Elnätsinspektion med drönare",
-            href: "/tjanster/kraftledningsinspektion",
-          },
-          { name: "Inspektionsprogram" },
+          { name: "Elnätsinspektion med drönare", href: "/tjanster/kraftledningsinspektion" },
+          { name: "Inspektionsprogram", href: "/tjanster/kraftledningsinspektion/inspektionsprogram" },
         ]}
       />
 

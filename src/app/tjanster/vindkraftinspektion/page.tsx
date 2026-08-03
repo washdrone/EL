@@ -95,7 +95,7 @@ export default function VindkraftinspektionPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Tjänster", href: "/tjanster" },
-          { name: "Vindkraftinspektion" },
+          { name: "Vindkraftinspektion", href: "/tjanster/vindkraftinspektion" },
         ]}
       />
 

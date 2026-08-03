@@ -25,7 +25,7 @@ export default function HelikopterVsDronarePage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Blogg", href: "/blogg" },
-          { name: "Helikopter vs Drönare" },
+          { name: "Helikopter vs Drönare", href: "/blogg/helikopter-vs-dronare" },
         ]}
       />
       <JsonLd

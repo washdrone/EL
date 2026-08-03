@@ -25,8 +25,8 @@ export default function StockholmPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/kraftledningsinspektion-stockholm" },
-          { name: "Stockholm & Mälardalen" },
+          { name: "Platser", href: "/platser" },
+          { name: "Stockholm & Mälardalen", href: "/platser/kraftledningsinspektion-stockholm" },
         ]}
       />
       <JsonLd
@@ -46,7 +46,7 @@ export default function StockholmPage() {
 
       <Breadcrumbs
         items={[
-          { name: "Platser" },
+          { name: "Platser", href: "/platser" },
           { name: "Stockholm & Mälardalen" },
         ]}
       />

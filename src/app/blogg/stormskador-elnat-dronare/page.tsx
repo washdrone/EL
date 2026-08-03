@@ -26,7 +26,7 @@ export default function StormskadorBloggPage() {
         type="BreadcrumbList"
         breadcrumbs={[
           { name: "Blogg", href: "/blogg" },
-          { name: "Stormskador & drönare" },
+          { name: "Stormskador & drönare", href: "/blogg/stormskador-elnat-dronare" },
         ]}
       />
       <JsonLd

@@ -25,8 +25,8 @@ export default function NorrlandPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          { name: "Platser", href: "/platser/kraftledningsinspektion-norrland" },
-          { name: "Norrland" },
+          { name: "Platser", href: "/platser" },
+          { name: "Norrland", href: "/platser/kraftledningsinspektion-norrland" },
         ]}
       />
       <JsonLd
@@ -46,7 +46,7 @@ export default function NorrlandPage() {
 
       <Breadcrumbs
         items={[
-          { name: "Platser" },
+          { name: "Platser", href: "/platser" },
           { name: "Norrland" },
         ]}
       />

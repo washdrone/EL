@@ -27,11 +27,8 @@ export default function DataleveranserPage() {
       <JsonLd
         type="BreadcrumbList"
         breadcrumbs={[
-          {
-            name: "Elnätsinspektion med drönare",
-            href: "/tjanster/kraftledningsinspektion",
-          },
-          { name: "Dataleveranser" },
+          { name: "Elnätsinspektion med drönare", href: "/tjanster/kraftledningsinspektion" },
+          { name: "Dataleveranser", href: "/tjanster/kraftledningsinspektion/dataleveranser" },
         ]}
       />
 
