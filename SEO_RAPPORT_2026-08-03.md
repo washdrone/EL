@@ -159,3 +159,21 @@ Tunnaste sidorna (ord, inkl. navigation): `/tjanster/kraftledningsinspektion/cas
 3. **Månad 1:** komprimera hero-videon; lägg till riktiga inspektionsbilder på tjänstesidor.
 4. **Löpande:** 1–2 nya guide-/bloggartiklar per månad ur ämnesklustret (förslag: "Ställverk och transformatorstationer – inspektionsguide", "Digital tvilling av elnät", "Tillståndsbaserat underhåll i praktiken") — alltid byggda på verklig projekterfarenhet.
 5. **Uppföljning:** GSC-täckningsrapport efter 2–4 veckor; följ AI-citeringar genom att ställa branschfrågor till ChatGPT/Perplexity/Gemini och notera källor.
+
+---
+
+# Runda 4 (samma dag): ägarverifierade E-E-A-T-åtgärder + videokomprimering
+
+Ägaren har besvarat verifieringsfrågorna. Utfall:
+
+| Fråga | Svar | Åtgärd |
+|---|---|---|
+| Besöksadress + telefon? | Nej, inte nu | LocalBusiness-schema läggs INTE till (kräver adress/telefon). Organization behålls. |
+| Officiella profiler (LinkedIn m.m.)? | Finns inga än | `sameAs` utelämnas tills profiler skapats. |
+| Är bilderna från egna uppdrag? | **Ja – verifierat** | Fotona på exempelrapportsidan (skadad isolator, vegetationsintrång, korrosion traversfot, fågelbo) har nu `ImageObject`-schema med `creator`/`copyrightHolder`/`creditText` = GridDrone + synlig proveniensrad "fotona är tagna vid GridDrones egna inspektioner". Stark E-E-A-T/AI-citeringssignal: originalbilder med maskinläsbar upphovsangivelse. |
+| Stämmer certifieringssidans påståenden? | **Ja, allt stämmer** | `hasCredential` tillagt i Organization-schemat: EASA-utbildning för drönarpiloter, BVLOS-behörighet, behörighet för mörkerflygning. (Ansvarsförsäkring nämns i text; schema.org saknar lämplig egenskap för försäkring.) |
+| Hero-video 12 MB | — | Komprimerad med ffmpeg (H.264 CRF 31, 1080p, ljudspår borttaget, faststart): **12 MB → 2,7 MB (−78 %)**. Bildkvalitet kontrollerad bildruta för bildruta-nivå; skillnaden är osynlig bakom sidans mörka overlay. |
+
+**Omverifierat:** 55 sidor, 234 JSON-LD-block — 0 fel, 0 varningar. Build + lint gröna.
+
+**Kvar på väntelistan (aktiveras så fort uppgifter finns):** LocalBusiness (adress+telefon), `sameAs` (profil-URL:er), publicerade referensuppdrag med substans (ägaren har ännu inte pekat ut något uppdrag som kan publiceras).

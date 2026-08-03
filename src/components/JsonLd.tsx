@@ -30,7 +30,8 @@ interface JsonLdProps {
     | "Article"
     | "TechArticle"
     | "ItemList"
-    | "DefinedTermSet";
+    | "DefinedTermSet"
+    | "ImageObject";
   breadcrumbs?: JsonLdBreadcrumb[];
   faqItems?: FAQItem[];
   serviceName?: string;
@@ -49,6 +50,8 @@ interface JsonLdProps {
   definedTermSetName?: string;
   definedTermSetPath?: string;
   definedTerms?: { name: string; description: string }[];
+  imagePath?: string;
+  imageCaption?: string;
 }
 
 export default function JsonLd({
@@ -71,6 +74,8 @@ export default function JsonLd({
   definedTermSetName,
   definedTermSetPath,
   definedTerms,
+  imagePath,
+  imageCaption,
 }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
@@ -92,7 +97,21 @@ export default function JsonLd({
           "@type": "Country",
           name: "Sweden",
         },
-        // hasCredential: Borttaget – lägg till verifierade credentials här när de bekräftats.
+        // Verifierat av ägaren 2026-08-03: EASA-utbildning, BVLOS, mörkerflyg.
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "EASA-utbildning för drönarpiloter",
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "BVLOS-behörighet (flygning bortom synhåll)",
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "Behörighet för mörkerflygning",
+          },
+        ],
         knowsAbout: [
           "Kraftledningsinspektion",
           "Drönarinspektion elnät",
@@ -232,6 +251,27 @@ export default function JsonLd({
           "@id": `${SITE_URL}#organization`,
           name: COMPANY_NAME,
           url: SITE_URL,
+        },
+      };
+      break;
+
+    // Endast för bilder från GridDrones egna inspektioner (verifierat av ägaren).
+    case "ImageObject":
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        contentUrl: `${SITE_URL}${imagePath || ""}`,
+        caption: imageCaption || "",
+        creditText: COMPANY_NAME,
+        creator: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}#organization`,
+          name: COMPANY_NAME,
+        },
+        copyrightHolder: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}#organization`,
+          name: COMPANY_NAME,
         },
       };
       break;
