@@ -77,7 +77,7 @@ export default function UpphandlingGuidePage() {
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
         <JsonLd
-          type="Article"
+          type="TechArticle"
           articleHeadline={"Upphandla drönarinspektion av elnät — guide"}
           articleDescription={
             "Guide för upphandling av drönarinspektion av kraftledningar och elnät. Kravspec, utvärderingskriterier, leveransformat och avtalsupplägg."

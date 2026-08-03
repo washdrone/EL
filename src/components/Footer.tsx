@@ -47,6 +47,7 @@ const footerNavigation = [
   { label: "Guide: Upphandling", href: "/guider/upphandling-dronareinspektion" },
   { label: "Guide: Feltyper", href: "/guider/feltyper-kraftledningar" },
   { label: "Guide: Komponenter", href: "/guider/komponenter-elnat" },
+  { label: "Ordlista", href: "/guider/ordlista" },
   { label: "Helikopter vs drönare", href: "/jamforelser/helikopter-vs-dronare-inspektion" },
   { label: "Om oss", href: "/om-oss" },
   { label: "Kontakt", href: "/kontakt" },

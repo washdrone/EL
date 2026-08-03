@@ -73,7 +73,7 @@ export default function FeltyperGuidePage() {
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
         <JsonLd
-          type="Article"
+          type="TechArticle"
           articleHeadline={"Feltyper i kraftledningar vid drönarinspektion"}
           articleDescription={
             "Vilka fel och skador upptäcks vid drönarinspektion av kraftledningar? Varmgångar, isolatorfel, korrosion, trådbrott och vegetationsröjningsbehov."

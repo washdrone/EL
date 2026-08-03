@@ -89,7 +89,7 @@ export default function TermograferingGuidePage() {
           ]}
         />
         <JsonLd
-          type="Article"
+          type="TechArticle"
           articleHeadline={"Termografering av kraftledningar med drönare"}
           articleDescription={
             "Guide om termografering av kraftledningar och elnät med drönare. Identifiera varmgångar, kontaktmotstånd och dolda fel. Radiometrisk värmekamera."

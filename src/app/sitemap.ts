@@ -74,6 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/guider/upphandling-dronareinspektion", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/guider/feltyper-kraftledningar", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/guider/komponenter-elnat", priority: 0.8, changeFrequency: "monthly" as const },
+    { path: "/guider/ordlista", priority: 0.7, changeFrequency: "monthly" as const },
 
     // Comparisons
     { path: "/jamforelser/helikopter-vs-dronare-inspektion", priority: 0.8, changeFrequency: "monthly" as const },
