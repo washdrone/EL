@@ -73,7 +73,7 @@ export default function BvlosGuidePage() {
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
         <JsonLd
-          type="Article"
+          type="TechArticle"
           articleHeadline={"BVLOS-inspektion av elnät — guide och regler"}
           articleDescription={
             "Guide om BVLOS-inspektion av kraftledningar och elnät. Tillstånd, teknik, riskbedömning (SORA/PDRA) och tillämpningar. Inspektion bortom synhåll."

@@ -93,6 +93,14 @@ export default function ExempelrapportPage() {
         type="BreadcrumbList"
         breadcrumbs={[{ name: "Exempelrapport", href: "/exempelrapport" }]}
       />
+      {exampleFindings.map((finding) => (
+        <JsonLd
+          key={finding.image}
+          type="ImageObject"
+          imagePath={finding.image}
+          imageCaption={finding.imageAlt}
+        />
+      ))}
 
       <section className="gradient-hero py-16 sm:py-20">
         <div className="container-section text-center">
@@ -143,7 +151,8 @@ export default function ExempelrapportPage() {
             <h2 className="heading-2">Exempel på fyndkort</h2>
             <p className="body-text mt-4">
               Varje fynd dokumenteras med foto, GPS-koordinat, klassificering
-              och åtgärdsrekommendation. Nedan visas anonymiserade exempel.
+              och åtgärdsrekommendation. Nedan visas anonymiserade exempel —
+              fotona är tagna vid GridDrones egna inspektioner.
             </p>
           </div>
           <div className="mx-auto mt-12 grid max-w-4xl gap-6 sm:grid-cols-2">

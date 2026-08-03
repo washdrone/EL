@@ -19,7 +19,7 @@ export default function HeroSection() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/kraftledningar.png"
+          poster="/images/kraftledningar-poster.jpg"
           className="h-full w-full object-cover"
         >
           <source src="/video/Drone_inspection_power_lines_summer_322cb98d5e.mp4" type="video/mp4" />

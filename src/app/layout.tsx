@@ -87,6 +87,7 @@ export default function RootLayout({
         {children}
         {GA_MEASUREMENT_ID && (
           <>
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
             {/* Google Consent Mode v2 – must run before gtag.js loads */}
             <Script id="consent-default" strategy="beforeInteractive">
               {`

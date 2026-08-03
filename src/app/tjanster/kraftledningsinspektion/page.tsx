@@ -530,6 +530,11 @@ export default function HubPage() {
               <p className="mt-2 text-sm text-surface-500">Vad ni bör tänka på vid upphandling av drönarinspektion — kravspec, metodik och leveransformat.</p>
               <span className="mt-3 inline-block text-sm font-medium text-brand-600">Läs guiden →</span>
             </Link>
+            <Link href="/tjanster/kraftledningsinspektion/case" className="card group p-6 transition-all hover:border-brand-200 hover:shadow-md">
+              <h3 className="text-base font-semibold text-surface-900 group-hover:text-brand-700">Referensuppdrag</h3>
+              <p className="mt-2 text-sm text-surface-500">Exempel på genomförda inspektionsuppdrag — omfattning, metod och leveranser.</p>
+              <span className="mt-3 inline-block text-sm font-medium text-brand-600">Se referensuppdrag →</span>
+            </Link>
           </div>
         </div>
       </section>

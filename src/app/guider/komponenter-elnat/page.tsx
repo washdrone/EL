@@ -68,7 +68,7 @@ export default function KomponenterGuidePage() {
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
         <JsonLd
-          type="Article"
+          type="TechArticle"
           articleHeadline={"Komponenter i elnät — vad inspekteras med drönare?"}
           articleDescription={
             "Vilka komponenter inspekteras vid drönarinspektion av elnät? Stolpar, isolatorer, ledningslinor, traverser, fästen, topplinor och ledningsgata."

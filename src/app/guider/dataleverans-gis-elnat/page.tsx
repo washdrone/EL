@@ -78,7 +78,7 @@ export default function DataleveransGuidePage() {
         />
         <JsonLd type="FAQPage" faqItems={faqItems} />
         <JsonLd
-          type="Article"
+          type="TechArticle"
           articleHeadline={"Dataleverans och GIS vid drönarinspektion av elnät"}
           articleDescription={
             "Hur inspektionsdata från drönarinspektion levereras i GIS-format. GeoTIFF, shapefiler, SWEREF99 TM och integration med nätförvaltningssystem."

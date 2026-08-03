@@ -63,6 +63,12 @@ const guides = [
     description:
       "Kravspec, utvärderingskriterier, leveransformat och avtalsupplägg för nätägare.",
   },
+  {
+    label: "Ordlista",
+    href: "/guider/ordlista",
+    description:
+      "Tekniska termer förklarade — BVLOS, LiDAR, punktmoln, ställverk, tillståndsbaserat underhåll med mera.",
+  },
 ];
 
 export default function GuiderPage() {
@@ -99,8 +105,8 @@ export default function GuiderPage() {
             <div className="section-intro">
               <h2 className="heading-2">Alla guider</h2>
               <p className="body-text mt-4">
-                Sju guider som täcker hela kedjan — från teknik och regelverk
-                till dataleverans och upphandling.
+                Guider och ordlista som täcker hela kedjan — från teknik och
+                regelverk till dataleverans och upphandling.
               </p>
             </div>
             <div className="mx-auto mt-12 grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">

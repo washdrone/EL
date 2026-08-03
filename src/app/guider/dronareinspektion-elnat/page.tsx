@@ -80,7 +80,7 @@ export default function DroneInspectionGuidePage() {
           ]}
         />
         <JsonLd
-          type="Article"
+          type="TechArticle"
           articleHeadline={"Vad är drönarinspektion av elnät? Komplett guide"}
           articleDescription={
             "Lär dig hur drönarinspektion av elnät fungerar, vilka fel som upptäcks, vilken utrustning som används och hur data levereras. Guide för nätägare och energibolag."

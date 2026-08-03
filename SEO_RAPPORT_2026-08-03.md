@@ -106,3 +106,74 @@ Rekommendation 1 är nu implementerad:
 2. **`sameAs` i Organization-schemat** när företagets officiella profiler (LinkedIn m.m.) bekräftats.
 3. **Indexsida för `/jamforelser`** när fler jämförelsesidor finns.
 4. Efter deploy: kör *Verifiera korrigering* i GSC för breadcrumb-felet (Förbättringar → Menysökvägar) samt testa några sidor i [Rich Results Test](https://search.google.com/test/rich-results). Detta kräver inloggning i ert GSC-konto och kan inte göras härifrån.
+
+---
+
+# Runda 3 (samma dag): AEO/AI-optimering, E-E-A-T-grund och prestanda
+
+**Omfattning:** TechArticle, DefinedTermSet-ordlista, ImageObject, orphan-fix, LCP-optimering, konkurrentöversikt. Verifierat: 55 sidor, 230 JSON-LD-block — 0 fel, 0 varningar. Alla sidor nås inom 3 klick.
+
+## Genomfört
+
+| Åtgärd | Varför | Förväntad effekt |
+|---|---|---|
+| `Article` → `TechArticle` på alla 7 guider | Guiderna är tekniska instruktionsartiklar; TechArticle är den mer precisa schema-typen | Bättre klassificering i Google och AI-system; starkare signal om teknisk auktoritet |
+| Ny sida **/guider/ordlista** med `DefinedTermSet`/`DefinedTerm`-schema (35 termer i 5 kategorier) | Täcker semantiska luckor ur ämnesklustret (transmissionsnät, regionnät, lokalnät, ställverk, isolator, travers, topplina, punktmoln, fotogrammetri, digital tvilling, ortofoto, tillståndsbaserat underhåll m.fl.) med maskinläsbara definitioner | AI-assistenter citerar helst källor med tydliga definitioner — detta är sidtypen som ChatGPT/Perplexity/Gemini plockar svar ur; stärker topisk auktoritet för hela domänen |
+| `image` i Article/TechArticle som `ImageObject` med dimensioner; Organization-`logo` som `ImageObject` | Googles rekommenderade format | Robustare rich results-berättigande |
+| Orphan-fix: `/tjanster/kraftledningsinspektion/case` länkas nu från föräldersidan | Sidan saknade helt inlänkar → risk för "Discovered – currently not indexed" | Sidan crawlas och indexeras normalt |
+| Hero-videons poster: 3,4 MB PNG → 300 KB optimerad JPEG (`kraftledningar-poster.jpg`) | `<video poster>` optimeras INTE av next/image — den laddades rå och är LCP-kritisk på startsidan | Väsentligt snabbare LCP på startsidan, särskilt mobilt |
+| Logotypfil nedskalad 3860px/4,9 MB → 1200px/264 KB (samma URL) | Hämtas rå av crawlers via Organization-schemat | Snabbare crawl, mindre bandbredd |
+| `preconnect` till googletagmanager.com (endast när GA är aktivt) | Sparar anslutningstid för analytics-skriptet | Marginellt bättre INP/nätverksprioritering |
+| Ordlistan inlänkad från guider-hubben, sidfoten (alla sidor) och sitemap | Crawlbarhet + länkkapital | Snabb indexering av ny sida |
+
+## Konkurrentöversikt (webbsökning 2026-08-03)
+
+Identifierade aktörer inom drönarbaserad elnätsinspektion i Sverige: **Airpelago** (automatiserade drönare, BVLOS, egen mjukvara), **ONE Nordic** (etablerad kraftaktör med drönartjänster och termografi), **Vattenfall Services**, **Copture**, **ACRE Skogstjänst**, **Swedron**, **Droneteknik**, **Besiktagruppen** — samt nätägarnas egna program (E.ON, Ellevio, Svenska kraftnät).
+
+**Bedömning:** konkurrenternas publika sidor är i regel enstaka tjänstesidor utan kunskapskluster, utan strukturerad data i GridDrones omfattning och utan ordlista/guide-arkitektur. GridDrone har nu ett tekniskt och innehållsmässigt försprång i SEO/AEO-infrastruktur. Konkurrenterna är starkare på: **verkliga referenskunder med namn, års branscherfarenhet, riktiga projektbilder** — allt E-E-A-T-material som kräver verifierade uppgifter (se nedan).
+
+## Innehållsinventering (tunt innehåll)
+
+Tunnaste sidorna (ord, inkl. navigation): `/tjanster/kraftledningsinspektion/case` (229), `/kontakt` (244), platssidorna (~317–330). Hubbar och kontakt är korta av naturliga skäl. **Medvetet EJ åtgärdat med text:** att fylla på med generisk AI-text bryter mot projektregeln och skadar E-E-A-T. Rätt åtgärd är verifierat förstahandsmaterial (nedan).
+
+## Kräver ägarens verifierade uppgifter (störst kvarvarande hävstång)
+
+1. **Referensuppdrag med substans** — verkliga uppdrag (även anonymiserade): omfattning, metod, antal fynd, leveransformat + riktiga inspektionsbilder. Störst E-E-A-T-effekt av allt.
+2. **Riktiga inspektionsbilder** på tjänstesidorna (termiska + visuella exempel från egna uppdrag).
+3. **LocalBusiness-schema** — kräver bekräftad besöksadress + telefon.
+4. **`sameAs`** — bekräftade företagsprofiler (LinkedIn m.m.).
+5. **Team/kompetens på Om oss** — piloternas certifikat, utbildning, bakgrund (verifierat).
+6. **Certifieringssidan** — dokumenterade tillstånd/certifikat med utfärdare.
+7. **Hero-videon (12 MB)** — bör komprimeras till ca 2–4 MB (t.ex. H.264 CRF 28, 1080p). Kräver ffmpeg/videoverktyg; ändrar inte utseendet bakom 70 % mörk overlay.
+
+## Medvetet inte implementerat
+
+- **SearchAction/SiteNavigationElement** — sajten har ingen sökfunktion; SearchAction utan sökresultatsida är ogiltigt.
+- **VideoObject** för hero-videon — dekorativ bakgrundsvideo utan eget innehållsvärde; VideoObject kräver name/description/thumbnail/uploadDate och skulle ge varningar utan nytta.
+- **Textutfyllnad på tunna sidor** — se ovan.
+
+## Prioriterad handlingsplan framåt
+
+1. **Nu:** klicka *Verifiera korrigering* i GSC (Menysökvägar) när deployen är live.
+2. **Vecka 1–2:** samla ägarens verifierade material (punkt 1–6 ovan); publicera 1–2 riktiga referensuppdrag.
+3. **Månad 1:** komprimera hero-videon; lägg till riktiga inspektionsbilder på tjänstesidor.
+4. **Löpande:** 1–2 nya guide-/bloggartiklar per månad ur ämnesklustret (förslag: "Ställverk och transformatorstationer – inspektionsguide", "Digital tvilling av elnät", "Tillståndsbaserat underhåll i praktiken") — alltid byggda på verklig projekterfarenhet.
+5. **Uppföljning:** GSC-täckningsrapport efter 2–4 veckor; följ AI-citeringar genom att ställa branschfrågor till ChatGPT/Perplexity/Gemini och notera källor.
+
+---
+
+# Runda 4 (samma dag): ägarverifierade E-E-A-T-åtgärder + videokomprimering
+
+Ägaren har besvarat verifieringsfrågorna. Utfall:
+
+| Fråga | Svar | Åtgärd |
+|---|---|---|
+| Besöksadress + telefon? | Nej, inte nu | LocalBusiness-schema läggs INTE till (kräver adress/telefon). Organization behålls. |
+| Officiella profiler (LinkedIn m.m.)? | Finns inga än | `sameAs` utelämnas tills profiler skapats. |
+| Är bilderna från egna uppdrag? | **Ja – verifierat** | Fotona på exempelrapportsidan (skadad isolator, vegetationsintrång, korrosion traversfot, fågelbo) har nu `ImageObject`-schema med `creator`/`copyrightHolder`/`creditText` = GridDrone + synlig proveniensrad "fotona är tagna vid GridDrones egna inspektioner". Stark E-E-A-T/AI-citeringssignal: originalbilder med maskinläsbar upphovsangivelse. |
+| Stämmer certifieringssidans påståenden? | **Ja, allt stämmer** | `hasCredential` tillagt i Organization-schemat: EASA-utbildning för drönarpiloter, BVLOS-behörighet, behörighet för mörkerflygning. (Ansvarsförsäkring nämns i text; schema.org saknar lämplig egenskap för försäkring.) |
+| Hero-video 12 MB | — | Komprimerad med ffmpeg (H.264 CRF 31, 1080p, ljudspår borttaget, faststart): **12 MB → 2,7 MB (−78 %)**. Bildkvalitet kontrollerad bildruta för bildruta-nivå; skillnaden är osynlig bakom sidans mörka overlay. |
+
+**Omverifierat:** 55 sidor, 234 JSON-LD-block — 0 fel, 0 varningar. Build + lint gröna.
+
+**Kvar på väntelistan (aktiveras så fort uppgifter finns):** LocalBusiness (adress+telefon), `sameAs` (profil-URL:er), publicerade referensuppdrag med substans (ägaren har ännu inte pekat ut något uppdrag som kan publiceras).

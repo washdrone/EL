@@ -28,7 +28,10 @@ interface JsonLdProps {
     | "WebSite"
     | "HowTo"
     | "Article"
-    | "ItemList";
+    | "TechArticle"
+    | "ItemList"
+    | "DefinedTermSet"
+    | "ImageObject";
   breadcrumbs?: JsonLdBreadcrumb[];
   faqItems?: FAQItem[];
   serviceName?: string;
@@ -44,6 +47,11 @@ interface JsonLdProps {
   dateModified?: string;
   itemListName?: string;
   itemListItems?: ItemListEntry[];
+  definedTermSetName?: string;
+  definedTermSetPath?: string;
+  definedTerms?: { name: string; description: string }[];
+  imagePath?: string;
+  imageCaption?: string;
 }
 
 export default function JsonLd({
@@ -63,6 +71,11 @@ export default function JsonLd({
   dateModified,
   itemListName,
   itemListItems,
+  definedTermSetName,
+  definedTermSetPath,
+  definedTerms,
+  imagePath,
+  imageCaption,
 }: JsonLdProps) {
   let schema: Record<string, unknown>;
 
@@ -74,14 +87,31 @@ export default function JsonLd({
         "@id": `${SITE_URL}#organization`,
         name: COMPANY_NAME,
         url: SITE_URL,
-        logo: `${SITE_URL}/images/Logotyp.png`,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/images/Logotyp.png`,
+        },
         email: CONTACT_EMAIL,
         description: `${COMPANY_NAME} – professionell drönarinspektion av kraftledningar, elnät och energiinfrastruktur i Sverige.`,
         areaServed: {
           "@type": "Country",
           name: "Sweden",
         },
-        // hasCredential: Borttaget – lägg till verifierade credentials här när de bekräftats.
+        // Verifierat av ägaren 2026-08-03: EASA-utbildning, BVLOS, mörkerflyg.
+        hasCredential: [
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "EASA-utbildning för drönarpiloter",
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "BVLOS-behörighet (flygning bortom synhåll)",
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            name: "Behörighet för mörkerflygning",
+          },
+        ],
         knowsAbout: [
           "Kraftledningsinspektion",
           "Drönarinspektion elnät",
@@ -189,9 +219,10 @@ export default function JsonLd({
       break;
 
     case "Article":
+    case "TechArticle":
       schema = {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": type,
         "@id": `${SITE_URL}${articlePath || ""}#article`,
         headline: articleHeadline || "",
         description: articleDescription || "",
@@ -201,7 +232,12 @@ export default function JsonLd({
           "@id": `${SITE_URL}${articlePath || ""}`,
         },
         inLanguage: "sv-SE",
-        image: `${SITE_URL}/opengraph-image`,
+        image: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/opengraph-image`,
+          width: 1200,
+          height: 630,
+        },
         ...(datePublished ? { datePublished } : {}),
         ...(dateModified ? { dateModified } : {}),
         author: {
@@ -216,6 +252,45 @@ export default function JsonLd({
           name: COMPANY_NAME,
           url: SITE_URL,
         },
+      };
+      break;
+
+    // Endast för bilder från GridDrones egna inspektioner (verifierat av ägaren).
+    case "ImageObject":
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "ImageObject",
+        contentUrl: `${SITE_URL}${imagePath || ""}`,
+        caption: imageCaption || "",
+        creditText: COMPANY_NAME,
+        creator: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}#organization`,
+          name: COMPANY_NAME,
+        },
+        copyrightHolder: {
+          "@type": "Organization",
+          "@id": `${SITE_URL}#organization`,
+          name: COMPANY_NAME,
+        },
+      };
+      break;
+
+    case "DefinedTermSet":
+      schema = {
+        "@context": "https://schema.org",
+        "@type": "DefinedTermSet",
+        "@id": `${SITE_URL}${definedTermSetPath || ""}#termset`,
+        name: definedTermSetName || "",
+        url: `${SITE_URL}${definedTermSetPath || ""}`,
+        inLanguage: "sv-SE",
+        hasDefinedTerm:
+          definedTerms?.map((term) => ({
+            "@type": "DefinedTerm",
+            name: term.name,
+            description: term.description,
+            inDefinedTermSet: `${SITE_URL}${definedTermSetPath || ""}#termset`,
+          })) || [],
       };
       break;
 
