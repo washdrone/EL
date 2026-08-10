@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { events } from "@/lib/analytics";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 interface FormData {
   company: string;
@@ -12,6 +13,8 @@ interface FormData {
   scope: string;
   timeframe: string;
   message: string;
+  /** Honeypot – dold för besökare, fylls bara i av bottar. */
+  website: string;
 }
 
 const initialForm: FormData = {
@@ -23,7 +26,52 @@ const initialForm: FormData = {
   scope: "",
   timeframe: "",
   message: "",
+  website: "",
 };
+
+const inspectionLabels: Record<string, string> = {
+  arlig: "Årlig översiktsinspektion",
+  detaljerad: "Detaljerad komponentinspektion",
+  storm: "Storm- / akutinspektion",
+  lidar: "LiDAR / kartläggning (tillägg)",
+  annan: "Annat / vet ej",
+};
+
+const timeframeLabels: Record<string, string> = {
+  akut: "Akut (inom dagar)",
+  "1-4veckor": "1–4 veckor",
+  "1-3manader": "1–3 månader",
+  planering: "Under planering",
+  upphandling: "Inför upphandling",
+};
+
+/**
+ * Reservväg: om utskicket fallerar ska besökaren inte förlora sin text.
+ * Bygger en mailto-länk med allt ifyllt innehåll.
+ */
+function buildMailtoHref(form: FormData): string {
+  const rows: [string, string][] = [
+    ["Företag", form.company],
+    ["Kontaktperson", form.contact],
+    ["E-post", form.email],
+    ["Region / nätområde", form.region],
+    ["Typ av inspektion", inspectionLabels[form.inspectionType] || form.inspectionType],
+    ["Omfattning", form.scope],
+    ["Önskad tidsram", timeframeLabels[form.timeframe] || form.timeframe],
+    ["Meddelande", form.message],
+  ];
+
+  const body = rows
+    .filter(([, value]) => value)
+    .map(([label, value]) => `${label}: ${value}`)
+    .join("\n");
+
+  const subject = `Förfrågan${form.company ? `: ${form.company}` : ""}`;
+
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+    subject
+  )}&body=${encodeURIComponent(body)}`;
+}
 
 const inputClass =
   "mt-1.5 block min-h-[44px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-surface-900 transition-colors placeholder:text-surface-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100";
@@ -37,7 +85,7 @@ export default function LeadForm() {
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) {
-    if (!hasTrackedStart.current) {
+    if (!hasTrackedStart.current && e.target.name !== "website") {
       events.formStart();
       hasTrackedStart.current = true;
     }
@@ -123,9 +171,30 @@ export default function LeadForm() {
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
       {status === "error" && (
         <div className="border border-red-200 bg-red-50 p-4 text-sm text-red-700" role="alert">
-          {errorMsg}
+          <p>{errorMsg}</p>
+          <p className="mt-2">
+            Du kan också{" "}
+            <a href={buildMailtoHref(form)} className="font-medium underline">
+              skicka förfrågan som e-post
+            </a>{" "}
+            – dina uppgifter följer med i mejlet.
+          </p>
         </div>
       )}
+
+      {/* Honeypot: dold för besökare och skärmläsare, synlig för bottar. */}
+      <div className="hidden" aria-hidden="true">
+        <label htmlFor="website">Lämna detta fält tomt</label>
+        <input
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={form.website}
+          onChange={handleChange}
+        />
+      </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
