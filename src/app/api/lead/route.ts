@@ -156,6 +156,7 @@ export async function POST(request: NextRequest) {
       html: buildEmailHtml(body),
       text: buildEmailText(body),
       replyTo: body.email,
+      fields: leadFields(body),
       data: {
         company: body.company,
         contact: body.contact,

@@ -113,15 +113,47 @@ if (env("LEAD_WEBHOOK_URL")) {
 
 console.log(
   env("RESEND_API_KEY")
-    ? "Resend: nyckel finns (används som sista reserv)"
+    ? "Resend: nyckel finns (används som reserv)"
     : "Resend: inte konfigurerad"
 );
 
-if (!env("SMTP_HOST") && !env("LEAD_WEBHOOK_URL") && !env("RESEND_API_KEY")) {
-  console.error(
-    "\n✗ Ingen kanal är konfigurerad – formuläret kan inte skicka något. Se .env.example."
-  );
-  process.exit(1);
+/* ---------------------------------------------------------- FormSubmit --- */
+
+if (env("FORMSUBMIT_DISABLED") === "true") {
+  console.log("FormSubmit: avstängd (FORMSUBMIT_DISABLED=true)");
+} else {
+  const target = env("FORMSUBMIT_TOKEN") || to;
+  console.log(`FormSubmit: aktiv utan konfiguration, skickar till ${target}`);
+
+  if (send) {
+    const base = env("FORMSUBMIT_BASE_URL") || "https://formsubmit.co/ajax";
+    try {
+      const res = await fetch(`${base}/${encodeURIComponent(target)}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: "Testutskick från griddrone.se",
+          _captcha: "false",
+          _template: "table",
+          Meddelande: "Detta är ett testutskick från npm run mail:test.",
+        }),
+      });
+      const result = await res.json().catch(() => null);
+      if (!res.ok || String(result?.success) === "false") {
+        throw new Error(result?.message || `svarade ${res.status}`);
+      }
+      console.log(`  ✓ ${result?.message || "OK"}`);
+      console.log(
+        `  → Första gången skickar tjänsten ett aktiveringsmejl till ${target}.\n` +
+          "    Klicka på länken i det mejlet, annars levereras inga leads."
+      );
+    } catch (err) {
+      failures++;
+      console.error(`  ✗ ${err.message}`);
+    }
+  } else {
+    console.log("  – kör med --send för att testa utskicket");
+  }
 }
 
 process.exit(failures > 0 ? 1 : 0);

@@ -11,8 +11,11 @@ import { COMPANY_NAME, CONTACT_EMAIL } from "@/lib/constants";
  *   2. Webhook     – POST:ar leadet som JSON till valfri endpoint
  *                    (Zapier, Make, n8n, Slack, Google Apps Script).
  *   3. Resend      – behålls som valfri reserv om API-nyckeln fungerar igen.
+ *   4. FormSubmit  – kräver inga uppgifter alls och är därför alltid aktiv
+ *                    som sista utväg, så formuläret fungerar även när inget
+ *                    är konfigurerat.
  *
- * Varje kanal aktiveras enbart av att dess miljövariabler är satta.
+ * Kanal 1–3 aktiveras enbart av att deras miljövariabler är satta.
  */
 
 export interface MailPayload {
@@ -23,6 +26,8 @@ export interface MailPayload {
   replyTo?: string;
   /** Rådata, används av webhook-kanalen. */
   data: Record<string, unknown>;
+  /** Fälten med svenska etiketter, i visningsordning. */
+  fields: [string, string][];
 }
 
 export interface MailResult {
@@ -172,10 +177,81 @@ function resendChannel(): Channel | null {
   };
 }
 
+/* ---------------------------------------------------------- FormSubmit */
+
+/**
+ * FormSubmit vidarebefordrar formulärinlägg till en e-postadress utan konto
+ * eller API-nyckel. Kräver därför ingen konfiguration – men första gången en
+ * ny mottagaradress används skickar tjänsten ett aktiveringsmejl dit som
+ * måste bekräftas innan leads börjar levereras.
+ *
+ * Sätt FORMSUBMIT_DISABLED=true för att stänga av kanalen.
+ */
+function formsubmitChannel(): Channel | null {
+  if (env("FORMSUBMIT_DISABLED") === "true") return null;
+
+  // Tjänsten tar en mottagare i URL:en. FORMSUBMIT_TOKEN kan användas i
+  // stället för adressen om man vill slippa exponera den i anropet.
+  const target = env("FORMSUBMIT_TOKEN") || recipients()[0];
+  if (!target) return null;
+
+  return {
+    name: "formsubmit",
+    async send(payload) {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15_000);
+
+      try {
+        // Basadressen är överskrivbar för att kunna testas mot en lokal stub.
+        const baseUrl = env("FORMSUBMIT_BASE_URL") || "https://formsubmit.co/ajax";
+
+        const res = await fetch(
+          `${baseUrl}/${encodeURIComponent(target)}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify({
+              _subject: payload.subject,
+              _replyto: payload.replyTo,
+              _captcha: "false",
+              _template: "table",
+              ...Object.fromEntries(payload.fields),
+            }),
+            signal: controller.signal,
+          }
+        );
+
+        const result = (await res.json().catch(() => null)) as {
+          success?: string | boolean;
+          message?: string;
+        } | null;
+
+        if (!res.ok) {
+          throw new Error(
+            `FormSubmit svarade ${res.status}${
+              result?.message ? `: ${result.message}` : ""
+            }`
+          );
+        }
+
+        // Tjänsten svarar 200 med success:"false" vid t.ex. ej aktiverad adress.
+        if (result && String(result.success) === "false") {
+          throw new Error(result.message || "FormSubmit avvisade utskicket");
+        }
+      } finally {
+        clearTimeout(timeout);
+      }
+    },
+  };
+}
+
 /* ------------------------------------------------------------------ Send */
 
 function channels(): Channel[] {
-  const order = (env("MAIL_CHANNELS") || "smtp,webhook,resend")
+  const order = (env("MAIL_CHANNELS") || "smtp,webhook,resend,formsubmit")
     .split(",")
     .map((name) => name.trim().toLowerCase())
     .filter(Boolean);
@@ -184,6 +260,7 @@ function channels(): Channel[] {
     smtp: smtpChannel,
     webhook: webhookChannel,
     resend: resendChannel,
+    formsubmit: formsubmitChannel,
   };
 
   return order

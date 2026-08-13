@@ -24,15 +24,24 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 Formuläret på `/kontakt` postar till `/api/lead`, som skickar leadet via ett
 leverantörsoberoende lager (`src/lib/mailer.ts`). Kanalerna provas i tur och
-ordning tills en lyckas – du behöver bara sätta upp **en** av dem:
+ordning tills en lyckas:
 
 | Kanal | Miljövariabler | När den passar |
 | --- | --- | --- |
-| `smtp` | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM` | Rekommenderas. Fungerar med valfri befintlig brevlåda (webbhotell, Microsoft 365, Google Workspace) och kräver inget godkännande från en extern tjänst. |
+| `smtp` | `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM` | Bäst i längden. Fungerar med valfri befintlig brevlåda (webbhotell, Microsoft 365, Google Workspace) och skickar från er egen domän. |
 | `webhook` | `LEAD_WEBHOOK_URL`, `LEAD_WEBHOOK_SECRET` | Leads som JSON till Zapier, Make, n8n, Slack eller ett kalkylark. |
 | `resend` | `RESEND_API_KEY`, `RESEND_FROM` | Valfri reserv om Resend-nyckeln fungerar. |
+| `formsubmit` | *(inga)* | **Standard.** Kräver varken konto eller nyckel, så formuläret fungerar utan konfiguration. |
 
-Ordningen styrs av `MAIL_CHANNELS` (standard: `smtp,webhook,resend`).
+**Ingen konfiguration krävs för att formuläret ska fungera.** Utan
+miljövariabler går leads via FormSubmit till adressen i `CONTACT_EMAIL`.
+Första gången en ny mottagaradress används skickar tjänsten ett
+aktiveringsmejl dit som måste bekräftas innan leads levereras – kör
+`npm run mail:test -- --send` för att framkalla det mejlet direkt i stället
+för att en riktig förfrågan ska bli aktiveringen. Observera att leads då
+passerar en tredjepartstjänst; vill man undvika det sätter man upp SMTP.
+
+Ordningen styrs av `MAIL_CHANNELS` (standard: `smtp,webhook,resend,formsubmit`).
 Mottagare styrs av `LEAD_TO_EMAIL` (kommaseparerad lista); utan den används
 `CONTACT_EMAIL` i `src/lib/constants.ts`. Alla variabler beskrivs i
 `.env.example`.
