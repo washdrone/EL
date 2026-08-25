@@ -48,8 +48,11 @@ if (env("SMTP_HOST") && env("SMTP_USER") && env("SMTP_PASS")) {
     host: env("SMTP_HOST"),
     port,
     secure,
+    requireTLS: !secure, // samma krav som i src/lib/mailer.ts
     auth: { user: env("SMTP_USER"), pass: env("SMTP_PASS") },
     connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 15_000,
   });
 
   try {

@@ -90,10 +90,15 @@ function smtpChannel(): Channel | null {
         host,
         port,
         secure,
+        // På 587/25 krävs STARTTLS – annars vägrar vi skicka hellre än att
+        // låta lösenord och kunduppgifter gå i klartext.
+        requireTLS: !secure,
         auth: { user, pass },
-        connectionTimeout: 10_000,
-        greetingTimeout: 10_000,
-        socketTimeout: 15_000,
+        // Snålt tilltagna så att hela kanalkedjan hinner klart innan
+        // Vercels funktionstidsgräns slår till.
+        connectionTimeout: 7_000,
+        greetingTimeout: 7_000,
+        socketTimeout: 10_000,
       });
 
       await transporter.sendMail({
@@ -199,7 +204,7 @@ function formsubmitChannel(): Channel | null {
     name: "formsubmit",
     async send(payload) {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 15_000);
+      const timeout = setTimeout(() => controller.abort(), 10_000);
 
       try {
         // Basadressen är överskrivbar för att kunna testas mot en lokal stub.

@@ -46,6 +46,26 @@ Mottagare styrs av `LEAD_TO_EMAIL` (kommaseparerad lista); utan den används
 `CONTACT_EMAIL` i `src/lib/constants.ts`. Alla variabler beskrivs i
 `.env.example`.
 
+### SMTP via Loopia
+
+`griddrone.se` ligger hos Loopia. Sätt dessa i Vercel → Project Settings →
+Environment Variables (Production, Preview och Development):
+
+| Variabel | Värde |
+| --- | --- |
+| `SMTP_HOST` | `mailcluster.loopia.se` |
+| `SMTP_PORT` | `587` |
+| `SMTP_USER` | `info@griddrone.se` (alltid hela adressen) |
+| `SMTP_PASS` | brevlådans lösenord |
+
+Port 465 fungerar också – sätt då även `SMTP_SECURE=true`. Anslutningen
+kräver STARTTLS respektive TLS; okrypterade anslutningar avvisas.
+Källa: [Loopias SupportWiki om e-postservrar](https://support.loopia.se/wiki/e-postservrar/).
+
+När SMTP är satt används det före FormSubmit automatiskt – ingen kodändring
+behövs. Vill du stänga av tredjepartskanalen helt sätter du
+`FORMSUBMIT_DISABLED=true`.
+
 ### Hemligheter
 
 `.env` är incheckad i repot och repot är publikt – lägg därför **aldrig**
