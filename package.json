@@ -7,11 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seo:audit:live": "node scripts/seo-audit-live.mjs"
+    "seo:audit:live": "node scripts/seo-audit-live.mjs",
+    "mail:test": "node scripts/mail-test.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.577.0",
     "next": "14.2.35",
+    "nodemailer": "^9.0.5",
     "react": "^18",
     "react-dom": "^18",
     "resend": "^6.9.3"
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@playwright/test": "^1.56.1",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
