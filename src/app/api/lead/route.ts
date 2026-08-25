@@ -4,6 +4,8 @@ import { sendLeadMail } from "@/lib/mailer";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+// Utrymme för att hinna prova flera kanaler innan Vercel avbryter anropet.
+export const maxDuration = 30;
 
 interface LeadData {
   company: string;
