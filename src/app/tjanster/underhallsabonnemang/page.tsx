@@ -85,6 +85,7 @@ export default function UnderhallsabonnemangPage() {
       <JsonLd type="FAQPage" faqItems={faqItems} />
 
       <Hero
+        image={{ src: "/images/services/underhallsanalys.webp", alt: "Granskning av en lodbild över en ledningsgata på bildskärm" }}
         title="Prediktivt underhållsabonnemang — schemalagd inspektion & trendanalys"
         subtitle="Löpande inspektion"
         description="Årsbaserat inspektionsavtal med garanterad frekvens. GridDrone lagrar historisk inspektionsdata och levererar trendanalys — identifiera försämring innan fel uppstår."

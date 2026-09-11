@@ -100,6 +100,7 @@ export default function VindkraftinspektionPage() {
       />
 
       <Hero
+        image={{ src: "/images/services/rotorblad.webp", alt: "Rotorbladets yta och framkant med synligt ytslitage" }}
         title="Vindkraftinspektion med drönare"
         subtitle="Vindkraftinspektion"
         description="Professionell inspektion av vindkraftverk med drönare. Vi dokumenterar rotorblad, torn, nacelle och åskledare — snabbare och säkrare än manuell klättring."

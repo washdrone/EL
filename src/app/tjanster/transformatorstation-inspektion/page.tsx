@@ -111,6 +111,7 @@ export default function TransformatorstationInspektionPage() {
       />
 
       <Hero
+        image={{ src: "/images/services/stationsdetalj.webp", alt: "Detaljvy av transformatorns genomföringar och elektriska anslutningar" }}
         title="Drönarinspektion av transformatorstationer"
         subtitle="Transformatorstation inspektion"
         description="Säker och effektiv inspektion av transformatorstationer med drönare. Visuell och termisk kontroll av isolatorer, kablar, transformatorer och strukturer utan att personal behöver vistas nära spänningsförande delar."

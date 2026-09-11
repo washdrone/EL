@@ -102,6 +102,7 @@ export default function StormskadeinspektionPage() {
       />
 
       <Hero
+        image={{ src: "/images/services/stormskador.webp", alt: "Vindfällda träd vid en ledningsgata sedda uppifrån" }}
         title="Stormskadeinspektion med drönare — snabb skadeöversikt"
         subtitle="Akut stormskadeinspektion"
         description="Akut skadekartläggning av elnät och kraftledningar efter storm, orkan eller exceptionella väderförhållanden. Prioritering av skadelägen för snabbast möjliga återuppbyggnad."

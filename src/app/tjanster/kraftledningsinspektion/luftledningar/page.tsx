@@ -48,6 +48,7 @@ export default function LuftledningarPage() {
       />
 
       <Hero
+        image={{ src: "/images/services/isolator.webp", alt: "Isolatorkedja med infästning och ledare i detalj" }}
         title="Inspektion av luftledningar – systematiskt och spårbart"
         subtitle="Luftledningar"
         description="Detaljerad dokumentation av stolpar, isolatorer, traverser, linor och ledningsgata. Utan klättring, utan driftstopp – med standardiserad och repeterbar metodik."

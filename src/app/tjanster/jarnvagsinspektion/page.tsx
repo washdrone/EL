@@ -92,6 +92,7 @@ export default function JarnvagsinspektionPage() {
       <JsonLd type="FAQPage" faqItems={faqItems} />
 
       <Hero
+        image={{ src: "/images/services/jarnvag.webp", alt: "Lodvy över järnvägsspår, kontaktledning, banvall och diken" }}
         title="Inspektion av järnvägskontaktledningar med drönare"
         subtitle="Järnväg & kontaktledning"
         description="Inspektion av kontaktledningssystem längs järnväg — hängare, bärlina, kontakttråd, isolatorer och fästanordningar. Utförs utan trafikstörning vid samordnade tidsfönster."
