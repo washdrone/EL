@@ -13,6 +13,7 @@ export default function ProofSection() {
               alt="Jämförelse mellan standardfoto och termisk bild av en skadad isolator med markerad avvikelse"
               width={800}
               height={600}
+              sizes="(min-width: 1280px) 560px, (min-width: 1024px) 45vw, 100vw"
               className="w-full h-full object-cover"
             />
             {/* Left accent */}

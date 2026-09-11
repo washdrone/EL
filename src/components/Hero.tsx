@@ -84,7 +84,7 @@ export default function Hero({
                 alt={image.alt}
                 width={1536}
                 height={1024}
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                sizes="(min-width: 1280px) 584px, (min-width: 1024px) 46vw, calc(100vw - 48px)"
                 className="h-auto w-full"
                 priority
               />

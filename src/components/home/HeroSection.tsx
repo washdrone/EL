@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import HeroVideo from "./HeroVideo";
 
 const infoCards = [
   { title: "RGB + Termografi", subtitle: "Visuell & termisk analys" },
@@ -12,20 +13,7 @@ export default function HeroSection() {
   return (
     <section className="relative bg-navy-950 overflow-hidden">
       {/* Background video */}
-      <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          poster="/images/kraftledningar-poster.jpg"
-          className="h-full w-full object-cover"
-        >
-          <source src="/video/Drone_inspection_power_lines_summer_322cb98d5e.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-navy-950/70" />
-      </div>
+      <HeroVideo />
 
       {/* Grid pattern */}
       <div className="absolute inset-0" aria-hidden="true">
