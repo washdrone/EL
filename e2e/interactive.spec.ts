@@ -2,9 +2,11 @@ import { test, expect } from "@playwright/test";
 
 test.describe("FAQ accordion", () => {
   test("FAQ items expand and collapse", async ({ page }) => {
-    await page.goto("/tjanster/kraftledningsinspektion/faq", { waitUntil: "domcontentloaded" });
+    await page.goto("/tjanster/kraftledningsinspektion/faq", {
+      waitUntil: "domcontentloaded",
+    });
 
-    const faqButtons = page.locator('button[aria-expanded]');
+    const faqButtons = page.locator("button[aria-expanded]");
     const count = await faqButtons.count();
 
     if (count > 0) {
@@ -23,46 +25,43 @@ test.describe("FAQ accordion", () => {
   });
 });
 
-test.describe("ROI Calculator", () => {
-  test("calculator inputs are interactive", async ({ page }) => {
-    await page.goto("/roi-kalkylator", { waitUntil: "domcontentloaded" });
-
-    const kmInput = page.locator("#km");
-    await kmInput.scrollIntoViewIfNeeded();
-    await expect(kmInput).toBeVisible();
-    await kmInput.fill("200");
-    await expect(kmInput).toHaveValue("200");
-
-    const methodSelect = page.locator("#method");
-    await expect(methodSelect).toBeVisible();
-    await methodSelect.selectOption("manuell");
-    await expect(methodSelect).toHaveValue("manuell");
-
-    // Results section should show savings
-    const savingsText = page.locator("text=Uppskattad årlig besparing").first();
-    await expect(savingsText).toBeVisible();
-  });
-
-  test("assumptions accordion toggles", async ({ page }) => {
-    await page.goto("/roi-kalkylator", { waitUntil: "domcontentloaded" });
-
-    const assumptionsBtn = page.locator('button:has-text("Metod och antaganden")');
-    await assumptionsBtn.scrollIntoViewIfNeeded();
-    await expect(assumptionsBtn).toHaveAttribute("aria-expanded", "false");
-
-    await assumptionsBtn.click();
-    await expect(assumptionsBtn).toHaveAttribute("aria-expanded", "true");
-    await expect(page.locator("table").first()).toBeVisible();
+test.describe("Cost comparison", () => {
+  test("uses entered costs including fixed costs and handles a more expensive alternative", async ({
+    page,
+  }) => {
+    await page.goto("/roi-kalkylator");
+    await expect(page.locator("#cost-current")).toHaveValue("");
+    for (const [key, value] of Object.entries({
+      distance: "100",
+      frequency: "2",
+      current: "1000",
+      drone: "1200",
+      currentFixed: "10000",
+      droneFixed: "5000",
+    })) {
+      await page.locator(`#cost-${key}`).fill(value);
+    }
+    await expect(page.getByRole("status")).toContainText("Högre kostnad");
+    await expect(page.getByRole("status")).toContainText(/30\s000/);
+    await page.locator("#cost-frequency").fill("-1");
+    await expect(page.getByRole("status")).not.toContainText(
+      "Beräknad årskostnad",
+    );
   });
 });
 
 test.describe("Sticky CTA", () => {
-  test("sticky CTA appears on mobile after consent", async ({ page, isMobile }) => {
+  test("sticky CTA appears on mobile after consent", async ({
+    page,
+    isMobile,
+  }) => {
     test.skip(!isMobile, "Mobile-only test");
     await page.goto("/", { waitUntil: "domcontentloaded" });
 
     // Set consent to trigger StickyCTA visibility
-    await page.evaluate(() => localStorage.setItem("griddrone_cookie_consent", "accepted"));
+    await page.evaluate(() =>
+      localStorage.setItem("griddrone_cookie_consent", "accepted"),
+    );
 
     // StickyCTA polls localStorage every 500ms, wait for it
     await page.waitForTimeout(1500);
@@ -78,7 +77,9 @@ test.describe("Services section tabs (desktop)", () => {
     await page.goto("/", { waitUntil: "domcontentloaded" });
 
     // Find service buttons
-    const serviceSection = page.locator("section").filter({ hasText: "Heltäckande inspektion" });
+    const serviceSection = page
+      .locator("section")
+      .filter({ hasText: "Heltäckande inspektion" });
     const serviceButtons = serviceSection.locator("button");
     const count = await serviceButtons.count();
 

@@ -21,7 +21,7 @@ export const metadata: Metadata = createPageMetadata({
 
 const reasons = [
   {
-    title: "Renodlat fokus på elnät",
+    title: "Elnät som kärnområde",
     description:
       "Vi är specialiserade på inspektion av kraftledningar, transformatorstationer och tillhörande nätinfrastruktur. Det innebär att vår metodik, utrustning och kompetens är anpassad för elnätsbranschens krav – inte generell drönarfotografering.",
     icon: (
@@ -126,8 +126,7 @@ export default function OmOssPage() {
               >
                 transformatorstationer
               </Link>{" "}
-              och tillhörande nätkomponenter. Genom att fokusera enbart på
-              elnätssektorn kan vi anpassa metodik, sensorer och
+              och tillhörande nätkomponenter. Med elnät som kärnområde kan vi anpassa metodik, sensorer och
               leveransformat efter de specifika behov som nätägare och
               elnätsbolag har.
             </p>

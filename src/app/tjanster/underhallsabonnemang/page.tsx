@@ -88,8 +88,8 @@ export default function UnderhallsabonnemangPage() {
         title="Prediktivt underhållsabonnemang — schemalagd inspektion & trendanalys"
         subtitle="Löpande inspektion"
         description="Årsbaserat inspektionsavtal med garanterad frekvens. GridDrone lagrar historisk inspektionsdata och levererar trendanalys — identifiera försämring innan fel uppstår."
-        primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
+        primaryCta={{ label: "Begär offert", href: "/kontakt?tjanst=abonnemang" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs
@@ -251,7 +251,7 @@ export default function UnderhallsabonnemangPage() {
         </div>
       </section>
 
-      <CTABand primaryHref="/kontakt" secondaryHref="/kontakt" />
+      <CTABand primaryHref="/kontakt?tjanst=abonnemang" secondaryHref="/exempelrapport" secondaryLabel="Se exempelrapport" />
     </>
   );
 }

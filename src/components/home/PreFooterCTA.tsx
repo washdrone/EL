@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function PreFooterCTA() {
   return (
@@ -25,14 +25,14 @@ export default function PreFooterCTA() {
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link href="/kontakt" className="btn-primary-dark">
-              Boka ett inledande möte
+              Begär offert
             </Link>
             <Link
               href="/exempelrapport"
               className="btn-ghost inline-flex items-center gap-2"
             >
-              <Download className="h-4 w-4" />
-              Ladda ner exempelrapport (PDF)
+              <ArrowRight className="h-4 w-4" />
+              Se exempelrapport
             </Link>
           </div>
         </div>

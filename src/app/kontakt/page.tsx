@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { createPageMetadata } from "@/lib/metadata";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { validInspection } from "@/lib/lead-options";
 import LeadForm from "@/components/LeadForm";
 import JsonLd from "@/components/JsonLd";
 import { CONTACT_EMAIL, COMPANY_NAME } from "@/lib/constants";
@@ -20,7 +21,7 @@ export const metadata: Metadata = createPageMetadata({
   ],
 });
 
-export default function KontaktPage() {
+export default function KontaktPage({ searchParams }: { searchParams: { tjanst?: string | string[] } }) {
   return (
     <>
       <JsonLd
@@ -38,7 +39,7 @@ export default function KontaktPage() {
             <div className="grid gap-12 lg:grid-cols-5">
               {/* Left: Info */}
               <div className="lg:col-span-2">
-                <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl text-balance">Boka genomgång eller begär offert</h1>
+                <h1 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl lg:text-4xl text-balance">Begär offert eller diskutera ert behov</h1>
                 <p className="body-text mt-4">
                   Fyll i formuläret så återkommer vi med en genomgång
                   anpassad efter ert behov.
@@ -77,7 +78,7 @@ export default function KontaktPage() {
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="mt-1 text-accent-500">●</span>
-                        GIS-underlag eller kartlänk (om tillgängligt)
+                        Beskriv området översiktligt; känsliga underlag delas efter överenskommelse
                       </li>
                       <li className="flex items-start gap-2">
                         <span className="mt-1 text-accent-500">●</span>
@@ -98,7 +99,7 @@ export default function KontaktPage() {
                     Obligatoriska fält markerade med *
                   </p>
                   <div className="mt-6">
-                    <LeadForm />
+                    <LeadForm initialInspection={validInspection(searchParams.tjanst)} />
                   </div>
                 </div>
               </div>

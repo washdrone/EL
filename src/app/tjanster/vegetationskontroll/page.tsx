@@ -1,3 +1,4 @@
+import InspectionScope from "@/components/InspectionScope";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
@@ -23,7 +24,7 @@ export const metadata: Metadata = createPageMetadata({
 const detectionItems = [
   {
     title: "Träd inom riskzon",
-    desc: "Identifiera träd som växer in i eller riskerar att falla mot ledningsgatan. Exakt avståndsmätning med LiDAR.",
+    desc: "Identifiera träd som växer in i eller riskerar att falla mot ledningsgatan. Avståndsanalys med LiDAR enligt uppdragets noggrannhetskrav.",
   },
   {
     title: "Höjdtillväxt",
@@ -46,7 +47,7 @@ const benefits = [
   },
   {
     title: "Stor yttäckning per dag",
-    desc: "LiDAR-drönare kartlägger kilometer av ledningsgata per dag — oavsett terräng och tillgänglighet.",
+    desc: "LiDAR-drönare kartlägger kilometer av ledningsgata per dag med täckning som beror på terräng, åtkomst och flygförhållanden.",
   },
   {
     title: "Prioriterat röjningsunderlag",
@@ -103,8 +104,8 @@ export default function VegetationskontrollPage() {
         title="Vegetationskontroll & LiDAR kartläggning"
         subtitle="Vegetationskontroll"
         description="LiDAR-baserad vegetationskontroll längs kraftledningsgator med drönare. Identifiera träd och grenar som hotar ledningen, mät säkerhetsavstånd och få prioriterat röjningsunderlag."
-        primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
+        primaryCta={{ label: "Begär offert", href: "/kontakt?tjanst=vegetation" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs
@@ -113,6 +114,8 @@ export default function VegetationskontrollPage() {
           { name: "Vegetationskontroll" },
         ]}
       />
+
+      <InspectionScope service="vegetation" />
 
       {/* Vad upptäcker LiDAR */}
       <section className="section-padding bg-white">
@@ -172,7 +175,7 @@ export default function VegetationskontrollPage() {
         </div>
       </section>
 
-      <CTABand primaryHref="/kontakt" secondaryHref="/kontakt" />
+      <CTABand primaryHref="/kontakt?tjanst=vegetation" secondaryHref="/exempelrapport" secondaryLabel="Se exempelrapport" />
     </>
   );
 }

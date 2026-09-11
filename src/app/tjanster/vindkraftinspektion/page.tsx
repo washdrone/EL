@@ -103,8 +103,8 @@ export default function VindkraftinspektionPage() {
         title="Vindkraftinspektion med drönare"
         subtitle="Vindkraftinspektion"
         description="Professionell inspektion av vindkraftverk med drönare. Vi dokumenterar rotorblad, torn, nacelle och åskledare — snabbare och säkrare än manuell klättring."
-        primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
+        primaryCta={{ label: "Begär offert", href: "/kontakt?tjanst=vindkraft" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs
@@ -174,8 +174,8 @@ export default function VindkraftinspektionPage() {
       </section>
 
       <CTABand
-        primaryHref="/kontakt"
-        secondaryHref="/kontakt"
+        primaryHref="/kontakt?tjanst=vindkraft"
+        secondaryHref="/exempelrapport" secondaryLabel="Se exempelrapport"
       />
     </>
   );

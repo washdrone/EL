@@ -85,8 +85,8 @@ export default function BvlosInspektionPage() {
         title="BVLOS drönarinspektion — inspektera långa ledningssträckor"
         subtitle="BVLOS-inspektion"
         description="Med BVLOS (Beyond Visual Line of Sight) kan vi inspektera kraftledningar utom synhåll, vilket gör det möjligt att täcka långa sträckor per flygdag. Perfekt för avlägsna och svårtillgängliga ledningsnät."
-        primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
+        primaryCta={{ label: "Begär offert", href: "/kontakt?tjanst=bvlos" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs
@@ -179,8 +179,8 @@ export default function BvlosInspektionPage() {
       </section>
 
       <CTABand
-        primaryHref="/kontakt"
-        secondaryHref="/kontakt"
+        primaryHref="/kontakt?tjanst=bvlos"
+        secondaryHref="/exempelrapport" secondaryLabel="Se exempelrapport"
       />
     </>
   );

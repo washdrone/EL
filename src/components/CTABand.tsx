@@ -12,10 +12,10 @@ interface CTABandProps {
 export default function CTABand({
   heading = "Redo att effektivisera er elnätsinspektion?",
   description = "Kontakta oss för en genomgång av hur drönarinspektion kan anpassas till ert nät och era behov.",
-  primaryLabel = "Boka genomgång",
+  primaryLabel = "Begär offert",
   primaryHref = "/kontakt",
-  secondaryLabel = "Begär offert",
-  secondaryHref = "/kontakt",
+  secondaryLabel = "Se exempelrapport",
+  secondaryHref = "/exempelrapport",
 }: CTABandProps) {
   return (
     <section className="relative overflow-hidden gradient-dark-section py-16 sm:py-20">
