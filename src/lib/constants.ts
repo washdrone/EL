@@ -56,7 +56,7 @@ export const SERVICE_ITEMS = [
   {
     label: "BVLOS-inspektion",
     href: "/tjanster/bvlos-inspektion",
-    description: "Inspektera långa ledningssträckor utan siktlinjekrav",
+    description: "Inspektion bortom synhåll inom tillståndets villkor",
   },
   {
     label: "Stormskadeinspektion",

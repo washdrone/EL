@@ -39,7 +39,7 @@ export default function StickyCTA() {
           className="btn-primary flex-1 justify-center"
           onClick={() => events.clickBook()}
         >
-          Boka genomgång
+          Begär offert
         </Link>
       </div>
     </div>

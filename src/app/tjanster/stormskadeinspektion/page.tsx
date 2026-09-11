@@ -105,7 +105,7 @@ export default function StormskadeinspektionPage() {
         title="Stormskadeinspektion med drönare — snabb skadeöversikt"
         subtitle="Akut stormskadeinspektion"
         description="Akut skadekartläggning av elnät och kraftledningar efter storm, orkan eller exceptionella väderförhållanden. Prioritering av skadelägen för snabbast möjliga återuppbyggnad."
-        primaryCta={{ label: "Kontakta oss", href: "/kontakt" }}
+        primaryCta={{ label: "Kontakta oss", href: "/kontakt?tjanst=storm" }}
         secondaryCta={{ label: "Se inspektionsprogram", href: "/tjanster/kraftledningsinspektion/inspektionsprogram" }}
       />
 
@@ -130,7 +130,7 @@ export default function StormskadeinspektionPage() {
               reparationsteam — utan att personal behöver ta sig ut i farlig terräng.
             </p>
             <div className="mt-8">
-              <Link href="/kontakt" className="btn-primary inline-flex items-center">
+              <Link href="/kontakt?tjanst=storm" className="btn-primary inline-flex items-center">
                 Kontakta oss om beredskapsavtal
                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -234,7 +234,7 @@ export default function StormskadeinspektionPage() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <Link href="/kontakt" className="btn-primary inline-flex items-center">
+            <Link href="/kontakt?tjanst=storm" className="btn-primary inline-flex items-center">
               Begär offert för beredskapsavtal
               <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -325,7 +325,7 @@ export default function StormskadeinspektionPage() {
 
       <FAQ items={faqItems} heading="Vanliga frågor om stormskadeinspektion" />
 
-      <CTABand primaryHref="/kontakt" secondaryHref="/kontakt" />
+      <CTABand primaryHref="/kontakt?tjanst=storm" secondaryHref="/exempelrapport" secondaryLabel="Se exempelrapport" />
     </>
   );
 }

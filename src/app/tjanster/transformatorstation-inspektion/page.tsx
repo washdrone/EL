@@ -114,8 +114,8 @@ export default function TransformatorstationInspektionPage() {
         title="Drönarinspektion av transformatorstationer"
         subtitle="Transformatorstation inspektion"
         description="Säker och effektiv inspektion av transformatorstationer med drönare. Visuell och termisk kontroll av isolatorer, kablar, transformatorer och strukturer utan att personal behöver vistas nära spänningsförande delar."
-        primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
+        primaryCta={{ label: "Begär offert", href: "/kontakt?tjanst=station" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs
@@ -183,7 +183,7 @@ export default function TransformatorstationInspektionPage() {
         </div>
       </section>
 
-      <CTABand primaryHref="/kontakt" secondaryHref="/kontakt" />
+      <CTABand primaryHref="/kontakt?tjanst=station" secondaryHref="/exempelrapport" secondaryLabel="Se exempelrapport" />
     </>
   );
 }

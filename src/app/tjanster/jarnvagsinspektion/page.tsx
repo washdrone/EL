@@ -95,8 +95,8 @@ export default function JarnvagsinspektionPage() {
         title="Inspektion av järnvägskontaktledningar med drönare"
         subtitle="Järnväg & kontaktledning"
         description="Inspektion av kontaktledningssystem längs järnväg — hängare, bärlina, kontakttråd, isolatorer och fästanordningar. Utförs utan trafikstörning vid samordnade tidsfönster."
-        primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
+        primaryCta={{ label: "Begär offert", href: "/kontakt?tjanst=jarnvag" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs
@@ -220,7 +220,7 @@ export default function JarnvagsinspektionPage() {
 
       <FAQ items={faqItems} heading="Vanliga frågor om järnvägsinspektion" />
 
-      <CTABand primaryHref="/kontakt" secondaryHref="/kontakt" />
+      <CTABand primaryHref="/kontakt?tjanst=jarnvag" secondaryHref="/exempelrapport" secondaryLabel="Se exempelrapport" />
     </>
   );
 }

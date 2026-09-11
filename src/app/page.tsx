@@ -17,7 +17,7 @@ import type { FAQItem } from "@/data/faq";
 export const metadata: Metadata = {
   title: "Drönarinspektion av Elnät & Kraftledningar | GridDrone",
   description:
-    "GridDrone utför drönarinspektion av elnät och kraftledningar i hela Sverige. Termografi, BVLOS, GIS-redo leveranser. EASA-utbildade piloter. Begär offert.",
+    "Drönarinspektion av elnät för nätägare och energibolag. Visuell dokumentation, termografi och vegetationskontroll som underlag för underhåll. Begär offert.",
   keywords: [
     "drönarinspektion elnät",
     "kraftledningsinspektion drönare",
@@ -37,7 +37,7 @@ const homepageFaqItems: FAQItem[] = [
   {
     question: "Vilka fördelar har drönare jämfört med traditionell inspektion?",
     answer:
-      "Drönare eliminerar behovet av stolpklättring och arbete på höjd, kräver ingen markåtkomst, och möjliggör inspektion utan driftstopp. Data georefereras automatiskt med RTK-positionering och levereras i GIS-kompatibla format för direkt import i nätförvaltningssystem.",
+      "Drönare kan dokumentera komponenter utan stolpklättring. Åtkomst för start och landning, luftrum och driftförutsättningar behöver planeras. Positioneringskrav och GIS-format fastställs för uppdraget; importen behöver kontrolleras i mottagande system.",
   },
   {
     question: "Vilka tjänster erbjuder GridDrone?",

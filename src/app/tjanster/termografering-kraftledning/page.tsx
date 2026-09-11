@@ -1,3 +1,4 @@
+import InspectionScope from "@/components/InspectionScope";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
@@ -11,7 +12,7 @@ import type { FAQItem } from "@/data/faq";
 export const metadata: Metadata = createPageMetadata({
   title: "Termografering av kraftledningar & elnät",
   description:
-    "Drönarbaserad termografering av elnät, transformatorstationer och kraftledningar. Radiometrisk värmekamera med hög termisk upplösning. Förhindra driftstopp.",
+    "Drönarbaserad termografering av elnät, transformatorstationer och kraftledningar. Radiometrisk värmekamera med hög termisk upplösning. Underlag för underhållsbeslut.",
   path: "/tjanster/termografering-kraftledning",
   keywords: [
     "termografering kraftledning",
@@ -35,18 +36,18 @@ const faqItems: FAQItem[] = [
   {
     question: "Vad kan värmekameran upptäcka?",
     answer:
-      "Varmgångar i skarvar och klämmor, överbelastade transformatorer, defekta isolatorer med interna fel, kontaktfel i kopplingsanordningar och temperaturskillnader som indikerar materialutmattning.",
+      "Varmgångar i skarvar och klämmor, överbelastade transformatorer, temperaturavvikelser vid isolatorer, kontaktfel i kopplingsanordningar och temperaturskillnader som indikerar materialutmattning.",
   },
   {
     question:
       "Vad är skillnaden mellan visuell inspektion och termografi?",
     answer:
-      "Visuell inspektion hittar synliga skador som korrosion, sprickor och mekaniskt slitage. Termografi upptäcker dolda elektriska och termiska fel som inte syns med blotta ögat, exempelvis interna isolatorfel och kontaktmotstånd.",
+      "Visuell inspektion hittar synliga skador som korrosion, sprickor och mekaniskt slitage. Termografi visar temperaturavvikelser som kan indikera elektriska problem. Orsaken kan behöva utredas med kompletterande metoder.",
   },
   {
     question: "Kan ni inspektera ledningar utan att koppla bort strömmen?",
     answer:
-      "Ja. Termografering förutsätter att anläggningen är spänningssatt och under last för att varmgångar ska bli synliga. Drönaren håller säkert avstånd och inspekterar under drift, vilket innebär att inga frånkopplingar eller driftstopp behövs.",
+      "Ja. Termografering förutsätter att anläggningen är spänningssatt och under last för att varmgångar ska bli synliga. Drönaren håller säkert avstånd och inspekterar under drift, med driftförutsättningar och säkerhetsavstånd som behöver stämmas av med anläggningsägaren.",
   },
   {
     question: "Vilka väderförhållanden krävs för termografering?",
@@ -66,7 +67,7 @@ const findings = [
   },
   {
     title: "Defekta isolatorer",
-    desc: "Hitta interna isolatorfel som inte syns vid visuell inspektion.",
+    desc: "Dokumentera temperaturavvikelser vid isolatorer som kan motivera vidare kontroll.",
   },
   {
     title: "Kontaktfel",
@@ -80,8 +81,8 @@ const benefits = [
     desc: "Drönaren täcker stora områden på kort tid jämfört med manuell termografering från marken.",
   },
   {
-    title: "Ingen frånkoppling krävs",
-    desc: "Inspektionen utförs under drift — inga kostsamma driftstopp eller frånkopplingar.",
+    title: "Planeras för mätning under last",
+    desc: "Belastning behövs för att bedöma varmgång. Genomförandet samordnas med anläggningsägaren.",
   },
   {
     title: "Radiometrisk data för analys",
@@ -106,8 +107,8 @@ export default function TermograferingKraftledningPage() {
         title="Termografering av kraftledningar & elnät"
         subtitle="Termografering med drönare"
         description="Upptäck hotspots och varmgångar innan de leder till driftstopp. Med radiometrisk värmekamera monterad på drönare inspekterar vi elnät, transformatorstationer och kraftledningar snabbt och säkert."
-        primaryCta={{ label: "Boka genomgång", href: "/kontakt" }}
-        secondaryCta={{ label: "Begär offert", href: "/kontakt" }}
+        primaryCta={{ label: "Begär offert", href: "/kontakt?tjanst=termografi" }}
+        secondaryCta={{ label: "Se exempelrapport", href: "/exempelrapport" }}
       />
 
       <Breadcrumbs
@@ -117,14 +118,15 @@ export default function TermograferingKraftledningPage() {
         ]}
       />
 
+      <InspectionScope service="termografi" />
+
       {/* Vad hittar termografering? */}
       <section className="section-padding bg-white">
         <div className="container-section">
           <div className="section-intro">
             <h2 className="heading-2">Vad hittar termografering?</h2>
             <p className="body-text mt-4">
-              Värmekameran avslöjar dolda fel som inte syns vid visuell
-              inspektion. Här är de vanligaste fynden.
+              Värmekameran visar temperaturavvikelser som kan behöva utredas vidare. Exempel på observationer:
             </p>
           </div>
           <div className="mx-auto mt-12 grid max-w-4xl gap-8 sm:grid-cols-2">
@@ -173,8 +175,8 @@ export default function TermograferingKraftledningPage() {
       </section>
 
       <CTABand
-        primaryHref="/kontakt"
-        secondaryHref="/kontakt"
+        primaryHref="/kontakt?tjanst=termografi"
+        secondaryHref="/exempelrapport" secondaryLabel="Se exempelrapport"
       />
     </>
   );

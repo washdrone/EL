@@ -1,5 +1,7 @@
 "use client";
 
+import { inspectionLabels } from "@/lib/lead-options";
+
 import { useState, useRef } from "react";
 import { events } from "@/lib/analytics";
 import { CONTACT_EMAIL } from "@/lib/constants";
@@ -27,14 +29,6 @@ const initialForm: FormData = {
   timeframe: "",
   message: "",
   website: "",
-};
-
-const inspectionLabels: Record<string, string> = {
-  arlig: "Årlig översiktsinspektion",
-  detaljerad: "Detaljerad komponentinspektion",
-  storm: "Storm- / akutinspektion",
-  lidar: "LiDAR / kartläggning (tillägg)",
-  annan: "Annat / vet ej",
 };
 
 const timeframeLabels: Record<string, string> = {
@@ -74,10 +68,10 @@ function buildMailtoHref(form: FormData): string {
 }
 
 const inputClass =
-  "mt-1.5 block min-h-[44px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-surface-900 transition-colors placeholder:text-surface-400 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100";
+  "mt-1.5 block min-h-[44px] w-full border border-slate-200 bg-white px-4 py-3 text-sm text-surface-900 transition-colors placeholder:text-surface-500 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-100";
 
-export default function LeadForm() {
-  const [form, setForm] = useState<FormData>(initialForm);
+export default function LeadForm({ initialInspection = "" }: { initialInspection?: string }) {
+  const [form, setForm] = useState<FormData>({ ...initialForm, inspectionType: initialInspection });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
   const hasTrackedStart = useRef(false);
@@ -104,8 +98,8 @@ export default function LeadForm() {
         body: JSON.stringify(form),
       });
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => null);
+      const data = await res.json().catch(() => null);
+      if (!res.ok || data?.success !== true) {
         throw new Error(
           data?.error || "Något gick fel. Försök igen eller kontakta oss direkt."
         );
@@ -113,7 +107,7 @@ export default function LeadForm() {
 
       events.formSubmit();
       setStatus("success");
-      setForm(initialForm);
+      setForm({ ...initialForm, inspectionType: initialInspection });
       hasTrackedStart.current = false;
     } catch (err) {
       setStatus("error");
@@ -127,7 +121,7 @@ export default function LeadForm() {
 
   if (status === "success") {
     return (
-      <div className="border border-brand-200 bg-brand-50 p-8 text-center">
+      <div role="status" tabIndex={-1} ref={(node) => node?.focus()} className="border border-brand-200 bg-brand-50 p-8 text-center">
         <div className="mx-auto flex h-14 w-14 items-center justify-center border border-brand-200 bg-white">
           <svg className="h-7 w-7 text-brand-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -168,7 +162,7 @@ export default function LeadForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit} className="space-y-5" aria-busy={status === "submitting"}>
       {status === "error" && (
         <div className="border border-red-200 bg-red-50 p-4 text-sm text-red-700" role="alert">
           <p>{errorMsg}</p>
@@ -201,19 +195,19 @@ export default function LeadForm() {
           <label htmlFor="company" className="block text-sm font-medium text-surface-700">
             Företag <span className="text-red-500">*</span>
           </label>
-          <input type="text" id="company" name="company" required value={form.company} onChange={handleChange} className={inputClass} placeholder="Företagsnamn" />
+          <input type="text" id="company" name="company" autoComplete="organization" maxLength={200} required value={form.company} onChange={handleChange} className={inputClass} placeholder="Företagsnamn" />
         </div>
         <div>
           <label htmlFor="contact" className="block text-sm font-medium text-surface-700">
             Kontaktperson <span className="text-red-500">*</span>
           </label>
-          <input type="text" id="contact" name="contact" required value={form.contact} onChange={handleChange} className={inputClass} placeholder="Namn" />
+          <input type="text" id="contact" name="contact" autoComplete="name" maxLength={200} required value={form.contact} onChange={handleChange} className={inputClass} placeholder="Namn" />
         </div>
         <div>
           <label htmlFor="email" className="block text-sm font-medium text-surface-700">
             E-post <span className="text-red-500">*</span>
           </label>
-          <input type="email" id="email" name="email" required value={form.email} onChange={handleChange} className={inputClass} placeholder="namn@foretag.se" />
+          <input type="email" id="email" name="email" autoComplete="email" maxLength={254} required value={form.email} onChange={handleChange} className={inputClass} placeholder="namn@foretag.se" />
         </div>
       </div>
 
@@ -231,18 +225,14 @@ export default function LeadForm() {
           </label>
           <select id="inspectionType" name="inspectionType" value={form.inspectionType} onChange={handleChange} className={inputClass}>
             <option value="">Välj typ</option>
-            <option value="arlig">Årlig översiktsinspektion</option>
-            <option value="detaljerad">Detaljerad komponentinspektion</option>
-            <option value="storm">Storm- / akutinspektion</option>
-            <option value="lidar">LiDAR / kartläggning (tillägg)</option>
-            <option value="annan">Annat / vet ej</option>
+            {Object.entries(inspectionLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
           </select>
         </div>
         <div>
           <label htmlFor="scope" className="block text-sm font-medium text-surface-700">
             Omfattning
           </label>
-          <input type="text" id="scope" name="scope" value={form.scope} onChange={handleChange} className={inputClass} placeholder="km ledning / stolpar, eller 'vet ej'" />
+          <input type="text" id="scope" name="scope" value={form.scope} onChange={handleChange} className={inputClass} placeholder="Sträcka eller antal objekt, om känt" />
         </div>
       </div>
 
@@ -264,12 +254,11 @@ export default function LeadForm() {
         <label htmlFor="message" className="block text-sm font-medium text-surface-700">
           Meddelande
         </label>
-        <textarea id="message" name="message" rows={4} value={form.message} onChange={handleChange} className={inputClass} placeholder="Beskriv ert behov, bifoga gärna länk till GIS-underlag eller specifikation." />
+        <textarea id="message" name="message" maxLength={3000} rows={4} value={form.message} onChange={handleChange} className={inputClass} placeholder="Beskriv kort ert behov. Skicka inte känsliga anläggningsuppgifter här; kontakta oss först om lämplig överföring." />
       </div>
 
       <p className="text-xs text-surface-500">
-        Genom att skicka detta formulär godkänner ni att vi behandlar era
-        uppgifter för att hantera er förfrågan.{" "}
+        Vi använder era uppgifter för att hantera er förfrågan.{" "}
         Vi sparar era uppgifter i enlighet med vår{" "}
         <a href="/integritetspolicy" className="text-brand-600 underline hover:text-brand-700">
           integritetspolicy

@@ -26,13 +26,13 @@ const services = [
   {
     icon: Thermometer,
     title: "Termografi",
-    text: "Säker identifiering av överhettning och obalans i nätet för att förhindra haverier.",
+    text: "Dokumentation av temperaturavvikelser som underlag för vidare bedömning och underhåll.",
     image: "/images/termografi.png",
   },
   {
     icon: TreePine,
     title: "Vegetationskontroll",
-    text: "LiDAR-baserad kartläggning av ledningsgator för exakt prioritering av röjningsinsatser.",
+    text: "LiDAR-baserad kartläggning av ledningsgator för prioritering av röjningsinsatser.",
     image: "/images/vegetationskontroll.png",
   },
   {

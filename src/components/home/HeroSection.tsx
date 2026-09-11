@@ -3,9 +3,9 @@ import { ArrowRight } from "lucide-react";
 
 const infoCards = [
   { title: "RGB + Termografi", subtitle: "Visuell & termisk analys" },
-  { title: "RTK-positionering", subtitle: "Centimeternoggrannhet" },
+  { title: "RTK-positionering", subtitle: "Positionering för dokumentation" },
   { title: "SWEREF99 TM", subtitle: "Rikstäckande koordinater" },
-  { title: "GIS-redo", subtitle: "Direktimport i era system" },
+  { title: "GIS-redo", subtitle: "Format enligt överenskommelse" },
 ];
 
 export default function HeroSection() {
@@ -46,16 +46,16 @@ export default function HeroSection() {
             </p>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl xl:text-[3.25rem] xl:leading-[1.15]">
-            Drönarinspektion av elnät och kraftledningar — utan klättring, utan driftstopp
+            Drönarinspektion av elnät — underlag för rätt underhållsinsats
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
             Georefererade bilder, termografisk analys och klassificerade åtgärdsunderlag
-            — direkt in i ert nätförvaltningssystem.
+            för nätägare och energibolag. Omfattning och leveransformat anpassas efter ert uppdrag.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Link href="/kontakt" className="btn-primary-dark">
-              Diskutera ert inspektionsbehov
+              Begär offert på inspektion
             </Link>
             <Link
               href="/exempelrapport"

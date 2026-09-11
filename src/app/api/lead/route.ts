@@ -1,3 +1,4 @@
+import { inspectionLabels, validInspection } from "@/lib/lead-options";
 import { NextRequest, NextResponse } from "next/server";
 import { CONTACT_EMAIL, COMPANY_NAME } from "@/lib/constants";
 import { sendLeadMail } from "@/lib/mailer";
@@ -19,14 +20,6 @@ interface LeadData {
   /** Honeypot – fylls bara i av bottar. Skickas aldrig av riktiga besökare. */
   website?: string;
 }
-
-const inspectionLabels: Record<string, string> = {
-  arlig: "Årlig översiktsinspektion",
-  detaljerad: "Detaljerad komponentinspektion",
-  storm: "Storm- / akutinspektion",
-  lidar: "LiDAR / kartläggning (tillägg)",
-  annan: "Annat / vet ej",
-};
 
 const timeframeLabels: Record<string, string> = {
   akut: "Akut (inom dagar)",
@@ -84,10 +77,10 @@ function buildEmailHtml(body: LeadData): string {
     .map(
       ([label, value]) =>
         `<tr><td style="padding:8px 12px;font-weight:600;vertical-align:top;white-space:nowrap;border-bottom:1px solid #e2e8f0">${escapeHtml(
-          label
+          label,
         )}</td><td style="padding:8px 12px;border-bottom:1px solid #e2e8f0">${escapeHtml(
-          value
-        ).replace(/\n/g, "<br>")}</td></tr>`
+          value,
+        ).replace(/\n/g, "<br>")}</td></tr>`,
     )
     .join("");
 
@@ -117,27 +110,75 @@ function buildEmailText(body: LeadData): string {
 
 export async function POST(request: NextRequest) {
   try {
-    const body: LeadData = await request.json();
+    const raw: unknown = await request.json().catch(() => null);
+    if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
+      return NextResponse.json(
+        { error: "Ogiltigt formulär." },
+        { status: 400 },
+      );
+    }
+    const fields = [
+      "company",
+      "contact",
+      "email",
+      "region",
+      "inspectionType",
+      "scope",
+      "timeframe",
+      "message",
+      "website",
+    ] as const;
+    const input = raw as Record<string, unknown>;
+    if (
+      fields.some(
+        (key) => input[key] !== undefined && typeof input[key] !== "string",
+      )
+    ) {
+      return NextResponse.json(
+        { error: "Ogiltiga fältvärden." },
+        { status: 400 },
+      );
+    }
+    const body = Object.fromEntries(
+      fields.map((key) => [key, String(input[key] ?? "").trim()]),
+    ) as unknown as LeadData;
+    if (
+      (body.inspectionType && !validInspection(body.inspectionType)) ||
+      (body.timeframe &&
+        !Object.prototype.hasOwnProperty.call(
+          timeframeLabels,
+          body.timeframe,
+        )) ||
+      body.company.length > 200 ||
+      body.contact.length > 200 ||
+      body.email.length > 254 ||
+      /[\r\n]/.test(body.company + body.contact + body.email)
+    ) {
+      return NextResponse.json(
+        { error: "Kontrollera formulärets uppgifter." },
+        { status: 400 },
+      );
+    }
 
     // Honeypot: svara med 200 så botten tror att det gick igenom.
     if (body.website) {
       return NextResponse.json(
         { success: true, message: "Förfrågan mottagen." },
-        { status: 200 }
+        { status: 200 },
       );
     }
 
     if (!body.company || !body.contact || !body.email) {
       return NextResponse.json(
         { error: "Företag, kontaktperson och e-post är obligatoriska." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!isValidEmail(body.email)) {
       return NextResponse.json(
         { error: "Ogiltig e-postadress." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -145,7 +186,7 @@ export async function POST(request: NextRequest) {
     if (totalLength > 5000) {
       return NextResponse.json(
         { error: "Meddelandet är för långt." },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -175,40 +216,25 @@ export async function POST(request: NextRequest) {
     if (result.ok) {
       return NextResponse.json(
         { success: true, message: "Förfrågan mottagen." },
-        { status: 200 }
+        { status: 200 },
       );
     }
 
-    // Leadet får aldrig försvinna tyst – logga hela innehållet så att det
-    // går att hämta ur serverloggen även när utskicket fallerar.
-    console.error("=== LEAD KUNDE INTE SKICKAS ===");
-    console.error(buildEmailText(body));
-    if (result.notConfigured) {
-      console.error("Ingen e-postkanal är konfigurerad (se .env.example).");
-    } else {
-      console.error("Kanalfel:", JSON.stringify(result.errors));
-    }
-    console.error("===============================");
-
-    // I utvecklingsläge utan konfigurerad kanal räcker loggen.
-    if (result.notConfigured && process.env.NODE_ENV !== "production") {
-      return NextResponse.json(
-        { success: true, message: "Förfrågan mottagen (loggad lokalt)." },
-        { status: 200 }
-      );
-    }
+    console.error("Lead delivery failed", {
+      notConfigured: result.notConfigured,
+    });
 
     return NextResponse.json(
       {
         error: `Meddelandet kunde inte skickas just nu. Mejla oss gärna direkt på ${CONTACT_EMAIL}.`,
       },
-      { status: 502 }
+      { status: 502 },
     );
   } catch (err) {
     console.error("Lead API error:", err);
     return NextResponse.json(
       { error: "Något gick fel. Försök igen." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

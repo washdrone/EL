@@ -80,14 +80,14 @@ export default function BvlosGuidePage() {
           }
           articlePath="/guider/bvlos-inspektion-elnat"
           datePublished="2026-04-05"
-          dateModified="2026-04-05"
+          dateModified="2026-09-11"
         />
 
         <Hero
           title="BVLOS-inspektion av elnät — guide, regler och teknik"
           subtitle="Guide: BVLOS inspektion elnät"
           description="Hur inspektion av kraftledningar bortom synhåll (BVLOS) fungerar — tillståndskrav, riskbedömning, teknik och tillämpningar för nätägare och energibolag."
-          dateLine="Uppdaterad: 5 april 2026"
+          dateLine="Uppdaterad: 11 september 2026"
           primaryCta={{ label: "Begär offert", href: "/kontakt" }}
           secondaryCta={{ label: "Se BVLOS-tjänst", href: "/tjanster/bvlos-inspektion" }}
           compact
@@ -145,7 +145,7 @@ export default function BvlosGuidePage() {
               {[
                 {
                   title: "PDRA (Pre-Defined Risk Assessment)",
-                  desc: "Standardiserade riskbedömningar för definierade scenarion. PDRA-S01 och PDRA-S02 täcker linjär inspektion av infrastruktur (kraftledningar, järnväg). Snabbare godkännandeprocess med fastställda villkor och begränsningar.",
+                  desc: "Fördefinierade riskbedömningar gäller bestämda driftförhållanden. PDRA-S01 avser VLOS. PDRA-S02 medger begränsad BVLOS, medan PDRA-G03 bland annat avser linjär inspektion. Operatören behöver ett operativt tillstånd och måste uppfylla det valda scenariots villkor; pilotutbildning är inte i sig ett sådant tillstånd.",
                 },
                 {
                   title: "SORA (Specific Operations Risk Assessment)",
@@ -277,7 +277,8 @@ export default function BvlosGuidePage() {
           subheading="Har ni fler frågor om BVLOS? Kontakta oss för rådgivning."
         />
 
-        <CTABand
+        <p className="container-section py-6 text-sm text-surface-600">Regeluppgifterna om PDRA kontrollerades 11 september 2026 mot <a className="underline text-brand-700" href="https://www.easa.europa.eu/en/domains/drones-air-mobility/operating-drone/specific-category-civil-drones/predefined-risk-assessment-pdra">EASA:s översikt över fördefinierade riskbedömningar</a>. Tillståndets villkor avgör vad en operatör får genomföra.</p>
+      <CTABand
           heading="Vill ni inspektera långa ledningssträckor effektivt?"
           description="BVLOS-inspektion möjliggör inspektion av kraftledningar bortom synhåll — kontakta oss för att diskutera ert behov."
           primaryLabel="Begär offert"

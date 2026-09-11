@@ -1,3 +1,4 @@
+import InspectionScope from "@/components/InspectionScope";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/metadata";
@@ -94,12 +95,12 @@ export default function HubPage() {
       />
 
       <Hero
-        title="Kraftledningsinspektion med drönare — säkrare, mer effektiv"
+        title="Kraftledningsinspektion med drönare för planerat underhåll"
         subtitle="Kraftledningsinspektion drönare"
-        description="Standardiserad drönarinspektion av luftledningar – från översikt till detaljgranskning. Strukturerade dataleveranser direkt till ert nätförvaltningssystem."
+        description="Standardiserad drönarinspektion av luftledningar – från översikt till detaljgranskning. Bilder och klassificerade fynd med leveransformat anpassat efter ert behov."
         primaryCta={{
           label: "Begär offert",
-          href: "/kontakt",
+          href: "/kontakt?tjanst=kraftledning",
         }}
         secondaryCta={{
           label: "Se inspektionsprogram",
@@ -114,6 +115,8 @@ export default function HubPage() {
         ]}
       />
 
+      <InspectionScope service="kraftledning" />
+
       <ProofBar />
 
       {/* AEO Answer-First Block */}
@@ -126,7 +129,7 @@ export default function HubPage() {
               drönare utrustad med högupplöst RGB-kamera och radiometrisk värmekamera längs
               kraftledningen. Varje stolpe, isolator, traverser och ledningsgata fotograferas
               med standardiserade bildvinklar. Bilderna georefereras automatiskt via
-              RTK-positionering (centimeternoggrannhet) och levereras i en strukturerad
+              RTK-positionering enligt uppdragets noggrannhetskrav och levereras i en strukturerad
               rapport med klassificerade fynd och åtgärdsrekommendationer — redo för
               ert nätförvaltningssystem.
             </p>
@@ -143,7 +146,7 @@ export default function HubPage() {
               </Link>.
             </p>
             <div className="mt-8">
-              <Link href="/kontakt" className="btn-primary inline-flex items-center">
+              <Link href="/kontakt?tjanst=kraftledning" className="btn-primary inline-flex items-center">
                 Begär offert
                 <svg className="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -193,7 +196,7 @@ export default function HubPage() {
                 >
                   luftledningar
                 </Link>{" "}
-                utan klättring, utan driftstopp och med
+                utan klättring och normalt utan driftstopp och med
                 konsekvent kvalitet oavsett terräng. Varje stolpe och
                 ledningssektion dokumenteras med standardiserade bildvinklar
                 och georefererade bilder – redo för ert
@@ -449,7 +452,7 @@ export default function HubPage() {
             kostnadsestimat baserat på er nätstruktur.
           </p>
           <div className="mt-6">
-            <Link href="/kontakt" className="btn-primary">
+            <Link href="/kontakt?tjanst=kraftledning" className="btn-primary">
               Begär offert
             </Link>
           </div>

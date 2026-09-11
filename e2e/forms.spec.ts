@@ -49,3 +49,30 @@ test.describe("Lead form", () => {
     await expect(textarea).toHaveValue("Testmeddelande");
   });
 });
+
+// All delivery responses are intercepted: these tests never send email.
+test("service choice survives navigation and failed delivery preserves entered text", async ({
+  page,
+}) => {
+  await page.goto("/kontakt?tjanst=termografi");
+  await expect(page.locator("#inspectionType")).toHaveValue("termografi");
+  await page.route("**/api/lead", (route) =>
+    route.fulfill({
+      status: 502,
+      contentType: "application/json",
+      body: JSON.stringify({ error: "Testfel" }),
+    }),
+  );
+  await page.locator("#company").fill("Test AB");
+  await page.locator("#contact").fill("Testperson");
+  await page.locator("#email").fill("test@example.invalid");
+  await page.locator("#message").fill("Behåll denna text");
+  await page
+    .getByRole("button", { name: "Skicka förfrågan", exact: true })
+    .click();
+  await expect(page.getByRole("alert")).toContainText("Testfel");
+  await expect(page.locator("#message")).toHaveValue("Behåll denna text");
+  await expect(
+    page.getByRole("link", { name: "skicka förfrågan som e-post" }),
+  ).toHaveAttribute("href", /mailto:/);
+});
