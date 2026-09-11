@@ -82,6 +82,7 @@ export default function BvlosInspektionPage() {
       />
 
       <Hero
+        image={{ src: "/images/services/ledningskorridor.webp", alt: "Översikt av en kraftledningskorridor sedd uppifrån" }}
         title="BVLOS drönarinspektion — inspektera långa ledningssträckor"
         subtitle="BVLOS-inspektion"
         description="Med BVLOS (Beyond Visual Line of Sight) kan vi inspektera kraftledningar utom synhåll, vilket gör det möjligt att täcka långa sträckor per flygdag. Perfekt för avlägsna och svårtillgängliga ledningsnät."

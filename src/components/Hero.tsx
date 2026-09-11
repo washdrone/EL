@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface HeroProps {
   title: string;
@@ -8,6 +9,7 @@ interface HeroProps {
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
   compact?: boolean;
+  image?: { src: string; alt: string };
 }
 
 export default function Hero({
@@ -18,6 +20,7 @@ export default function Hero({
   primaryCta,
   secondaryCta,
   compact = false,
+  image,
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden gradient-hero">
@@ -34,9 +37,9 @@ export default function Hero({
       </div>
 
       <div className={`container-section relative ${compact ? "py-16 sm:py-20" : "py-20 sm:py-28 lg:py-36"}`}>
-        <div className={`grid items-center gap-12 ${compact ? "" : "lg:grid-cols-5"}`}>
+        <div className={`grid items-center gap-12 ${image ? "lg:grid-cols-2" : compact ? "" : "lg:grid-cols-5"}`}>
           {/* Text content */}
-          <div className={compact ? "max-w-2xl" : "lg:col-span-3"}>
+          <div className={image || compact ? "max-w-2xl" : "lg:col-span-3"}>
             <div className="flex items-center gap-3">
               <div className="h-px w-8 bg-brand-400" />
               <span className="eyebrow-cyan">
@@ -74,7 +77,20 @@ export default function Hero({
           </div>
 
           {/* Visual element - service overview card */}
-          {!compact && (
+          {image && (
+            <div className="overflow-hidden rounded-lg border border-white/10 bg-slate-900">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={1536}
+                height={1024}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="h-auto w-full"
+                priority
+              />
+            </div>
+          )}
+          {!compact && !image && (
             <div className="hidden lg:col-span-2 lg:block">
               <div className="relative">
                 <div className="border border-white/10 bg-white/[0.03] p-8 backdrop-blur-sm">

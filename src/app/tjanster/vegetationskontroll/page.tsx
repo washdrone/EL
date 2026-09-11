@@ -101,6 +101,7 @@ export default function VegetationskontrollPage() {
       />
 
       <Hero
+        image={{ src: "/images/services/vegetationskontroll.webp", alt: "Ledningsgata och omgivande trädkronor sedda lodrätt uppifrån" }}
         title="Vegetationskontroll & LiDAR kartläggning"
         subtitle="Vegetationskontroll"
         description="LiDAR-baserad vegetationskontroll längs kraftledningsgator med drönare. Identifiera träd och grenar som hotar ledningen, mät säkerhetsavstånd och få prioriterat röjningsunderlag."
