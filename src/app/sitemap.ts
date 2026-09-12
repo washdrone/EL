@@ -1,6 +1,28 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/metadata";
 
+// Verifierade tidpunkter i versionshistoriken för ändrat huvudinnehåll.
+// PR #43: texter, tjänsteomfattning och kalkylator. PR #44: tjänstebilder.
+// Uppdatera bara berörda sidor när deras innehåll faktiskt ändras.
+// Saknas ett verifierat datum utelämnas lastmod; använd aldrig byggdatum.
+const contentUpdatedAt: Record<string, string> = {
+  "/": "2026-09-11T08:47:25Z",
+  "/kontakt": "2026-09-11T08:47:25Z",
+  "/om-oss": "2026-09-11T08:47:25Z",
+  "/roi-kalkylator": "2026-09-11T08:47:25Z",
+  "/guider/bvlos-inspektion-elnat": "2026-09-11T08:47:25Z",
+  "/tjanster/kraftledningsinspektion": "2026-09-11T08:47:25Z",
+  "/tjanster/termografering-kraftledning": "2026-09-11T08:47:25Z",
+  "/tjanster/kraftledningsinspektion/luftledningar": "2026-09-11T12:03:29Z",
+  "/tjanster/transformatorstation-inspektion": "2026-09-11T12:03:29Z",
+  "/tjanster/vegetationskontroll": "2026-09-11T12:03:29Z",
+  "/tjanster/bvlos-inspektion": "2026-09-11T12:03:29Z",
+  "/tjanster/stormskadeinspektion": "2026-09-11T12:03:29Z",
+  "/tjanster/vindkraftinspektion": "2026-09-11T12:03:29Z",
+  "/tjanster/jarnvagsinspektion": "2026-09-11T12:03:29Z",
+  "/tjanster/underhallsabonnemang": "2026-09-11T12:03:29Z",
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = [
     // Homepage
@@ -85,6 +107,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return pages.map((page) => ({
     url: page.path === "/" ? SITE_URL : `${SITE_URL}${page.path}`,
+    ...(contentUpdatedAt[page.path]
+      ? { lastModified: contentUpdatedAt[page.path] }
+      : {}),
     changeFrequency: page.changeFrequency,
     priority: page.priority,
   }));
