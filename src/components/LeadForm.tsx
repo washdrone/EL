@@ -112,6 +112,9 @@ export default function LeadForm({ initialInspection = "" }: { initialInspection
   const [form, setForm] = useState<FormData>({ ...initialForm, inspectionType: initialInspection });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  // Detaljfälten är valfria och dolda som standard för ett kortare formulär.
+  // Öppna direkt om besökaren kom från en tjänstesida med förvald tjänst.
+  const [showDetails, setShowDetails] = useState(Boolean(initialInspection));
   const hasTrackedStart = useRef(false);
 
   function handleChange(
@@ -248,7 +251,7 @@ export default function LeadForm({ initialInspection = "" }: { initialInspection
         </div>
         <div>
           <label htmlFor="contact" className="block text-sm font-medium text-surface-700">
-            Kontaktperson <span className="text-red-500">*</span>
+            Namn <span className="text-red-500">*</span>
           </label>
           <input type="text" id="contact" name="contact" autoComplete="name" maxLength={200} required value={form.contact} onChange={handleChange} className={inputClass} placeholder="Namn" />
         </div>
@@ -261,49 +264,68 @@ export default function LeadForm({ initialInspection = "" }: { initialInspection
       </div>
 
       <div>
-        <label htmlFor="region" className="block text-sm font-medium text-surface-700">
-          Nätområde / Region
-        </label>
-        <input type="text" id="region" name="region" value={form.region} onChange={handleChange} className={inputClass} placeholder="Kommun, region eller nätområde" />
-      </div>
-
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label htmlFor="inspectionType" className="block text-sm font-medium text-surface-700">
-            Typ av inspektion
-          </label>
-          <select id="inspectionType" name="inspectionType" value={form.inspectionType} onChange={handleChange} className={inputClass}>
-            <option value="">Välj typ</option>
-            {Object.entries(inspectionLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
-          </select>
-        </div>
-        <div>
-          <label htmlFor="scope" className="block text-sm font-medium text-surface-700">
-            Omfattning
-          </label>
-          <input type="text" id="scope" name="scope" value={form.scope} onChange={handleChange} className={inputClass} placeholder="Sträcka eller antal objekt, om känt" />
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="timeframe" className="block text-sm font-medium text-surface-700">
-          Önskad tidsram
-        </label>
-        <select id="timeframe" name="timeframe" value={form.timeframe} onChange={handleChange} className={inputClass}>
-          <option value="">Välj tidsram</option>
-          <option value="akut">Akut (inom dagar)</option>
-          <option value="1-4veckor">1–4 veckor</option>
-          <option value="1-3manader">1–3 månader</option>
-          <option value="planering">Under planering</option>
-          <option value="upphandling">Inför upphandling</option>
-        </select>
-      </div>
-
-      <div>
         <label htmlFor="message" className="block text-sm font-medium text-surface-700">
           Meddelande
         </label>
         <textarea id="message" name="message" maxLength={3000} rows={4} value={form.message} onChange={handleChange} className={inputClass} placeholder="Beskriv kort ert behov. Skicka inte känsliga anläggningsuppgifter här; kontakta oss först om lämplig överföring." />
+      </div>
+
+      <div>
+        <button
+          type="button"
+          onClick={() => setShowDetails((open) => !open)}
+          aria-expanded={showDetails}
+          aria-controls="lead-details"
+          className="text-sm font-medium text-brand-600 hover:text-brand-700"
+        >
+          {showDetails ? "− Dölj detaljer" : "+ Lägg till detaljer (valfritt)"}
+        </button>
+        {!showDetails && (
+          <p className="mt-1 text-xs text-surface-500">
+            Region, typ av inspektion, omfattning och tidsram
+          </p>
+        )}
+      </div>
+
+      <div id="lead-details" hidden={!showDetails} className="space-y-5">
+        <div>
+          <label htmlFor="region" className="block text-sm font-medium text-surface-700">
+            Nätområde / Region
+          </label>
+          <input type="text" id="region" name="region" value={form.region} onChange={handleChange} className={inputClass} placeholder="Kommun, region eller nätområde" />
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div>
+            <label htmlFor="inspectionType" className="block text-sm font-medium text-surface-700">
+              Typ av inspektion
+            </label>
+            <select id="inspectionType" name="inspectionType" value={form.inspectionType} onChange={handleChange} className={inputClass}>
+              <option value="">Välj typ</option>
+              {Object.entries(inspectionLabels).map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="scope" className="block text-sm font-medium text-surface-700">
+              Omfattning
+            </label>
+            <input type="text" id="scope" name="scope" value={form.scope} onChange={handleChange} className={inputClass} placeholder="Sträcka eller antal objekt, om känt" />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="timeframe" className="block text-sm font-medium text-surface-700">
+            Önskad tidsram
+          </label>
+          <select id="timeframe" name="timeframe" value={form.timeframe} onChange={handleChange} className={inputClass}>
+            <option value="">Välj tidsram</option>
+            <option value="akut">Akut (inom dagar)</option>
+            <option value="1-4veckor">1–4 veckor</option>
+            <option value="1-3manader">1–3 månader</option>
+            <option value="planering">Under planering</option>
+            <option value="upphandling">Inför upphandling</option>
+          </select>
+        </div>
       </div>
 
       <p className="text-xs text-surface-500">
