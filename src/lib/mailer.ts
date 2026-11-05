@@ -210,6 +210,13 @@ function formsubmitChannel(): Channel | null {
         // Basadressen är överskrivbar för att kunna testas mot en lokal stub.
         const baseUrl = env("FORMSUBMIT_BASE_URL") || "https://formsubmit.co/ajax";
 
+        // FormSubmit avvisar anrop som saknar Origin/Referer ("open this page
+        // through a web server") – ett serveranrop skickar inga av dem själv.
+        // Samma ursprung som webbläsaren skickar, så aktiveringen gäller båda.
+        const siteUrl = (
+          env("NEXT_PUBLIC_SITE_URL") || "https://www.griddrone.se"
+        ).replace(/\/+$/, "");
+
         const res = await fetch(
           `${baseUrl}/${encodeURIComponent(target)}`,
           {
@@ -217,6 +224,8 @@ function formsubmitChannel(): Channel | null {
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
+              Origin: siteUrl,
+              Referer: `${siteUrl}/`,
             },
             body: JSON.stringify({
               _subject: payload.subject,
