@@ -14,7 +14,20 @@ test.describe("Lead form", () => {
     await expect(companyInput).toHaveValue("Test AB");
   });
 
+  test("optional details are hidden until opened", async ({ page }) => {
+    const toggle = page.getByRole("button", { name: /Lägg till detaljer/ });
+    await expect(page.locator("#inspectionType")).toBeHidden();
+    await expect(toggle).toHaveAttribute("aria-expanded", "false");
+    await toggle.click();
+    await expect(page.locator("#inspectionType")).toBeVisible();
+    await expect(page.getByRole("button", { name: /Dölj detaljer/ })).toHaveAttribute(
+      "aria-expanded",
+      "true",
+    );
+  });
+
   test("select dropdowns are usable", async ({ page }) => {
+    await page.getByRole("button", { name: /Lägg till detaljer/ }).click();
     const inspectionSelect = page.locator("#inspectionType");
     await expect(inspectionSelect).toBeVisible();
     await inspectionSelect.selectOption("arlig");
@@ -55,6 +68,8 @@ test("service choice survives navigation and failed delivery preserves entered t
   page,
 }) => {
   await page.goto("/kontakt?tjanst=termografi");
+  // Förvald tjänst ska synas direkt, så detaljerna är öppna.
+  await expect(page.locator("#inspectionType")).toBeVisible();
   await expect(page.locator("#inspectionType")).toHaveValue("termografi");
   await page.route("**/api/lead", (route) =>
     route.fulfill({
