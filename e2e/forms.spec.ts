@@ -63,6 +63,15 @@ test("service choice survives navigation and failed delivery preserves entered t
       body: JSON.stringify({ error: "Testfel" }),
     }),
   );
+  // Även webbläsarens reservväg fallerar.
+  await page.route("https://formsubmit.co/**", (route) =>
+    route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      headers: { "Access-Control-Allow-Origin": "*" },
+      body: JSON.stringify({ success: "false", message: "Testfel" }),
+    }),
+  );
   await page.locator("#company").fill("Test AB");
   await page.locator("#contact").fill("Testperson");
   await page.locator("#email").fill("test@example.invalid");
@@ -70,9 +79,76 @@ test("service choice survives navigation and failed delivery preserves entered t
   await page
     .getByRole("button", { name: "Skicka förfrågan", exact: true })
     .click();
-  await expect(page.getByRole("alert")).toContainText("Testfel");
+  await expect(page.locator("form").getByRole("alert")).toContainText("Testfel");
   await expect(page.locator("#message")).toHaveValue("Behåll denna text");
   await expect(
     page.getByRole("link", { name: "skicka förfrågan som e-post" }),
   ).toHaveAttribute("href", /mailto:/);
+});
+
+test("browser fallback delivers when the server cannot send", async ({ page }) => {
+  await page.goto("/kontakt");
+  await page.route("**/api/lead", (route) =>
+    route.fulfill({
+      status: 502,
+      contentType: "application/json",
+      body: JSON.stringify({ error: "Testfel" }),
+    }),
+  );
+  let fallbackBody: Record<string, string> | null = null;
+  await page.route("https://formsubmit.co/**", (route) => {
+    if (route.request().method() === "OPTIONS") {
+      return route.fulfill({
+        status: 204,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Headers": "Content-Type, Accept",
+          "Access-Control-Allow-Methods": "POST",
+        },
+      });
+    }
+    fallbackBody = route.request().postDataJSON();
+    return route.fulfill({
+      status: 200,
+      contentType: "application/json",
+      headers: { "Access-Control-Allow-Origin": "*" },
+      body: JSON.stringify({ success: "true" }),
+    });
+  });
+  await page.locator("#company").fill("Test AB");
+  await page.locator("#contact").fill("Testperson");
+  await page.locator("#email").fill("test@example.invalid");
+  await page
+    .getByRole("button", { name: "Skicka förfrågan", exact: true })
+    .click();
+  await expect(page.getByRole("status")).toContainText("Tack för er förfrågan");
+  expect(fallbackBody).toMatchObject({
+    Företag: "Test AB",
+    "E-post": "test@example.invalid",
+    _replyto: "test@example.invalid",
+  });
+});
+
+test("input errors from the server are shown without fallback", async ({ page }) => {
+  await page.goto("/kontakt");
+  await page.route("**/api/lead", (route) =>
+    route.fulfill({
+      status: 400,
+      contentType: "application/json",
+      body: JSON.stringify({ error: "Ogiltig e-postadress." }),
+    }),
+  );
+  let fallbackCalled = false;
+  await page.route("https://formsubmit.co/**", (route) => {
+    fallbackCalled = true;
+    return route.abort();
+  });
+  await page.locator("#company").fill("Test AB");
+  await page.locator("#contact").fill("Testperson");
+  await page.locator("#email").fill("test@example.invalid");
+  await page
+    .getByRole("button", { name: "Skicka förfrågan", exact: true })
+    .click();
+  await expect(page.locator("form").getByRole("alert")).toContainText("Ogiltig e-postadress.");
+  expect(fallbackCalled).toBe(false);
 });

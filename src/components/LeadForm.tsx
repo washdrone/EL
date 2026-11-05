@@ -39,11 +39,8 @@ const timeframeLabels: Record<string, string> = {
   upphandling: "Inför upphandling",
 };
 
-/**
- * Reservväg: om utskicket fallerar ska besökaren inte förlora sin text.
- * Bygger en mailto-länk med allt ifyllt innehåll.
- */
-function buildMailtoHref(form: FormData): string {
+/** Ifyllda fält med svenska etiketter, i visningsordning. */
+function leadRows(form: FormData): [string, string][] {
   const rows: [string, string][] = [
     ["Företag", form.company],
     ["Kontaktperson", form.contact],
@@ -54,9 +51,50 @@ function buildMailtoHref(form: FormData): string {
     ["Önskad tidsram", timeframeLabels[form.timeframe] || form.timeframe],
     ["Meddelande", form.message],
   ];
+  return rows.filter(([, value]) => value.trim() !== "");
+}
 
-  const body = rows
-    .filter(([, value]) => value)
+/**
+ * Reservväg 1: om serverns utskick fallerar skickas förfrågan direkt från
+ * webbläsaren till FormSubmit. Webbläsaren skickar själv Origin/Referer,
+ * vilket är det FormSubmit är byggt för, och går inte via Vercels IP-adresser.
+ */
+async function sendViaBrowser(form: FormData): Promise<boolean> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15_000);
+  try {
+    const inspection =
+      inspectionLabels[form.inspectionType] || form.inspectionType || "Ej angiven";
+    const res = await fetch(
+      `https://formsubmit.co/ajax/${encodeURIComponent(CONTACT_EMAIL)}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          _subject: `Ny förfrågan: ${form.company} — ${inspection}`,
+          _replyto: form.email,
+          _captcha: "false",
+          _template: "table",
+          ...Object.fromEntries(leadRows(form)),
+        }),
+        signal: controller.signal,
+      }
+    );
+    const data = (await res.json().catch(() => null)) as { success?: unknown } | null;
+    return res.ok && String(data?.success) === "true";
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+/**
+ * Reservväg 2: om allt annat fallerar ska besökaren inte förlora sin text.
+ * Bygger en mailto-länk med allt ifyllt innehåll.
+ */
+function buildMailtoHref(form: FormData): string {
+  const body = leadRows(form)
     .map(([label, value]) => `${label}: ${value}`)
     .join("\n");
 
@@ -92,17 +130,28 @@ export default function LeadForm({ initialInspection = "" }: { initialInspection
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      let res: Response | null = null;
+      let data: { success?: boolean; error?: string } | null = null;
+      try {
+        res = await fetch("/api/lead", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+        data = await res.json().catch(() => null);
+      } catch {
+        // Nätverksfel mot vår egen server – reservvägen nedan tar över.
+      }
 
-      const data = await res.json().catch(() => null);
-      if (!res.ok || data?.success !== true) {
-        throw new Error(
-          data?.error || "Något gick fel. Försök igen eller kontakta oss direkt."
-        );
+      if (!res?.ok || data?.success !== true) {
+        // 4xx = fel i formuläret – visa felet. Annars har servern inte fått
+        // iväg mejlet, så prova att skicka direkt från webbläsaren.
+        const isInputError = !!res && res.status >= 400 && res.status < 500;
+        if (isInputError || !(await sendViaBrowser(form))) {
+          throw new Error(
+            data?.error || "Något gick fel. Försök igen eller kontakta oss direkt."
+          );
+        }
       }
 
       events.formSubmit();

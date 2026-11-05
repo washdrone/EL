@@ -220,8 +220,11 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Kanalernas felmeddelanden (inga formulärdata) – utan dem går det inte
+    // att se i Vercel-loggen varför utskicket misslyckades.
     console.error("Lead delivery failed", {
       notConfigured: result.notConfigured,
+      errors: result.errors,
     });
 
     return NextResponse.json(
